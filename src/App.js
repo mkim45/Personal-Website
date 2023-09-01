@@ -9,16 +9,11 @@ import { useMediaQuery } from "@mui/material";
 import TempMobile from "./Components/TempMobile";
 
 function App() {
-	const mobile = useMediaQuery("(min-width:900px)");
-	if (!mobile) {
-		return <TempMobile />;
-	}
 	return (
 		<div className='App'>
 				<Routes>
-					<Route path='/' element={<DefaultLayout />}>
-						<Route index element={<ViewPosts />} />
-					</Route>
+					<Route path='/' element={<ViewPosts />}/>
+
 				</Routes>
 		</div>
 	);

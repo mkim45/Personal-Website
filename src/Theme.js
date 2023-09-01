@@ -4,7 +4,7 @@ import responsiveFontSizes from "@mui/material/styles/responsiveFontSizes";
 let theme = createTheme({
 	palette: {
 		primary: {
-			main: "#482fd7",
+			main: "#fbe4d8",
 		},
 		secondary: {
 			main: "#ff8800",
@@ -14,20 +14,24 @@ let theme = createTheme({
 		},
 	},
 	typography: {
-		fontFamily: '"Poppins", "Arial", sans-serif',
+		fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
 		fontSize: 16,
 		htmlFontSize: 16,
+		header1: {
+			fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+			fontSize: "72px",
+		},
 		body1: {
-			fontFamily: '"Poppins", "Arial", sans-serif',
+			fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
 		},
 		body2: {
-			fontFamily: '"Inter", "Arial", sans-serif',
+			fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
 			fontSize: "1.25rem",
 			fontWeight: 400,
 		},
 		subtitle2: {
 			fontWeight: 300,
-			fontFamily: ' "Roboto", "Arial", sans-serif',
+			fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
 		},
 	},
 });

@@ -26,6 +26,8 @@ import firestore from '../../Utilities/firebase';
 import { doc, setDoc, collection, getDocs, writeBatch } from "firebase/firestore"; 
 import Logo from "../../images/Logo.svg";
 
+import Portrait from "./Michael_Kim.jpg";
+
 import ExpandedCard from "./ExpandedCard";
 import SearchIcon from "@mui/icons-material/Search";
 
@@ -42,24 +44,91 @@ import CloseIcon from '@mui/icons-material/Close';
 import emailjs from '@emailjs/browser';
 
 const ViewPosts = () => {
+	const [textOptionOneIndex, setTextOptionOneIndex] = useState(0);
+	const [textOptionTwoIndex, setTextOptionTwoIndex] = useState(0);
+    const navigate = useNavigate();
 
-	const navigate = useNavigate();
+	const rotatingTextOptionsOne = [
+		"software engineering",
+		"machine learning",
+		"web development",
+		"data analysis"
+	];
 
-	return (
-		<Container component='main' maxWidth='xs' sx={{ marginBlock: "auto" }}>
+	const rotatingTextOptionsTwo = [
+		"proteomics",
+		"bioinformatics",
+		"business",
+		"metabolomics"
+	];
+
+	const Img = styled("img")({
+		margin: "auto",
+		display: "block",
+		maxWidth: "100%",
+		maxHeight: "100%",
+	});
+
+	const calculatedWidth = (window.innerWidth - 198) + "px";
+
+	const smallerCalculatedWidth = ((window.innerWidth - 198)/3) + "px";
+
+	const calculatedHeight = (((window.innerWidth - 198)/3) + 35) + "px";
+
+	useEffect(() => {
+		const intervalOne = setInterval(() => {
+			setTextOptionOneIndex((prevIndex) => (prevIndex + 1) % rotatingTextOptionsOne.length);
+		}, 4000);
+
+		const intervalTwoDelay = setTimeout(() => {
+			const intervalTwo = setInterval(() => {
+			  setTextOptionTwoIndex((prevIndex) => (prevIndex + 1) % rotatingTextOptionsTwo.length);
+			}, 4000);
+		
+			return () => {
+			  clearInterval(intervalTwo);
+			};
+		}, 2000);
+	
+		return () => {
+			clearInterval(intervalOne);
+			clearInterval(intervalTwoDelay);
+		};
+	}, []);
+
+    return (
+        <div 
+			style={{
+				backgroundColor: "#fbf7f0",
+				width: "100vw",
+				height: "100vh",
+				overflowX: "hidden"
+			}}>
 			<CssBaseline />
-			<AppBar
-				position='fixed'
-				color='white'
-				m={0}
-				sx={{ zIndex: 1400, height: 96, backgroundColor: "#414fb6"}}>
+			<style>
+				{`
+					body {
+						margin: 0;
+						background-color: #fbf7f0;
+					}
+				`}
+			</style>
+            <AppBar
+				position="fixed"
+				sx={{ zIndex: 1400, 
+					  height: 94.5,
+					  boxShadow: "none",
+					  overflow: "visible",
+					  backgroundColor: "#fbf7f0"
+				}}
+			>
 				<Container maxWidth='xl'>
 					<Toolbar sx={{ justifyContent: "space-between" }}>
-						<Box sx={{ display: { xs: "none", md: "flex" }, mr: 3 }}>
+						<Box sx={{ display: { xs: "none", md: "flex" }, pt: 4, pb: 3 }}>
 							<img src={Logo} width={140} alt='Logo' />
 						</Box>
 						<Stack
-							sx={{ flexGrow: 0, display: { xs: "none", md: "flex" } }}
+							sx={{ flexGrow: 0, display: { xs: "none", md: "flex" }, pt: 4, pb: 3 }}
 							direction='row'
 							>
 								<Typography
@@ -69,14 +138,14 @@ const ViewPosts = () => {
 									sx={{
 										mr: 8,
 										display: "flex",
-										fontFamily: "Poppins",
+										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
 										fontWeight: 500,
-										color: "#fff",
+										color: "#190019",
 										textDecoration: "none",
 										flexGrow: 1,
 										cursor: "pointer",
 									}}>
-									About Me
+									ABOUT ME
 								</Typography>
 								<Typography
 									variant='body3'
@@ -85,14 +154,14 @@ const ViewPosts = () => {
 									sx={{
 										mr: 8,
 										display: "flex",
-										fontFamily: "Poppins",
+										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
 										fontWeight: 500,
-										color: "#fff",
+										color: "#190019",
 										textDecoration: "none",
 										flexGrow: 1,
 										cursor: "pointer",
 									}}>
-									Projects
+									PROJECTS
 								</Typography>
 								<Typography
 									variant='body3'
@@ -101,14 +170,14 @@ const ViewPosts = () => {
 									sx={{
 										mr: 8,
 										display: "flex",
-										fontFamily: "Poppins",
+										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
 										fontWeight: 500,
-										color: "#fff",
+										color: "#190019",
 										textDecoration: "none",
 										flexGrow: 1,
 										cursor: "pointer",
 									}}>
-									Experiences
+									EXPERIENCES
 								</Typography>
 								<Typography
 									variant='body3'
@@ -116,21 +185,1109 @@ const ViewPosts = () => {
 									component='a'
 									sx={{
 										display: "flex",
-										fontFamily: "Poppins",
+										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
 										fontWeight: 500,
-										color: "#fff",
+										color: "#190019",
 										textDecoration: "none",
 										flexGrow: 1,
 										cursor: "pointer",
 									}}>
-									Contact Me
+									CONTACT ME
 								</Typography>
 						</Stack>
 					</Toolbar>
+					<div
+                    style={{
+                        borderBottom: "1.5px solid black",
+                        marginLeft: 24,
+                        marginRight: 24,
+                    }}
+					/>
 				</Container>
 			</AppBar>
+			<Container maxWidth='xl' style={{ paddingTop: "96px" }}>
+				<section style={{ paddingTop: "40px", paddingBottom: "40px", height: "640px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+					<Box sx={{
+						display: "flex",
+						flexDirection: "row",
+						alignItems: "center",
+						justifyContent: "center"
+					}}>
+						<Box sx={{
+							display: "flex",
+							flexDirection: "column",
+							justifyContent: "center",
+							width: "900px",
+						}}>
+							<Box sx={{
+								display: "flex",
+								flexDirection: "row",
+								alignItems: "baseline",
+								width: "100%"
+							}}>
+								<Typography sx={{
+									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+									fontWeight: 500,
+									color: "#190019",
+									fontSize: 32,
+									lineHeight: "1",
+									verticalAlign: "text-bottom",
+									letterSpacing: "0.5px"
+								}}>
+									Hi, my name is{" "}
+								</Typography>
+								<Typography sx={{
+									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+									fontWeight: 600,
+									color: "#356760",
+									fontSize: 60,
+									paddingLeft: 1.25,
+									lineHeight: "1",
+									verticalAlign: "text-bottom",
+									letterSpacing: "0.5px"
+								}}>
+									Michael Kim
+								</Typography>
+								<Typography sx={{
+									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+									fontWeight: 500,
+									color: "#190019",
+									fontSize: 32,
+									lineHeight: "1",
+									verticalAlign: "text-bottom",
+									letterSpacing: "0.5px"
+								}}>
+									.
+								</Typography>
+							</Box>
+							<Box sx={{
+								display: "flex",
+								flexDirection: "column",
+								width: "100%",
+								paddingTop: 4
+							}}>
+								<Typography sx={{
+									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+									fontWeight: 500,
+									color: "#190019",
+									fontSize: 32,
+									lineHeight: "1.5",
+									verticalAlign: "text-bottom",
+									letterSpacing: "0.5px"
+								}}>
+									I'm a software developer and data scientist interested
+								</Typography>
+								<Typography sx={{
+									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+									fontWeight: 500,
+									color: "#190019",
+									fontSize: 32,
+									lineHeight: "1.5",
+									verticalAlign: "text-bottom",
+									letterSpacing: "0.5px",
+								}}>
+									in deepening human understanding at the intersections
+								</Typography>
+								<Box sx={{
+									display: "flex",
+									flexDirection: "row",
+									alignItems: "baseline",
+									width: "100%",
+								}}>
+									<Typography sx={{
+										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+										fontWeight: 500,
+										color: "#190019",
+										fontSize: 32,
+										lineHeight: "1.2",
+										verticalAlign: "text-bottom",
+										letterSpacing: "0.5px"
+									}}>
+									of
+									</Typography>
+									<Typography sx={{
+										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+										fontWeight: 600,
+										color: "#356760",
+										fontSize: 40,
+										lineHeight: "1.2",
+										verticalAlign: "text-bottom",
+										letterSpacing: "0.5px",
+										paddingLeft: 1.25,
+										paddingRight: 1.25
+									}}>
+										{rotatingTextOptionsOne[textOptionOneIndex]}
+									</Typography>
+									<Typography sx={{
+										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+										fontWeight: 500,
+										color: "#190019",
+										fontSize: 32,
+										lineHeight: "1.2",
+										verticalAlign: "text-bottom",
+										letterSpacing: "0.5px"
+									}}>
+									and
+									</Typography>
+									<Typography sx={{
+										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+										fontWeight: 600,
+										color: "#356760",
+										fontSize: 40,
+										lineHeight: "1.2",
+										verticalAlign: "text-bottom",
+										letterSpacing: "0.5px",
+										paddingLeft: 1.25
+									}}>
+										{rotatingTextOptionsTwo[textOptionTwoIndex]}
+									</Typography>
+									<Typography sx={{
+										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+										fontWeight: 500,
+										color: "#190019",
+										fontSize: 32,
+										lineHeight: "1.2",
+										verticalAlign: "text-bottom",
+										letterSpacing: "0.5px"
+									}}>
+									.
+									</Typography>
+								</Box>
+							</Box>
+						</Box>
+						<Box sx={{
+							paddingLeft: 4
+						}}>
+							<Img
+								alt="portrait"
+								src={Portrait}
+								sx={{ height: "525px", width: "350px" }}
+							/>
+						</Box>
+					</Box>
+				</section>
+				<div
+                    style={{
+                        borderBottom: "1.5px solid black",
+						marginLeft: 24,
+                        marginRight: 24,
+                    }}
+				/>
+				<section style={{ paddingTop: "40px", paddingBottom: "40px", height: "640px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+					<Box sx={{
+						display: "flex",
+						flexDirection: "row",
+						alignItems: "center",
+						justifyContent: "center"
+					}}>
+						<Box sx={{
+							display: "flex",
+							flexDirection: "column",
+							justifyContent: "center",
+							width: "900px",
+						}}>
+							<Box sx={{
+								display: "flex",
+								flexDirection: "row",
+								alignItems: "baseline",
+								width: "100%"
+							}}>
+								<Typography sx={{
+									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+									fontWeight: 500,
+									color: "#190019",
+									fontSize: 32,
+									lineHeight: "1",
+									verticalAlign: "text-bottom",
+									letterSpacing: "0.5px"
+								}}>
+									Hi, my name is{" "}
+								</Typography>
+								<Typography sx={{
+									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+									fontWeight: 600,
+									color: "#356760",
+									fontSize: 60,
+									paddingLeft: 1.25,
+									lineHeight: "1",
+									verticalAlign: "text-bottom",
+									letterSpacing: "0.5px"
+								}}>
+									Michael Kim
+								</Typography>
+								<Typography sx={{
+									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+									fontWeight: 500,
+									color: "#190019",
+									fontSize: 32,
+									lineHeight: "1",
+									verticalAlign: "text-bottom",
+									letterSpacing: "0.5px"
+								}}>
+									.
+								</Typography>
+							</Box>
+							<Box sx={{
+								display: "flex",
+								flexDirection: "column",
+								width: "100%",
+								paddingTop: 4
+							}}>
+								<Typography sx={{
+									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+									fontWeight: 500,
+									color: "#190019",
+									fontSize: 32,
+									lineHeight: "1.5",
+									verticalAlign: "text-bottom",
+									letterSpacing: "0.5px"
+								}}>
+									I'm a software developer and data scientist interested
+								</Typography>
+								<Typography sx={{
+									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+									fontWeight: 500,
+									color: "#190019",
+									fontSize: 32,
+									lineHeight: "1.5",
+									verticalAlign: "text-bottom",
+									letterSpacing: "0.5px",
+								}}>
+									in deepening human understanding at the intersections
+								</Typography>
+								<Box sx={{
+									display: "flex",
+									flexDirection: "row",
+									alignItems: "baseline",
+									width: "100%",
+								}}>
+									<Typography sx={{
+										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+										fontWeight: 500,
+										color: "#190019",
+										fontSize: 32,
+										lineHeight: "1.2",
+										verticalAlign: "text-bottom",
+										letterSpacing: "0.5px"
+									}}>
+									of
+									</Typography>
+									<Typography sx={{
+										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+										fontWeight: 600,
+										color: "#356760",
+										fontSize: 40,
+										lineHeight: "1.2",
+										verticalAlign: "text-bottom",
+										letterSpacing: "0.5px",
+										paddingLeft: 1.25,
+										paddingRight: 1.25
+									}}>
+										{rotatingTextOptionsOne[textOptionOneIndex]}
+									</Typography>
+									<Typography sx={{
+										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+										fontWeight: 500,
+										color: "#190019",
+										fontSize: 32,
+										lineHeight: "1.2",
+										verticalAlign: "text-bottom",
+										letterSpacing: "0.5px"
+									}}>
+									and
+									</Typography>
+									<Typography sx={{
+										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+										fontWeight: 600,
+										color: "#356760",
+										fontSize: 40,
+										lineHeight: "1.2",
+										verticalAlign: "text-bottom",
+										letterSpacing: "0.5px",
+										paddingLeft: 1.25
+									}}>
+										{rotatingTextOptionsTwo[textOptionTwoIndex]}
+									</Typography>
+									<Typography sx={{
+										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+										fontWeight: 500,
+										color: "#190019",
+										fontSize: 32,
+										lineHeight: "1.2",
+										verticalAlign: "text-bottom",
+										letterSpacing: "0.5px"
+									}}>
+									.
+									</Typography>
+								</Box>
+							</Box>
+						</Box>
+						<Box sx={{
+							paddingLeft: 4
+						}}>
+							<Img
+								alt="portrait"
+								src={Portrait}
+								sx={{ height: "525px", width: "350px" }}
+							/>
+						</Box>
+					</Box>
+				</section>
+				<section style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px" }}>
+					<Box sx={{
+						display: "flex",
+						flexDirection: "row",
+						alignItems: "center",
+						justifyContent: "start",
+						width: calculatedWidth,
+						height: calculatedHeight
+					}}>
+						<div
+							style={{
+								borderLeft: "1.5px solid black",
+								height: smallerCalculatedWidth,
+								paddingTop: "16px",
+								paddingBottom: "16px",
+								paddingRight: "16px",
+							}}
+						/>
+						<Box sx={{
+							display: "flex",
+							flexDirection: "column",
+							justifyContent: "center",
+							alignItems: "center",
+							width: calculatedHeight,
+							height: calculatedHeight,
+							paddingRight: "16px"
+						}}>
+							<div
+								style={{
+									borderTop: "1.5px solid black",
+									paddingBottom: "16px",
+									width: smallerCalculatedWidth
+								}}
+							/>
+							<Box sx={{
+								height: smallerCalculatedWidth,
+								width: smallerCalculatedWidth
+							}}>
+								<Img
+									alt="portrait"
+									src={Portrait}
+									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
+								/>
+							</Box>
+							<div
+								style={{
+									borderBottom: "1.5px solid black",
+									paddingTop: "16px",
+									width: smallerCalculatedWidth
+								}}
+							/>
+						</Box>
+						<div
+							style={{
+								borderLeft: "1.5px solid black",
+								height: smallerCalculatedWidth,
+								paddingTop: "16px",
+								paddingBottom: "16px",
+								paddingRight: "16px",
+							}}
+						/>
+						<Box sx={{
+							display: "flex",
+							flexDirection: "column",
+							justifyContent: "center",
+							alignItems: "center",
+							width: calculatedHeight,
+							height: calculatedHeight,
+							paddingRight: "16px"
+						}}>
+							<div
+								style={{
+									borderTop: "1.5px solid black",
+									paddingBottom: "16px",
+									width: smallerCalculatedWidth
+								}}
+							/>
+							<Box sx={{
+								height: smallerCalculatedWidth,
+								width: smallerCalculatedWidth
+							}}>
+								<Img
+									alt="portrait"
+									src={Portrait}
+									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
+								/>
+							</Box>
+							<div
+								style={{
+									borderBottom: "1.5px solid black",
+									paddingTop: "16px",
+									width: smallerCalculatedWidth
+								}}
+							/>
+						</Box>
+						<div
+							style={{
+								borderLeft: "1.5px solid black",
+								height: smallerCalculatedWidth,
+								paddingTop: "16px",
+								paddingBottom: "16px",
+								paddingRight: "16px",
+							}}
+						/>
+						<Box sx={{
+							display: "flex",
+							flexDirection: "column",
+							justifyContent: "center",
+							alignItems: "center",
+							width: calculatedHeight,
+							height: calculatedHeight,
+							paddingRight: "16px"
+						}}>
+							<div
+								style={{
+									borderTop: "1.5px solid black",
+									paddingBottom: "16px",
+									width: smallerCalculatedWidth,
+								}}
+							/>
+							<Box sx={{
+								height: smallerCalculatedWidth,
+								width: smallerCalculatedWidth
+							}}>
+								<Img
+									alt="portrait"
+									src={Portrait}
+									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
+								/>
+							</Box>
+							<div
+								style={{
+									borderBottom: "1.5px solid black",
+									paddingTop: "16px",
+									width: smallerCalculatedWidth
+								}}
+							/>
+						</Box>
+						<div
+							style={{
+								borderLeft: "1.5px solid black",
+								height: smallerCalculatedWidth,
+								paddingTop: "16px",
+								paddingBottom: "16px",
+							}}
+						/>
+					</Box>
+				</section>
+				<section style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px" }}>
+					<Box sx={{
+						display: "flex",
+						flexDirection: "row",
+						alignItems: "center",
+						justifyContent: "start",
+						width: calculatedWidth,
+						height: calculatedHeight
+					}}>
+						<div
+							style={{
+								borderLeft: "1.5px solid black",
+								height: smallerCalculatedWidth,
+								paddingTop: "16px",
+								paddingBottom: "16px",
+								paddingRight: "16px",
+							}}
+						/>
+						<Box sx={{
+							display: "flex",
+							flexDirection: "column",
+							justifyContent: "center",
+							alignItems: "center",
+							width: calculatedHeight,
+							height: calculatedHeight,
+							paddingRight: "16px"
+						}}>
+							<div
+								style={{
+									borderTop: "1.5px solid transparent",
+									paddingBottom: "16px",
+									width: smallerCalculatedWidth
+								}}
+							/>
+							<Box sx={{
+								height: smallerCalculatedWidth,
+								width: smallerCalculatedWidth
+							}}>
+								<Img
+									alt="portrait"
+									src={Portrait}
+									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
+								/>
+							</Box>
+							<div
+								style={{
+									borderBottom: "1.5px solid black",
+									paddingTop: "16px",
+									width: smallerCalculatedWidth
+								}}
+							/>
+						</Box>
+						<div
+							style={{
+								borderLeft: "1.5px solid black",
+								height: smallerCalculatedWidth,
+								paddingTop: "16px",
+								paddingBottom: "16px",
+								paddingRight: "16px",
+							}}
+						/>
+						<Box sx={{
+							display: "flex",
+							flexDirection: "column",
+							justifyContent: "center",
+							alignItems: "center",
+							width: calculatedHeight,
+							height: calculatedHeight,
+							paddingRight: "16px"
+						}}>
+							<div
+								style={{
+									borderTop: "1.5px solid transparent",
+									paddingBottom: "16px",
+									width: smallerCalculatedWidth
+								}}
+							/>
+							<Box sx={{
+								height: smallerCalculatedWidth,
+								width: smallerCalculatedWidth
+							}}>
+								<Img
+									alt="portrait"
+									src={Portrait}
+									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
+								/>
+							</Box>
+							<div
+								style={{
+									borderBottom: "1.5px solid black",
+									paddingTop: "16px",
+									width: smallerCalculatedWidth
+								}}
+							/>
+						</Box>
+						<div
+							style={{
+								borderLeft: "1.5px solid black",
+								height: smallerCalculatedWidth,
+								paddingTop: "16px",
+								paddingBottom: "16px",
+								paddingRight: "16px",
+							}}
+						/>
+						<Box sx={{
+							display: "flex",
+							flexDirection: "column",
+							justifyContent: "center",
+							alignItems: "center",
+							width: calculatedHeight,
+							height: calculatedHeight,
+							paddingRight: "16px"
+						}}>
+							<div
+								style={{
+									borderTop: "1.5px solid transparent",
+									paddingBottom: "16px",
+									width: smallerCalculatedWidth,
+								}}
+							/>
+							<Box sx={{
+								height: smallerCalculatedWidth,
+								width: smallerCalculatedWidth
+							}}>
+								<Img
+									alt="portrait"
+									src={Portrait}
+									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
+								/>
+							</Box>
+							<div
+								style={{
+									borderBottom: "1.5px solid black",
+									paddingTop: "16px",
+									width: smallerCalculatedWidth
+								}}
+							/>
+						</Box>
+						<div
+							style={{
+								borderLeft: "1.5px solid black",
+								height: smallerCalculatedWidth,
+								paddingTop: "16px",
+								paddingBottom: "16px",
+							}}
+						/>
+					</Box>
+				</section>
+				<section style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px" }}>
+					<Box sx={{
+						display: "flex",
+						flexDirection: "row",
+						alignItems: "center",
+						justifyContent: "start",
+						width: calculatedWidth,
+						height: calculatedHeight
+					}}>
+						<div
+							style={{
+								borderLeft: "1.5px solid black",
+								height: smallerCalculatedWidth,
+								paddingTop: "16px",
+								paddingBottom: "16px",
+								paddingRight: "16px",
+							}}
+						/>
+						<Box sx={{
+							display: "flex",
+							flexDirection: "column",
+							justifyContent: "center",
+							alignItems: "center",
+							width: calculatedHeight,
+							height: calculatedHeight,
+							paddingRight: "16px"
+						}}>
+							<div
+								style={{
+									borderTop: "1.5px solid transparent",
+									paddingBottom: "16px",
+									width: smallerCalculatedWidth
+								}}
+							/>
+							<Box sx={{
+								height: smallerCalculatedWidth,
+								width: smallerCalculatedWidth
+							}}>
+								<Img
+									alt="portrait"
+									src={Portrait}
+									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
+								/>
+							</Box>
+							<div
+								style={{
+									borderBottom: "1.5px solid black",
+									paddingTop: "16px",
+									width: smallerCalculatedWidth
+								}}
+							/>
+						</Box>
+						<div
+							style={{
+								borderLeft: "1.5px solid black",
+								height: smallerCalculatedWidth,
+								paddingTop: "16px",
+								paddingBottom: "16px",
+								paddingRight: "16px",
+							}}
+						/>
+						<Box sx={{
+							display: "flex",
+							flexDirection: "column",
+							justifyContent: "center",
+							alignItems: "center",
+							width: calculatedHeight,
+							height: calculatedHeight,
+							paddingRight: "16px"
+						}}>
+							<div
+								style={{
+									borderTop: "1.5px solid transparent",
+									paddingBottom: "16px",
+									width: smallerCalculatedWidth
+								}}
+							/>
+							<Box sx={{
+								height: smallerCalculatedWidth,
+								width: smallerCalculatedWidth
+							}}>
+								<Img
+									alt="portrait"
+									src={Portrait}
+									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
+								/>
+							</Box>
+							<div
+								style={{
+									borderBottom: "1.5px solid black",
+									paddingTop: "16px",
+									width: smallerCalculatedWidth
+								}}
+							/>
+						</Box>
+						<div
+							style={{
+								borderLeft: "1.5px solid black",
+								height: smallerCalculatedWidth,
+								paddingTop: "16px",
+								paddingBottom: "16px",
+								paddingRight: "16px",
+							}}
+						/>
+						<Box sx={{
+							display: "flex",
+							flexDirection: "column",
+							justifyContent: "center",
+							alignItems: "center",
+							width: calculatedHeight,
+							height: calculatedHeight,
+							paddingRight: "16px"
+						}}>
+							<div
+								style={{
+									borderTop: "1.5px solid transparent",
+									paddingBottom: "16px",
+									width: smallerCalculatedWidth,
+								}}
+							/>
+							<Box sx={{
+								height: smallerCalculatedWidth,
+								width: smallerCalculatedWidth
+							}}>
+								<Img
+									alt="portrait"
+									src={Portrait}
+									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
+								/>
+							</Box>
+							<div
+								style={{
+									borderBottom: "1.5px solid black",
+									paddingTop: "16px",
+									width: smallerCalculatedWidth
+								}}
+							/>
+						</Box>
+						<div
+							style={{
+								borderLeft: "1.5px solid black",
+								height: smallerCalculatedWidth,
+								paddingTop: "16px",
+								paddingBottom: "16px",
+							}}
+						/>
+					</Box>
+				</section>
+				<section style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px" }}>
+					<Box sx={{
+						display: "flex",
+						flexDirection: "row",
+						alignItems: "center",
+						justifyContent: "start",
+						width: calculatedWidth,
+						height: calculatedHeight
+					}}>
+						<div
+							style={{
+								borderLeft: "1.5px solid black",
+								height: smallerCalculatedWidth,
+								paddingTop: "16px",
+								paddingBottom: "16px",
+								paddingRight: "16px",
+							}}
+						/>
+						<Box sx={{
+							display: "flex",
+							flexDirection: "column",
+							justifyContent: "center",
+							alignItems: "center",
+							width: calculatedHeight,
+							height: calculatedHeight,
+							paddingRight: "16px"
+						}}>
+							<div
+								style={{
+									borderTop: "1.5px solid transparent",
+									paddingBottom: "16px",
+									width: smallerCalculatedWidth
+								}}
+							/>
+							<Box sx={{
+								height: smallerCalculatedWidth,
+								width: smallerCalculatedWidth
+							}}>
+								<Img
+									alt="portrait"
+									src={Portrait}
+									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
+								/>
+							</Box>
+							<div
+								style={{
+									borderBottom: "1.5px solid black",
+									paddingTop: "16px",
+									width: smallerCalculatedWidth
+								}}
+							/>
+						</Box>
+						<div
+							style={{
+								borderLeft: "1.5px solid black",
+								height: smallerCalculatedWidth,
+								paddingTop: "16px",
+								paddingBottom: "16px",
+								paddingRight: "16px",
+							}}
+						/>
+						<Box sx={{
+							display: "flex",
+							flexDirection: "column",
+							justifyContent: "center",
+							alignItems: "center",
+							width: calculatedHeight,
+							height: calculatedHeight,
+							paddingRight: "16px"
+						}}>
+							<div
+								style={{
+									borderTop: "1.5px solid transparent",
+									paddingBottom: "16px",
+									width: smallerCalculatedWidth
+								}}
+							/>
+							<Box sx={{
+								height: smallerCalculatedWidth,
+								width: smallerCalculatedWidth
+							}}>
+								<Img
+									alt="portrait"
+									src={Portrait}
+									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
+								/>
+							</Box>
+							<div
+								style={{
+									borderBottom: "1.5px solid black",
+									paddingTop: "16px",
+									width: smallerCalculatedWidth
+								}}
+							/>
+						</Box>
+						<div
+							style={{
+								borderLeft: "1.5px solid black",
+								height: smallerCalculatedWidth,
+								paddingTop: "16px",
+								paddingBottom: "16px",
+								paddingRight: "16px",
+							}}
+						/>
+						<Box sx={{
+							display: "flex",
+							flexDirection: "column",
+							justifyContent: "center",
+							alignItems: "center",
+							width: calculatedHeight,
+							height: calculatedHeight,
+							paddingRight: "16px"
+						}}>
+							<div
+								style={{
+									borderTop: "1.5px solid transparent",
+									paddingBottom: "16px",
+									width: smallerCalculatedWidth,
+								}}
+							/>
+							<Box sx={{
+								height: smallerCalculatedWidth,
+								width: smallerCalculatedWidth
+							}}>
+								<Img
+									alt="portrait"
+									src={Portrait}
+									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
+								/>
+							</Box>
+							<div
+								style={{
+									borderBottom: "1.5px solid black",
+									paddingTop: "16px",
+									width: smallerCalculatedWidth
+								}}
+							/>
+						</Box>
+						<div
+							style={{
+								borderLeft: "1.5px solid black",
+								height: smallerCalculatedWidth,
+								paddingTop: "16px",
+								paddingBottom: "16px",
+							}}
+						/>
+					</Box>
+				</section>
+				<section style={{ paddingTop: "40px", paddingBottom: "40px", height: "640px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+					<Box sx={{
+						display: "flex",
+						flexDirection: "row",
+						alignItems: "center",
+						justifyContent: "center"
+					}}>
+						<Box sx={{
+							display: "flex",
+							flexDirection: "column",
+							justifyContent: "center",
+							width: "900px",
+						}}>
+							<Box sx={{
+								display: "flex",
+								flexDirection: "row",
+								alignItems: "baseline",
+								width: "100%"
+							}}>
+								<Typography sx={{
+									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+									fontWeight: 500,
+									color: "#190019",
+									fontSize: 32,
+									lineHeight: "1",
+									verticalAlign: "text-bottom",
+									letterSpacing: "0.5px"
+								}}>
+									Hi, my name is{" "}
+								</Typography>
+								<Typography sx={{
+									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+									fontWeight: 600,
+									color: "#356760",
+									fontSize: 60,
+									paddingLeft: 1.25,
+									lineHeight: "1",
+									verticalAlign: "text-bottom",
+									letterSpacing: "0.5px"
+								}}>
+									Michael Kim
+								</Typography>
+								<Typography sx={{
+									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+									fontWeight: 500,
+									color: "#190019",
+									fontSize: 32,
+									lineHeight: "1",
+									verticalAlign: "text-bottom",
+									letterSpacing: "0.5px"
+								}}>
+									.
+								</Typography>
+							</Box>
+							<Box sx={{
+								display: "flex",
+								flexDirection: "column",
+								width: "100%",
+								paddingTop: 4
+							}}>
+								<Typography sx={{
+									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+									fontWeight: 500,
+									color: "#190019",
+									fontSize: 32,
+									lineHeight: "1.5",
+									verticalAlign: "text-bottom",
+									letterSpacing: "0.5px"
+								}}>
+									I'm a software developer and data scientist interested
+								</Typography>
+								<Typography sx={{
+									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+									fontWeight: 500,
+									color: "#190019",
+									fontSize: 32,
+									lineHeight: "1.5",
+									verticalAlign: "text-bottom",
+									letterSpacing: "0.5px",
+								}}>
+									in deepening human understanding at the intersections
+								</Typography>
+								<Box sx={{
+									display: "flex",
+									flexDirection: "row",
+									alignItems: "baseline",
+									width: "100%",
+								}}>
+									<Typography sx={{
+										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+										fontWeight: 500,
+										color: "#190019",
+										fontSize: 32,
+										lineHeight: "1.2",
+										verticalAlign: "text-bottom",
+										letterSpacing: "0.5px"
+									}}>
+									of
+									</Typography>
+									<Typography sx={{
+										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+										fontWeight: 600,
+										color: "#356760",
+										fontSize: 40,
+										lineHeight: "1.2",
+										verticalAlign: "text-bottom",
+										letterSpacing: "0.5px",
+										paddingLeft: 1.25,
+										paddingRight: 1.25
+									}}>
+										{rotatingTextOptionsOne[textOptionOneIndex]}
+									</Typography>
+									<Typography sx={{
+										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+										fontWeight: 500,
+										color: "#190019",
+										fontSize: 32,
+										lineHeight: "1.2",
+										verticalAlign: "text-bottom",
+										letterSpacing: "0.5px"
+									}}>
+									and
+									</Typography>
+									<Typography sx={{
+										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+										fontWeight: 600,
+										color: "#356760",
+										fontSize: 40,
+										lineHeight: "1.2",
+										verticalAlign: "text-bottom",
+										letterSpacing: "0.5px",
+										paddingLeft: 1.25
+									}}>
+										{rotatingTextOptionsTwo[textOptionTwoIndex]}
+									</Typography>
+									<Typography sx={{
+										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+										fontWeight: 500,
+										color: "#190019",
+										fontSize: 32,
+										lineHeight: "1.2",
+										verticalAlign: "text-bottom",
+										letterSpacing: "0.5px"
+									}}>
+									.
+									</Typography>
+								</Box>
+							</Box>
+						</Box>
+						<Box sx={{
+							paddingLeft: 4
+						}}>
+							<Img
+								alt="portrait"
+								src={Portrait}
+								sx={{ height: "525px", width: "350px" }}
+							/>
+						</Box>
+					</Box>
+				</section>
 			</Container>
-	)
+        </div>
+    );
 };
 
 export default ViewPosts;
