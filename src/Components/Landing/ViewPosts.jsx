@@ -27,6 +27,18 @@ import { doc, setDoc, collection, getDocs, writeBatch } from "firebase/firestore
 import Logo from "../../images/Logo.svg";
 
 import Portrait from "./Michael_Kim.jpg";
+import Yelp from "./Yelp.png";
+import Battery from "./Battery.jpg";
+import Chess from "./Chess.jpg";
+import Proteins1 from "./Proteins1.png";
+import Proteins2 from "./Proteins2.jpeg";
+import Proteins3 from "./Proteins3.jpg";
+import Proteins4 from "./Proteins4.png";
+import Proteins5 from "./Proteins5.png";
+import Science1 from "./Science1.jpg";
+import SciOly from "./SciOly.png";
+import Uber from "./Uber.png";
+import Wine from "./Wine.jpg";
 
 import ExpandedCard from "./ExpandedCard";
 import SearchIcon from "@mui/icons-material/Search";
