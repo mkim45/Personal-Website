@@ -584,8 +584,8 @@ const ViewPosts = () => {
 								width: smallerCalculatedWidth
 							}}>
 								<Img
-									alt="portrait"
-									src={Portrait}
+									alt="proteins3"
+									src={Proteins3}
 									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
 								/>
 							</Box>
@@ -627,8 +627,8 @@ const ViewPosts = () => {
 								width: smallerCalculatedWidth
 							}}>
 								<Img
-									alt="portrait"
-									src={Portrait}
+									alt="proteins2"
+									src={Proteins2}
 									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
 								/>
 							</Box>
@@ -670,8 +670,8 @@ const ViewPosts = () => {
 								width: smallerCalculatedWidth
 							}}>
 								<Img
-									alt="portrait"
-									src={Portrait}
+									alt="proteins4"
+									src={Proteins4}
 									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
 								/>
 							</Box>
@@ -732,8 +732,8 @@ const ViewPosts = () => {
 								width: smallerCalculatedWidth
 							}}>
 								<Img
-									alt="portrait"
-									src={Portrait}
+									alt="proteins1"
+									src={Proteins1}
 									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
 								/>
 							</Box>
@@ -775,8 +775,8 @@ const ViewPosts = () => {
 								width: smallerCalculatedWidth
 							}}>
 								<Img
-									alt="portrait"
-									src={Portrait}
+									alt="battery"
+									src={Battery}
 									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
 								/>
 							</Box>
@@ -818,8 +818,8 @@ const ViewPosts = () => {
 								width: smallerCalculatedWidth
 							}}>
 								<Img
-									alt="portrait"
-									src={Portrait}
+									alt="proteins5"
+									src={Proteins5}
 									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
 								/>
 							</Box>
@@ -880,8 +880,8 @@ const ViewPosts = () => {
 								width: smallerCalculatedWidth
 							}}>
 								<Img
-									alt="portrait"
-									src={Portrait}
+									alt="scioly"
+									src={SciOly}
 									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
 								/>
 							</Box>
@@ -923,8 +923,8 @@ const ViewPosts = () => {
 								width: smallerCalculatedWidth
 							}}>
 								<Img
-									alt="portrait"
-									src={Portrait}
+									alt="science1"
+									src={Science1}
 									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
 								/>
 							</Box>
@@ -966,8 +966,8 @@ const ViewPosts = () => {
 								width: smallerCalculatedWidth
 							}}>
 								<Img
-									alt="portrait"
-									src={Portrait}
+									alt="uber"
+									src={Uber}
 									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
 								/>
 							</Box>
@@ -1028,8 +1028,8 @@ const ViewPosts = () => {
 								width: smallerCalculatedWidth
 							}}>
 								<Img
-									alt="portrait"
-									src={Portrait}
+									alt="wine"
+									src={Wine}
 									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
 								/>
 							</Box>
@@ -1071,8 +1071,8 @@ const ViewPosts = () => {
 								width: smallerCalculatedWidth
 							}}>
 								<Img
-									alt="portrait"
-									src={Portrait}
+									alt="yelp"
+									src={Yelp}
 									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
 								/>
 							</Box>
@@ -1114,8 +1114,8 @@ const ViewPosts = () => {
 								width: smallerCalculatedWidth
 							}}>
 								<Img
-									alt="portrait"
-									src={Portrait}
+									alt="chess"
+									src={Chess}
 									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
 								/>
 							</Box>
