@@ -1,6 +1,7 @@
 import React from "react";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { FaPlus } from 'react-icons/fa';
 
 const Img = styled("img")({
 	margin: "auto",
@@ -37,7 +38,7 @@ const Projects = ({calculatedWidth, calculatedHeight, smallerCalculatedWidth, Im
 					alignItems: "center",
 					width: calculatedHeight,
 					height: calculatedHeight,
-					paddingRight: "16px"
+					paddingRight: "16px",
 				}}>
 					<div
 						style={{
@@ -46,15 +47,80 @@ const Projects = ({calculatedWidth, calculatedHeight, smallerCalculatedWidth, Im
 							width: smallerCalculatedWidth
 						}}
 					/>
-					<Box sx={{
-						height: smallerCalculatedWidth,
-						width: smallerCalculatedWidth
-					}}>
+					<Box
+						sx={{
+							height: smallerCalculatedWidth,
+							width: smallerCalculatedWidth,
+							position: 'relative',
+							cursor: "pointer",
+							transition: "box-shadow 0.3s",
+							'&:hover': {
+								boxShadow: "0 0 32px #356760", 
+							}
+						}}
+					>
 						<Img
 							alt="proteins3"
 							src={Images[0]}
 							sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
 						/>
+						<div
+							style={{
+							zIndex: 1,
+							background: "transparent",
+							position: "absolute",
+							top: "0",
+							left: "0",
+							display: "flex",
+							justifyContent: "flex-start", 
+							alignItems: "center",
+							textAlign: "center",
+							width: "90%",
+							}}
+						>
+							<Typography
+							sx={{
+								fontFamily:
+								'"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+								fontWeight: 600,
+								color: "white",
+								fontSize: 16, 
+								marginRight: "8px",
+								marginLeft: "8px",
+								marginTop: "8px"
+							}}
+							>
+							In Progress
+							</Typography>
+						</div>
+						<div
+							style={{
+							zIndex: 1,
+							background: "transparent",
+							position: "absolute",
+							top: "50%",
+							left: "50%",
+							transform: "translate(-50%, -50%)",
+							display: "flex",
+							justifyContent: "center",
+							alignItems: "center",
+							textAlign: "center",
+							width: "90%",
+							}}
+						>
+							<Typography
+							sx={{
+								fontFamily:
+								'"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+								fontWeight: 600,
+								color: "white",
+								fontSize: 24,
+								lineHeight: 1.25
+							}}
+							>
+							CAFA-5 Protein Function Prediction
+							</Typography>
+						</div>
 					</Box>
 					<div
 						style={{
@@ -80,7 +146,7 @@ const Projects = ({calculatedWidth, calculatedHeight, smallerCalculatedWidth, Im
 					alignItems: "center",
 					width: calculatedHeight,
 					height: calculatedHeight,
-					paddingRight: "16px"
+					paddingRight: "16px",
 				}}>
 					<div
 						style={{
@@ -89,15 +155,80 @@ const Projects = ({calculatedWidth, calculatedHeight, smallerCalculatedWidth, Im
 							width: smallerCalculatedWidth
 						}}
 					/>
-					<Box sx={{
-						height: smallerCalculatedWidth,
-						width: smallerCalculatedWidth
-					}}>
+					<Box
+						sx={{
+							height: smallerCalculatedWidth,
+							width: smallerCalculatedWidth,
+							position: 'relative',
+							cursor: "pointer",
+							transition: "box-shadow 0.3s",
+							'&:hover': {
+								boxShadow: "0 0 32px #356760", 
+							}
+						}}
+					>
 						<Img
 							alt="proteins2"
 							src={Images[1]}
 							sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
 						/>
+						<div
+							style={{
+							zIndex: 1,
+							background: "transparent",
+							position: "absolute",
+							top: "0",
+							left: "0",
+							display: "flex",
+							justifyContent: "flex-start", 
+							alignItems: "center",
+							textAlign: "center",
+							width: "90%",
+							}}
+						>
+							<Typography
+							sx={{
+								fontFamily:
+								'"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+								fontWeight: 600,
+								color: "white",
+								fontSize: 16, 
+								marginRight: "8px",
+								marginLeft: "8px",
+								marginTop: "8px"
+							}}
+							>
+							In Progress
+							</Typography>
+						</div>
+						<div
+							style={{
+							zIndex: 1,
+							background: "transparent",
+							position: "absolute",
+							top: "50%",
+							left: "50%",
+							transform: "translate(-50%, -50%)",
+							display: "flex",
+							justifyContent: "center",
+							alignItems: "center",
+							textAlign: "center",
+							width: "90%",
+							}}
+						>
+							<Typography
+							sx={{
+								fontFamily:
+								'"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+								fontWeight: 600,
+								color: "white",
+								fontSize: 24,
+								lineHeight: 1.25
+							}}
+							>
+							Bottom-Up Proteomics Data Assessment Tool
+							</Typography>
+						</div>
 					</Box>
 					<div
 						style={{
@@ -123,24 +254,89 @@ const Projects = ({calculatedWidth, calculatedHeight, smallerCalculatedWidth, Im
 					alignItems: "center",
 					width: calculatedHeight,
 					height: calculatedHeight,
-					paddingRight: "16px"
+					paddingRight: "16px",
 				}}>
 					<div
 						style={{
 							borderTop: "1.5px solid transparent",
 							paddingBottom: "16px",
-							width: smallerCalculatedWidth,
+							width: smallerCalculatedWidth
 						}}
 					/>
-					<Box sx={{
-						height: smallerCalculatedWidth,
-						width: smallerCalculatedWidth
-					}}>
+					<Box
+						sx={{
+							height: smallerCalculatedWidth,
+							width: smallerCalculatedWidth,
+							position: 'relative',
+							cursor: "pointer",
+							transition: "box-shadow 0.3s",
+							'&:hover': {
+								boxShadow: "0 0 32px #356760", 
+							}
+						}}
+					>
 						<Img
 							alt="proteins4"
 							src={Images[2]}
 							sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
 						/>
+						<div
+							style={{
+							zIndex: 1,
+							background: "transparent",
+							position: "absolute",
+							top: "0",
+							left: "0",
+							display: "flex",
+							justifyContent: "flex-start", 
+							alignItems: "center",
+							textAlign: "center",
+							width: "90%",
+							}}
+						>
+							<Typography
+							sx={{
+								fontFamily:
+								'"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+								fontWeight: 600,
+								color: "white",
+								fontSize: 16, 
+								marginRight: "8px",
+								marginLeft: "8px",
+								marginTop: "8px"
+							}}
+							>
+							Sep 2023
+							</Typography>
+						</div>
+						<div
+							style={{
+							zIndex: 1,
+							background: "transparent",
+							position: "absolute",
+							top: "50%",
+							left: "50%",
+							transform: "translate(-50%, -50%)",
+							display: "flex",
+							justifyContent: "center",
+							alignItems: "center",
+							textAlign: "center",
+							width: "90%",
+							}}
+						>
+							<Typography
+							sx={{
+								fontFamily:
+								'"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+								fontWeight: 600,
+								color: "white",
+								fontSize: 24,
+								lineHeight: 1.25
+							}}
+							>
+								AIM-Based Discovery Fragment Ion Mass Comparison For Ensemble and I2MS
+							</Typography>
+						</div>
 					</Box>
 					<div
 						style={{
@@ -166,7 +362,7 @@ const Projects = ({calculatedWidth, calculatedHeight, smallerCalculatedWidth, Im
 					alignItems: "center",
 					width: calculatedHeight,
 					height: calculatedHeight,
-					paddingRight: "16px"
+					paddingRight: "16px",
 				}}>
 					<div
 						style={{
@@ -175,15 +371,80 @@ const Projects = ({calculatedWidth, calculatedHeight, smallerCalculatedWidth, Im
 							width: smallerCalculatedWidth
 						}}
 					/>
-					<Box sx={{
-						height: smallerCalculatedWidth,
-						width: smallerCalculatedWidth
-					}}>
+					<Box
+						sx={{
+							height: smallerCalculatedWidth,
+							width: smallerCalculatedWidth,
+							position: 'relative',
+							cursor: "pointer",
+							transition: "box-shadow 0.3s",
+							'&:hover': {
+								boxShadow: "0 0 32px #356760", 
+							}
+						}}
+					>
 						<Img
-							alt="proteins1"
-							src={Images[3]}
+							alt="proteins2"
+							src={Images[1]}
 							sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
 						/>
+						<div
+							style={{
+							zIndex: 1,
+							background: "transparent",
+							position: "absolute",
+							top: "0",
+							left: "0",
+							display: "flex",
+							justifyContent: "flex-start", 
+							alignItems: "center",
+							textAlign: "center",
+							width: "90%",
+							}}
+						>
+							<Typography
+							sx={{
+								fontFamily:
+								'"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+								fontWeight: 600,
+								color: "white",
+								fontSize: 16, 
+								marginRight: "8px",
+								marginLeft: "8px",
+								marginTop: "8px"
+							}}
+							>
+								Aug 2023
+							</Typography>
+						</div>
+						<div
+							style={{
+							zIndex: 1,
+							background: "transparent",
+							position: "absolute",
+							top: "50%",
+							left: "50%",
+							transform: "translate(-50%, -50%)",
+							display: "flex",
+							justifyContent: "center",
+							alignItems: "center",
+							textAlign: "center",
+							width: "90%",
+							}}
+						>
+							<Typography
+							sx={{
+								fontFamily:
+								'"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+								fontWeight: 600,
+								color: "white",
+								fontSize: 24,
+								lineHeight: 1.25
+							}}
+							>
+							ALS Metabolomics Top-Down Label-Free Quantification
+							</Typography>
+						</div>
 					</Box>
 					<div
 						style={{

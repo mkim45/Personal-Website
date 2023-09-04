@@ -637,7 +637,7 @@ const ViewPosts = () => {
 									lineHeight: "1",
 									letterSpacing: "0.5px"
 								}}>
-									WHAT DO I WORK ON?
+									WHAT I'VE WORKED ON
 								</Typography>
 							</Box>
 							<div
@@ -715,7 +715,7 @@ const ViewPosts = () => {
 									lineHeight: "1",
 									letterSpacing: "0.5px"
 								}}>
-									TECHNOLOGIES I WORK WITH
+									WHAT I'VE WORKED WITH
 								</Typography>
 							</Box>
 							<div
@@ -769,171 +769,76 @@ const ViewPosts = () => {
 					imgAlt={["React", "SAS", "Scikit", "Scipy", "Seaborn", "SQLite", "Statsmodels", "Tensorflow", "Wasm"]}
 					first={true}
 				/>
-				<div
-                    style={{
-                        borderTop: "1.5px solid black",
-						marginLeft: 40,
-                        marginRight: 40,
-                    }}
-				/>
-				<section style={{ paddingTop: "40px", paddingBottom: "40px", height: "640px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+				<section style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "355px" }}>
 					<Box sx={{
 						display: "flex",
 						flexDirection: "row",
 						alignItems: "center",
-						justifyContent: "center"
+						justifyContent: "start",
+						width: calculatedWidthIntermediateTotal,
+						height: "355px"
 					}}>
+						<div
+							style={{
+								borderLeft: "1.5px solid black",
+								height: "320px",
+								paddingTop: "16px",
+								paddingBottom: "16px",
+								paddingRight: "16px",
+							}}
+						/>
 						<Box sx={{
 							display: "flex",
 							flexDirection: "column",
 							justifyContent: "center",
-							width: "900px",
+							alignItems: "center",
+							width: calculatedWidthIntermediate,
+							height: "355px",
+							paddingRight: "16px"
 						}}>
+							<div
+								style={{
+									borderTop: "1.5px solid black",
+									paddingBottom: "16px",
+									width: calculatedWidthIntermediate
+								}}
+							/>
 							<Box sx={{
+								height: "320px",
+								width: calculatedWidthIntermediate,
 								display: "flex",
-								flexDirection: "row",
-								alignItems: "baseline",
-								width: "100%"
+								justifyContent: "center",
+								alignItems: "center",
 							}}>
-								<Typography sx={{
-									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-									fontWeight: 500,
-									color: "#190019",
-									fontSize: 32,
-									lineHeight: "1",
-									verticalAlign: "text-bottom",
-									letterSpacing: "0.5px"
-								}}>
-									Hi, my name is{" "}
-								</Typography>
 								<Typography sx={{
 									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
 									fontWeight: 600,
 									color: "#356760",
-									fontSize: 60,
+									fontSize: 70,
 									paddingLeft: 1.25,
 									lineHeight: "1",
-									verticalAlign: "text-bottom",
 									letterSpacing: "0.5px"
 								}}>
-									Michael Kim
-								</Typography>
-								<Typography sx={{
-									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-									fontWeight: 500,
-									color: "#190019",
-									fontSize: 32,
-									lineHeight: "1",
-									verticalAlign: "text-bottom",
-									letterSpacing: "0.5px"
-								}}>
-									.
+									WHERE I'VE WORKED BEFORE
 								</Typography>
 							</Box>
-							<Box sx={{
-								display: "flex",
-								flexDirection: "column",
-								width: "100%",
-								paddingTop: 4
-							}}>
-								<Typography sx={{
-									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-									fontWeight: 500,
-									color: "#190019",
-									fontSize: 32,
-									lineHeight: "1.5",
-									verticalAlign: "text-bottom",
-									letterSpacing: "0.5px"
-								}}>
-									I'm a software developer and data scientist interested
-								</Typography>
-								<Typography sx={{
-									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-									fontWeight: 500,
-									color: "#190019",
-									fontSize: 32,
-									lineHeight: "1.5",
-									verticalAlign: "text-bottom",
-									letterSpacing: "0.5px",
-								}}>
-									in deepening human understanding at the intersections
-								</Typography>
-								<Box sx={{
-									display: "flex",
-									flexDirection: "row",
-									alignItems: "baseline",
-									width: "100%",
-								}}>
-									<Typography sx={{
-										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-										fontWeight: 500,
-										color: "#190019",
-										fontSize: 32,
-										lineHeight: "1.2",
-										verticalAlign: "text-bottom",
-										letterSpacing: "0.5px"
-									}}>
-									of
-									</Typography>
-									<Typography sx={{
-										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-										fontWeight: 600,
-										color: "#356760",
-										fontSize: 40,
-										lineHeight: "1.2",
-										verticalAlign: "text-bottom",
-										letterSpacing: "0.5px",
-										paddingLeft: 1.25,
-										paddingRight: 1.25
-									}}>
-										{rotatingTextOptionsOne[textOptionOneIndex]}
-									</Typography>
-									<Typography sx={{
-										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-										fontWeight: 500,
-										color: "#190019",
-										fontSize: 32,
-										lineHeight: "1.2",
-										verticalAlign: "text-bottom",
-										letterSpacing: "0.5px"
-									}}>
-									and
-									</Typography>
-									<Typography sx={{
-										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-										fontWeight: 600,
-										color: "#356760",
-										fontSize: 40,
-										lineHeight: "1.2",
-										verticalAlign: "text-bottom",
-										letterSpacing: "0.5px",
-										paddingLeft: 1.25
-									}}>
-										{rotatingTextOptionsTwo[textOptionTwoIndex]}
-									</Typography>
-									<Typography sx={{
-										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-										fontWeight: 500,
-										color: "#190019",
-										fontSize: 32,
-										lineHeight: "1.2",
-										verticalAlign: "text-bottom",
-										letterSpacing: "0.5px"
-									}}>
-									.
-									</Typography>
-								</Box>
-							</Box>
-						</Box>
-						<Box sx={{
-							paddingLeft: 4
-						}}>
-							<Img
-								alt="portrait"
-								src={Portrait}
-								sx={{ height: "525px", width: "350px" }}
+							<div
+								style={{
+									borderBottom: "1.5px solid black",
+									paddingTop: "16px",
+									width: calculatedWidthIntermediate
+								}}
 							/>
 						</Box>
+						<div
+							style={{
+								borderLeft: "1.5px solid black",
+								height: "320px",
+								paddingTop: "16px",
+								paddingBottom: "16px",
+								paddingRight: "16px",
+							}}
+						/>
 					</Box>
 				</section>
 				<section style={{ paddingTop: "40px", paddingBottom: "40px", height: "640px", display: "flex", alignItems: "center", justifyContent: "center" }}>
