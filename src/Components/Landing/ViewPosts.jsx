@@ -7,8 +7,8 @@ import { AppBar, Toolbar, Box, Stack, Typography, IconButton, Switch, Divider, D
 import React from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useState, useEffect, useCallback } from "react";
-import LeftSection from "./LeftSection";
-import RightSection from "./RightSection";
+import Projects from "./Projects";
+import Technologies from "./Technologies";
 import Hero from "./Hero";
 import SignUp from "./SignUp";
 import Footer from "../Footer";
@@ -40,6 +40,43 @@ import SciOly from "./SciOly.png";
 import Uber from "./Uber.png";
 import Wine from "./Wine.jpg";
 
+import Net from "./NET.png";
+import Azure from "./Azure.png";
+import Blazor from "./Blazor.png";
+import C from "./C.png";
+import CSharp from "./CSharp.png";
+import CPlus from "./C++.png";
+import CSS from "./CSS.png";
+import FSharp from "./FSharp.png";
+import Figma from "./Figma.png";
+import Firebase from "./Firebase.png";
+import Git from "./Git.png";
+import HTML from "./HTML.png";
+import HuggingFace from "./Hugging.png";
+import Java from "./Java.png";
+import JavaScript from "./Javascript.png";
+import Keras from "./Keras.png";
+import Matplotlib from "./Matplotlib.png";
+import MySQL from "./MySQL.png";
+import Node from "./Node.png";
+import Npm from "./Npm.png";
+import Numpy from "./Numpy.png";
+import Pandas from "./Pandas.png";
+import Postgre from "./Postgre.png";
+import Python from "./Python.png";
+import Pytorch from "./Pytorch.png";
+import R from "./R.png";
+import Racket from "./Racket.png";
+import ReactImage from "./React.png";
+import SAS from "./SAS.png";
+import Scikit from "./Scikit.png";
+import Scipy from "./Scipy.png";
+import Seaborn from "./Seaborn.png";
+import SQLite from "./SQLite.png";
+import Statsmodels from "./Statsmodels.png";
+import Tensorflow from "./Tensorflow.png";
+import Wasm from "./WebAssembly.png";
+
 import ExpandedCard from "./ExpandedCard";
 import SearchIcon from "@mui/icons-material/Search";
 
@@ -54,6 +91,13 @@ import Container from "@mui/material/Container";
 import Modal from "@mui/material/Modal";
 import CloseIcon from '@mui/icons-material/Close';
 import emailjs from '@emailjs/browser';
+
+const Img = styled("img")({
+	margin: "auto",
+	display: "block",
+	maxWidth: "100%",
+	maxHeight: "100%",
+});
 
 const ViewPosts = () => {
 	const [textOptionOneIndex, setTextOptionOneIndex] = useState(0);
@@ -74,18 +118,16 @@ const ViewPosts = () => {
 		"metabolomics"
 	];
 
-	const Img = styled("img")({
-		margin: "auto",
-		display: "block",
-		maxWidth: "100%",
-		maxHeight: "100%",
-	});
+	const calculatedWidth = (window.innerWidth - 231.5) + "px";
+	const smallerCalculatedWidth = ((window.innerWidth - 231.5)/4) + "px";
+	const calculatedHeight = (((window.innerWidth - 231.5)/4) + 35) + "px";
 
-	const calculatedWidth = (window.innerWidth - 198) + "px";
+	const calculatedWidthTechnologies = (window.innerWidth - 399) + "px";
+	const smallerCalculatedWidthTechnologies = ((window.innerWidth - 399)/9) + "px";
+	const calculatedHeightTechnologies = (((window.innerWidth - 399)/9) + 35) + "px";
 
-	const smallerCalculatedWidth = ((window.innerWidth - 198)/3) + "px";
-
-	const calculatedHeight = (((window.innerWidth - 198)/3) + 35) + "px";
+	const calculatedWidthIntermediate = (window.innerWidth - 115) + "px";
+	const calculatedWidthIntermediateTotal = (window.innerWidth - 96) + "px";
 
 	useEffect(() => {
 		const intervalOne = setInterval(() => {
@@ -381,8 +423,8 @@ const ViewPosts = () => {
 				<div
                     style={{
                         borderBottom: "1.5px solid black",
-						marginLeft: 24,
-                        marginRight: 24,
+						marginLeft: 40,
+                        marginRight: 40,
                     }}
 				/>
 				<section style={{ paddingTop: "40px", paddingBottom: "40px", height: "640px", display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -545,19 +587,19 @@ const ViewPosts = () => {
 						</Box>
 					</Box>
 				</section>
-				<section style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px" }}>
+				<section style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "355px" }}>
 					<Box sx={{
 						display: "flex",
 						flexDirection: "row",
 						alignItems: "center",
 						justifyContent: "start",
-						width: calculatedWidth,
-						height: calculatedHeight
+						width: calculatedWidthIntermediateTotal,
+						height: "355px"
 					}}>
 						<div
 							style={{
 								borderLeft: "1.5px solid black",
-								height: smallerCalculatedWidth,
+								height: "320px",
 								paddingTop: "16px",
 								paddingBottom: "16px",
 								paddingRight: "16px",
@@ -568,39 +610,74 @@ const ViewPosts = () => {
 							flexDirection: "column",
 							justifyContent: "center",
 							alignItems: "center",
-							width: calculatedHeight,
-							height: calculatedHeight,
+							width: calculatedWidthIntermediate,
+							height: "355px",
 							paddingRight: "16px"
 						}}>
 							<div
 								style={{
 									borderTop: "1.5px solid black",
 									paddingBottom: "16px",
-									width: smallerCalculatedWidth
+									width: calculatedWidthIntermediate
 								}}
 							/>
 							<Box sx={{
-								height: smallerCalculatedWidth,
-								width: smallerCalculatedWidth
+								height: "320px",
+								width: calculatedWidthIntermediate,
+								display: "flex",
+								justifyContent: "center",
+								alignItems: "center",
 							}}>
-								<Img
-									alt="proteins3"
-									src={Proteins3}
-									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
-								/>
+								<Typography sx={{
+									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+									fontWeight: 600,
+									color: "#356760",
+									fontSize: 70,
+									paddingLeft: 1.25,
+									lineHeight: "1",
+									letterSpacing: "0.5px"
+								}}>
+									WHAT DO I WORK ON?
+								</Typography>
 							</Box>
 							<div
 								style={{
 									borderBottom: "1.5px solid black",
 									paddingTop: "16px",
-									width: smallerCalculatedWidth
+									width: calculatedWidthIntermediate
 								}}
 							/>
 						</Box>
 						<div
 							style={{
 								borderLeft: "1.5px solid black",
-								height: smallerCalculatedWidth,
+								height: "320px",
+								paddingTop: "16px",
+								paddingBottom: "16px",
+								paddingRight: "16px",
+							}}
+						/>
+					</Box>
+				</section>
+				<Projects
+					calculatedWidth={calculatedWidth}
+					calculatedHeight={calculatedHeight}
+					smallerCalculatedWidth={smallerCalculatedWidth}
+					Images={[Proteins3, Proteins2, Proteins4, Proteins1, Battery, Proteins5, SciOly, Science1, Wine, Uber, Chess, Yelp]}
+				/>
+				<section style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "355px" }}>
+					<Box sx={{
+						display: "flex",
+						flexDirection: "row",
+						alignItems: "center",
+						justifyContent: "start",
+						width: calculatedWidthIntermediateTotal,
+						height: "355px"
+					}}>
+						<div
+							style={{
+								borderLeft: "1.5px solid black",
+								height: "320px",
 								paddingTop: "16px",
 								paddingBottom: "16px",
 								paddingRight: "16px",
@@ -611,530 +688,252 @@ const ViewPosts = () => {
 							flexDirection: "column",
 							justifyContent: "center",
 							alignItems: "center",
-							width: calculatedHeight,
-							height: calculatedHeight,
+							width: calculatedWidthIntermediate,
+							height: "355px",
 							paddingRight: "16px"
 						}}>
 							<div
 								style={{
 									borderTop: "1.5px solid black",
 									paddingBottom: "16px",
-									width: smallerCalculatedWidth
+									width: calculatedWidthIntermediate
 								}}
 							/>
 							<Box sx={{
-								height: smallerCalculatedWidth,
-								width: smallerCalculatedWidth
+								height: "320px",
+								width: calculatedWidthIntermediate,
+								display: "flex",
+								justifyContent: "center",
+								alignItems: "center",
 							}}>
-								<Img
-									alt="proteins2"
-									src={Proteins2}
-									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
-								/>
+								<Typography sx={{
+									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+									fontWeight: 600,
+									color: "#356760",
+									fontSize: 70,
+									paddingLeft: 1.25,
+									lineHeight: "1",
+									letterSpacing: "0.5px"
+								}}>
+									TECHNOLOGIES I WORK WITH
+								</Typography>
 							</Box>
 							<div
 								style={{
 									borderBottom: "1.5px solid black",
 									paddingTop: "16px",
-									width: smallerCalculatedWidth
+									width: calculatedWidthIntermediate
 								}}
 							/>
 						</Box>
 						<div
 							style={{
 								borderLeft: "1.5px solid black",
-								height: smallerCalculatedWidth,
+								height: "320px",
 								paddingTop: "16px",
 								paddingBottom: "16px",
 								paddingRight: "16px",
-							}}
-						/>
-						<Box sx={{
-							display: "flex",
-							flexDirection: "column",
-							justifyContent: "center",
-							alignItems: "center",
-							width: calculatedHeight,
-							height: calculatedHeight,
-							paddingRight: "16px"
-						}}>
-							<div
-								style={{
-									borderTop: "1.5px solid black",
-									paddingBottom: "16px",
-									width: smallerCalculatedWidth,
-								}}
-							/>
-							<Box sx={{
-								height: smallerCalculatedWidth,
-								width: smallerCalculatedWidth
-							}}>
-								<Img
-									alt="proteins4"
-									src={Proteins4}
-									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
-								/>
-							</Box>
-							<div
-								style={{
-									borderBottom: "1.5px solid black",
-									paddingTop: "16px",
-									width: smallerCalculatedWidth
-								}}
-							/>
-						</Box>
-						<div
-							style={{
-								borderLeft: "1.5px solid black",
-								height: smallerCalculatedWidth,
-								paddingTop: "16px",
-								paddingBottom: "16px",
 							}}
 						/>
 					</Box>
 				</section>
-				<section style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px" }}>
+				<Technologies
+					calculatedWidthTechnologies={calculatedWidthTechnologies}
+					calculatedHeightTechnologies={calculatedHeightTechnologies}
+					smallerCalculatedWidthTechnologies={smallerCalculatedWidthTechnologies}
+					imgSrc={[Azure, Blazor, C, CSharp, CPlus, CSS, FSharp, Figma, Firebase]}
+					imgAlt={["Azure", "Blazor", "C", "CSharp", "CPlus", "CSS", "FSharp", "Figma", "Firebase"]}
+					first={false}
+				/>
+				<Technologies
+					calculatedWidthTechnologies={calculatedWidthTechnologies}
+					calculatedHeightTechnologies={calculatedHeightTechnologies}
+					smallerCalculatedWidthTechnologies={smallerCalculatedWidthTechnologies}
+					imgSrc={[Git, HTML, HuggingFace, Java, JavaScript, Keras, Matplotlib, MySQL, Net]}
+					imgAlt={["Git", "HTML", "HuggingFace", "Java", "JavaScript", "Keras", "Matplotlib", "MySQL", "Net"]}
+					first={false}
+				/>
+				<Technologies
+					calculatedWidthTechnologies={calculatedWidthTechnologies}
+					calculatedHeightTechnologies={calculatedHeightTechnologies}
+					smallerCalculatedWidthTechnologies={smallerCalculatedWidthTechnologies}
+					imgSrc={[Node, Npm, Numpy, Pandas, Postgre, Python, Pytorch, R, Racket]}
+					imgAlt={["Node", "Npm", "Numpy", "Pandas", "Postgre", "Python", "Pytorch", "R", "Racket"]}
+					first={false}
+				/>
+				<Technologies
+					calculatedWidthTechnologies={calculatedWidthTechnologies}
+					calculatedHeightTechnologies={calculatedHeightTechnologies}
+					smallerCalculatedWidthTechnologies={smallerCalculatedWidthTechnologies}
+					imgSrc={[ReactImage, SAS, Scikit, Scipy, Seaborn, SQLite, Statsmodels, Tensorflow, Wasm]}
+					imgAlt={["React", "SAS", "Scikit", "Scipy", "Seaborn", "SQLite", "Statsmodels", "Tensorflow", "Wasm"]}
+					first={true}
+				/>
+				<div
+                    style={{
+                        borderTop: "1.5px solid black",
+						marginLeft: 40,
+                        marginRight: 40,
+                    }}
+				/>
+				<section style={{ paddingTop: "40px", paddingBottom: "40px", height: "640px", display: "flex", alignItems: "center", justifyContent: "center" }}>
 					<Box sx={{
 						display: "flex",
 						flexDirection: "row",
 						alignItems: "center",
-						justifyContent: "start",
-						width: calculatedWidth,
-						height: calculatedHeight
+						justifyContent: "center"
 					}}>
-						<div
-							style={{
-								borderLeft: "1.5px solid black",
-								height: smallerCalculatedWidth,
-								paddingTop: "16px",
-								paddingBottom: "16px",
-								paddingRight: "16px",
-							}}
-						/>
 						<Box sx={{
 							display: "flex",
 							flexDirection: "column",
 							justifyContent: "center",
-							alignItems: "center",
-							width: calculatedHeight,
-							height: calculatedHeight,
-							paddingRight: "16px"
+							width: "900px",
 						}}>
-							<div
-								style={{
-									borderTop: "1.5px solid transparent",
-									paddingBottom: "16px",
-									width: smallerCalculatedWidth
-								}}
-							/>
 							<Box sx={{
-								height: smallerCalculatedWidth,
-								width: smallerCalculatedWidth
+								display: "flex",
+								flexDirection: "row",
+								alignItems: "baseline",
+								width: "100%"
 							}}>
-								<Img
-									alt="proteins1"
-									src={Proteins1}
-									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
-								/>
+								<Typography sx={{
+									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+									fontWeight: 500,
+									color: "#190019",
+									fontSize: 32,
+									lineHeight: "1",
+									verticalAlign: "text-bottom",
+									letterSpacing: "0.5px"
+								}}>
+									Hi, my name is{" "}
+								</Typography>
+								<Typography sx={{
+									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+									fontWeight: 600,
+									color: "#356760",
+									fontSize: 60,
+									paddingLeft: 1.25,
+									lineHeight: "1",
+									verticalAlign: "text-bottom",
+									letterSpacing: "0.5px"
+								}}>
+									Michael Kim
+								</Typography>
+								<Typography sx={{
+									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+									fontWeight: 500,
+									color: "#190019",
+									fontSize: 32,
+									lineHeight: "1",
+									verticalAlign: "text-bottom",
+									letterSpacing: "0.5px"
+								}}>
+									.
+								</Typography>
 							</Box>
-							<div
-								style={{
-									borderBottom: "1.5px solid black",
-									paddingTop: "16px",
-									width: smallerCalculatedWidth
-								}}
-							/>
+							<Box sx={{
+								display: "flex",
+								flexDirection: "column",
+								width: "100%",
+								paddingTop: 4
+							}}>
+								<Typography sx={{
+									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+									fontWeight: 500,
+									color: "#190019",
+									fontSize: 32,
+									lineHeight: "1.5",
+									verticalAlign: "text-bottom",
+									letterSpacing: "0.5px"
+								}}>
+									I'm a software developer and data scientist interested
+								</Typography>
+								<Typography sx={{
+									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+									fontWeight: 500,
+									color: "#190019",
+									fontSize: 32,
+									lineHeight: "1.5",
+									verticalAlign: "text-bottom",
+									letterSpacing: "0.5px",
+								}}>
+									in deepening human understanding at the intersections
+								</Typography>
+								<Box sx={{
+									display: "flex",
+									flexDirection: "row",
+									alignItems: "baseline",
+									width: "100%",
+								}}>
+									<Typography sx={{
+										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+										fontWeight: 500,
+										color: "#190019",
+										fontSize: 32,
+										lineHeight: "1.2",
+										verticalAlign: "text-bottom",
+										letterSpacing: "0.5px"
+									}}>
+									of
+									</Typography>
+									<Typography sx={{
+										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+										fontWeight: 600,
+										color: "#356760",
+										fontSize: 40,
+										lineHeight: "1.2",
+										verticalAlign: "text-bottom",
+										letterSpacing: "0.5px",
+										paddingLeft: 1.25,
+										paddingRight: 1.25
+									}}>
+										{rotatingTextOptionsOne[textOptionOneIndex]}
+									</Typography>
+									<Typography sx={{
+										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+										fontWeight: 500,
+										color: "#190019",
+										fontSize: 32,
+										lineHeight: "1.2",
+										verticalAlign: "text-bottom",
+										letterSpacing: "0.5px"
+									}}>
+									and
+									</Typography>
+									<Typography sx={{
+										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+										fontWeight: 600,
+										color: "#356760",
+										fontSize: 40,
+										lineHeight: "1.2",
+										verticalAlign: "text-bottom",
+										letterSpacing: "0.5px",
+										paddingLeft: 1.25
+									}}>
+										{rotatingTextOptionsTwo[textOptionTwoIndex]}
+									</Typography>
+									<Typography sx={{
+										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+										fontWeight: 500,
+										color: "#190019",
+										fontSize: 32,
+										lineHeight: "1.2",
+										verticalAlign: "text-bottom",
+										letterSpacing: "0.5px"
+									}}>
+									.
+									</Typography>
+								</Box>
+							</Box>
 						</Box>
-						<div
-							style={{
-								borderLeft: "1.5px solid black",
-								height: smallerCalculatedWidth,
-								paddingTop: "16px",
-								paddingBottom: "16px",
-								paddingRight: "16px",
-							}}
-						/>
 						<Box sx={{
-							display: "flex",
-							flexDirection: "column",
-							justifyContent: "center",
-							alignItems: "center",
-							width: calculatedHeight,
-							height: calculatedHeight,
-							paddingRight: "16px"
+							paddingLeft: 4
 						}}>
-							<div
-								style={{
-									borderTop: "1.5px solid transparent",
-									paddingBottom: "16px",
-									width: smallerCalculatedWidth
-								}}
-							/>
-							<Box sx={{
-								height: smallerCalculatedWidth,
-								width: smallerCalculatedWidth
-							}}>
-								<Img
-									alt="battery"
-									src={Battery}
-									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
-								/>
-							</Box>
-							<div
-								style={{
-									borderBottom: "1.5px solid black",
-									paddingTop: "16px",
-									width: smallerCalculatedWidth
-								}}
+							<Img
+								alt="portrait"
+								src={Portrait}
+								sx={{ height: "525px", width: "350px" }}
 							/>
 						</Box>
-						<div
-							style={{
-								borderLeft: "1.5px solid black",
-								height: smallerCalculatedWidth,
-								paddingTop: "16px",
-								paddingBottom: "16px",
-								paddingRight: "16px",
-							}}
-						/>
-						<Box sx={{
-							display: "flex",
-							flexDirection: "column",
-							justifyContent: "center",
-							alignItems: "center",
-							width: calculatedHeight,
-							height: calculatedHeight,
-							paddingRight: "16px"
-						}}>
-							<div
-								style={{
-									borderTop: "1.5px solid transparent",
-									paddingBottom: "16px",
-									width: smallerCalculatedWidth,
-								}}
-							/>
-							<Box sx={{
-								height: smallerCalculatedWidth,
-								width: smallerCalculatedWidth
-							}}>
-								<Img
-									alt="proteins5"
-									src={Proteins5}
-									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
-								/>
-							</Box>
-							<div
-								style={{
-									borderBottom: "1.5px solid black",
-									paddingTop: "16px",
-									width: smallerCalculatedWidth
-								}}
-							/>
-						</Box>
-						<div
-							style={{
-								borderLeft: "1.5px solid black",
-								height: smallerCalculatedWidth,
-								paddingTop: "16px",
-								paddingBottom: "16px",
-							}}
-						/>
-					</Box>
-				</section>
-				<section style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px" }}>
-					<Box sx={{
-						display: "flex",
-						flexDirection: "row",
-						alignItems: "center",
-						justifyContent: "start",
-						width: calculatedWidth,
-						height: calculatedHeight
-					}}>
-						<div
-							style={{
-								borderLeft: "1.5px solid black",
-								height: smallerCalculatedWidth,
-								paddingTop: "16px",
-								paddingBottom: "16px",
-								paddingRight: "16px",
-							}}
-						/>
-						<Box sx={{
-							display: "flex",
-							flexDirection: "column",
-							justifyContent: "center",
-							alignItems: "center",
-							width: calculatedHeight,
-							height: calculatedHeight,
-							paddingRight: "16px"
-						}}>
-							<div
-								style={{
-									borderTop: "1.5px solid transparent",
-									paddingBottom: "16px",
-									width: smallerCalculatedWidth
-								}}
-							/>
-							<Box sx={{
-								height: smallerCalculatedWidth,
-								width: smallerCalculatedWidth
-							}}>
-								<Img
-									alt="scioly"
-									src={SciOly}
-									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
-								/>
-							</Box>
-							<div
-								style={{
-									borderBottom: "1.5px solid black",
-									paddingTop: "16px",
-									width: smallerCalculatedWidth
-								}}
-							/>
-						</Box>
-						<div
-							style={{
-								borderLeft: "1.5px solid black",
-								height: smallerCalculatedWidth,
-								paddingTop: "16px",
-								paddingBottom: "16px",
-								paddingRight: "16px",
-							}}
-						/>
-						<Box sx={{
-							display: "flex",
-							flexDirection: "column",
-							justifyContent: "center",
-							alignItems: "center",
-							width: calculatedHeight,
-							height: calculatedHeight,
-							paddingRight: "16px"
-						}}>
-							<div
-								style={{
-									borderTop: "1.5px solid transparent",
-									paddingBottom: "16px",
-									width: smallerCalculatedWidth
-								}}
-							/>
-							<Box sx={{
-								height: smallerCalculatedWidth,
-								width: smallerCalculatedWidth
-							}}>
-								<Img
-									alt="science1"
-									src={Science1}
-									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
-								/>
-							</Box>
-							<div
-								style={{
-									borderBottom: "1.5px solid black",
-									paddingTop: "16px",
-									width: smallerCalculatedWidth
-								}}
-							/>
-						</Box>
-						<div
-							style={{
-								borderLeft: "1.5px solid black",
-								height: smallerCalculatedWidth,
-								paddingTop: "16px",
-								paddingBottom: "16px",
-								paddingRight: "16px",
-							}}
-						/>
-						<Box sx={{
-							display: "flex",
-							flexDirection: "column",
-							justifyContent: "center",
-							alignItems: "center",
-							width: calculatedHeight,
-							height: calculatedHeight,
-							paddingRight: "16px"
-						}}>
-							<div
-								style={{
-									borderTop: "1.5px solid transparent",
-									paddingBottom: "16px",
-									width: smallerCalculatedWidth,
-								}}
-							/>
-							<Box sx={{
-								height: smallerCalculatedWidth,
-								width: smallerCalculatedWidth
-							}}>
-								<Img
-									alt="uber"
-									src={Uber}
-									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
-								/>
-							</Box>
-							<div
-								style={{
-									borderBottom: "1.5px solid black",
-									paddingTop: "16px",
-									width: smallerCalculatedWidth
-								}}
-							/>
-						</Box>
-						<div
-							style={{
-								borderLeft: "1.5px solid black",
-								height: smallerCalculatedWidth,
-								paddingTop: "16px",
-								paddingBottom: "16px",
-							}}
-						/>
-					</Box>
-				</section>
-				<section style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px" }}>
-					<Box sx={{
-						display: "flex",
-						flexDirection: "row",
-						alignItems: "center",
-						justifyContent: "start",
-						width: calculatedWidth,
-						height: calculatedHeight
-					}}>
-						<div
-							style={{
-								borderLeft: "1.5px solid black",
-								height: smallerCalculatedWidth,
-								paddingTop: "16px",
-								paddingBottom: "16px",
-								paddingRight: "16px",
-							}}
-						/>
-						<Box sx={{
-							display: "flex",
-							flexDirection: "column",
-							justifyContent: "center",
-							alignItems: "center",
-							width: calculatedHeight,
-							height: calculatedHeight,
-							paddingRight: "16px"
-						}}>
-							<div
-								style={{
-									borderTop: "1.5px solid transparent",
-									paddingBottom: "16px",
-									width: smallerCalculatedWidth
-								}}
-							/>
-							<Box sx={{
-								height: smallerCalculatedWidth,
-								width: smallerCalculatedWidth
-							}}>
-								<Img
-									alt="wine"
-									src={Wine}
-									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
-								/>
-							</Box>
-							<div
-								style={{
-									borderBottom: "1.5px solid black",
-									paddingTop: "16px",
-									width: smallerCalculatedWidth
-								}}
-							/>
-						</Box>
-						<div
-							style={{
-								borderLeft: "1.5px solid black",
-								height: smallerCalculatedWidth,
-								paddingTop: "16px",
-								paddingBottom: "16px",
-								paddingRight: "16px",
-							}}
-						/>
-						<Box sx={{
-							display: "flex",
-							flexDirection: "column",
-							justifyContent: "center",
-							alignItems: "center",
-							width: calculatedHeight,
-							height: calculatedHeight,
-							paddingRight: "16px"
-						}}>
-							<div
-								style={{
-									borderTop: "1.5px solid transparent",
-									paddingBottom: "16px",
-									width: smallerCalculatedWidth
-								}}
-							/>
-							<Box sx={{
-								height: smallerCalculatedWidth,
-								width: smallerCalculatedWidth
-							}}>
-								<Img
-									alt="yelp"
-									src={Yelp}
-									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
-								/>
-							</Box>
-							<div
-								style={{
-									borderBottom: "1.5px solid black",
-									paddingTop: "16px",
-									width: smallerCalculatedWidth
-								}}
-							/>
-						</Box>
-						<div
-							style={{
-								borderLeft: "1.5px solid black",
-								height: smallerCalculatedWidth,
-								paddingTop: "16px",
-								paddingBottom: "16px",
-								paddingRight: "16px",
-							}}
-						/>
-						<Box sx={{
-							display: "flex",
-							flexDirection: "column",
-							justifyContent: "center",
-							alignItems: "center",
-							width: calculatedHeight,
-							height: calculatedHeight,
-							paddingRight: "16px"
-						}}>
-							<div
-								style={{
-									borderTop: "1.5px solid transparent",
-									paddingBottom: "16px",
-									width: smallerCalculatedWidth,
-								}}
-							/>
-							<Box sx={{
-								height: smallerCalculatedWidth,
-								width: smallerCalculatedWidth
-							}}>
-								<Img
-									alt="chess"
-									src={Chess}
-									sx={{ height: smallerCalculatedWidth, width: smallerCalculatedWidth }}
-								/>
-							</Box>
-							<div
-								style={{
-									borderBottom: "1.5px solid black",
-									paddingTop: "16px",
-									width: smallerCalculatedWidth
-								}}
-							/>
-						</Box>
-						<div
-							style={{
-								borderLeft: "1.5px solid black",
-								height: smallerCalculatedWidth,
-								paddingTop: "16px",
-								paddingBottom: "16px",
-							}}
-						/>
 					</Box>
 				</section>
 				<section style={{ paddingTop: "40px", paddingBottom: "40px", height: "640px", display: "flex", alignItems: "center", justifyContent: "center" }}>
