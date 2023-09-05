@@ -13,7 +13,6 @@ function App() {
 		<div className='App'>
 				<Routes>
 					<Route path='/' element={<ViewPosts />}/>
-
 				</Routes>
 		</div>
 	);
