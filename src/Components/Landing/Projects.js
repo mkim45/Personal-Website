@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
+import Dialog from '@mui/material/Dialog';
 import { styled } from "@mui/material/styles";
 import { FaPlus } from 'react-icons/fa';
 
@@ -10,7 +11,21 @@ const Img = styled("img")({
 	maxHeight: "100%",
 });
 
-const Projects = ({calculatedWidth, calculatedHeight, smallerCalculatedWidth, Images}) => {
+export default function Projects({calculatedWidth, calculatedHeight, smallerCalculatedWidth, Images}) {
+	const [open, setOpen] = React.useState([false, false, false, false, false, false, false, false, false, false, false, false]);
+
+	const handleClickOpen = (index) => {
+		const updatedOpen = [...open];
+		updatedOpen[index] = true;
+		setOpen(updatedOpen);
+	};
+	  
+	const handleClose = (index) => {
+		const updatedOpen = [...open];
+		updatedOpen[index] = false;
+		setOpen(updatedOpen);
+	};
+
 	return (
 		<>
 		<section style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px" }}>
@@ -58,7 +73,18 @@ const Projects = ({calculatedWidth, calculatedHeight, smallerCalculatedWidth, Im
 								boxShadow: "0 0 32px #356760", 
 							}
 						}}
+						onClick={() => handleClickOpen(0)}
 					>
+						<Dialog
+							maxWidth="600px"
+							minHeight="600px"
+							open={open[0]}
+							onClose={() => handleClose(0)}
+						>
+							<Typography>
+								Hello
+							</Typography>
+						</Dialog>
 						<Img
 							alt="proteins2"
 							src={Images[1]}
@@ -1369,5 +1395,3 @@ const Projects = ({calculatedWidth, calculatedHeight, smallerCalculatedWidth, Im
 		</>
 	);
 };
-
-export default Projects;
