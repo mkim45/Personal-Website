@@ -28,17 +28,17 @@ import Logo from "../../images/Logo.svg";
 
 import Portrait from "./Michael_Kim.jpg";
 import Yelp from "./Yelp.png";
-import Battery from "./Battery.jpg";
-import Chess from "./Chess.jpg";
+import Battery from "./Battery.png";
+import Chess from "./Chess.png";
 import Proteins1 from "./Proteins1.png";
 import Proteins2 from "./Proteins2.jpeg";
-import Proteins3 from "./Proteins3.jpg";
+import Proteins3 from "./Proteins3.png";
 import Proteins4 from "./Proteins4.png";
 import Proteins5 from "./Proteins5.png";
-import Science1 from "./Science1.jpg";
+import Science1 from "./Science1.png";
 import SciOly from "./SciOly.png";
 import Uber from "./Uber.png";
-import Wine from "./Wine.jpg";
+import Wine from "./Wine.png";
 
 import Net from "./NET.png";
 import Azure from "./Azure.png";
