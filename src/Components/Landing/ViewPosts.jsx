@@ -169,7 +169,7 @@ const ViewPosts = () => {
 			</style>
             <AppBar
 				position="fixed"
-				sx={{ zIndex: 1400, 
+				sx={{ zIndex: 2, 
 					  height: 94.5,
 					  boxShadow: "none",
 					  overflow: "visible",

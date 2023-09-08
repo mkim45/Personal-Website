@@ -2,7 +2,6 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 import Dialog from '@mui/material/Dialog';
 import { styled } from "@mui/material/styles";
-import { FaPlus } from 'react-icons/fa';
 
 const Img = styled("img")({
 	margin: "auto",
@@ -15,15 +14,13 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 	const [open, setOpen] = React.useState([false, false, false, false, false, false, false, false, false, false, false, false]);
 
 	const handleClickOpen = (index) => {
-		const updatedOpen = [...open];
+		const updatedOpen = [false, false, false, false, false, false, false, false, false, false, false, false];
 		updatedOpen[index] = true;
 		setOpen(updatedOpen);
 	};
 	  
-	const handleClose = (index) => {
-		const updatedOpen = [...open];
-		updatedOpen[index] = false;
-		setOpen(updatedOpen);
+	const handleClose = () => {
+		setOpen([false, false, false, false, false, false, false, false, false, false, false, false]);
 	};
 
 	return (
@@ -62,6 +59,41 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 							width: smallerCalculatedWidth
 						}}
 					/>
+					<Dialog
+							maxWidth={"600px"}
+							open={open[0]}
+							onClose={handleClose}
+						>
+						<Box sx={{
+							width: "100%",
+							padding: "16px",
+						}}>
+							<Typography
+							variant="h4" // You can choose the appropriate variant (h1, h2, h3, h4, h5, h6, or body1, body2)
+							sx={{
+								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+								fontWeight: 600,
+								color: "#356760",
+								marginBottom: "16px", // You can adjust the margin as needed
+							}}
+							>
+							Title Here
+							</Typography>
+
+							{/* Body Text */}
+							<Typography
+							variant="body1" // You can choose the appropriate variant
+							sx={{
+								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+								fontWeight: 500,
+								color: "#190019",
+								fontSize: "18px", // You can adjust the font size as needed
+							}}
+							>
+							Body text goes here. You can add as much content as needed.
+							</Typography>
+						</Box>
+					</Dialog>
 					<Box
 						sx={{
 							height: smallerCalculatedWidth,
@@ -75,16 +107,6 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						}}
 						onClick={() => handleClickOpen(0)}
 					>
-						<Dialog
-							maxWidth="600px"
-							minHeight="600px"
-							open={open[0]}
-							onClose={() => handleClose(0)}
-						>
-							<Typography>
-								Hello
-							</Typography>
-						</Dialog>
 						<Img
 							alt="proteins2"
 							src={Images[1]}
