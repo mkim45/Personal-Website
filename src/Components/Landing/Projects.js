@@ -2,9 +2,16 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 import Dialog from '@mui/material/Dialog';
 import { styled } from "@mui/material/styles";
+import GitHub from "./GitHub.png";
 
 const Img = styled("img")({
 	margin: "auto",
+	display: "block",
+	maxWidth: "100%",
+	maxHeight: "100%",
+});
+
+const ImgNoMargin = styled("img")({
 	display: "block",
 	maxWidth: "100%",
 	maxHeight: "100%",
@@ -60,37 +67,79 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						}}
 					/>
 					<Dialog
-							maxWidth={"600px"}
-							open={open[0]}
-							onClose={handleClose}
-						>
+						fullWidth
+						maxWidth={"lg"}
+						open={open[0]}
+						onClose={handleClose}
+						PaperProps={{
+							sx: {
+							  minHeight: "80vh",
+							  maxHeight: "80vh",
+							  backgroundColor: "#fbf7f0"
+							}
+						  }}
+					>
 						<Box sx={{
-							width: "100%",
-							padding: "16px",
+							display: "flex",
+							flexDirection: "column",
+							height: "100%"
 						}}>
-							<Typography
-							variant="h4" // You can choose the appropriate variant (h1, h2, h3, h4, h5, h6, or body1, body2)
-							sx={{
+							<Box sx={{
+								display: "flex",
+								flexDirection: "row",
+								justifyContent: "space-between",
+								padding: "10px"
+							}}>
+								<Typography
+									sx={{
+										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+										fontWeight: 600,
+										color: "#356760",
+										px: "4px",
+										fontSize: "36px"
+									}}
+								>
+									Bottom-Up Proteomics Data Assessment Tool
+								</Typography>
+								<ImgNoMargin
+									src={GitHub}
+									sx={{ height: "50px", width: "50px" }}
+								/>
+							</Box>
+							<Typography sx={{
 								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-								fontWeight: 600,
-								color: "#356760",
-								marginBottom: "16px", // You can adjust the margin as needed
-							}}
-							>
-							Title Here
+								fontWeight: 500,
+								fontSize: "18px",
+								px: "14px"
+							}}>
+								A recreating of Thermo Fisher Scientific's RawMeat using Blazor WebAssembly for device-agnostic tabular and graphical representations of data quality for mass spectrometry raw file scans.
 							</Typography>
-
-							{/* Body Text */}
+							<Typography sx={{
+								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+								fontWeight: 500,
+								fontSize: "18px",
+								px: "14px",
+								py: "5px"
+							}}>
+								<span style={{ fontWeight: "bold" }}>Duration:</span> Sep 2023 - Present <span style={{ fontWeight: "bold", marginLeft: "16px" }}>Technologies Used:</span> Blazor, WebAssembly, C#, JavaScript
+							</Typography>
+							<div style={{
+								borderBottom: "1.5px solid black",
+								marginLeft: "14px",
+								marginRight: "14px",
+								width: `calc(100% - 28px)`
+							}} />
 							<Typography
-							variant="body1" // You can choose the appropriate variant
 							sx={{
 								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
 								fontWeight: 500,
 								color: "#190019",
-								fontSize: "18px", // You can adjust the font size as needed
+								fontSize: "18px",
+								px: "14px",
+								pt: "10px"
 							}}
 							>
-							Body text goes here. You can add as much content as needed.
+								Body text goes here. You can add as much content as needed.
 							</Typography>
 						</Box>
 					</Dialog>
