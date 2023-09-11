@@ -521,10 +521,6 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								>
 									Northwestern University Science Olympiad Website
 								</Typography>
-								<ImgNoMargin
-									src={GitHub}
-									sx={{ height: "50px", width: "50px" }}
-								/>
 							</Box>
 							<Typography sx={{
 								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
@@ -735,10 +731,6 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								>
 									Battery Ventures Internal Company Bidding Tool
 								</Typography>
-								<ImgNoMargin
-									src={GitHub}
-									sx={{ height: "50px", width: "50px" }}
-								/>
 							</Box>
 							<Typography sx={{
 								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
@@ -785,8 +777,8 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								Automated emails were able to be sent out at the beginning of a bidding period to announce the companies and at the end of a bidding period to declare the successful and unsuccessful bids for
 								each user. The prototype, along with a Figma mockup and formatted HTML email, were submitted to the development team and leaders of the externship program.<br/><br/>
 
-								Below is a sample image of the prototype landing page for a user. The prototype, Figma mockup, and formatted HTML email can all be found in the GitHub repository linked at the top right (prototype is without proper user authentication, as this was to be implemented 
-								at a later date for the final product).<br/><br/>
+								Below is a sample image of the prototype landing page for a user. The prototype, Figma mockup, and formatted HTML email are in the process of being completed and will all be found in a GitHub 
+								repository linked in the future. <br/><br/>
 							</Typography>
 							<Img
 								src={BatteryTool}
@@ -839,7 +831,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								marginTop: "8px"
 							}}
 							>
-								Sep 2023
+								In Progress
 							</Typography>
 						</div>
 						<div
@@ -1586,7 +1578,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								fontSize: "18px",
 								px: "20px"
 							}}>
-								An internal project and presentation comparing the mass of matched fragment ions for ensemble vs. I2MS methods.
+								A project to predict the quality of Vinho Verde red and white wines with predictive machine learning models.
 							</Typography>
 							<Typography sx={{
 								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
@@ -1595,7 +1587,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								px: "20px",
 								py: "5px"
 							}}>
-								<span style={{ fontWeight: "bold" }}>Duration:</span> Jul 2023 - Aug 2023 <span style={{ fontWeight: "bold", marginLeft: "16px" }}>Technologies Used:</span> C#
+								<span style={{ fontWeight: "bold" }}>Duration:</span> Apr 2023 - Jun 2023 <span style={{ fontWeight: "bold", marginLeft: "16px" }}>Technologies Used:</span> Python, Pandas, NumPy, Matplotlib, Scikit-learn, Seaborn, Statsmodels
 							</Typography>
 							<div style={{
 								borderBottom: "1.5px solid black",
@@ -1615,19 +1607,17 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								pb: "10px"
 							}}
 							>
-								As part of the Kelleher Research Group at Northwestern University's Proteomics Center of Excellence, I completed an internal project to further analyze the differences
-								in masses amongst matched fragment ions for ensemble and individual ion mass spectrometry (I2MS) methods. Current literature shows that I2MS methods can provide a far 
-								greater ability to detect high mass fragment ions than traditional mass spectrometry methods. However, further analysis might be needed to see whether the missed fragment ions 
-								left undetected by I2MS methods are actually of interest and visible in individual scans.<br/><br/>
+								As part of the final coursework for Northwestern University's STAT_303-3 Data Science in Python course, I completed a project to predict the quality of Vinho Verde red and white wines 
+								using various models as part of a four-person team. Wine quality was measured as a discrete response variable on a scale of 0-10, with 11 predictor variables based on physicochemical 
+								properties of wines being used from samples to train our models. We attempted to minimize MAE to attempt to predict quality within the margin of rounding up or down to the nearest integer value.<br/><br/>
 
-								To this end, I analyzed myoglobin (17kDa), carbonic anhydrase (29kDa), and pyruvate kinase (58kDa) scans from both ensemble and I2MS methods using ASCs. The matched fragment 
-								ions resulting from running the ASCs on scans were then compared for which ions were exclusive to each of the two methods. Those exclusive ions were then mapped to see the differences 
-								in presence of low mass and high mass ions, in addition to their appearance on spectra. Ultimately, it was discovered that in all three proteins, there were exclusive matched fragment ions, 
-								where the number of exclusive matched fragment ions increased with the mass of the proteins. It appeared that the ions missing in the I2MS method, which were lower mass ions, were actually missed 
-								and present in both spectra for I2MS and ensemble.<br/><br/>
+								To begin with, stratified splitting of data was done with respect to wine quality to obtain training and testing data at similar distributions to the overall dataset for response variables. MARS, Bagged 
+								Decision Trees, Random Forest, and XGBoost models were used to test individual model performance in reducing MAE beyond naive methods. Fine tuning of hyperparameters was done for all four of these models 
+								to minimize cross-validated MAE. Afterwards, the four individual models were ensembled using various methods, including voting ensemble and stacking ensemble with different metamodels. Further attempts at creating 
+								ensembles of ensembled models with different metamodels was conducted. However, the best model ended up being the fine-tuned voting ensemble, with a test MAE of 0.35 being within the desired range to predict 
+								wine quality within the margin of rounding.<br/><br/>
 
-								Below is an example of mapping of the exclusive matched fragment ions for pyruvate kinase (58kDa) between I2MS and ensemble methods. C# was utilized for the mapping and analysis of spectra across the 
-								entire project. Further add-ons to this project may be completed as I continue working at the Kelleher Research Group as a software development and informatics intern during my junior year. <br/><br/>
+								The GitHub repository containing the code and report writeup can be found in the top right.
 							</Typography>
 						</Box>
 					</Dialog>
@@ -1813,7 +1803,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								fontSize: "18px",
 								px: "20px"
 							}}>
-								An internal project and presentation comparing the mass of matched fragment ions for ensemble vs. I2MS methods.
+								A project to predict the prices of Uber and Lyft rides in the greater Boston area.
 							</Typography>
 							<Typography sx={{
 								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
@@ -1822,7 +1812,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								px: "20px",
 								py: "5px"
 							}}>
-								<span style={{ fontWeight: "bold" }}>Duration:</span> Jul 2023 - Aug 2023 <span style={{ fontWeight: "bold", marginLeft: "16px" }}>Technologies Used:</span> C#
+								<span style={{ fontWeight: "bold" }}>Duration:</span> Jan 2023 - Mar 2023 <span style={{ fontWeight: "bold", marginLeft: "16px" }}>Technologies Used:</span> Python, Pandas, NumPy, Matplotlib, Scikit-learn, Seaborn, Statsmodels
 							</Typography>
 							<div style={{
 								borderBottom: "1.5px solid black",
@@ -1842,19 +1832,17 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								pb: "10px"
 							}}
 							>
-								As part of the Kelleher Research Group at Northwestern University's Proteomics Center of Excellence, I completed an internal project to further analyze the differences
-								in masses amongst matched fragment ions for ensemble and individual ion mass spectrometry (I2MS) methods. Current literature shows that I2MS methods can provide a far 
-								greater ability to detect high mass fragment ions than traditional mass spectrometry methods. However, further analysis might be needed to see whether the missed fragment ions 
-								left undetected by I2MS methods are actually of interest and visible in individual scans.<br/><br/>
+								As part of the final coursework for Northwestern University's STAT_303-2 Data Science in Python course, I completed a project to predict the price of Uber and Lyft rides in the greater Boston 
+								area using various models as part of a four-person team. Predictor variables were ride factors that included the distance of the trip, time of the ride, the weather, and destination. Further analysis was done 
+								to determine which predictors had the largest impact on price and any statistically significant associations of interest.<br/><br/>
 
-								To this end, I analyzed myoglobin (17kDa), carbonic anhydrase (29kDa), and pyruvate kinase (58kDa) scans from both ensemble and I2MS methods using ASCs. The matched fragment 
-								ions resulting from running the ASCs on scans were then compared for which ions were exclusive to each of the two methods. Those exclusive ions were then mapped to see the differences 
-								in presence of low mass and high mass ions, in addition to their appearance on spectra. Ultimately, it was discovered that in all three proteins, there were exclusive matched fragment ions, 
-								where the number of exclusive matched fragment ions increased with the mass of the proteins. It appeared that the ions missing in the I2MS method, which were lower mass ions, were actually missed 
-								and present in both spectra for I2MS and ensemble.<br/><br/>
-
-								Below is an example of mapping of the exclusive matched fragment ions for pyruvate kinase (58kDa) between I2MS and ensemble methods. C# was utilized for the mapping and analysis of spectra across the 
-								entire project. Further add-ons to this project may be completed as I continue working at the Kelleher Research Group as a software development and informatics intern during my junior year. <br/><br/>
+								To begin with, we did exploratory data analysis (EDA) and examined the distributions of the predictors and response variable, in addition to examining the dataset for missing values. The naive simple linear regression model 
+								was used as a basis of comparison, with an RMSE of approximately $3.06. Transformations were then applied, including a non-linear relationship between distance and price that was included through a log transformation. Two-factor 
+								interactions and variable selection were considered through forward stepwise selection (method was chosen due to computational costs of handling 171 predictors). 
+								This final model yielded an RMSE of approximately $2.69, with subsequent analysis being done to handle potential outliers or influential points that might impact the final linear regression model. Ridge regression and lasso regression 
+								was also considered, however, the forward stepwise selection yielded the best model that was not overfitting to the train data. Multicollinearity was addressed through VIF values and autocorrelation was also factored into our analysis.<br/><br/>
+						
+								The GitHub repository containing the code and report writeup can be found in the top right.
 							</Typography>
 						</Box>
 					</Dialog>
@@ -2008,7 +1996,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 										fontSize: "36px"
 									}}
 								>
-									Science Olympiad Testing Autograder w/ Machine Learning
+									Science Olympiad Testing Autograder
 								</Typography>
 								<ImgNoMargin
 									src={GitHub}
@@ -2021,7 +2009,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								fontSize: "18px",
 								px: "20px"
 							}}>
-								An internal project and presentation comparing the mass of matched fragment ions for ensemble vs. I2MS methods.
+								An internal test autograding tool built using CNNs for Northwestern University's Science Olympiad Invitational to supplement grading for specific events.
 							</Typography>
 							<Typography sx={{
 								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
@@ -2030,7 +2018,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								px: "20px",
 								py: "5px"
 							}}>
-								<span style={{ fontWeight: "bold" }}>Duration:</span> Jul 2023 - Aug 2023 <span style={{ fontWeight: "bold", marginLeft: "16px" }}>Technologies Used:</span> C#
+								<span style={{ fontWeight: "bold" }}>Duration:</span> Dec 2022 - Feb 2023 <span style={{ fontWeight: "bold", marginLeft: "16px" }}>Technologies Used:</span> Python, Keras, Scikit-learn, Pandas, TensorFlow, NumPy
 							</Typography>
 							<div style={{
 								borderBottom: "1.5px solid black",
@@ -2050,19 +2038,16 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								pb: "10px"
 							}}
 							>
-								As part of the Kelleher Research Group at Northwestern University's Proteomics Center of Excellence, I completed an internal project to further analyze the differences
-								in masses amongst matched fragment ions for ensemble and individual ion mass spectrometry (I2MS) methods. Current literature shows that I2MS methods can provide a far 
-								greater ability to detect high mass fragment ions than traditional mass spectrometry methods. However, further analysis might be needed to see whether the missed fragment ions 
-								left undetected by I2MS methods are actually of interest and visible in individual scans.<br/><br/>
+								As the technology director for the Northwestern University Science Olympiad organization, I created a project for the February 2023 Invitational to autograde tests of certain events based off of the answer key to help in 
+								supplementing the manual grading efforts. Additionally, there is potential for certain events using multiple choice or simple fill in the blank questions to use a new version of this autograder in future competitions to 
+								reduce the amount of time needed to complete grading ahead of announcing results.<br/><br/>
 
-								To this end, I analyzed myoglobin (17kDa), carbonic anhydrase (29kDa), and pyruvate kinase (58kDa) scans from both ensemble and I2MS methods using ASCs. The matched fragment 
-								ions resulting from running the ASCs on scans were then compared for which ions were exclusive to each of the two methods. Those exclusive ions were then mapped to see the differences 
-								in presence of low mass and high mass ions, in addition to their appearance on spectra. Ultimately, it was discovered that in all three proteins, there were exclusive matched fragment ions, 
-								where the number of exclusive matched fragment ions increased with the mass of the proteins. It appeared that the ions missing in the I2MS method, which were lower mass ions, were actually missed 
-								and present in both spectra for I2MS and ensemble.<br/><br/>
+								The project uses Python and many machine learning and deep learning libraries to train a CNN to recognize digits from student answer sheets for a single event, Fermi Questions. In this event, students write integer values as 
+								responses and are graded based on their proximity to the actual answer. To start, the student answer sheet was taken as input files and segmented to highlight the different boxes containing answers for each question. The digits were 
+								then able to be extracted from this and predicted using the model trained on MNIST digit datasets to output the predicted integer value they represent. The model had a test accuracy of over 99% and performed well on test day with no 
+								recorded errors compared to the manual grading efforts. Although the model was not used for official grading purposes, this may change in future events.<br/><br/>
 
-								Below is an example of mapping of the exclusive matched fragment ions for pyruvate kinase (58kDa) between I2MS and ensemble methods. C# was utilized for the mapping and analysis of spectra across the 
-								entire project. Further add-ons to this project may be completed as I continue working at the Kelleher Research Group as a software development and informatics intern during my junior year. <br/><br/>
+								The GitHub repository containing the code can be found in the top right (however, the code is currently being updated and changed to prepare for the upcoming 2024 Invitational, which may result in some parts not being functional).
 							</Typography>
 						</Box>
 					</Dialog>
@@ -2138,7 +2123,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								lineHeight: 1.25
 							}}
 							>
-							Science Olympiad Testing Autograder w/ Machine Learning
+							Science Olympiad Testing Autograder
 							</Typography>
 						</div>
 					</Box>
@@ -2229,7 +2214,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								fontSize: "18px",
 								px: "20px"
 							}}>
-								An internal project and presentation comparing the mass of matched fragment ions for ensemble vs. I2MS methods.
+								A project for data analysis of Yelp reviews across different metropolitan areas.
 							</Typography>
 							<Typography sx={{
 								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
@@ -2238,7 +2223,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								px: "20px",
 								py: "5px"
 							}}>
-								<span style={{ fontWeight: "bold" }}>Duration:</span> Jul 2023 - Aug 2023 <span style={{ fontWeight: "bold", marginLeft: "16px" }}>Technologies Used:</span> C#
+								<span style={{ fontWeight: "bold" }}>Duration:</span> Oct 2022 - Dec 2022 <span style={{ fontWeight: "bold", marginLeft: "16px" }}>Technologies Used: </span>Python, Pandas, NumPy, Matplotlib, Scikit-learn, Seaborn, Statsmodels
 							</Typography>
 							<div style={{
 								borderBottom: "1.5px solid black",
@@ -2258,19 +2243,16 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								pb: "10px"
 							}}
 							>
-								As part of the Kelleher Research Group at Northwestern University's Proteomics Center of Excellence, I completed an internal project to further analyze the differences
-								in masses amongst matched fragment ions for ensemble and individual ion mass spectrometry (I2MS) methods. Current literature shows that I2MS methods can provide a far 
-								greater ability to detect high mass fragment ions than traditional mass spectrometry methods. However, further analysis might be needed to see whether the missed fragment ions 
-								left undetected by I2MS methods are actually of interest and visible in individual scans.<br/><br/>
+								As part of the final coursework for Northwestern University's STAT_303-1 Data Science in Python course, I completed a project to analyze Yelp reviews across 11 metropolitan areas. Different variables surrounding restaurant attributes (ratings, 
+								review counts, categories, status, etc.) and user account information (review counts, average stars given, and profile compliements) were used to find significant associations of interest and answer questions related to Yelper behavior and whether 
+								Yelp ratings were strongly correlated with a business's status as open or closed. Further, we wanted to use U.S. Census data to analyze whether ratings varied by demographics of different regions in metropolitan areas.<br/><br/>
 
-								To this end, I analyzed myoglobin (17kDa), carbonic anhydrase (29kDa), and pyruvate kinase (58kDa) scans from both ensemble and I2MS methods using ASCs. The matched fragment 
-								ions resulting from running the ASCs on scans were then compared for which ions were exclusive to each of the two methods. Those exclusive ions were then mapped to see the differences 
-								in presence of low mass and high mass ions, in addition to their appearance on spectra. Ultimately, it was discovered that in all three proteins, there were exclusive matched fragment ions, 
-								where the number of exclusive matched fragment ions increased with the mass of the proteins. It appeared that the ions missing in the I2MS method, which were lower mass ions, were actually missed 
-								and present in both spectra for I2MS and ensemble.<br/><br/>
-
-								Below is an example of mapping of the exclusive matched fragment ions for pyruvate kinase (58kDa) between I2MS and ensemble methods. C# was utilized for the mapping and analysis of spectra across the 
-								entire project. Further add-ons to this project may be completed as I continue working at the Kelleher Research Group as a software development and informatics intern during my junior year. <br/><br/>
+								To begin with, we cleaned the data of outliers to hone in on the 11 metropolitan areas of interest and grouped categorical variables for more interpretable results from analysis. We segmented the restaurants by types to get a better understanding of 
+								what restaurants and businesses populated the dataset. Further, we found that associations did exist between a business's open/closed status and the parking they offered, in addition to the total hours that they were opened and the stars they were given. 
+								Analyzing the demographics of different zip codes in these metropolitan areas yielded that mean household income and the proportion of population that was White had moderate, positive correlations with the average number of stars for businesses in a region. Lastly, 
+								analysis of user behavior was done to reveal that as the number of reviews written by users increases, on average, the number of five star reviews and higher rated reviews written decreases.<br/><br/>
+						
+								The GitHub repository containing the code and report writeup can be found in the top right.
 							</Typography>
 						</Box>
 					</Dialog>
@@ -2437,7 +2419,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								fontSize: "18px",
 								px: "20px"
 							}}>
-								An internal project and presentation comparing the mass of matched fragment ions for ensemble vs. I2MS methods.
+								A two-player chess game created using C++ as part of final coursework.
 							</Typography>
 							<Typography sx={{
 								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
@@ -2446,7 +2428,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								px: "20px",
 								py: "5px"
 							}}>
-								<span style={{ fontWeight: "bold" }}>Duration:</span> Jul 2023 - Aug 2023 <span style={{ fontWeight: "bold", marginLeft: "16px" }}>Technologies Used:</span> C#
+								<span style={{ fontWeight: "bold" }}>Duration:</span> May 2022 - Jun 2022 <span style={{ fontWeight: "bold", marginLeft: "16px" }}>Technologies Used:</span> C++
 							</Typography>
 							<div style={{
 								borderBottom: "1.5px solid black",
@@ -2466,19 +2448,19 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								pb: "10px"
 							}}
 							>
-								As part of the Kelleher Research Group at Northwestern University's Proteomics Center of Excellence, I completed an internal project to further analyze the differences
-								in masses amongst matched fragment ions for ensemble and individual ion mass spectrometry (I2MS) methods. Current literature shows that I2MS methods can provide a far 
-								greater ability to detect high mass fragment ions than traditional mass spectrometry methods. However, further analysis might be needed to see whether the missed fragment ions 
-								left undetected by I2MS methods are actually of interest and visible in individual scans.<br/><br/>
+								As a part of final coursework for Northwestern University's COMP_SCI 211 Fundamentals of Computer Programming II, I created a two-player simplified game of chess adhering to most 
+								standard rules as part of a two-person team.<br/><br/>
+								
+								The gameplay consists of standard pieces on an 8x8 board with alternating moves, starting with the player with white pieces. All of the 
+								functionalities of possible move sets are allowed for all pieces (except for castling and promotions [automatically promting to queen for pawns]). Gameplay automatically is planned to 
+								end when checkmate or a draw is detected and occurs.<br/><br/>
 
-								To this end, I analyzed myoglobin (17kDa), carbonic anhydrase (29kDa), and pyruvate kinase (58kDa) scans from both ensemble and I2MS methods using ASCs. The matched fragment 
-								ions resulting from running the ASCs on scans were then compared for which ions were exclusive to each of the two methods. Those exclusive ions were then mapped to see the differences 
-								in presence of low mass and high mass ions, in addition to their appearance on spectra. Ultimately, it was discovered that in all three proteins, there were exclusive matched fragment ions, 
-								where the number of exclusive matched fragment ions increased with the mass of the proteins. It appeared that the ions missing in the I2MS method, which were lower mass ions, were actually missed 
-								and present in both spectra for I2MS and ensemble.<br/><br/>
+								The project was created using C++ and consists of an interactive GUI using a Model-View-Controller architectural pattern. The view contained the sprites, functions, and board layout shown 
+								to the user and displays move changes accordingly. The model contains details on how gameplay should work, the rules of the game, movement of pieces, the interactions between pieces, the setup 
+								of the board, and how gameplay and moves should end. The controller controls detection of user inputs of mouse clicks and mouse movements, with additional supplementing files being used to define 
+								other classes or unit tests for edge cases of gameplay functions.<br/><br/>
 
-								Below is an example of mapping of the exclusive matched fragment ions for pyruvate kinase (58kDa) between I2MS and ensemble methods. C# was utilized for the mapping and analysis of spectra across the 
-								entire project. Further add-ons to this project may be completed as I continue working at the Kelleher Research Group as a software development and informatics intern during my junior year. <br/><br/>
+								The GitHub repository containing the code for the project can be found in the top right.
 							</Typography>
 						</Box>
 					</Dialog>
