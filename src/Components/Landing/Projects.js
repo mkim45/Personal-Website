@@ -329,7 +329,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								px: "20px",
 								py: "5px"
 							}}>
-								<span style={{ fontWeight: "bold" }}>Duration:</span> Sep 2023 - Present <span style={{ fontWeight: "bold", marginLeft: "16px" }}>Technologies Used:</span> Blazor, WebAssembly, C#, JavaScript
+								<span style={{ fontWeight: "bold" }}>Duration:</span> Sep 2023 - Present <span style={{ fontWeight: "bold", marginLeft: "16px" }}>Technologies Used:</span> Blazor, WebAssembly, C#, JavaScript, Git
 							</Typography>
 							<div style={{
 								borderBottom: "1.5px solid black",
@@ -959,10 +959,6 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								>
 									Fragment Ion Mass Comparison For Ensemble and I2MS
 								</Typography>
-								<ImgNoMargin
-									src={GitHub}
-									sx={{ height: "50px", width: "50px" }}
-								/>
 							</Box>
 							<Typography sx={{
 								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
@@ -1181,7 +1177,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								fontSize: "18px",
 								px: "20px"
 							}}>
-								An internal project and presentation comparing the mass of matched fragment ions for ensemble vs. I2MS methods.
+								A project to predict age-related medical conditions of anonymous patients based on masked measurements of health characteristics. 
 							</Typography>
 							<Typography sx={{
 								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
@@ -1190,7 +1186,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								px: "20px",
 								py: "5px"
 							}}>
-								<span style={{ fontWeight: "bold" }}>Duration:</span> Jul 2023 - Aug 2023 <span style={{ fontWeight: "bold", marginLeft: "16px" }}>Technologies Used:</span> C#
+								<span style={{ fontWeight: "bold" }}>Duration:</span> Jun 2023 - Aug 2023 <span style={{ fontWeight: "bold", marginLeft: "16px" }}>Technologies Used:</span> Python, Pandas, NumPy, Matplotlib, Optuna, Scikit-learn, Seaborn, Statsmodels
 							</Typography>
 							<div style={{
 								borderBottom: "1.5px solid black",
@@ -1210,19 +1206,16 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								pb: "10px"
 							}}
 							>
-								As part of the Kelleher Research Group at Northwestern University's Proteomics Center of Excellence, I completed an internal project to further analyze the differences
-								in masses amongst matched fragment ions for ensemble and individual ion mass spectrometry (I2MS) methods. Current literature shows that I2MS methods can provide a far 
-								greater ability to detect high mass fragment ions than traditional mass spectrometry methods. However, further analysis might be needed to see whether the missed fragment ions 
-								left undetected by I2MS methods are actually of interest and visible in individual scans.<br/><br/>
+								Using data from a Kaggle competition and InVitro Cell Research (ICR), I built predictive machine learning models to determine the probability that a patient had one of three age-related medical 
+								conditions based on various health characteristics data. Given the current literature connecting age with a number of complications (from heart disease to dementia), bioinformatics and data science 
+								can be utilized to intervene earlier if models are able to accurately detect where medical conditions may arise.<br/><br/>
 
-								To this end, I analyzed myoglobin (17kDa), carbonic anhydrase (29kDa), and pyruvate kinase (58kDa) scans from both ensemble and I2MS methods using ASCs. The matched fragment 
-								ions resulting from running the ASCs on scans were then compared for which ions were exclusive to each of the two methods. Those exclusive ions were then mapped to see the differences 
-								in presence of low mass and high mass ions, in addition to their appearance on spectra. Ultimately, it was discovered that in all three proteins, there were exclusive matched fragment ions, 
-								where the number of exclusive matched fragment ions increased with the mass of the proteins. It appeared that the ions missing in the I2MS method, which were lower mass ions, were actually missed 
-								and present in both spectra for I2MS and ensemble.<br/><br/>
+								I used Python and various libraries to initially do exploratory data analysis on 50+ masked health conditions and the binary response variable (presence of age-related health condition or not in patient). 
+								Afterwards, I imputed missing values after substantial testing of performance on base models after different imputation methods. I tested the performance of XGBoost, Random Forest, Decision Tree Classifiers, 
+								TabPFN, CatBoost, LightGBM, AdaBoost, and Gradient Boosting Classifiers individually and ensembled using both stacking and voting. Optuna trials and cross-validated metrics were used to find ideal hyperparameter 
+								values, in addition to different regularization parameters to adjust for overfitting and visualizations of model shortcomings in predicting probabilities of response above or below certain thresholds.<br/><br/>
 
-								Below is an example of mapping of the exclusive matched fragment ions for pyruvate kinase (58kDa) between I2MS and ensemble methods. C# was utilized for the mapping and analysis of spectra across the 
-								entire project. Further add-ons to this project may be completed as I continue working at the Kelleher Research Group as a software development and informatics intern during my junior year. <br/><br/>
+								The GitHub repository containing the code for the EDA and models can be found in the top right.
 							</Typography>
 						</Box>
 					</Dialog>
@@ -1378,10 +1371,6 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								>
 									ALS Metabolomics Top-Down Label-Free Quantification
 								</Typography>
-								<ImgNoMargin
-									src={GitHub}
-									sx={{ height: "50px", width: "50px" }}
-								/>
 							</Box>
 							<Typography sx={{
 								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
@@ -1389,7 +1378,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								fontSize: "18px",
 								px: "20px"
 							}}>
-								An internal project and presentation comparing the mass of matched fragment ions for ensemble vs. I2MS methods.
+								An internal top-down label-free quantification for measurements of metabolites as part of an ALS study.
 							</Typography>
 							<Typography sx={{
 								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
@@ -1398,7 +1387,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								px: "20px",
 								py: "5px"
 							}}>
-								<span style={{ fontWeight: "bold" }}>Duration:</span> Jul 2023 - Aug 2023 <span style={{ fontWeight: "bold", marginLeft: "16px" }}>Technologies Used:</span> C#
+								<span style={{ fontWeight: "bold" }}>Duration:</span> Jun 2023 - Aug 2023 <span style={{ fontWeight: "bold", marginLeft: "16px" }}>Technologies Used:</span> Python, R, SAS
 							</Typography>
 							<div style={{
 								borderBottom: "1.5px solid black",
@@ -1418,19 +1407,19 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								pb: "10px"
 							}}
 							>
-								As part of the Kelleher Research Group at Northwestern University's Proteomics Center of Excellence, I completed an internal project to further analyze the differences
-								in masses amongst matched fragment ions for ensemble and individual ion mass spectrometry (I2MS) methods. Current literature shows that I2MS methods can provide a far 
-								greater ability to detect high mass fragment ions than traditional mass spectrometry methods. However, further analysis might be needed to see whether the missed fragment ions 
-								left undetected by I2MS methods are actually of interest and visible in individual scans.<br/><br/>
+								As part of the Kelleher Research Group at Northwestern University's Proteomics Center of Excellence, I assisted in conducting data analysis through a top-down label-free 
+								quantification for identification of statistically significant intensities of metabolites as part of an external ALS study. Analysis was done utilizing custom SAS, R, and 
+								Python scripts to get final deliverable results to external collaborators.<br/><br/>
 
-								To this end, I analyzed myoglobin (17kDa), carbonic anhydrase (29kDa), and pyruvate kinase (58kDa) scans from both ensemble and I2MS methods using ASCs. The matched fragment 
-								ions resulting from running the ASCs on scans were then compared for which ions were exclusive to each of the two methods. Those exclusive ions were then mapped to see the differences 
-								in presence of low mass and high mass ions, in addition to their appearance on spectra. Ultimately, it was discovered that in all three proteins, there were exclusive matched fragment ions, 
-								where the number of exclusive matched fragment ions increased with the mass of the proteins. It appeared that the ions missing in the I2MS method, which were lower mass ions, were actually missed 
-								and present in both spectra for I2MS and ensemble.<br/><br/>
+								Initially, comparisons were made between the different custom scripts created in SAS, R, and Python to ensure the same results across all three programming langauges. This ensured 
+								that the final deliverable analysis to external collaborators could be verifiably sound, regardless of which of the three was chosen to run the analysis in. Afterwards, heirarchical linear 
+								model-based ANOVA was used to find metabolites with statistically significant differences across multiple treatment factors and time conditions. Boxplots were created to see the quality of the 
+								data based on the variation from all sources, in addition to subsequent batch correction steps and a random effect for block. Further analysis was also done to determine whether acceptable 
+								levels of missing values were present.<br/><br/>
 
-								Below is an example of mapping of the exclusive matched fragment ions for pyruvate kinase (58kDa) between I2MS and ensemble methods. C# was utilized for the mapping and analysis of spectra across the 
-								entire project. Further add-ons to this project may be completed as I continue working at the Kelleher Research Group as a software development and informatics intern during my junior year. <br/><br/>
+								P-values, z-scores, and fold changes were obtained for the creation of volcano plots that gave pairwise comparisons between treatments. Also, q-values were obtained using the 
+								Benjamini Hochberg procedure, yielding corrected p-values for marking boundaries of false-discovery rates (FDR) against fold changes. After this, heatmaps were created to display the differences 
+								in all treatments in an easily-interpretable visual. Subsets of metabolites of interest were also highlighted in separate heatmaps. 
 							</Typography>
 						</Box>
 					</Dialog>
