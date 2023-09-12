@@ -9,6 +9,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { useState, useEffect, useCallback } from "react";
 import Projects from "./Projects";
 import Technologies from "./Technologies";
+import Work from "./Work";
 import Hero from "./Hero";
 import SignUp from "./SignUp";
 import Footer from "../Footer";
@@ -841,6 +842,12 @@ const ViewPosts = () => {
 						/>
 					</Box>
 				</section>
+				<Work
+					calculatedWidth={calculatedWidth}
+					calculatedHeight={calculatedHeight}
+					smallerCalculatedWidth={smallerCalculatedWidth}
+					Images={[Proteins3, Proteins2, Proteins4, Proteins1, Battery, Proteins5, SciOly, Science1, Wine, Uber, Chess, Yelp]}
+				/>
 				<section style={{ paddingTop: "40px", paddingBottom: "40px", height: "640px", display: "flex", alignItems: "center", justifyContent: "center" }}>
 					<Box sx={{
 						display: "flex",

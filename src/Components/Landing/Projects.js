@@ -311,7 +311,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 										fontSize: "36px"
 									}}
 								>
-									CAFA-5 Protein Function Prediction
+									RNA Folding Structure Prediction
 								</Typography>
 							</Box>
 							<Typography sx={{
@@ -320,7 +320,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								fontSize: "18px",
 								px: "20px"
 							}}>
-								A creation of machine learning predictive models for CAFA (Critical Assessment of Protein Function Annotation) experiments.
+								A creation of machine learning predictive models for reactivity of RNA sequences to chemical modifiers.
 							</Typography>
 							<Typography sx={{
 								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
@@ -329,7 +329,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								px: "20px",
 								py: "5px"
 							}}>
-								<span style={{ fontWeight: "bold" }}>Duration:</span> Sep 2023 - Present <span style={{ fontWeight: "bold", marginLeft: "16px" }}>Technologies Used:</span> Blazor, WebAssembly, C#, JavaScript, Git
+								<span style={{ fontWeight: "bold" }}>Duration:</span> Sep 2023 - Present <span style={{ fontWeight: "bold", marginLeft: "16px" }}>Technologies Used:</span> Python, Keras, PyTorch, TensorFlow, Optuna, Scikit-learn, Statsmodels
 							</Typography>
 							<div style={{
 								borderBottom: "1.5px solid black",
@@ -349,23 +349,18 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								pb: "10px"
 							}}
 							>
-								Through data from a Kaggle competition, I will be predicting the function of a set of proteins by training models on amino-acid sequences of the proteins and other data. The aim 
-								of the project is to better understand the function of proteins based on amino-acid sequences or similar proteins and biological processes. The data was provided from the Critical 
-								Assessment of Protein Function Annotation (CAFA) experiment to continue imporving computational annotations of protein function.<br/><br/>
-
-								I am currently in the process of working on this project 
+								Through data from a Kaggle competition, I will be predicting the reactivity of an RNA sequence to two chemical modifiers, DMS and 2A3. Models with accurate RNA structure prediction can be leveraged 
+								to predictively design RNA-based medicines or deepen understandings of RNA molecules that underlie biological processes. The dataset contains data that is measured through a mutational profiling (MaP) experiment 
+								read out by high-throughput sequencing, knowing that positions protected from chemical modification are likely to form base pairs or other kinds of RNA structure.<br/><br/>
 								
-								As part of the Kelleher Research Group at Northwestern University's Proteomics Center of Excellence, I am currently developing a data quality 
-								assessment tool that will be open-source and publicly available for research use. Currently, scans containing data for ensemble mass spectrometry are accessable through .raw files that can only be opened using a Windows operating system. 
-								Additionally, existing tools like Thermo Fisher Scientific's RawMeat or RawTartare could lack some of the data quality assessment tables or graphs desired for 
-								specific use cases or in analyzing individual scans. <br/><br/>
+								I will be utilizing 800,000+ sequences to train predictive machine learning models to get target reactivities for each seequence position for both of the chemical modifiers. MAE will be used to determine 
+								performance of the models comparing actual and predicted values for 1M+ experimentally-synthesized sequences. Additional sequence libraries may be utilized to inform training of the model, along with open knot 
+								sequences and knot metadata.<br/><br/>
+								
+								The actual model that is trained for prediction will likely use PyTorch and other machine learning or deep learning libraries in Python and will be the product of optimizing 
+								hyperparameters to minimize cross-validated MAE while preventing overfitting to the train data.<br/><br/>
 
-								To solve for these missing features or use case limitations, I have been building a Blazor WebAssembly application that will accept user uploaded .raw files on
-								any operating system and output tabular and graphical visualizations of scan information. Existing libraries created by the Kelleher Research Group in C# will be
-								used, in addition to SciChart and some JavaScript to create the actual charts. A Model-View-ViewModel (MVVM) pattern will be implemented and testing will be done to
-								guarantee results compared to well-documented scans of proteoforms and Thermo Fisher Scientific's RawMeat and RawTartare products.<br/><br/>
-
-								I will be working on this throughout the fall quarter of my junior year as I continue as a software developer and informatics intern at the Kelleher Research Group.
+								I am currently in the process of working on this project and will update this with my GitHub repository at completion.
 							</Typography>
 						</Box>
 					</Dialog>
@@ -441,7 +436,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								lineHeight: 1.25
 							}}
 							>
-							CAFA-5 Protein Function Prediction
+							RNA Folding Structure Prediction
 							</Typography>
 						</div>
 					</Box>
@@ -661,14 +656,6 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						height: smallerCalculatedWidth,
 						paddingTop: "16px",
 						paddingBottom: "16px",
-					}}
-				/>
-				<div
-					style={{
-						borderLeft: "1.5px solid black",
-						height: smallerCalculatedWidth,
-						paddingTop: "16px",
-						paddingBottom: "16px",
 						paddingRight: "16px",
 					}}
 				/>
@@ -871,7 +858,14 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						}}
 					/>
 				</Box>
-				
+				<div
+					style={{
+						borderRight: "1.5px solid black",
+						height: smallerCalculatedWidth,
+						paddingTop: "16px",
+						paddingBottom: "16px",
+					}}
+				/>
 			</Box>
 		</section>
 		<section style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px" }}>
@@ -1158,10 +1152,12 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								>
 									ICR Identifying Age-Related Conditions w/ Machine Learning
 								</Typography>
-								<ImgNoMargin
-									src={GitHub}
-									sx={{ height: "50px", width: "50px" }}
-								/>
+								<a href="https://github.com/mkim45/ICR-Age" target="_blank" rel="noopener noreferrer">
+									<ImgNoMargin
+										src={GitHub}
+										sx={{ height: "50px", width: "50px" }}
+									/>
+								</a>
 							</Box>
 							<Typography sx={{
 								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
@@ -1567,10 +1563,12 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								>
 									Vinho Verde Wine Quality Prediction
 								</Typography>
-								<ImgNoMargin
-									src={GitHub}
-									sx={{ height: "50px", width: "50px" }}
-								/>
+								<a href="https://github.com/mkim45/Wine-Prediction" target="_blank" rel="noopener noreferrer">
+									<ImgNoMargin
+										src={GitHub}
+										sx={{ height: "50px", width: "50px" }}
+									/>
+								</a>
 							</Box>
 							<Typography sx={{
 								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
@@ -1792,10 +1790,12 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								>
 									Uber & Lyft Ride Price Prediction
 								</Typography>
-								<ImgNoMargin
-									src={GitHub}
-									sx={{ height: "50px", width: "50px" }}
-								/>
+								<a href="https://github.com/mkim45/Uber-Lyft-Ride-Price-Prediction" target="_blank" rel="noopener noreferrer">
+									<ImgNoMargin
+										src={GitHub}
+										sx={{ height: "50px", width: "50px" }}
+									/>
+								</a>
 							</Box>
 							<Typography sx={{
 								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
@@ -1998,10 +1998,12 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								>
 									Science Olympiad Testing Autograder
 								</Typography>
-								<ImgNoMargin
-									src={GitHub}
-									sx={{ height: "50px", width: "50px" }}
-								/>
+								<a href="https://github.com/mkim45/Science-Olympiad-Autograder" target="_blank" rel="noopener noreferrer">
+									<ImgNoMargin
+										src={GitHub}
+										sx={{ height: "50px", width: "50px" }}
+									/>
+								</a>
 							</Box>
 							<Typography sx={{
 								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
@@ -2203,10 +2205,12 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								>
 									Yelp Restaurant Review Data Analysis
 								</Typography>
-								<ImgNoMargin
-									src={GitHub}
-									sx={{ height: "50px", width: "50px" }}
-								/>
+								<a href="https://github.com/mkim45/Yelp-Analysis" target="_blank" rel="noopener noreferrer">
+									<ImgNoMargin
+										src={GitHub}
+										sx={{ height: "50px", width: "50px" }}
+									/>
+								</a>
 							</Box>
 							<Typography sx={{
 								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
@@ -2408,10 +2412,12 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								>
 									Two-Player Chess
 								</Typography>
-								<ImgNoMargin
-									src={GitHub}
-									sx={{ height: "50px", width: "50px" }}
-								/>
+								<a href="https://github.com/mkim45/Chess" target="_blank" rel="noopener noreferrer">
+									<ImgNoMargin
+										src={GitHub}
+										sx={{ height: "50px", width: "50px" }}
+									/>
+								</a>
 							</Box>
 							<Typography sx={{
 								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
@@ -2452,7 +2458,8 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 								standard rules as part of a two-person team.<br/><br/>
 								
 								The gameplay consists of standard pieces on an 8x8 board with alternating moves, starting with the player with white pieces. All of the 
-								functionalities of possible move sets are allowed for all pieces (except for castling and promotions [automatically promting to queen for pawns]). Gameplay automatically is planned to 
+								functionalities of possible move sets are allowed for all pieces, except for two exceptions: castling and promotions. Castling is not implemented and for pawn promotions, they were 
+								automatically promoted to queens, rather than giving users decisions for which piece to promote to. Gameplay automatically is planned to 
 								end when checkmate or a draw is detected and occurs.<br/><br/>
 
 								The project was created using C++ and consists of an interactive GUI using a Model-View-Controller architectural pattern. The view contained the sprites, functions, and board layout shown 
