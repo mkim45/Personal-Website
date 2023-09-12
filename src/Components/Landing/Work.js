@@ -66,8 +66,8 @@ export default function Work({calculatedWidth, calculatedHeight, smallerCalculat
 						onClose={handleClose}
 						PaperProps={{
 							sx: {
-							  minHeight: "80vh",
-							  maxHeight: "80vh",
+							  minHeight: "68vh",
+							  maxHeight: "68vh",
 							  backgroundColor: "#fbf7f0"
 							}
 						  }}
@@ -89,7 +89,8 @@ export default function Work({calculatedWidth, calculatedHeight, smallerCalculat
 								display: "flex",
 								flexDirection: "row",
 								justifyContent: "space-between",
-								padding: "10px"
+								px: "10px",
+								pt: "10px",
 							}}>
 								<Typography
 									sx={{
@@ -100,28 +101,29 @@ export default function Work({calculatedWidth, calculatedHeight, smallerCalculat
 										fontSize: "36px"
 									}}
 								>
-									Bottom-Up Proteomics Data Assessment Tool
+									Northwestern Proteomics Center of Excellence
 								</Typography>
 							</Box>
 							<Typography sx={{
 								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
 								fontWeight: 500,
-								fontSize: "18px",
-								px: "20px"
+								fontSize: "24px",
+								px: "20px",
+								fontStyle: "italic"
 							}}>
-								A recreating of Thermo Fisher Scientific's RawMeat using Blazor WebAssembly for device-agnostic tabular and graphical representations of data quality for mass spectrometry raw file scans.
+								Informatics and Software Engineering Intern
 							</Typography>
 							<Typography sx={{
 								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
 								fontWeight: 500,
 								fontSize: "18px",
 								px: "20px",
-								py: "5px"
+								py: "10px"
 							}}>
-								<span style={{ fontWeight: "bold" }}>Duration:</span> Sep 2023 - Present <span style={{ fontWeight: "bold", marginLeft: "16px" }}>Technologies Used:</span> Blazor, WebAssembly, C#, JavaScript
+								<span style={{ fontWeight: "bold" }}>Duration:</span> Jun 2023 - Present
 							</Typography>
 							<div style={{
-								borderBottom: "1.5px solid transparent",
+								borderBottom: "1.5px solid black",
 								marginLeft: "14px",
 								marginRight: "14px",
 								width: `calc(100% - 28px)`
@@ -134,21 +136,25 @@ export default function Work({calculatedWidth, calculatedHeight, smallerCalculat
 								color: "#190019",
 								fontSize: "18px",
 								px: "20px",
-								pt: "15px",
-								pb: "10px"
+								pt: "10px",
 							}}
 							>
-								As part of the Kelleher Research Group at Northwestern University's Proteomics Center of Excellence, I am currently developing a data quality 
-								assessment tool that will be open-source and publicly available for research use. Currently, scans containing data for ensemble mass spectrometry are accessable through .raw files that can only be opened using a Windows operating system. 
-								Additionally, existing tools like Thermo Fisher Scientific's RawMeat or RawTartare could lack some of the data quality assessment tables or graphs desired for 
-								specific use cases or in analyzing individual scans. <br/><br/>
-
-								To solve for these missing features or use case limitations, I have been building a Blazor WebAssembly application that will accept user uploaded .raw files on
-								any operating system and output tabular and graphical visualizations of scan information. Existing libraries created by the Kelleher Research Group in C# will be
-								used, in addition to SciChart and some JavaScript to create the actual charts. A Model-View-ViewModel (MVVM) pattern will be implemented and testing will be done to
-								guarantee results compared to well-documented scans of proteoforms and Thermo Fisher Scientific's RawMeat and RawTartare products.<br/><br/>
-
-								I will be working on this throughout the fall quarter of my junior year as I continue as a software developer and informatics intern at the Kelleher Research Group.
+								After joining the Northwestern Proteomics Center of Excellence with the Kelleher Research Group in June 2023 as a informatics and software engineering intern, 
+								I will be continuing in these roles as I begin my junior year working on new projects surrounding mass spectrometry, proteomics, and data analysis.
+								<br/>
+								<ul>
+									<li style={{ color: "#356760" }}>
+										<span style={{ color: "#190019" }}>Implemented composite spectrum creation project for the Kelleher Research Group using C#, F#, and .NET framework to optimize ASC and AIM-based proteoform discovery on multiple spectral outputs from individual ion mass spectrometry</span>
+									</li>
+									<br/>
+									<li style={{ color: "#356760" }}>
+										<span style={{ color: "#190019" }}>Conducted statistical analyses with custom Python, R, and SAS scripts for external collaborators, including top-down, label-free quantification using hierarchical linear model-based ANOVA to identify differentially expressed proteoforms and metabolites</span>
+									</li>
+									<br/>
+									<li style={{ color: "#356760" }}>
+										<span style={{ color: "#190019" }}>Currently creating a data quality assessment tool for displaying tabular and graphical representations of mass spectrometry scan data using a Model-View-ViewModel (MVVM) framework in Blazor WebAssembly and C#</span>
+									</li>
+								</ul>
 							</Typography>
 						</Box>
 					</Dialog>
@@ -211,8 +217,8 @@ export default function Work({calculatedWidth, calculatedHeight, smallerCalculat
 						onClose={handleClose}
 						PaperProps={{
 							sx: {
-							  minHeight: "80vh",
-							  maxHeight: "80vh",
+							  minHeight: "68vh",
+							  maxHeight: "68vh",
 							  backgroundColor: "#fbf7f0"
 							}
 						  }}
@@ -234,7 +240,8 @@ export default function Work({calculatedWidth, calculatedHeight, smallerCalculat
 								display: "flex",
 								flexDirection: "row",
 								justifyContent: "space-between",
-								padding: "10px"
+								px: "10px",
+								pt: "10px",
 							}}>
 								<Typography
 									sx={{
@@ -245,28 +252,29 @@ export default function Work({calculatedWidth, calculatedHeight, smallerCalculat
 										fontSize: "36px"
 									}}
 								>
-									RNA Folding Structure Prediction
+									Battery Ventures
 								</Typography>
 							</Box>
 							<Typography sx={{
 								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
 								fontWeight: 500,
-								fontSize: "18px",
-								px: "20px"
+								fontSize: "24px",
+								px: "20px",
+								fontStyle: "italic"
 							}}>
-								A creation of machine learning predictive models for reactivity of RNA sequences to chemical modifiers.
+								Analyst Sourcing and Diligence Extern & Freelance Software Developer
 							</Typography>
 							<Typography sx={{
 								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
 								fontWeight: 500,
 								fontSize: "18px",
 								px: "20px",
-								py: "5px"
+								py: "10px"
 							}}>
-								<span style={{ fontWeight: "bold" }}>Duration:</span> Sep 2023 - Present <span style={{ fontWeight: "bold", marginLeft: "16px" }}>Technologies Used:</span> Python, Keras, PyTorch, TensorFlow, Optuna, Scikit-learn, Statsmodels
+								<span style={{ fontWeight: "bold" }}>Duration:</span> Jan 2023 - Present
 							</Typography>
 							<div style={{
-								borderBottom: "1.5px solid transparent",
+								borderBottom: "1.5px solid black",
 								marginLeft: "14px",
 								marginRight: "14px",
 								width: `calc(100% - 28px)`
@@ -279,22 +287,29 @@ export default function Work({calculatedWidth, calculatedHeight, smallerCalculat
 								color: "#190019",
 								fontSize: "18px",
 								px: "20px",
-								pt: "15px",
-								pb: "10px"
+								pt: "10px",
 							}}
 							>
-								Through data from a Kaggle competition, I will be predicting the reactivity of an RNA sequence to two chemical modifiers, DMS and 2A3. Models with accurate RNA structure prediction can be leveraged 
-								to predictively design RNA-based medicines or deepen understandings of RNA molecules that underlie biological processes. The dataset contains data that is measured through a mutational profiling (MaP) experiment 
-								read out by high-throughput sequencing, knowing that positions protected from chemical modification are likely to form base pairs or other kinds of RNA structure.<br/><br/>
-								
-								I will be utilizing 800,000+ sequences to train predictive machine learning models to get target reactivities for each seequence position for both of the chemical modifiers. MAE will be used to determine 
-								performance of the models comparing actual and predicted values for 1M+ experimentally-synthesized sequences. Additional sequence libraries may be utilized to inform training of the model, along with open knot 
-								sequences and knot metadata.<br/><br/>
-								
-								The actual model that is trained for prediction will likely use PyTorch and other machine learning or deep learning libraries in Python and will be the product of optimizing 
-								hyperparameters to minimize cross-validated MAE while preventing overfitting to the train data.<br/><br/>
-
-								I am currently in the process of working on this project and will update this with my GitHub repository at completion.
+								In January 2023, I joined Battery Ventures ($13B AUM) as an analyst sourcing extern to find target B2B SaaS companies, and in May 2023, I transitioned to being an
+								analyst diligence extern to complete a months-long project on the broadcasting software space. I am now continuing as an analyst leadership extern to assist current students in the 
+								program and am working on an internal tool as a freelance software developer. 
+								<br/>
+								<ul>
+									<li style={{ color: "#356760" }}>
+										<span style={{ color: "#190019" }}>Sourced and led deal due-diligence for potential minority investments in early-stage and growth-stage B2B SaaS companies, with focuses on 
+										systems of collaboration, vertical operating systems, and marketplaces</span>
+									</li>
+									<br/>
+									<li style={{ color: "#356760" }}>
+										<span style={{ color: "#190019" }}>Developed the investment thesis and pitched potential investment opportunities to Battery Ventures senior leadership surrounding the Internet and non-Internet 
+										broadcasting and media software space</span>
+									</li>
+									<br/>
+									<li style={{ color: "#356760" }}>
+										<span style={{ color: "#190019" }}>Led discussions with company CEOs, built market maps of competitive landscapes, analyzed potential investments with Battery Ventures analysts, and drove financial due-diligence 
+										of key SaaS metrics</span>
+									</li>
+								</ul>
 							</Typography>
 						</Box>
 					</Dialog>
@@ -357,8 +372,8 @@ export default function Work({calculatedWidth, calculatedHeight, smallerCalculat
 						onClose={handleClose}
 						PaperProps={{
 							sx: {
-							  minHeight: "80vh",
-							  maxHeight: "80vh",
+							  minHeight: "68vh",
+							  maxHeight: "68vh",
 							  backgroundColor: "#fbf7f0"
 							}
 						  }}
@@ -380,7 +395,8 @@ export default function Work({calculatedWidth, calculatedHeight, smallerCalculat
 								display: "flex",
 								flexDirection: "row",
 								justifyContent: "space-between",
-								padding: "10px"
+								px: "10px",
+								pt: "10px",
 							}}>
 								<Typography
 									sx={{
@@ -391,28 +407,29 @@ export default function Work({calculatedWidth, calculatedHeight, smallerCalculat
 										fontSize: "36px"
 									}}
 								>
-									Northwestern University Science Olympiad Website
+									Inbound
 								</Typography>
 							</Box>
 							<Typography sx={{
 								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
 								fontWeight: 500,
-								fontSize: "18px",
-								px: "20px"
+								fontSize: "24px",
+								px: "20px",
+								fontStyle: "italic"
 							}}>
-								A publicly available website to house competition information, past competition tests, and sign-up coordination for Northwestern University's Science Olympiad organization.
+								Software Engineer and Growth Associate
 							</Typography>
 							<Typography sx={{
 								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
 								fontWeight: 500,
 								fontSize: "18px",
 								px: "20px",
-								py: "5px"
+								py: "10px"
 							}}>
-								<span style={{ fontWeight: "bold" }}>Duration:</span> Aug 2023 - Present <span style={{ fontWeight: "bold", marginLeft: "16px" }}>Technologies Used:</span> JavaScript, CSS, HTML
+								<span style={{ fontWeight: "bold" }}>Duration:</span> Aug 2022 - Jun 2023
 							</Typography>
 							<div style={{
-								borderBottom: "1.5px solid transparent",
+								borderBottom: "1.5px solid black",
 								marginLeft: "14px",
 								marginRight: "14px",
 								width: `calc(100% - 28px)`
@@ -425,21 +442,29 @@ export default function Work({calculatedWidth, calculatedHeight, smallerCalculat
 								color: "#190019",
 								fontSize: "18px",
 								px: "20px",
-								pt: "15px",
-								pb: "10px"
+								pt: "10px",
 							}}
 							>
-								As the technology director for the Northwestern University Science Olympiad organization, I am currently creating a website to display relevant details about the club, our past competitions,
-								and information for teams related to our upcoming invitational in February 2024. The Northwestern University Science Olympiad organization plans a Division C Science Olympiad Invitational for 
-								30+ high school teams (approximately 450+ students) each February on the Evanston campus. The organization's executive board is responsible for planning and preparing the logistics of the 
-								tournament day and lead up to the competition.<br/><br/>
-
-								The website was created using a combination of JavaScript, CSS, and HTML. It is an updated version of the previous year's website that was built primarily using WordPress and other CSS and HTML 
-								elements, which lacked capabilities for user-friendly navigation to various pages housing necessary information and had design constraints. Sections of the website were created to display information 
-								about the organization itself, the upcoming competition for this year including sign-up and logistics, and past competition tests and answer keys as a resource for competing high school students. The 
-								website will continue to be updated throughout the year leading up to the invitational in February to include new announcements about tournament day logistics.<br/><br/>
-
-								The website is currently being built and will be finished in September ahead of the beginning of sign-up for the 2024 invitational.
+								I joined Inbound, a university student recruiting platform connecting student organizations with company internships, in August 2022 as a growth associate. I led student outreach efforts 
+								over several months before taking on an additional role as a software engineer, where I contributed to building and refactoring the student and employer portals ahead of planned onboarding 
+								of global student users.
+								<br/>
+								<ul>
+									<li style={{ color: "#356760" }}>
+										<span style={{ color: "#190019" }}>Collaborated in agile software development environment to create a university student recruiting platform for finance and consulting 
+										internships with distinct student and employer portals</span>
+									</li>
+									<br/>
+									<li style={{ color: "#356760" }}>
+										<span style={{ color: "#190019" }}>Handled initial platform refactoring using JavaScript, React, and Firebase, with a specific focus on recruiter
+										accounts and student group creation to handle impending expansion to new university systems and firms</span>
+									</li>
+									<br/>
+									<li style={{ color: "#356760" }}>
+										<span style={{ color: "#190019" }}>Created go-to-market plans for gaining student users with verbal commitments from 21+ universities across U.S., Europe, and Asia with 300+ student users 
+										and 25 recruiters onboarded, including Blackstone, Deloitte, Mastercard, and PepsiCo</span>
+									</li>
+								</ul>
 							</Typography>
 						</Box>
 					</Dialog>
@@ -502,8 +527,8 @@ export default function Work({calculatedWidth, calculatedHeight, smallerCalculat
 						onClose={handleClose}
 						PaperProps={{
 							sx: {
-							  minHeight: "80vh",
-							  maxHeight: "80vh",
+							  minHeight: "68vh",
+							  maxHeight: "68vh",
 							  backgroundColor: "#fbf7f0"
 							}
 						  }}
@@ -525,7 +550,8 @@ export default function Work({calculatedWidth, calculatedHeight, smallerCalculat
 								display: "flex",
 								flexDirection: "row",
 								justifyContent: "space-between",
-								padding: "10px"
+								px: "10px",
+								pt: "10px",
 							}}>
 								<Typography
 									sx={{
@@ -536,28 +562,29 @@ export default function Work({calculatedWidth, calculatedHeight, smallerCalculat
 										fontSize: "36px"
 									}}
 								>
-									Battery Ventures Internal Company Bidding Tool
+									Bastiat Partners
 								</Typography>
 							</Box>
 							<Typography sx={{
 								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
 								fontWeight: 500,
-								fontSize: "18px",
-								px: "20px"
+								fontSize: "24px",
+								px: "20px",
+								fontStyle: "italic"
 							}}>
-								An internal software tool for investment professionals to browse sourced companies by externs and bid for ownership of future calls and transactions with target companies.
+								Investment Banking Summer Analyst
 							</Typography>
 							<Typography sx={{
 								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
 								fontWeight: 500,
 								fontSize: "18px",
 								px: "20px",
-								py: "5px"
+								py: "10px"
 							}}>
-								<span style={{ fontWeight: "bold" }}>Duration:</span> Aug 2023 - Present <span style={{ fontWeight: "bold", marginLeft: "16px" }}>Technologies Used:</span> JavaScript, CSS, HTML, Firebase, Figma
+								<span style={{ fontWeight: "bold" }}>Duration:</span> Jun 2022 - Sep 2022
 							</Typography>
 							<div style={{
-								borderBottom: "1.5px solid transparent",
+								borderBottom: "1.5px solid black",
 								marginLeft: "14px",
 								marginRight: "14px",
 								width: `calc(100% - 28px)`
@@ -570,23 +597,29 @@ export default function Work({calculatedWidth, calculatedHeight, smallerCalculat
 								color: "#190019",
 								fontSize: "18px",
 								px: "20px",
-								pt: "15px",
-								pb: "10px"
+								pt: "10px",
 							}}
 							>
-								As a former Battery Ventures sourcing and diligence extern, I was asked to create a prototype of a new internal tool that would allow for investment professionals at the firm across
-								any of their 6 offices to bid for ownership of future interactions with target companies sourced by externs. Currently, the sourcing externship consists of up to 40 college student
-								externs that gain hands-on experience by sourcing potential companies of interest for future deals that Battery Ventures has yet to discover. However, with 150+ companies sourced each week, 
-								a new system to enable other investors to explore and potentially take ownership of outreach and calls with those company CEOs was needed.<br/><br/>
-
-								The internal tool that I created functioned as a silent auction system, where each investor partaking in the system was given an allotted number of points per quarter to use on any company at
-								any time (with the person bidding the most each week on a company getting ownership of it). I utilized JavaScript, CSS, and HTML to allow for the uploading of extern sourced company details 
-								through a .csv file by an administrator. Then, for the duration of the bidding process, other users could view the current week bids, search companies by metrics, and input their bid amounts. 
-								Automated emails were able to be sent out at the beginning of a bidding period to announce the companies and at the end of a bidding period to declare the successful and unsuccessful bids for
-								each user. The prototype, along with a Figma mockup and formatted HTML email, were submitted to the development team and leaders of the externship program.<br/><br/>
-
-								Below is a sample image of the prototype landing page for a user. The prototype, Figma mockup, and formatted HTML email are in the process of being completed and will all be found in a GitHub 
-								repository linked in the future. 
+								In June 2022, I joined Bastiat Partners as an investment banking summer analyst to focus on advising seed through Series C companies on venture capital raises. I joined calls with 
+								startup CEOs to discuss prospective and active primary opportunities across various tech-enabled SaaS verticals and led sourcing efforts to identify target private companies in need 
+								of assistance given macroeconomic conditions.
+								<br/>
+								<ul>
+									<li style={{ color: "#356760" }}>
+										<span style={{ color: "#190019" }}> Advised fast-growing, early-stage private company clients on seed through Series C rounds for investment banking venture capital raises, 
+										with a concentration on differentiated, well-positioned technology companies</span>
+									</li>
+									<br/>
+									<li style={{ color: "#356760" }}>
+										<span style={{ color: "#190019" }}>Facilitated competitive operational benchmarking, valuation analyses, holistic marketing materials preparation, and process tracking for active and prospective 
+										primary, co-investment, and secondary opportunities</span>
+									</li>
+									<br/>
+									<li style={{ color: "#356760" }}>
+										<span style={{ color: "#190019" }}>Conducted sourcing to identify target early-stage private cybersecurity, cloud computing, and machine learning/artificial intelligence SaaS technology companies 
+										likely in need of advisory firm assistance for their next round capital raise</span>
+									</li>
+								</ul>
 							</Typography>
 						</Box>
 					</Dialog>
