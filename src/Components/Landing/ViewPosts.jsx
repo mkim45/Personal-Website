@@ -105,6 +105,21 @@ const Img = styled("img")({
 	maxHeight: "100%",
 });
 
+const CustomButtonForm = ({ children, onClick }) => (
+	<ButtonBase
+		onClick={onClick}
+		type="submit"
+		sx={{
+		width: "100%",
+		height: "100%",
+		textAlign: "center",
+		backgroundColor: "#414fb6",
+		}}
+	>
+		{children}
+	</ButtonBase>
+);
+
 const ViewPosts = () => {
 	const [textOptionOneIndex, setTextOptionOneIndex] = useState(0);
 	const [textOptionTwoIndex, setTextOptionTwoIndex] = useState(0);
@@ -414,172 +429,118 @@ const ViewPosts = () => {
 									</Typography>
 								</Box>
 							</Box>
-						</Box>
-						<Box sx={{
-							paddingLeft: 4
-						}}>
-							<Img
-								alt="portrait"
-								src={Portrait}
-								sx={{ height: "525px", width: "350px" }}
-							/>
-						</Box>
-					</Box>
-				</section>
-				<div
-                    style={{
-                        borderBottom: "1.5px solid black",
-						marginLeft: 40,
-                        marginRight: 40,
-                    }}
-				/>
-				<section style={{ paddingTop: "40px", paddingBottom: "40px", height: "640px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-					<Box sx={{
-						display: "flex",
-						flexDirection: "row",
-						alignItems: "center",
-						justifyContent: "center"
-					}}>
-						<Box sx={{
-							display: "flex",
-							flexDirection: "column",
-							justifyContent: "center",
-							width: "900px",
-						}}>
 							<Box sx={{
 								display: "flex",
 								flexDirection: "row",
-								alignItems: "baseline",
-								width: "100%"
-							}}>
-								<Typography sx={{
-									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-									fontWeight: 500,
-									color: "#190019",
-									fontSize: 32,
-									lineHeight: "1",
-									verticalAlign: "text-bottom",
-									letterSpacing: "0.5px"
-								}}>
-									Hi, my name is{" "}
-								</Typography>
-								<Typography sx={{
-									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-									fontWeight: 600,
-									color: "#356760",
-									fontSize: 60,
-									paddingLeft: 1.25,
-									lineHeight: "1",
-									verticalAlign: "text-bottom",
-									letterSpacing: "0.5px"
-								}}>
-									Michael Kim
-								</Typography>
-								<Typography sx={{
-									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-									fontWeight: 500,
-									color: "#190019",
-									fontSize: 32,
-									lineHeight: "1",
-									verticalAlign: "text-bottom",
-									letterSpacing: "0.5px"
-								}}>
-									.
-								</Typography>
-							</Box>
-							<Box sx={{
-								display: "flex",
-								flexDirection: "column",
-								width: "100%",
-								paddingTop: 4
-							}}>
-								<Typography sx={{
-									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-									fontWeight: 500,
-									color: "#190019",
-									fontSize: 32,
-									lineHeight: "1.5",
-									verticalAlign: "text-bottom",
-									letterSpacing: "0.5px"
-								}}>
-									I'm a software developer and data scientist interested
-								</Typography>
-								<Typography sx={{
-									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-									fontWeight: 500,
-									color: "#190019",
-									fontSize: 32,
-									lineHeight: "1.5",
-									verticalAlign: "text-bottom",
-									letterSpacing: "0.5px",
-								}}>
-									in deepening human understanding at the intersections
-								</Typography>
-								<Box sx={{
-									display: "flex",
-									flexDirection: "row",
-									alignItems: "baseline",
-									width: "100%",
-								}}>
-									<Typography sx={{
-										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-										fontWeight: 500,
-										color: "#190019",
-										fontSize: 32,
-										lineHeight: "1.2",
-										verticalAlign: "text-bottom",
-										letterSpacing: "0.5px"
-									}}>
-									of
-									</Typography>
-									<Typography sx={{
-										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-										fontWeight: 600,
-										color: "#356760",
-										fontSize: 40,
-										lineHeight: "1.2",
-										verticalAlign: "text-bottom",
-										letterSpacing: "0.5px",
-										paddingLeft: 1.25,
-										paddingRight: 1.25
-									}}>
-										{rotatingTextOptionsOne[textOptionOneIndex]}
-									</Typography>
-									<Typography sx={{
-										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-										fontWeight: 500,
-										color: "#190019",
-										fontSize: 32,
-										lineHeight: "1.2",
-										verticalAlign: "text-bottom",
-										letterSpacing: "0.5px"
-									}}>
-									and
-									</Typography>
-									<Typography sx={{
-										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-										fontWeight: 600,
-										color: "#356760",
-										fontSize: 40,
-										lineHeight: "1.2",
-										verticalAlign: "text-bottom",
-										letterSpacing: "0.5px",
-										paddingLeft: 1.25
-									}}>
-										{rotatingTextOptionsTwo[textOptionTwoIndex]}
-									</Typography>
-									<Typography sx={{
-										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-										fontWeight: 500,
-										color: "#190019",
-										fontSize: 32,
-										lineHeight: "1.2",
-										verticalAlign: "text-bottom",
-										letterSpacing: "0.5px"
-									}}>
-									.
-									</Typography>
-								</Box>
+								width: "90%",
+								paddingTop: 6,
+								justifyContent: "space-between"
+							}}> 
+								<Paper
+									elevation={3}
+									sx={{
+									border: 2,
+									borderColor: "transparent",
+									borderRadius: "10px",
+									minWidth: { xs: "100%", sm: "100%", md: "200px", lg: "250px" },
+									maxWidth: "250px",
+									height: "60px",
+									backgroundColor: "#414fb6",
+									display: "flex", 
+									flexDirection: "column", 
+									alignItems: "center", 
+									justifyContent: "center",
+									}}
+								>
+									<Box
+									sx={{
+										justifyContent: "center",
+										width: "100%",
+										borderRadius: "10px",
+										px: "14px",
+										py: "4px",
+										"&.Mui-active": {
+										border: "4px solid #482FD7",
+										},
+										textAlign: "center",
+										color: "#fff",
+									}}
+									>
+									<CustomButtonForm>
+										<Typography sx={{ fontWeight: 600 }}>LinkedIn</Typography>
+									</CustomButtonForm>
+									</Box>
+								</Paper>
+								<Paper
+									elevation={3}
+									sx={{
+									border: 2,
+									borderColor: "transparent",
+									borderRadius: "10px",
+									minWidth: { xs: "100%", sm: "100%", md: "200px", lg: "250px" },
+									maxWidth: "250px",
+									height: "60px",
+									backgroundColor: "#414fb6",
+									display: "flex", 
+									flexDirection: "column", 
+									alignItems: "center", 
+									justifyContent: "center",
+									}}
+								>
+									<Box
+									sx={{
+										justifyContent: "center",
+										width: "100%",
+										borderRadius: "10px",
+										px: "14px",
+										py: "4px",
+										"&.Mui-active": {
+										border: "4px solid #482FD7",
+										},
+										textAlign: "center",
+										color: "#fff",
+									}}
+									>
+									<CustomButtonForm>
+										<Typography sx={{ fontWeight: 600 }}>GitHub</Typography>
+									</CustomButtonForm>
+									</Box>
+								</Paper>
+								<Paper
+									elevation={3}
+									sx={{
+									border: 2,
+									borderColor: "transparent",
+									borderRadius: "10px",
+									minWidth: { xs: "100%", sm: "100%", md: "200px", lg: "250px" },
+									maxWidth: "250px",
+									height: "60px",
+									backgroundColor: "#414fb6",
+									display: "flex", 
+									flexDirection: "column", 
+									alignItems: "center", 
+									justifyContent: "center",
+									}}
+								>
+									<Box
+									sx={{
+										justifyContent: "center",
+										width: "100%",
+										borderRadius: "10px",
+										px: "14px",
+										py: "4px",
+										"&.Mui-active": {
+										border: "4px solid #482FD7",
+										},
+										textAlign: "center",
+										color: "#fff",
+									}}
+									>
+									<CustomButtonForm>
+										<Typography sx={{ fontWeight: 600 }}>Resume</Typography>
+									</CustomButtonForm>
+									</Box>
+								</Paper>
 							</Box>
 						</Box>
 						<Box sx={{
@@ -593,19 +554,19 @@ const ViewPosts = () => {
 						</Box>
 					</Box>
 				</section>
-				<section style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "355px" }}>
+				<section style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "300px" }}>
 					<Box sx={{
 						display: "flex",
 						flexDirection: "row",
 						alignItems: "center",
 						justifyContent: "start",
 						width: calculatedWidthIntermediateTotal,
-						height: "355px"
+						height: "100%"
 					}}>
 						<div
 							style={{
 								borderLeft: "1.5px solid black",
-								height: "320px",
+								height: "265px",
 								paddingTop: "16px",
 								paddingBottom: "16px",
 								paddingRight: "16px",
@@ -617,7 +578,7 @@ const ViewPosts = () => {
 							justifyContent: "center",
 							alignItems: "center",
 							width: calculatedWidthIntermediate,
-							height: "355px",
+							height: "300px",
 							paddingRight: "16px"
 						}}>
 							<div
@@ -628,7 +589,162 @@ const ViewPosts = () => {
 								}}
 							/>
 							<Box sx={{
-								height: "320px",
+								height: "265px",
+								width: calculatedWidthIntermediate,
+								display: "flex",
+								justifyContent: "center",
+								alignItems: "center",
+							}}>
+								<Typography sx={{
+									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+									fontWeight: 600,
+									color: "#356760",
+									fontSize: 70,
+									paddingLeft: 1.25,
+									lineHeight: "1",
+									letterSpacing: "0.5px"
+								}}>
+									ABOUT ME
+								</Typography>
+							</Box>
+							<div
+								style={{
+									borderBottom: "1.5px solid black",
+									paddingTop: "16px",
+									width: calculatedWidthIntermediate
+								}}
+							/>
+						</Box>
+						<div
+							style={{
+								borderLeft: "1.5px solid black",
+								height: "265px",
+								paddingTop: "16px",
+								paddingBottom: "16px",
+								paddingRight: "16px",
+							}}
+						/>
+					</Box>
+				</section>
+				<section style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "400px" }}>
+					<Box sx={{
+						display: "flex",
+						flexDirection: "row",
+						alignItems: "center",
+						justifyContent: "start",
+						width: calculatedWidthIntermediateTotal,
+						height: "100%"
+					}}>
+						<div
+							style={{
+								borderLeft: "1.5px solid black",
+								height: "365px",
+								paddingTop: "16px",
+								paddingBottom: "16px",
+								paddingRight: "16px",
+							}}
+						/>
+						<Box sx={{
+							display: "flex",
+							flexDirection: "column",
+							justifyContent: "center",
+							alignItems: "center",
+							width: calculatedWidthIntermediate,
+							height: "400px",
+							paddingRight: "16px"
+						}}>
+							<div
+								style={{
+									borderTop: "1.5px solid transparent",
+									paddingBottom: "16px",
+									width: calculatedWidthIntermediate
+								}}
+							/>
+							<Box sx={{
+								height: "365px",
+								width: calculatedWidthIntermediate,
+								display: "flex",
+								justifyContent: "center",
+								alignItems: "center",
+							}}>
+								<Typography
+								sx={{
+									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+									fontWeight: 500,
+									color: "#190019",
+									fontSize: "20px",
+									px: "25px",
+									py: "5px"
+								}}
+								>
+									I’m a third-year undergraduate student at Northwestern University pursuing a Bachelor’s degree in Biological Sciences and Data Science, 
+									with plans to obtain a Master’s degree in Computer Science through a four-year BA/MS program. While initially exploring finance through 
+									investment banking and venture capital internships, I found myself much more passionate about the transformative, far-reaching work of 
+									tech-enabled companies I was actually advising and sourcing. After discovering this, I explored software development, machine learning, and data 
+									science to begin making tangible impacts, specifically in the field of proteomics and biology at large.<br/><br/>
+									
+									I am currently working as an Informatics and Software Engineering Intern at the Northwestern Proteomics Center of Excellence, an Analyst Leadership 
+									Extern at Battery Ventures, and the Technology Director for Northwestern’s Science Olympiad organization. In my free time, I enjoy playing tennis, 
+									learning new languages, exploring outdoors, and reading books on genomics and human behavior.<br/><br/>
+
+									Keep scrolling to learn more about me and what I’m passionate about working on! 
+							</Typography>
+							</Box>
+							<div
+								style={{
+									borderBottom: "1.5px solid transparent",
+									paddingTop: "16px",
+									width: calculatedWidthIntermediate
+								}}
+							/>
+						</Box>
+						<div
+							style={{
+								borderLeft: "1.5px solid black",
+								height: "365px",
+								paddingTop: "16px",
+								paddingBottom: "16px",
+								paddingRight: "16px",
+							}}
+						/>
+					</Box>
+				</section>
+				<section style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "300px" }}>
+					<Box sx={{
+						display: "flex",
+						flexDirection: "row",
+						alignItems: "center",
+						justifyContent: "start",
+						width: calculatedWidthIntermediateTotal,
+						height: "100%"
+					}}>
+						<div
+							style={{
+								borderLeft: "1.5px solid black",
+								height: "265px",
+								paddingTop: "16px",
+								paddingBottom: "16px",
+								paddingRight: "16px",
+							}}
+						/>
+						<Box sx={{
+							display: "flex",
+							flexDirection: "column",
+							justifyContent: "center",
+							alignItems: "center",
+							width: calculatedWidthIntermediate,
+							height: "300px",
+							paddingRight: "16px"
+						}}>
+							<div
+								style={{
+									borderTop: "1.5px solid black",
+									paddingBottom: "16px",
+									width: calculatedWidthIntermediate
+								}}
+							/>
+							<Box sx={{
+								height: "265px",
 								width: calculatedWidthIntermediate,
 								display: "flex",
 								justifyContent: "center",
@@ -657,7 +773,7 @@ const ViewPosts = () => {
 						<div
 							style={{
 								borderLeft: "1.5px solid black",
-								height: "320px",
+								height: "265px",
 								paddingTop: "16px",
 								paddingBottom: "16px",
 								paddingRight: "16px",
@@ -671,19 +787,19 @@ const ViewPosts = () => {
 					smallerCalculatedWidth={smallerCalculatedWidth}
 					Images={[Proteins3, Proteins2, Proteins4, Proteins1, Battery, Proteins5, SciOly, Science1, Wine, Uber, Chess, Yelp]}
 				/>
-				<section style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "355px" }}>
+				<section style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "300px" }}>
 					<Box sx={{
 						display: "flex",
 						flexDirection: "row",
 						alignItems: "center",
 						justifyContent: "start",
 						width: calculatedWidthIntermediateTotal,
-						height: "355px"
+						height: "100%"
 					}}>
 						<div
 							style={{
 								borderLeft: "1.5px solid black",
-								height: "320px",
+								height: "265px",
 								paddingTop: "16px",
 								paddingBottom: "16px",
 								paddingRight: "16px",
@@ -695,7 +811,7 @@ const ViewPosts = () => {
 							justifyContent: "center",
 							alignItems: "center",
 							width: calculatedWidthIntermediate,
-							height: "355px",
+							height: "300px",
 							paddingRight: "16px"
 						}}>
 							<div
@@ -706,7 +822,7 @@ const ViewPosts = () => {
 								}}
 							/>
 							<Box sx={{
-								height: "320px",
+								height: "265px",
 								width: calculatedWidthIntermediate,
 								display: "flex",
 								justifyContent: "center",
@@ -735,7 +851,7 @@ const ViewPosts = () => {
 						<div
 							style={{
 								borderLeft: "1.5px solid black",
-								height: "320px",
+								height: "265px",
 								paddingTop: "16px",
 								paddingBottom: "16px",
 								paddingRight: "16px",
@@ -775,19 +891,19 @@ const ViewPosts = () => {
 					imgAlt={["React", "SAS", "Scikit", "Scipy", "Seaborn", "SQLite", "Statsmodels", "Tensorflow", "Wasm"]}
 					first={true}
 				/>
-				<section style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "355px" }}>
+				<section style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "300px" }}>
 					<Box sx={{
 						display: "flex",
 						flexDirection: "row",
 						alignItems: "center",
 						justifyContent: "start",
 						width: calculatedWidthIntermediateTotal,
-						height: "355px"
+						height: "100%"
 					}}>
 						<div
 							style={{
 								borderLeft: "1.5px solid black",
-								height: "320px",
+								height: "265px",
 								paddingTop: "16px",
 								paddingBottom: "16px",
 								paddingRight: "16px",
@@ -799,7 +915,7 @@ const ViewPosts = () => {
 							justifyContent: "center",
 							alignItems: "center",
 							width: calculatedWidthIntermediate,
-							height: "355px",
+							height: "300px",
 							paddingRight: "16px"
 						}}>
 							<div
@@ -810,7 +926,7 @@ const ViewPosts = () => {
 								}}
 							/>
 							<Box sx={{
-								height: "320px",
+								height: "265px",
 								width: calculatedWidthIntermediate,
 								display: "flex",
 								justifyContent: "center",
@@ -839,7 +955,7 @@ const ViewPosts = () => {
 						<div
 							style={{
 								borderLeft: "1.5px solid black",
-								height: "320px",
+								height: "265px",
 								paddingTop: "16px",
 								paddingBottom: "16px",
 								paddingRight: "16px",
@@ -853,19 +969,19 @@ const ViewPosts = () => {
 					smallerCalculatedWidth={smallerCalculatedWidth}
 					Images={[ProteomicsWork, BatteryWork, InboundWork, BastiatWork]}
 				/>
-				<section style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", paddingBottom: "24px", height: "379px" }}>
+				<section style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "300px" }}>
 					<Box sx={{
 						display: "flex",
 						flexDirection: "row",
 						alignItems: "center",
 						justifyContent: "start",
 						width: calculatedWidthIntermediateTotal,
-						height: "355px"
+						height: "100%"
 					}}>
 						<div
 							style={{
 								borderLeft: "1.5px solid black",
-								height: "320px",
+								height: "265px",
 								paddingTop: "16px",
 								paddingBottom: "16px",
 								paddingRight: "16px",
@@ -877,7 +993,7 @@ const ViewPosts = () => {
 							justifyContent: "center",
 							alignItems: "center",
 							width: calculatedWidthIntermediate,
-							height: "355px",
+							height: "300px",
 							paddingRight: "16px"
 						}}>
 							<div
@@ -888,7 +1004,7 @@ const ViewPosts = () => {
 								}}
 							/>
 							<Box sx={{
-								height: "320px",
+								height: "265px",
 								width: calculatedWidthIntermediate,
 								display: "flex",
 								justifyContent: "center",
@@ -917,7 +1033,158 @@ const ViewPosts = () => {
 						<div
 							style={{
 								borderLeft: "1.5px solid black",
-								height: "320px",
+								height: "265px",
+								paddingTop: "16px",
+								paddingBottom: "16px",
+								paddingRight: "16px",
+							}}
+						/>
+					</Box>
+				</section>
+				<section style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "330px" }}>
+					<Box sx={{
+						display: "flex",
+						flexDirection: "row",
+						alignItems: "center",
+						justifyContent: "start",
+						width: calculatedWidthIntermediateTotal,
+						height: "300px"
+					}}>
+						<div
+							style={{
+								borderLeft: "1.5px solid black",
+								height: "265px",
+								paddingTop: "16px",
+								paddingBottom: "16px",
+								paddingRight: "16px",
+							}}
+						/>
+						<Box sx={{
+							display: "flex",
+							flexDirection: "column",
+							justifyContent: "center",
+							alignItems: "center",
+							width: calculatedWidthIntermediate,
+							height: "300px",
+							paddingRight: "16px"
+						}}>
+							<div
+								style={{
+									borderTop: "1.5px solid transparent",
+									paddingBottom: "16px",
+									width: calculatedWidthIntermediate
+								}}
+							/>
+							<Box sx={{
+								height: "265px",
+								width: calculatedWidthIntermediate,
+								display: "flex",
+								justifyContent: "center",
+								alignItems: "center",
+								flexDirection: "row"
+							}}>
+								<Box sx={{
+								height: "265px",
+								width: "50%",
+								display: "flex",
+								justifyContent: "center",
+								alignItems: "center",
+								flexDirection: "row"
+								}}>
+									<Typography sx={{
+										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+										fontWeight: 600,
+										color: "#356760",
+										fontSize: 70,
+										paddingLeft: 1.25,
+										lineHeight: "1",
+										letterSpacing: "0.5px"
+									}}>
+										If any of this sounds interesting or you want to learn more about me, let's chat!
+									</Typography>
+								</Box>
+								<Box sx={{
+								height: "265px",
+								width: "50%",
+								display: "flex",
+								justifyContent: "center",
+								alignItems: "center",
+								flexDirection: "column"
+								}}>
+									<Box sx={{
+									height: "265px",
+									width: "50%",
+									display: "flex",
+									justifyContent: "center",
+									alignItems: "center",
+									flexDirection: "row"
+									}}>
+										<Typography sx={{
+											fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+											fontWeight: 600,
+											color: "#356760",
+											fontSize: 70,
+											paddingLeft: 1.25,
+											lineHeight: "1",
+											letterSpacing: "0.5px"
+										}}>
+											LINKEDIN
+										</Typography>
+									</Box>
+									<Box sx={{
+									height: "265px",
+									width: "50%",
+									display: "flex",
+									justifyContent: "center",
+									alignItems: "center",
+									flexDirection: "row"
+									}}>
+										<Typography sx={{
+											fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+											fontWeight: 600,
+											color: "#356760",
+											fontSize: 70,
+											paddingLeft: 1.25,
+											lineHeight: "1",
+											letterSpacing: "0.5px"
+										}}>
+											GITHUB
+										</Typography>
+									</Box>
+									<Box sx={{
+									height: "265px",
+									width: "50%",
+									display: "flex",
+									justifyContent: "center",
+									alignItems: "center",
+									flexDirection: "row"
+									}}>
+										<Typography sx={{
+											fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+											fontWeight: 600,
+											color: "#356760",
+											fontSize: 70,
+											paddingLeft: 1.25,
+											lineHeight: "1",
+											letterSpacing: "0.5px"
+										}}>
+											EMAIL
+										</Typography>
+									</Box>
+								</Box>
+							</Box>
+							<div
+								style={{
+									borderBottom: "1.5px solid black",
+									paddingTop: "16px",
+									width: calculatedWidthIntermediate
+								}}
+							/>
+						</Box>
+						<div
+							style={{
+								borderLeft: "1.5px solid black",
+								height: "265px",
 								paddingTop: "16px",
 								paddingBottom: "16px",
 								paddingRight: "16px",
