@@ -7,7 +7,7 @@ import { AppBar, Toolbar, Box, Stack, Typography, IconButton, Switch, Divider, D
 	Link } from "@mui/material";
 import React from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 import Projects from "./Projects";
 import Technologies from "./Technologies";
 import Work from "./Work";
@@ -87,6 +87,7 @@ import BastiatWork from "./BastiatPartners.jpg";
 import GitHubIcon from "./GitHubIcon.png";
 import LinkedInIcon from "./LinkedIn.png";
 import DownloadIcon from '@mui/icons-material/Download';
+import EmailIcon from '@mui/icons-material/Email';
 
 import HomeLogo from "./Logo.png";
 
@@ -112,7 +113,7 @@ const Img = styled("img")({
 	maxHeight: "100%",
 });
 
-const CustomButton = styled(Button)(({ buttonColor, hoverColor }) => ({
+const CustomButton = styled(Button)(({ buttonColor, hoverColor, width }) => ({
 	backgroundColor: buttonColor,
 	color: "#fff", 
 	borderRadius: "10px", 
@@ -121,7 +122,7 @@ const CustomButton = styled(Button)(({ buttonColor, hoverColor }) => ({
 	justifyContent: "space-around",
 	padding: "8px 16px", 
 	textDecoration: "none",
-	width: "200px", 
+	width: width, 
 	cursor: "pointer",
 	textTransform: "none",
 	textDecoration: "none",
@@ -130,39 +131,58 @@ const CustomButton = styled(Button)(({ buttonColor, hoverColor }) => ({
 	},
 }));
 
-function ButtonStart({ text, link, iconUrl, color, hoverColor }) {
+function ButtonStart({ text, link, iconUrl, color, hoverColor, width, fontSize, imgDimension }) {
 	return (
 	  <Link href={link} target="_blank" rel="noopener noreferrer" underline="none">
-		<CustomButton buttonColor={color} hoverColor={hoverColor}>
+		<CustomButton buttonColor={color} hoverColor={hoverColor} width={width}>
 		  <Typography sx={{
 			fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
 			fontWeight: 500,
 			color: "#fff",
-			fontSize: 24,
+			fontSize: fontSize,
 			verticalAlign: "text-bottom",
 		  }}>
 			{text}
 		  </Typography>
-		  <img src={iconUrl} style={{ width: "40px", height: "40px" }} />
+		  <img src={iconUrl} style={{ width: imgDimension, height: imgDimension }} />
 		</CustomButton>
 	  </Link>
 	);
 }
 
-function ButtonStartResume({ text, link, color, hoverColor }) {
+function ButtonStartResume({ text, link, color, hoverColor, width, fontSize, imgDimension }) {
 	return (
 	  <Link href={link} target="_blank" rel="noopener noreferrer" underline="none">
-		<CustomButton buttonColor={color} hoverColor={hoverColor}>
+		<CustomButton buttonColor={color} hoverColor={hoverColor} width={width}>
 		  <Typography sx={{
 			fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
 			fontWeight: 500,
 			color: "#fff",
-			fontSize: 24,
+			fontSize: fontSize,
 			verticalAlign: "text-bottom",
 		  }}>
 			{text}
 		  </Typography>
-		  <DownloadIcon style={{ width: "40px", height: "40px", color: "#fff" }} />
+		  <DownloadIcon style={{ width: imgDimension, height: imgDimension, color: "#fff" }} />
+		</CustomButton>
+	  </Link>
+	);
+}
+
+function ButtonStartEmail({ text, link, color, hoverColor, width, fontSize, imgDimension }) {
+	return (
+	  <Link href={link} target="_blank" rel="noopener noreferrer" underline="none">
+		<CustomButton buttonColor={color} hoverColor={hoverColor} width={width}>
+		  <Typography sx={{
+			fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+			fontWeight: 500,
+			color: "#fff",
+			fontSize: fontSize,
+			verticalAlign: "text-bottom",
+		  }}>
+			{text}
+		  </Typography>
+		  <EmailIcon style={{ width: imgDimension, height: imgDimension, color: "#fff" }} />
 		</CustomButton>
 	  </Link>
 	);
@@ -171,7 +191,232 @@ function ButtonStartResume({ text, link, color, hoverColor }) {
 const ViewPosts = () => {
 	const [textOptionOneIndex, setTextOptionOneIndex] = useState(0);
 	const [textOptionTwoIndex, setTextOptionTwoIndex] = useState(0);
-    const navigate = useNavigate();
+	const homeRef = useRef(null);
+	const aboutRef = useRef(null);
+	const projectsRef = useRef(null);
+	const experiencesRef = useRef(null);
+	const contactRef = useRef(null);
+	const APP_BAR_HEIGHT = 93;
+
+	const scrollToHome = () => {
+		const homeEl = homeRef.current;
+		 
+		let currentY = window.scrollY;
+		const targetY = homeEl.offsetTop - APP_BAR_HEIGHT;
+		
+		const increment = 100; 
+		
+		function scrollStep() {
+		  let smallerIncrement = 0;
+		  let nextY = currentY + increment;
+		  if (nextY > targetY) {
+			smallerIncrement = targetY - currentY;
+		  } 
+		  if (nextY < targetY) {
+			smallerIncrement = currentY - targetY;
+		  }
+		  if (currentY < targetY) {
+			if (smallerIncrement > 0) {
+				window.scroll(0, currentY + smallerIncrement);
+				currentY += smallerIncrement;
+				requestAnimationFrame(scrollStep);
+			} else {
+				window.scroll(0, currentY + increment);
+				currentY += increment;
+				requestAnimationFrame(scrollStep);
+			}
+		  }
+		  if (currentY > targetY) {
+			if (smallerIncrement > 0) {
+				window.scroll(0, currentY - smallerIncrement);
+				currentY -= smallerIncrement;
+				requestAnimationFrame(scrollStep);
+			} else {
+				window.scroll(0, currentY - increment);
+				currentY -= increment;
+				requestAnimationFrame(scrollStep);
+			}
+		  }
+		}
+		
+		requestAnimationFrame(scrollStep);
+	}
+
+	const scrollToAbout = () => {
+		const aboutEl = aboutRef.current;
+		 
+		let currentY = window.scrollY;
+		const targetY = aboutEl.offsetTop - APP_BAR_HEIGHT;
+		
+		const increment = 100; 
+		
+		function scrollStep() {
+		  let smallerIncrement = 0;
+		  let nextY = currentY + increment;
+		  if (nextY > targetY) {
+			smallerIncrement = targetY - currentY;
+		  } 
+		  if (nextY < targetY) {
+			smallerIncrement = currentY - targetY;
+		  }
+		  if (currentY < targetY) {
+			if (smallerIncrement > 0) {
+				window.scroll(0, currentY + smallerIncrement);
+				currentY += smallerIncrement;
+				requestAnimationFrame(scrollStep);
+			} else {
+				window.scroll(0, currentY + increment);
+				currentY += increment;
+				requestAnimationFrame(scrollStep);
+			}
+		  }
+		  if (currentY > targetY) {
+			if (smallerIncrement > 0) {
+				window.scroll(0, currentY - smallerIncrement);
+				currentY -= smallerIncrement;
+				requestAnimationFrame(scrollStep);
+			} else {
+				window.scroll(0, currentY - increment);
+				currentY -= increment;
+				requestAnimationFrame(scrollStep);
+			}
+		  }
+		}
+		
+		requestAnimationFrame(scrollStep);
+	}
+
+	const scrollToProjects = () => {
+		const projectsEl = projectsRef.current;
+		 
+		let currentY = window.scrollY;
+		const targetY = projectsEl.offsetTop - APP_BAR_HEIGHT;
+		
+		const increment = 100; 
+		
+		function scrollStep() {
+		  let smallerIncrement = 0;
+		  let nextY = currentY + increment;
+		  if (nextY > targetY) {
+			smallerIncrement = targetY - currentY;
+		  } 
+		  if (nextY < targetY) {
+			smallerIncrement = currentY - targetY;
+		  }
+		  if (currentY < targetY) {
+			if (smallerIncrement > 0) {
+				window.scroll(0, currentY + smallerIncrement);
+				currentY += smallerIncrement;
+				requestAnimationFrame(scrollStep);
+			} else {
+				window.scroll(0, currentY + increment);
+				currentY += increment;
+				requestAnimationFrame(scrollStep);
+			}
+		  }
+		  if (currentY > targetY) {
+			if (smallerIncrement > 0) {
+				window.scroll(0, currentY - smallerIncrement);
+				currentY -= smallerIncrement;
+				requestAnimationFrame(scrollStep);
+			} else {
+				window.scroll(0, currentY - increment);
+				currentY -= increment;
+				requestAnimationFrame(scrollStep);
+			}
+		  }
+		}
+		
+		requestAnimationFrame(scrollStep);
+	}
+
+	const scrollToExperiences = () => {
+		const experiencesEl = experiencesRef.current;
+		 
+		let currentY = window.scrollY;
+		const targetY = experiencesEl.offsetTop - APP_BAR_HEIGHT;
+		
+		const increment = 100; 
+		
+		function scrollStep() {
+		  let smallerIncrement = 0;
+		  let nextY = currentY + increment;
+		  if (nextY > targetY) {
+			smallerIncrement = targetY - currentY;
+		  } 
+		  if (nextY < targetY) {
+			smallerIncrement = currentY - targetY;
+		  }
+		  if (currentY < targetY) {
+			if (smallerIncrement > 0) {
+				window.scroll(0, currentY + smallerIncrement);
+				currentY += smallerIncrement;
+				requestAnimationFrame(scrollStep);
+			} else {
+				window.scroll(0, currentY + increment);
+				currentY += increment;
+				requestAnimationFrame(scrollStep);
+			}
+		  }
+		  if (currentY > targetY) {
+			if (smallerIncrement > 0) {
+				window.scroll(0, currentY - smallerIncrement);
+				currentY -= smallerIncrement;
+				requestAnimationFrame(scrollStep);
+			} else {
+				window.scroll(0, currentY - increment);
+				currentY -= increment;
+				requestAnimationFrame(scrollStep);
+			}
+		  }
+		}
+		
+		requestAnimationFrame(scrollStep);
+	}
+
+	const scrollToContact = () => {
+		const contactEl = contactRef.current;
+		 
+		let currentY = window.scrollY;
+		const targetY = contactEl.offsetTop - APP_BAR_HEIGHT;
+		
+		const increment = 100; 
+		
+		function scrollStep() {
+		  let smallerIncrement = 0;
+		  let nextY = currentY + increment;
+		  if (nextY > targetY) {
+			smallerIncrement = targetY - currentY;
+		  } 
+		  if (nextY < targetY) {
+			smallerIncrement = currentY - targetY;
+		  }
+		  if (currentY < targetY) {
+			if (smallerIncrement > 0) {
+				window.scroll(0, currentY + smallerIncrement);
+				currentY += smallerIncrement;
+				requestAnimationFrame(scrollStep);
+			} else {
+				window.scroll(0, currentY + increment);
+				currentY += increment;
+				requestAnimationFrame(scrollStep);
+			}
+		  }
+		  if (currentY > targetY) {
+			if (smallerIncrement > 0) {
+				window.scroll(0, currentY - smallerIncrement);
+				currentY -= smallerIncrement;
+				requestAnimationFrame(scrollStep);
+			} else {
+				window.scroll(0, currentY - increment);
+				currentY -= increment;
+				requestAnimationFrame(scrollStep);
+			}
+		  }
+		}
+		
+		requestAnimationFrame(scrollStep);
+	}
 
 	const rotatingTextOptionsOne = [
 		"software engineering",
@@ -225,7 +470,6 @@ const ViewPosts = () => {
 				backgroundColor: "#fbf7f0",
 				width: "100vw",
 				height: "100vh",
-				overflowX: "hidden"
 			}}>
 			<CssBaseline />
 			<style>
@@ -241,23 +485,24 @@ const ViewPosts = () => {
 				sx={{ zIndex: 2, 
 					  height: "94.5px",
 					  boxShadow: "none",
-					  overflow: "hidden",
 					  backgroundColor: "#fbf7f0"
 				}}
 			>
 				<Container maxWidth='xl'>
 					<Toolbar sx={{ justifyContent: "space-between", height: "93px" }}>
-						<Box sx={{ display: { xs: "none", md: "flex" }, pt: 3, pb: 2 }}>
-							<img src={HomeLogo} width={"200px"} alt='Logo' />
+						<Box sx={{ display: { xs: "none", md: "flex" }, pt: 3, pb: 2, cursor: "pointer" }}>
+							<a onClick={scrollToHome}>
+								<img src={HomeLogo} width={"200px"} alt='Logo' />
+							</a>
 						</Box>
 						<Stack
 							sx={{ flexGrow: 0, display: { xs: "none", md: "flex" }, pt: 4, pb: 3 }}
 							direction='row'
 							>
+								<a onClick={scrollToAbout}>
 								<Typography
 									variant='body3'
 									noWrap
-									component='a'
 									sx={{
 										mr: 8,
 										display: "flex",
@@ -270,10 +515,11 @@ const ViewPosts = () => {
 									}}>
 									ABOUT ME
 								</Typography>
+								</a>
+								<a onClick={scrollToProjects}>
 								<Typography
 									variant='body3'
 									noWrap
-									component='a'
 									sx={{
 										mr: 8,
 										display: "flex",
@@ -286,10 +532,11 @@ const ViewPosts = () => {
 									}}>
 									PROJECTS
 								</Typography>
+								</a>
+								<a onClick={scrollToExperiences}>
 								<Typography
 									variant='body3'
 									noWrap
-									component='a'
 									sx={{
 										mr: 8,
 										display: "flex",
@@ -302,10 +549,11 @@ const ViewPosts = () => {
 									}}>
 									EXPERIENCES
 								</Typography>
+								</a>
+								<a onClick={scrollToContact}>
 								<Typography
 									variant='body3'
 									noWrap
-									component='a'
 									sx={{
 										display: "flex",
 										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
@@ -317,6 +565,7 @@ const ViewPosts = () => {
 									}}>
 									CONTACT ME
 								</Typography>
+								</a>
 						</Stack>
 					</Toolbar>
 					<div
@@ -329,7 +578,7 @@ const ViewPosts = () => {
 				</Container>
 			</AppBar>
 			<Container maxWidth='xl' style={{ paddingTop: "96px" }}>
-				<section style={{ paddingTop: "40px", paddingBottom: "40px", height: "640px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+				<div style={{ paddingTop: "40px", paddingBottom: "40px", height: "640px", display: "flex", alignItems: "center", justifyContent: "center" }} id="home" ref={homeRef}>
 					<Box sx={{
 						display: "flex",
 						flexDirection: "row",
@@ -484,11 +733,11 @@ const ViewPosts = () => {
 								paddingTop: 8,
 								justifyContent: "start"
 							}}> 
-								<ButtonStart link="https://www.linkedin.com/in/michael-kim-nu/" iconUrl={LinkedInIcon} text="LinkedIn" color="#0A66C2" hoverColor="#0754a6"/>
+								<ButtonStart link="https://www.linkedin.com/in/michael-kim-nu/" iconUrl={LinkedInIcon} text="LinkedIn" color="#0A66C2" hoverColor="#0754a6" width="200px" fontSize="24px" imgDimension="40px"/>
 								<Box sx={{ paddingRight: "60px", paddingLeft: "60px" }}>
-									<ButtonStart link="https://github.com/mkim45" iconUrl={GitHubIcon} text="GitHub" hoverColor="#322F2A" color="#625F59"/>
+									<ButtonStart link="https://github.com/mkim45" iconUrl={GitHubIcon} text="GitHub" hoverColor="#322F2A" color="#625F59" width="200px" fontSize="24px" imgDimension="40px"/>
 								</Box>
-								<ButtonStartResume link="https://drive.google.com/file/d/1EqZagkx3Eyem9r26fnkN_FKbYD2Hc-AH/view?usp=sharing" text="Resume" hoverColor="#8A9D8B" color="#9DBE9A"/>
+								<ButtonStartResume link="https://drive.google.com/file/d/1EqZagkx3Eyem9r26fnkN_FKbYD2Hc-AH/view?usp=sharing" text="Resume" hoverColor="#8A9D8B" color="#9DBE9A" width="200px" fontSize="24px" imgDimension="40px"/>
 							</Box>
 						</Box>
 						<Box sx={{
@@ -501,8 +750,8 @@ const ViewPosts = () => {
 							/>
 						</Box>
 					</Box>
-				</section>
-				<section style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "300px" }}>
+				</div>
+				<div style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "300px" }} id="about" ref={aboutRef}>
 					<Box sx={{
 						display: "flex",
 						flexDirection: "row",
@@ -573,8 +822,8 @@ const ViewPosts = () => {
 							}}
 						/>
 					</Box>
-				</section>
-				<section style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "400px" }}>
+				</div>
+				<div style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "400px" }}>
 					<Box sx={{
 						display: "flex",
 						flexDirection: "row",
@@ -656,8 +905,8 @@ const ViewPosts = () => {
 							}}
 						/>
 					</Box>
-				</section>
-				<section style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "300px" }}>
+				</div>
+				<div style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "300px" }} id="projects" ref={projectsRef}>
 					<Box sx={{
 						display: "flex",
 						flexDirection: "row",
@@ -728,14 +977,14 @@ const ViewPosts = () => {
 							}}
 						/>
 					</Box>
-				</section>
+				</div>
 				<Projects
 					calculatedWidth={calculatedWidth}
 					calculatedHeight={calculatedHeight}
 					smallerCalculatedWidth={smallerCalculatedWidth}
 					Images={[Proteins3, Proteins2, Proteins4, Proteins1, Battery, Proteins5, SciOly, Science1, Wine, Uber, Chess, Yelp]}
 				/>
-				<section style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "300px" }}>
+				<div style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "300px" }}>
 					<Box sx={{
 						display: "flex",
 						flexDirection: "row",
@@ -806,7 +1055,7 @@ const ViewPosts = () => {
 							}}
 						/>
 					</Box>
-				</section>
+				</div>
 				<Technologies
 					calculatedWidthTechnologies={calculatedWidthTechnologies}
 					calculatedHeightTechnologies={calculatedHeightTechnologies}
@@ -839,7 +1088,7 @@ const ViewPosts = () => {
 					imgAlt={["React", "SAS", "Scikit", "Scipy", "Seaborn", "SQLite", "Statsmodels", "Tensorflow", "Wasm"]}
 					first={true}
 				/>
-				<section style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "300px" }}>
+				<div style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "300px" }} id="experiences" ref={experiencesRef}>
 					<Box sx={{
 						display: "flex",
 						flexDirection: "row",
@@ -910,14 +1159,14 @@ const ViewPosts = () => {
 							}}
 						/>
 					</Box>
-				</section>
+				</div>
 				<Work
 					calculatedWidth={calculatedWidth}
 					calculatedHeight={calculatedHeight}
 					smallerCalculatedWidth={smallerCalculatedWidth}
 					Images={[ProteomicsWork, BatteryWork, InboundWork, BastiatWork]}
 				/>
-				<section style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "300px" }}>
+				<div style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "300px" }} id="contact" ref={contactRef}>
 					<Box sx={{
 						display: "flex",
 						flexDirection: "row",
@@ -988,20 +1237,20 @@ const ViewPosts = () => {
 							}}
 						/>
 					</Box>
-				</section>
-				<section style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "330px" }}>
+				</div>
+				<div style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "360px" }}>
 					<Box sx={{
 						display: "flex",
 						flexDirection: "row",
 						alignItems: "center",
 						justifyContent: "start",
 						width: calculatedWidthIntermediateTotal,
-						height: "300px"
+						height: "330px"
 					}}>
 						<div
 							style={{
 								borderLeft: "1.5px solid black",
-								height: "265px",
+								height: "295px",
 								paddingTop: "16px",
 								paddingBottom: "16px",
 								paddingRight: "16px",
@@ -1013,7 +1262,7 @@ const ViewPosts = () => {
 							justifyContent: "center",
 							alignItems: "center",
 							width: calculatedWidthIntermediate,
-							height: "300px",
+							height: "330px",
 							paddingRight: "16px"
 						}}>
 							<div
@@ -1024,16 +1273,16 @@ const ViewPosts = () => {
 								}}
 							/>
 							<Box sx={{
-								height: "265px",
+								height: "295px",
 								width: calculatedWidthIntermediate,
 								display: "flex",
 								justifyContent: "center",
 								alignItems: "center",
-								flexDirection: "row"
+								flexDirection: "column"
 							}}>
 								<Box sx={{
-								height: "265px",
-								width: "50%",
+								height: "295px",
+								width: "100%",
 								display: "flex",
 								justifyContent: "center",
 								alignItems: "center",
@@ -1041,84 +1290,30 @@ const ViewPosts = () => {
 								}}>
 									<Typography sx={{
 										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-										fontWeight: 600,
-										color: "#356760",
-										fontSize: 70,
-										paddingLeft: 1.25,
-										lineHeight: "1",
-										letterSpacing: "0.5px"
+										fontWeight: 500,
+										color: "#190019",
+										fontSize: 48,
+										px: 2.5
 									}}>
-										If any of this sounds interesting or you want to learn more about me, let's chat!
+										If any of this sounds interesting or you want to learn some more about me, <span style={{ fontWeight: 600, color: "#356760" }}>let's chat!</span>
 									</Typography>
 								</Box>
 								<Box sx={{
-								height: "265px",
-								width: "50%",
+								height: "295px",
+								width: "100%",
 								display: "flex",
 								justifyContent: "center",
 								alignItems: "center",
-								flexDirection: "column"
+								flexDirection: "row"
 								}}>
-									<Box sx={{
-									height: "265px",
-									width: "50%",
-									display: "flex",
-									justifyContent: "center",
-									alignItems: "center",
-									flexDirection: "row"
-									}}>
-										<Typography sx={{
-											fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-											fontWeight: 600,
-											color: "#356760",
-											fontSize: 70,
-											paddingLeft: 1.25,
-											lineHeight: "1",
-											letterSpacing: "0.5px"
-										}}>
-											LINKEDIN
-										</Typography>
+									<ButtonStart link="https://www.linkedin.com/in/michael-kim-nu/" iconUrl={LinkedInIcon} text="LinkedIn" color="#0A66C2" hoverColor="#0754a6" width="250px" fontSize="30px" imgDimension="45px"/>
+									<Box sx={{ paddingLeft: "60px", paddingRight: "60px" }}>
+										<ButtonStart link="https://github.com/mkim45" iconUrl={GitHubIcon} text="GitHub" hoverColor="#322F2A" color="#625F59" width="250px" fontSize="30px" imgDimension="45px"/>
 									</Box>
-									<Box sx={{
-									height: "265px",
-									width: "50%",
-									display: "flex",
-									justifyContent: "center",
-									alignItems: "center",
-									flexDirection: "row"
-									}}>
-										<Typography sx={{
-											fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-											fontWeight: 600,
-											color: "#356760",
-											fontSize: 70,
-											paddingLeft: 1.25,
-											lineHeight: "1",
-											letterSpacing: "0.5px"
-										}}>
-											GITHUB
-										</Typography>
+									<Box sx={{ paddingRight: "60px" }}>
+										<ButtonStartResume link="https://drive.google.com/file/d/1EqZagkx3Eyem9r26fnkN_FKbYD2Hc-AH/view?usp=sharing" text="Resume" hoverColor="#8A9D8B" color="#9DBE9A" width="250px" fontSize="30px" imgDimension="45px"/>
 									</Box>
-									<Box sx={{
-									height: "265px",
-									width: "50%",
-									display: "flex",
-									justifyContent: "center",
-									alignItems: "center",
-									flexDirection: "row"
-									}}>
-										<Typography sx={{
-											fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-											fontWeight: 600,
-											color: "#356760",
-											fontSize: 70,
-											paddingLeft: 1.25,
-											lineHeight: "1",
-											letterSpacing: "0.5px"
-										}}>
-											EMAIL
-										</Typography>
-									</Box>
+									<ButtonStartEmail link="mailto:michaelkim2025.1@u.northwestern.edu" text="Email" hoverColor="#2F4858" color="#4D6A70" width="250px" fontSize="30px" imgDimension="45px"/>
 								</Box>
 							</Box>
 							<div
@@ -1132,14 +1327,14 @@ const ViewPosts = () => {
 						<div
 							style={{
 								borderLeft: "1.5px solid black",
-								height: "265px",
+								height: "295px",
 								paddingTop: "16px",
 								paddingBottom: "16px",
 								paddingRight: "16px",
 							}}
 						/>
 					</Box>
-				</section>
+				</div>
 			</Container>
         </div>
     );
