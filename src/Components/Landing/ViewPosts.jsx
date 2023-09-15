@@ -3,7 +3,8 @@ import { AppBar, Toolbar, Box, Stack, Typography, IconButton, Switch, Divider, D
 	ListItem,
 	ListItemText,
 	InputAdornment,
-	Checkbox } from "@mui/material";
+	Checkbox,
+	Link } from "@mui/material";
 import React from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useState, useEffect, useCallback } from "react";
@@ -83,11 +84,17 @@ import BatteryWork from "./BatteryWork.png";
 import InboundWork from "./Inbound.png";
 import BastiatWork from "./BastiatPartners.jpg";
 
+import GitHubIcon from "./GitHubIcon.png";
+import LinkedInIcon from "./LinkedIn.png";
+import DownloadIcon from '@mui/icons-material/Download';
+
+import HomeLogo from "./Logo.png";
+
 import ExpandedCard from "./ExpandedCard";
 import SearchIcon from "@mui/icons-material/Search";
 
 import { navigateTo } from "../../Utilities/navigate";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
@@ -105,20 +112,61 @@ const Img = styled("img")({
 	maxHeight: "100%",
 });
 
-const CustomButtonForm = ({ children, onClick, color }) => (
-	<ButtonBase
-		onClick={onClick}
-		type="submit"
-		sx={{
-		width: "100%",
-		height: "100%",
-		textAlign: "center",
-		backgroundColor: color,
-		}}
-	>
-		{children}
-	</ButtonBase>
-);
+const CustomButton = styled(Button)(({ buttonColor, hoverColor }) => ({
+	backgroundColor: buttonColor,
+	color: "#fff", 
+	borderRadius: "10px", 
+	display: "flex",
+	alignItems: "center",
+	justifyContent: "space-around",
+	padding: "8px 16px", 
+	textDecoration: "none",
+	width: "200px", 
+	cursor: "pointer",
+	textTransform: "none",
+	textDecoration: "none",
+	"&:hover": {
+		backgroundColor: hoverColor, 
+	},
+}));
+
+function ButtonStart({ text, link, iconUrl, color, hoverColor }) {
+	return (
+	  <Link href={link} target="_blank" rel="noopener noreferrer" underline="none">
+		<CustomButton buttonColor={color} hoverColor={hoverColor}>
+		  <Typography sx={{
+			fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+			fontWeight: 500,
+			color: "#fff",
+			fontSize: 24,
+			verticalAlign: "text-bottom",
+		  }}>
+			{text}
+		  </Typography>
+		  <img src={iconUrl} style={{ width: "40px", height: "40px" }} />
+		</CustomButton>
+	  </Link>
+	);
+}
+
+function ButtonStartResume({ text, link, color, hoverColor }) {
+	return (
+	  <Link href={link} target="_blank" rel="noopener noreferrer" underline="none">
+		<CustomButton buttonColor={color} hoverColor={hoverColor}>
+		  <Typography sx={{
+			fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+			fontWeight: 500,
+			color: "#fff",
+			fontSize: 24,
+			verticalAlign: "text-bottom",
+		  }}>
+			{text}
+		  </Typography>
+		  <DownloadIcon style={{ width: "40px", height: "40px", color: "#fff" }} />
+		</CustomButton>
+	  </Link>
+	);
+}
 
 const ViewPosts = () => {
 	const [textOptionOneIndex, setTextOptionOneIndex] = useState(0);
@@ -191,16 +239,16 @@ const ViewPosts = () => {
             <AppBar
 				position="fixed"
 				sx={{ zIndex: 2, 
-					  height: 94.5,
+					  height: "94.5px",
 					  boxShadow: "none",
-					  overflow: "visible",
+					  overflow: "hidden",
 					  backgroundColor: "#fbf7f0"
 				}}
 			>
 				<Container maxWidth='xl'>
-					<Toolbar sx={{ justifyContent: "space-between" }}>
-						<Box sx={{ display: { xs: "none", md: "flex" }, pt: 4, pb: 3 }}>
-							<img src={Logo} width={140} alt='Logo' />
+					<Toolbar sx={{ justifyContent: "space-between", height: "93px" }}>
+						<Box sx={{ display: { xs: "none", md: "flex" }, pt: 3, pb: 2 }}>
+							<img src={HomeLogo} width={"200px"} alt='Logo' />
 						</Box>
 						<Stack
 							sx={{ flexGrow: 0, display: { xs: "none", md: "flex" }, pt: 4, pb: 3 }}
@@ -433,135 +481,14 @@ const ViewPosts = () => {
 								display: "flex",
 								flexDirection: "row",
 								width: "90%",
-								paddingTop: 6,
-								justifyContent: "space-between"
+								paddingTop: 8,
+								justifyContent: "start"
 							}}> 
-								<Paper
-									elevation={3}
-									sx={{
-									border: 2,
-									borderColor: "transparent",
-									borderRadius: "10px",
-									minWidth: { xs: "100%", sm: "100%", md: "200px", lg: "250px" },
-									maxWidth: "250px",
-									height: "60px",
-									backgroundColor: "#0A66C2",
-									display: "flex", 
-									flexDirection: "column", 
-									alignItems: "center", 
-									justifyContent: "center",
-									}}
-								>
-									<Box
-									sx={{
-										justifyContent: "center",
-										width: "100%",
-										borderRadius: "10px",
-										px: "14px",
-										py: "4px",
-										"&.Mui-active": {
-										border: "4px solid #0A66C2",
-										},
-										textAlign: "center",
-										color: "#fff",
-									}}
-									>
-									<CustomButtonForm color="#0A66C2"> 
-										<Typography sx={{ 
-											fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-											fontWeight: 600,
-											color: "#fff",
-											fontSize: 24,
-										}}>
-											LinkedIn
-										</Typography>
-									</CustomButtonForm>
-									</Box>
-								</Paper>
-								<Paper
-									elevation={3}
-									sx={{
-									border: 2,
-									borderColor: "transparent",
-									borderRadius: "10px",
-									minWidth: { xs: "100%", sm: "100%", md: "200px", lg: "250px" },
-									maxWidth: "250px",
-									height: "60px",
-									backgroundColor: "#322F2A",
-									display: "flex", 
-									flexDirection: "column", 
-									alignItems: "center", 
-									justifyContent: "center",
-									}}
-								>
-									<Box
-									sx={{
-										justifyContent: "center",
-										width: "100%",
-										borderRadius: "10px",
-										px: "14px",
-										py: "4px",
-										"&.Mui-active": {
-										border: "4px solid #482FD7",
-										},
-										textAlign: "center",
-										color: "#fff",
-									}}
-									>
-									<CustomButtonForm color="#322F2A">
-										<Typography sx={{ 
-											fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-											fontWeight: 600,
-											color: "#fff",
-											fontSize: 24,
-										}}>
-											GitHub
-										</Typography>
-									</CustomButtonForm>
-									</Box>
-								</Paper>
-								<Paper
-									elevation={3}
-									sx={{
-									border: 2,
-									borderColor: "transparent",
-									borderRadius: "10px",
-									minWidth: { xs: "100%", sm: "100%", md: "200px", lg: "250px" },
-									maxWidth: "250px",
-									height: "60px",
-									backgroundColor: "#8A9D8B",
-									display: "flex", 
-									flexDirection: "column", 
-									alignItems: "center", 
-									justifyContent: "center",
-									}}
-								>
-									<Box
-									sx={{
-										justifyContent: "center",
-										width: "100%",
-										borderRadius: "10px",
-										px: "14px",
-										py: "4px",
-										"&.Mui-active": {
-										border: "4px solid #482FD7",
-										},
-										textAlign: "center",
-										color: "#fff",
-									}}
-									>
-									<CustomButtonForm color="#8A9D8B">
-										<Typography sx={{ 
-											fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-											fontWeight: 600,
-											color: "#fff",
-											fontSize: 24,
-										}}>
-											Resume
-										</Typography>
-									</CustomButtonForm>
-									</Box>
-								</Paper>
+								<ButtonStart link="https://www.linkedin.com/in/michael-kim-nu/" iconUrl={LinkedInIcon} text="LinkedIn" color="#0A66C2" hoverColor="#0754a6"/>
+								<Box sx={{ paddingRight: "60px", paddingLeft: "60px" }}>
+									<ButtonStart link="https://github.com/mkim45" iconUrl={GitHubIcon} text="GitHub" hoverColor="#322F2A" color="#625F59"/>
+								</Box>
+								<ButtonStartResume link="https://drive.google.com/file/d/1EqZagkx3Eyem9r26fnkN_FKbYD2Hc-AH/view?usp=sharing" text="Resume" hoverColor="#8A9D8B" color="#9DBE9A"/>
 							</Box>
 						</Box>
 						<Box sx={{
