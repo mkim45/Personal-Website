@@ -1238,7 +1238,7 @@ const ViewPosts = () => {
 						/>
 					</Box>
 				</div>
-				<div style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "360px" }}>
+				<div style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "345px" }}>
 					<Box sx={{
 						display: "flex",
 						flexDirection: "row",
@@ -1307,10 +1307,10 @@ const ViewPosts = () => {
 								flexDirection: "row"
 								}}>
 									<ButtonStart link="https://www.linkedin.com/in/michael-kim-nu/" iconUrl={LinkedInIcon} text="LinkedIn" color="#0A66C2" hoverColor="#0754a6" width="250px" fontSize="30px" imgDimension="45px"/>
-									<Box sx={{ paddingLeft: "60px", paddingRight: "60px" }}>
+									<Box sx={{ paddingLeft: "70px", paddingRight: "70px" }}>
 										<ButtonStart link="https://github.com/mkim45" iconUrl={GitHubIcon} text="GitHub" hoverColor="#322F2A" color="#625F59" width="250px" fontSize="30px" imgDimension="45px"/>
 									</Box>
-									<Box sx={{ paddingRight: "60px" }}>
+									<Box sx={{ paddingRight: "70px" }}>
 										<ButtonStartResume link="https://drive.google.com/file/d/1EqZagkx3Eyem9r26fnkN_FKbYD2Hc-AH/view?usp=sharing" text="Resume" hoverColor="#8A9D8B" color="#9DBE9A" width="250px" fontSize="30px" imgDimension="45px"/>
 									</Box>
 									<ButtonStartEmail link="mailto:michaelkim2025.1@u.northwestern.edu" text="Email" hoverColor="#2F4858" color="#4D6A70" width="250px" fontSize="30px" imgDimension="45px"/>
