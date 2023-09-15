@@ -105,7 +105,7 @@ const Img = styled("img")({
 	maxHeight: "100%",
 });
 
-const CustomButtonForm = ({ children, onClick }) => (
+const CustomButtonForm = ({ children, onClick, color }) => (
 	<ButtonBase
 		onClick={onClick}
 		type="submit"
@@ -113,7 +113,7 @@ const CustomButtonForm = ({ children, onClick }) => (
 		width: "100%",
 		height: "100%",
 		textAlign: "center",
-		backgroundColor: "#414fb6",
+		backgroundColor: color,
 		}}
 	>
 		{children}
@@ -445,7 +445,7 @@ const ViewPosts = () => {
 									minWidth: { xs: "100%", sm: "100%", md: "200px", lg: "250px" },
 									maxWidth: "250px",
 									height: "60px",
-									backgroundColor: "#414fb6",
+									backgroundColor: "#0A66C2",
 									display: "flex", 
 									flexDirection: "column", 
 									alignItems: "center", 
@@ -460,14 +460,21 @@ const ViewPosts = () => {
 										px: "14px",
 										py: "4px",
 										"&.Mui-active": {
-										border: "4px solid #482FD7",
+										border: "4px solid #0A66C2",
 										},
 										textAlign: "center",
 										color: "#fff",
 									}}
 									>
-									<CustomButtonForm>
-										<Typography sx={{ fontWeight: 600 }}>LinkedIn</Typography>
+									<CustomButtonForm color="#0A66C2"> 
+										<Typography sx={{ 
+											fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+											fontWeight: 600,
+											color: "#fff",
+											fontSize: 24,
+										}}>
+											LinkedIn
+										</Typography>
 									</CustomButtonForm>
 									</Box>
 								</Paper>
@@ -480,7 +487,7 @@ const ViewPosts = () => {
 									minWidth: { xs: "100%", sm: "100%", md: "200px", lg: "250px" },
 									maxWidth: "250px",
 									height: "60px",
-									backgroundColor: "#414fb6",
+									backgroundColor: "#322F2A",
 									display: "flex", 
 									flexDirection: "column", 
 									alignItems: "center", 
@@ -501,8 +508,15 @@ const ViewPosts = () => {
 										color: "#fff",
 									}}
 									>
-									<CustomButtonForm>
-										<Typography sx={{ fontWeight: 600 }}>GitHub</Typography>
+									<CustomButtonForm color="#322F2A">
+										<Typography sx={{ 
+											fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+											fontWeight: 600,
+											color: "#fff",
+											fontSize: 24,
+										}}>
+											GitHub
+										</Typography>
 									</CustomButtonForm>
 									</Box>
 								</Paper>
@@ -515,7 +529,7 @@ const ViewPosts = () => {
 									minWidth: { xs: "100%", sm: "100%", md: "200px", lg: "250px" },
 									maxWidth: "250px",
 									height: "60px",
-									backgroundColor: "#414fb6",
+									backgroundColor: "#8A9D8B",
 									display: "flex", 
 									flexDirection: "column", 
 									alignItems: "center", 
@@ -536,8 +550,15 @@ const ViewPosts = () => {
 										color: "#fff",
 									}}
 									>
-									<CustomButtonForm>
-										<Typography sx={{ fontWeight: 600 }}>Resume</Typography>
+									<CustomButtonForm color="#8A9D8B">
+										<Typography sx={{ 
+											fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+											fontWeight: 600,
+											color: "#fff",
+											fontSize: 24,
+										}}>
+											Resume
+										</Typography>
 									</CustomButtonForm>
 									</Box>
 								</Paper>
