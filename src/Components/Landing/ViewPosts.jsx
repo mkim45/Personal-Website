@@ -1,32 +1,10 @@
-import { AppBar, Toolbar, Box, Stack, Typography, IconButton, Switch, Divider, Drawer,
-	List,
-	ListItem,
-	ListItemText,
-	InputAdornment,
-	Checkbox,
-	Link } from "@mui/material";
+import { AppBar, Toolbar, Box, Stack, Typography, Link } from "@mui/material";
 import React from "react";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import { useState, useEffect, useRef } from "react";
 import Projects from "./Projects";
 import Technologies from "./Technologies";
 import Work from "./Work";
-import Hero from "./Hero";
-import SignUp from "./SignUp";
-import Footer from "../Footer";
-import OpportunitiesImage from "../Landing/viewposts.png";
-import RelationshipImage from "../Landing/discussionpost.png";
-import Video from "../Landing/cardiacrehab.mp4"
-import SummariesImage from "../Landing/message.png";
-import Banner from "./Banner";
-import Image from "../Landing/Auditboard.png"
 import { styled } from "@mui/material/styles";
-import ButtonBase from "@mui/material/ButtonBase";
-import { Grid, Paper } from "@mui/material";
-import TextField from '@mui/material/TextField';
-import firestore from '../../Utilities/firebase';
-import { doc, setDoc, collection, getDocs, writeBatch } from "firebase/firestore"; 
-import Logo from "../../images/Logo.svg";
 
 import Portrait from "./Michael_Kim.jpg";
 import Yelp from "./Yelp.png";
@@ -91,20 +69,9 @@ import EmailIcon from '@mui/icons-material/Email';
 
 import HomeLogo from "./Logo.png";
 
-import ExpandedCard from "./ExpandedCard";
-import SearchIcon from "@mui/icons-material/Search";
-
-import { navigateTo } from "../../Utilities/navigate";
-import { useNavigate } from "react-router-dom";
-
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Container from "@mui/material/Container";
-import Modal from "@mui/material/Modal";
-import CloseIcon from '@mui/icons-material/Close';
-import emailjs from '@emailjs/browser';
 
 const Img = styled("img")({
 	margin: "auto",
