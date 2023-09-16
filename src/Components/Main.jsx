@@ -155,7 +155,7 @@ function ButtonStartEmail({ text, link, color, hoverColor, width, fontSize, imgD
 	);
 }
 
-const ViewPosts = () => {
+const Main = () => {
 	const [textOptionOneIndex, setTextOptionOneIndex] = useState(0);
 	const [textOptionTwoIndex, setTextOptionTwoIndex] = useState(0);
 	const homeRef = useRef(null);
@@ -1307,4 +1307,4 @@ const ViewPosts = () => {
     );
 };
 
-export default ViewPosts;
+export default Main;

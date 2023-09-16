@@ -1,12 +1,12 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import ViewPosts from "./Components/Landing/ViewPosts";
+import Main from "./Components/Landing/Main";
 
 function App() {
 	return (
 		<div className='App'>
 			<Routes>
-				<Route path='/' element={<ViewPosts />}/>
+				<Route path='/' element={<Main/>}/>
 			</Routes>
 		</div>
 	);
