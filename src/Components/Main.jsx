@@ -111,7 +111,7 @@ function ButtonStart({ text, link, iconUrl, color, hoverColor, width, fontSize, 
 		  }}>
 			{text}
 		  </Typography>
-		  <img src={iconUrl} style={{ width: imgDimension, height: imgDimension }} />
+		  <img src={iconUrl} alt={text} style={{ width: imgDimension, height: imgDimension }} />
 		</CustomButton>
 	  </Link>
 	);
