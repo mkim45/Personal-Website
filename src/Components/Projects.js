@@ -75,7 +75,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						onClose={handleClose}
 						PaperProps={{
 							sx: {
-							  minHeight: "80vh",
+							  minHeight: "60vh",
 							  maxHeight: "80vh",
 							  backgroundColor: "#fbf7f0"
 							}
@@ -277,7 +277,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						onClose={handleClose}
 						PaperProps={{
 							sx: {
-							  minHeight: "80vh",
+							  minHeight: "60vh",
 							  maxHeight: "80vh",
 							  backgroundColor: "#fbf7f0"
 							}
@@ -480,7 +480,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						onClose={handleClose}
 						PaperProps={{
 							sx: {
-							  minHeight: "80vh",
+							  minHeight: "60vh",
 							  maxHeight: "80vh",
 							  backgroundColor: "#fbf7f0"
 							}
@@ -682,7 +682,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						onClose={handleClose}
 						PaperProps={{
 							sx: {
-							  minHeight: "80vh",
+							  minHeight: "60vh",
 							  maxHeight: "80vh",
 							  backgroundColor: "#fbf7f0"
 							}
@@ -909,7 +909,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						onClose={handleClose}
 						PaperProps={{
 							sx: {
-							  minHeight: "80vh",
+							  minHeight: "60vh",
 							  maxHeight: "80vh",
 							  backgroundColor: "#fbf7f0"
 							}
@@ -1116,7 +1116,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						onClose={handleClose}
 						PaperProps={{
 							sx: {
-							  minHeight: "80vh",
+							  minHeight: "60vh",
 							  maxHeight: "80vh",
 							  backgroundColor: "#fbf7f0"
 							}
@@ -1323,7 +1323,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						onClose={handleClose}
 						PaperProps={{
 							sx: {
-							  minHeight: "80vh",
+							  minHeight: "60vh",
 							  maxHeight: "80vh",
 							  backgroundColor: "#fbf7f0"
 							}
@@ -1527,7 +1527,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						onClose={handleClose}
 						PaperProps={{
 							sx: {
-							  minHeight: "80vh",
+							  minHeight: "60vh",
 							  maxHeight: "80vh",
 							  backgroundColor: "#fbf7f0"
 							}
@@ -1754,7 +1754,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						onClose={handleClose}
 						PaperProps={{
 							sx: {
-							  minHeight: "80vh",
+							  minHeight: "60vh",
 							  maxHeight: "80vh",
 							  backgroundColor: "#fbf7f0"
 							}
@@ -1962,7 +1962,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						onClose={handleClose}
 						PaperProps={{
 							sx: {
-							  minHeight: "80vh",
+							  minHeight: "60vh",
 							  maxHeight: "80vh",
 							  backgroundColor: "#fbf7f0"
 							}
@@ -2169,7 +2169,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						onClose={handleClose}
 						PaperProps={{
 							sx: {
-							  minHeight: "80vh",
+							  minHeight: "60vh",
 							  maxHeight: "80vh",
 							  backgroundColor: "#fbf7f0"
 							}
@@ -2376,7 +2376,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						onClose={handleClose}
 						PaperProps={{
 							sx: {
-							  minHeight: "80vh",
+							  minHeight: "60vh",
 							  maxHeight: "80vh",
 							  backgroundColor: "#fbf7f0"
 							}
