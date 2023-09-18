@@ -455,7 +455,7 @@ const Main = () => {
 					  backgroundColor: "#fbf7f0"
 				}}
 			>
-				<Container maxWidth='xl'>
+				<Container maxWidth={(window.innerWidth - 32) + "px"}>
 					<Toolbar sx={{ justifyContent: "space-between", height: "93px" }}>
 						<Box sx={{ display: { xs: "none", md: "flex" }, pt: 3, pb: 2, cursor: "pointer" }}>
 							<a onClick={scrollToHome}>
@@ -544,7 +544,7 @@ const Main = () => {
 					/>
 				</Container>
 			</AppBar>
-			<Container maxWidth='xl' style={{ paddingTop: "96px" }}>
+			<Container maxWidth={(window.innerWidth - 231.5) + "px"} style={{ paddingTop: "96px" }}>
 				<div style={{ paddingTop: "40px", paddingBottom: "40px", height: "640px", display: "flex", alignItems: "center", justifyContent: "center" }} id="home" ref={homeRef}>
 					<Box sx={{
 						display: "flex",
