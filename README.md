@@ -4,7 +4,7 @@ A personal website built by myself for showing my projects and experiences over 
 
 # Credits
 
-One section of code for rotating text in Main.jsx was taken directly from the below source.  
+One section of code for rotating text in Main.jsx was adapted from the below source:
 
 Copyright (c) 2023 by J Voorendt (https://codepen.io/Hikisu/pen/qVbQgZ)
 
