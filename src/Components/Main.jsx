@@ -73,8 +73,7 @@ import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
 
-const Img = styled("img")({
-	margin: "auto",
+const ImgNoMargin = styled("img")({
 	display: "block",
 	maxWidth: "100%",
 	maxHeight: "100%",
@@ -88,7 +87,6 @@ const CustomButton = styled(Button)(({ buttonColor, hoverColor, width }) => ({
 	alignItems: "center",
 	justifyContent: "space-around",
 	padding: "8px 16px", 
-	textDecoration: "none",
 	width: width, 
 	cursor: "pointer",
 	textTransform: "none",
@@ -155,9 +153,74 @@ function ButtonStartEmail({ text, link, color, hoverColor, width, fontSize, imgD
 	);
 }
 
+var TxtRotate = function(el, toRotate, period) {
+	this.toRotate = toRotate;
+	this.el = el;
+	this.loopNum = 0;
+	this.period = parseInt(period, 100) || 4000;
+	this.txt = '';
+	this.tick();
+	this.isDeleting = false;
+  };
+  
+  TxtRotate.prototype.tick = function() {
+	var i = this.loopNum % this.toRotate.length;
+	var fullTxt = this.toRotate[i];
+  
+	if (this.isDeleting) {
+	  this.txt = fullTxt.substring(0, this.txt.length - 1);
+	} else {
+	  this.txt = fullTxt.substring(0, this.txt.length + 1);
+	}
+  
+	this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+  
+	var that = this;
+	var delta = 150 - Math.random() * 100;
+  
+	if (this.isDeleting) { delta /= 2; }
+  
+	if (!this.isDeleting && this.txt === fullTxt) {
+	  delta = this.period;
+	  this.isDeleting = true;
+	} else if (this.isDeleting && this.txt === '') {
+	  this.isDeleting = false;
+	  this.loopNum++;
+	  delta = 1000;
+	}
+  
+	setTimeout(function() {
+	  that.tick();
+	}, delta);
+  };
+  
+  window.onload = function() {
+	var elements = document.getElementsByClassName('txt-rotate');
+	for (var i=0; i<elements.length; i++) {
+	  var toRotate = elements[i].getAttribute('data-rotate');
+	  var period = elements[i].getAttribute('data-period');
+	  if (toRotate) {
+		new TxtRotate(elements[i], JSON.parse(toRotate), period);
+	  }
+	}
+	var css = document.createElement("style");
+	css.type = "text/css";
+	css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #fbf7f0 }";
+	document.body.appendChild(css);
+  };
+
 const Main = () => {
-	const [textOptionOneIndex, setTextOptionOneIndex] = useState(0);
-	const [textOptionTwoIndex, setTextOptionTwoIndex] = useState(0);
+	const minWidth = 1440;
+	const [calculatedWidth, setCalculatedWidth] = useState("");
+	const [smallerCalculatedWidth, setSmallerCalculatedWidth] = useState("");
+	const [calculatedHeight, setCalculatedHeight] = useState("");
+	const [calculatedWidthTechnologies, setCalculatedWidthTechnologies] = useState("");
+	const [smallerCalculatedWidthTechnologies, setSmallerCalculatedWidthTechnologies] = useState("");
+	const [calculatedHeightTechnologies, setCalculatedHeightTechnologies] = useState("");
+	const [calculatedWidthIntermediate, setCalculatedWidthIntermediate] = useState("");
+	const [calculatedWidthIntermediateTotal, setCalculatedWidthIntermediateTotal] = useState("");
+	const [smallerWidth, setSmallerWidth] = useState(false);
+
 	const homeRef = useRef(null);
 	const aboutRef = useRef(null);
 	const projectsRef = useRef(null);
@@ -385,51 +448,27 @@ const Main = () => {
 		requestAnimationFrame(scrollStep);
 	}
 
-	const rotatingTextOptionsOne = [
-		"software engineering",
-		"machine learning",
-		"web development",
-		"data analysis"
-	];
-
-	const rotatingTextOptionsTwo = [
-		"proteomics",
-		"bioinformatics",
-		"business",
-		"metabolomics"
-	];
-
-	const calculatedWidth = (window.innerWidth - 231.5) + "px";
-	const smallerCalculatedWidth = ((window.innerWidth - 231.5)/4) + "px";
-	const calculatedHeight = (((window.innerWidth - 231.5)/4) + 35) + "px";
-
-	const calculatedWidthTechnologies = (window.innerWidth - 399) + "px";
-	const smallerCalculatedWidthTechnologies = ((window.innerWidth - 399)/9) + "px";
-	const calculatedHeightTechnologies = (((window.innerWidth - 399)/9) + 35) + "px";
-
-	const calculatedWidthIntermediate = (window.innerWidth - 115) + "px";
-	const calculatedWidthIntermediateTotal = (window.innerWidth - 96) + "px";
-
 	useEffect(() => {
-		const intervalOne = setInterval(() => {
-			setTextOptionOneIndex((prevIndex) => (prevIndex + 1) % rotatingTextOptionsOne.length);
-		}, 4000);
-
-		const intervalTwoDelay = setTimeout(() => {
-			const intervalTwo = setInterval(() => {
-			  setTextOptionTwoIndex((prevIndex) => (prevIndex + 1) % rotatingTextOptionsTwo.length);
-			}, 4000);
-		
-			return () => {
-			  clearInterval(intervalTwo);
-			};
-		}, 2000);
-	
-		return () => {
-			clearInterval(intervalOne);
-			clearInterval(intervalTwoDelay);
+		const updateCalculatedValues = () => {
+			const maxWidth = Math.max(window.innerWidth, minWidth);
+			setCalculatedWidth(`${maxWidth - 231.5}px`);
+			setSmallerCalculatedWidth(`${(maxWidth - 231.5) / 4}px`);
+			setCalculatedHeight(`${((maxWidth - 231.5) / 4) + 35}px`);
+			setCalculatedWidthTechnologies(`${maxWidth - 399}px`);
+			setSmallerCalculatedWidthTechnologies(`${(maxWidth - 399) / 9}px`);
+			setCalculatedHeightTechnologies(`${((maxWidth - 399) / 9) + 35}px`);
+			setCalculatedWidthIntermediate(`${maxWidth - 115}px`);
+			setCalculatedWidthIntermediateTotal(`${maxWidth - 96}px`);
+			setSmallerWidth(window.innerWidth > 950 ? true : false);
 		};
-	}, []);
+
+		updateCalculatedValues();
+		window.addEventListener("resize", updateCalculatedValues);
+
+		return () => {
+			window.removeEventListener("resize", updateCalculatedValues);
+		};
+	}, [minWidth]);
 
     return (
         <div 
@@ -437,6 +476,7 @@ const Main = () => {
 				backgroundColor: "#fbf7f0",
 				width: "100vw",
 				height: "100vh",
+				minWidth: "1440px"
 			}}>
 			<CssBaseline />
 			<style>
@@ -455,13 +495,15 @@ const Main = () => {
 					  backgroundColor: "#fbf7f0"
 				}}
 			>
-				<Container maxWidth={(window.innerWidth - 32) + "px"}>
+				<Container maxWidth={(Math.max(window.innerWidth, minWidth) - 32) + "px"}>
 					<Toolbar sx={{ justifyContent: "space-between", height: "93px" }}>
-						<Box sx={{ display: { xs: "none", md: "flex" }, pt: 3, pb: 2, cursor: "pointer" }}>
+						<Box sx={{ display: "flex", pt: 3, pb: 2, cursor: "pointer" }}>
 							<a onClick={scrollToHome}>
 								<img src={HomeLogo} width={"200px"} alt='Logo' />
 							</a>
 						</Box>
+						{smallerWidth && (
+       							<>	
 						<Stack
 							sx={{ flexGrow: 0, display: { xs: "none", md: "flex" }, pt: 4, pb: 3 }}
 							direction='row'
@@ -534,6 +576,7 @@ const Main = () => {
 								</Typography>
 								</a>
 						</Stack>
+						</>)}
 					</Toolbar>
 					<div
                     style={{
@@ -544,155 +587,71 @@ const Main = () => {
 					/>
 				</Container>
 			</AppBar>
-			<Container maxWidth={(window.innerWidth - 231.5) + "px"} style={{ paddingTop: "96px" }}>
-				<div style={{ paddingTop: "40px", paddingBottom: "40px", height: "640px", display: "flex", alignItems: "center", justifyContent: "center" }} id="home" ref={homeRef}>
+			<Container maxWidth={(Math.max(window.innerWidth, minWidth) - 32) + "px"} style={{ paddingTop: "96px" }}>
+				<div style={{ paddingTop: "40px", paddingBottom: "40px", height: "640px", display: "flex", alignItems: "center", width: "100%", justifyContent: "space-evenly" }} id="home" ref={homeRef}>
 					<Box sx={{
+						width: "100%",
 						display: "flex",
 						flexDirection: "row",
 						alignItems: "center",
-						justifyContent: "center"
+						justifyContent: "space-evenly"
 					}}>
+						<Box sx={{ paddingRight: 6 }}>
+							<ImgNoMargin
+								alt="portrait"
+								src={Portrait}
+								sx={{ height: "525px", width: "350px" }}
+							/>
+						</Box>
 						<Box sx={{
 							display: "flex",
 							flexDirection: "column",
 							justifyContent: "center",
-							width: "900px",
+							width: "850px",
+							alignItems: "baseline"
 						}}>
-							<Box sx={{
-								display: "flex",
-								flexDirection: "row",
-								alignItems: "baseline",
-								width: "100%"
+							<Typography sx={{
+								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+								fontWeight: 500,
+								color: "#190019",
+								fontSize: 32,
+								lineHeight: "1",
+								verticalAlign: "text-bottom",
+								letterSpacing: "0.5px"
 							}}>
-								<Typography sx={{
-									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-									fontWeight: 500,
-									color: "#190019",
-									fontSize: 32,
-									lineHeight: "1",
-									verticalAlign: "text-bottom",
-									letterSpacing: "0.5px"
-								}}>
-									Hi, my name is{" "}
-								</Typography>
-								<Typography sx={{
-									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-									fontWeight: 600,
+								Hi, my name is <span style={{ fontWeight: 600,
 									color: "#356760",
-									fontSize: 60,
-									paddingLeft: 1.25,
-									lineHeight: "1",
-									verticalAlign: "text-bottom",
-									letterSpacing: "0.5px"
-								}}>
-									Michael Kim
-								</Typography>
-								<Typography sx={{
-									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-									fontWeight: 500,
-									color: "#190019",
-									fontSize: 32,
-									lineHeight: "1",
-									verticalAlign: "text-bottom",
-									letterSpacing: "0.5px"
-								}}>
-									.
-								</Typography>
-							</Box>
-							<Box sx={{
-								display: "flex",
-								flexDirection: "column",
-								width: "100%",
+									fontSize: 60, }}>Michael Kim</span>.
+							</Typography>
+							<Typography sx={{
+								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+								fontWeight: 500,
+								color: "#190019",
+								fontSize: 32,
+								lineHeight: "60px",
+								verticalAlign: "text-bottom",
+								letterSpacing: "0.5px",
 								paddingTop: 4
 							}}>
-								<Typography sx={{
-									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-									fontWeight: 500,
-									color: "#190019",
-									fontSize: 32,
-									lineHeight: "1.5",
-									verticalAlign: "text-bottom",
-									letterSpacing: "0.5px"
-								}}>
-									I'm a software developer and data scientist interested
-								</Typography>
-								<Typography sx={{
-									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-									fontWeight: 500,
-									color: "#190019",
-									fontSize: 32,
-									lineHeight: "1.5",
-									verticalAlign: "text-bottom",
-									letterSpacing: "0.5px",
-								}}>
-									in deepening human understanding at the intersections
-								</Typography>
-								<Box sx={{
-									display: "flex",
-									flexDirection: "row",
-									alignItems: "baseline",
-									width: "100%",
-								}}>
-									<Typography sx={{
-										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-										fontWeight: 500,
-										color: "#190019",
-										fontSize: 32,
-										lineHeight: "1.2",
-										verticalAlign: "text-bottom",
-										letterSpacing: "0.5px"
-									}}>
-									of
-									</Typography>
-									<Typography sx={{
-										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-										fontWeight: 600,
-										color: "#356760",
-										fontSize: 40,
-										lineHeight: "1.2",
-										verticalAlign: "text-bottom",
-										letterSpacing: "0.5px",
-										paddingLeft: 1.25,
-										paddingRight: 1.25
-									}}>
-										{rotatingTextOptionsOne[textOptionOneIndex]}
-									</Typography>
-									<Typography sx={{
-										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-										fontWeight: 500,
-										color: "#190019",
-										fontSize: 32,
-										lineHeight: "1.2",
-										verticalAlign: "text-bottom",
-										letterSpacing: "0.5px"
-									}}>
-									and
-									</Typography>
-									<Typography sx={{
-										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-										fontWeight: 600,
-										color: "#356760",
-										fontSize: 40,
-										lineHeight: "1.2",
-										verticalAlign: "text-bottom",
-										letterSpacing: "0.5px",
-										paddingLeft: 1.25
-									}}>
-										{rotatingTextOptionsTwo[textOptionTwoIndex]}
-									</Typography>
-									<Typography sx={{
-										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-										fontWeight: 500,
-										color: "#190019",
-										fontSize: 32,
-										lineHeight: "1.2",
-										verticalAlign: "text-bottom",
-										letterSpacing: "0.5px"
-									}}>
-									.
-									</Typography>
-								</Box>
-							</Box>
+								I'm a software developer and data scientist interested in deepening human understanding at the intersections of{" "}
+								<span
+									class="txt-rotate"
+									data-period="4000"
+									data-rotate='["software engineering",
+									"machine learning",
+									"web development",
+									"data analysis"]'
+									style={{ fontWeight: 600, color: "#356760", fontSize: 40 }}
+								/> and <span
+								class="txt-rotate"
+								data-period="4000"
+								data-rotate='["proteomics",
+								"bioinformatics",
+								"business",
+								"metabolomics"]'
+								style={{ fontWeight: 600, color: "#356760", fontSize: 40 }}
+							/>.
+							</Typography>
 							<Box sx={{
 								display: "flex",
 								flexDirection: "row",
@@ -706,15 +665,6 @@ const Main = () => {
 								</Box>
 								<ButtonStartResume link="https://drive.google.com/file/d/1EqZagkx3Eyem9r26fnkN_FKbYD2Hc-AH/view?usp=sharing" text="Resume" hoverColor="#8A9D8B" color="#9DBE9A" width="200px" fontSize="24px" imgDimension="40px"/>
 							</Box>
-						</Box>
-						<Box sx={{
-							paddingLeft: 4
-						}}>
-							<Img
-								alt="portrait"
-								src={Portrait}
-								sx={{ height: "525px", width: "350px" }}
-							/>
 						</Box>
 					</Box>
 				</div>
@@ -830,6 +780,8 @@ const Main = () => {
 								display: "flex",
 								justifyContent: "center",
 								alignItems: "center",
+								paddingRight: "2.5%",
+								paddingLeft: "2.5%"
 							}}>
 								<Typography
 								sx={{
@@ -1253,14 +1205,17 @@ const Main = () => {
 								display: "flex",
 								justifyContent: "center",
 								alignItems: "center",
-								flexDirection: "row"
+								flexDirection: "row",
+								paddingRight: "5%",
+								paddingLeft: "5%"
 								}}>
 									<Typography sx={{
 										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
 										fontWeight: 500,
 										color: "#190019",
 										fontSize: 48,
-										px: 2.5
+										px: 2.5,
+										pt: 2
 									}}>
 										If any of this sounds interesting or you want to learn some more about me, <span style={{ fontWeight: 600, color: "#356760" }}>let's chat!</span>
 									</Typography>
@@ -1271,7 +1226,9 @@ const Main = () => {
 								display: "flex",
 								justifyContent: "center",
 								alignItems: "center",
-								flexDirection: "row"
+								flexDirection: "row",
+								paddingRight: "2.5%",
+								paddingLeft: "2.5%"
 								}}>
 									<ButtonStart link="https://www.linkedin.com/in/michael-kim-nu/" iconUrl={LinkedInIcon} text="LinkedIn" color="#0A66C2" hoverColor="#0754a6" width="250px" fontSize="30px" imgDimension="45px"/>
 									<Box sx={{ paddingLeft: "70px", paddingRight: "70px" }}>
