@@ -153,62 +153,6 @@ function ButtonStartEmail({ text, link, color, hoverColor, width, fontSize, imgD
 	);
 }
 
-var TxtRotate = function(el, toRotate, period) {
-	this.toRotate = toRotate;
-	this.el = el;
-	this.loopNum = 0;
-	this.period = parseInt(period, 100) || 4000;
-	this.txt = '';
-	this.tick();
-	this.isDeleting = false;
-  };
-  
-  TxtRotate.prototype.tick = function() {
-	var i = this.loopNum % this.toRotate.length;
-	var fullTxt = this.toRotate[i];
-  
-	if (this.isDeleting) {
-	  this.txt = fullTxt.substring(0, this.txt.length - 1);
-	} else {
-	  this.txt = fullTxt.substring(0, this.txt.length + 1);
-	}
-  
-	this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-  
-	var that = this;
-	var delta = 150 - Math.random() * 100;
-  
-	if (this.isDeleting) { delta /= 2; }
-  
-	if (!this.isDeleting && this.txt === fullTxt) {
-	  delta = this.period;
-	  this.isDeleting = true;
-	} else if (this.isDeleting && this.txt === '') {
-	  this.isDeleting = false;
-	  this.loopNum++;
-	  delta = 1000;
-	}
-  
-	setTimeout(function() {
-	  that.tick();
-	}, delta);
-  };
-  
-  window.onload = function() {
-	var elements = document.getElementsByClassName('txt-rotate');
-	for (var i=0; i<elements.length; i++) {
-	  var toRotate = elements[i].getAttribute('data-rotate');
-	  var period = elements[i].getAttribute('data-period');
-	  if (toRotate) {
-		new TxtRotate(elements[i], JSON.parse(toRotate), period);
-	  }
-	}
-	var css = document.createElement("style");
-	css.type = "text/css";
-	css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #fbf7f0 }";
-	document.body.appendChild(css);
-  };
-
 const Main = () => {
 	const minWidth = 1440;
 	const [calculatedWidth, setCalculatedWidth] = useState("");
@@ -220,7 +164,6 @@ const Main = () => {
 	const [calculatedWidthIntermediate, setCalculatedWidthIntermediate] = useState("");
 	const [calculatedWidthIntermediateTotal, setCalculatedWidthIntermediateTotal] = useState("");
 	const [smallerWidth, setSmallerWidth] = useState(false);
-	const [smallerWidthText, setSmallerWidthText] = useState(false);
 	const [textOptionOneIndex, setTextOptionOneIndex] = useState(0);
 	const [textOptionTwoIndex, setTextOptionTwoIndex] = useState(0);
 
@@ -498,7 +441,6 @@ const Main = () => {
 			setCalculatedWidthIntermediate(`${maxWidth - 115}px`);
 			setCalculatedWidthIntermediateTotal(`${maxWidth - 96}px`);
 			setSmallerWidth(window.innerWidth > 950 ? true : false);
-			setSmallerWidthText(window.innerWidth > 1440 ? true : false);
 		};
 
 		updateCalculatedValues();
@@ -662,7 +604,6 @@ const Main = () => {
 									color: "#356760",
 									fontSize: 60, }}>Michael Kim</span>.
 							</Typography>
-							{smallerWidthText ? (
 								<Typography sx={{
 									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
 									fontWeight: 500,
@@ -681,38 +622,6 @@ const Main = () => {
 									style={{ fontWeight: 600, color: "#356760", fontSize: 40 }}
 								>{rotatingTextOptionsTwo[textOptionTwoIndex]}</span>.
 							</Typography>
-							) : (
-								<Typography sx={{
-									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-									fontWeight: 500,
-									color: "#190019",
-									fontSize: 32,
-									lineHeight: "60px",
-									verticalAlign: "text-bottom",
-									letterSpacing: "0.5px",
-									paddingTop: 4
-								}}>
-									
-									I'm a software developer and data scientist interested in deepening human understanding at the intersections of{" "}
-									<span
-										class="txt-rotate"
-										data-period="4000"
-										data-rotate='["software engineering",
-										"machine learning",
-										"web development",
-										"data analysis"]'
-										style={{ fontWeight: 600, color: "#356760", fontSize: 40 }}
-									/> and <span
-									class="txt-rotate"
-									data-period="4000"
-									data-rotate='["proteomics",
-									"bioinformatics",
-									"business",
-									"metabolomics"]'
-									style={{ fontWeight: 600, color: "#356760", fontSize: 40 }}
-								/>.
-							</Typography>
-							)}
 							<Box sx={{
 								display: "flex",
 								flexDirection: "row",
