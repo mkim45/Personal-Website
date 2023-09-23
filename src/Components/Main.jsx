@@ -740,7 +740,7 @@ const Main = () => {
 						/>
 					</Box>
 				</div>
-				<div style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "400px" }}>
+				<div style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "430px" }}>
 					<Box sx={{
 						display: "flex",
 						flexDirection: "row",
@@ -752,7 +752,7 @@ const Main = () => {
 						<div
 							style={{
 								borderLeft: "1.5px solid black",
-								height: "365px",
+								height: "395px",
 								paddingTop: "16px",
 								paddingBottom: "16px",
 								paddingRight: "16px",
@@ -764,7 +764,7 @@ const Main = () => {
 							justifyContent: "center",
 							alignItems: "center",
 							width: calculatedWidthIntermediate,
-							height: "400px",
+							height: "430px",
 							paddingRight: "16px"
 						}}>
 							<div
@@ -775,7 +775,7 @@ const Main = () => {
 								}}
 							/>
 							<Box sx={{
-								height: "365px",
+								height: "395px",
 								width: calculatedWidthIntermediate,
 								display: "flex",
 								justifyContent: "center",
@@ -817,7 +817,7 @@ const Main = () => {
 						<div
 							style={{
 								borderLeft: "1.5px solid black",
-								height: "365px",
+								height: "395px",
 								paddingTop: "16px",
 								paddingBottom: "16px",
 								paddingRight: "16px",

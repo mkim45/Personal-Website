@@ -66,8 +66,8 @@ export default function Work({calculatedWidth, calculatedHeight, smallerCalculat
 						onClose={handleClose}
 						PaperProps={{
 							sx: {
-							  minHeight: "50vh",
-							  maxHeight: "68vh",
+							  minHeight: "300px",
+							  maxHeight: "500px",
 							  backgroundColor: "#fbf7f0"
 							}
 						  }}
@@ -217,8 +217,8 @@ export default function Work({calculatedWidth, calculatedHeight, smallerCalculat
 						onClose={handleClose}
 						PaperProps={{
 							sx: {
-							  minHeight: "50vh",
-							  maxHeight: "68vh",
+							  minHeight: "300px",
+							  maxHeight: "500px",
 							  backgroundColor: "#fbf7f0"
 							}
 						  }}
@@ -372,8 +372,8 @@ export default function Work({calculatedWidth, calculatedHeight, smallerCalculat
 						onClose={handleClose}
 						PaperProps={{
 							sx: {
-							  minHeight: "50vh",
-							  maxHeight: "68vh",
+							  minHeight: "300px",
+							  maxHeight: "500px",
 							  backgroundColor: "#fbf7f0"
 							}
 						  }}
@@ -527,8 +527,8 @@ export default function Work({calculatedWidth, calculatedHeight, smallerCalculat
 						onClose={handleClose}
 						PaperProps={{
 							sx: {
-							  minHeight: "50vh",
-							  maxHeight: "68vh",
+							  minHeight: "300px",
+							  maxHeight: "500px",
 							  backgroundColor: "#fbf7f0"
 							}
 						  }}

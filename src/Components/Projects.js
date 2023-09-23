@@ -75,8 +75,8 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						onClose={handleClose}
 						PaperProps={{
 							sx: {
-							  minHeight: "60vh",
-							  maxHeight: "80vh",
+							  minHeight: "400px",
+							  maxHeight: "600px",
 							  backgroundColor: "#fbf7f0"
 							}
 						  }}
@@ -277,8 +277,8 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						onClose={handleClose}
 						PaperProps={{
 							sx: {
-							  minHeight: "60vh",
-							  maxHeight: "80vh",
+								minHeight: "400px",
+								maxHeight: "600px",
 							  backgroundColor: "#fbf7f0"
 							}
 						  }}
@@ -480,8 +480,8 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						onClose={handleClose}
 						PaperProps={{
 							sx: {
-							  minHeight: "60vh",
-							  maxHeight: "80vh",
+								minHeight: "400px",
+								maxHeight: "600px",
 							  backgroundColor: "#fbf7f0"
 							}
 						  }}
@@ -682,8 +682,8 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						onClose={handleClose}
 						PaperProps={{
 							sx: {
-							  minHeight: "60vh",
-							  maxHeight: "80vh",
+							  minHeight: "400px",
+							  maxHeight: "600px",
 							  backgroundColor: "#fbf7f0"
 							}
 						  }}
@@ -909,8 +909,8 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						onClose={handleClose}
 						PaperProps={{
 							sx: {
-							  minHeight: "60vh",
-							  maxHeight: "80vh",
+							  minHeight: "400px",
+							  maxHeight: "600px",
 							  backgroundColor: "#fbf7f0"
 							}
 						  }}
@@ -1116,8 +1116,8 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						onClose={handleClose}
 						PaperProps={{
 							sx: {
-							  minHeight: "60vh",
-							  maxHeight: "80vh",
+							  minHeight: "400px",
+							  maxHeight: "600px",
 							  backgroundColor: "#fbf7f0"
 							}
 						  }}
@@ -1323,8 +1323,8 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						onClose={handleClose}
 						PaperProps={{
 							sx: {
-							  minHeight: "60vh",
-							  maxHeight: "80vh",
+							  minHeight: "400px",
+							  maxHeight: "600px",
 							  backgroundColor: "#fbf7f0"
 							}
 						  }}
@@ -1527,8 +1527,8 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						onClose={handleClose}
 						PaperProps={{
 							sx: {
-							  minHeight: "60vh",
-							  maxHeight: "80vh",
+							  minHeight: "400px",
+							  maxHeight: "600px",
 							  backgroundColor: "#fbf7f0"
 							}
 						  }}
@@ -1754,8 +1754,8 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						onClose={handleClose}
 						PaperProps={{
 							sx: {
-							  minHeight: "60vh",
-							  maxHeight: "80vh",
+							  minHeight: "400px",
+							  maxHeight: "600px",
 							  backgroundColor: "#fbf7f0"
 							}
 						  }}
@@ -1962,8 +1962,8 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						onClose={handleClose}
 						PaperProps={{
 							sx: {
-							  minHeight: "60vh",
-							  maxHeight: "80vh",
+							  minHeight: "400px",
+							  maxHeight: "600px",
 							  backgroundColor: "#fbf7f0"
 							}
 						  }}
@@ -2169,8 +2169,8 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						onClose={handleClose}
 						PaperProps={{
 							sx: {
-							  minHeight: "60vh",
-							  maxHeight: "80vh",
+							  minHeight: "400px",
+							  maxHeight: "600px",
 							  backgroundColor: "#fbf7f0"
 							}
 						  }}
@@ -2376,8 +2376,8 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						onClose={handleClose}
 						PaperProps={{
 							sx: {
-							  minHeight: "60vh",
-							  maxHeight: "80vh",
+							  minHeight: "400px",
+							  maxHeight: "600px",
 							  backgroundColor: "#fbf7f0"
 							}
 						  }}
