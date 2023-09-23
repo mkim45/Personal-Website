@@ -220,7 +220,6 @@ const Main = () => {
 	const [calculatedWidthIntermediate, setCalculatedWidthIntermediate] = useState("");
 	const [calculatedWidthIntermediateTotal, setCalculatedWidthIntermediateTotal] = useState("");
 	const [smallerWidth, setSmallerWidth] = useState(false);
-	const [smallerWidthText, setSmallerWidthText] = useState(false);
 	const [textOptionOneIndex, setTextOptionOneIndex] = useState(0);
 	const [textOptionTwoIndex, setTextOptionTwoIndex] = useState(0);
 
@@ -469,22 +468,22 @@ const Main = () => {
 		const intervalOne = setInterval(() => {
 		  setTextOptionOneIndex((prevIndex) => (prevIndex + 1) % rotatingTextOptionsOne.length);
 		}, 3500);
-	  
+	
 		const intervalTwoDelay = setTimeout(() => {
 		  const intervalTwo = setInterval(() => {
 			setTextOptionTwoIndex((prevIndex) => (prevIndex + 1) % rotatingTextOptionsTwo.length);
 		  }, 3500);
-	  
+	
 		  return () => {
 			clearInterval(intervalTwo);
 		  };
-		}, 3500); 
-	  
+		}, 2500);
+	
 		return () => {
 		  clearInterval(intervalOne);
 		  clearTimeout(intervalTwoDelay);
 		};
-	  }, []);
+	}, []);	
 
 	useEffect(() => {
 		const updateCalculatedValues = () => {
@@ -498,7 +497,6 @@ const Main = () => {
 			setCalculatedWidthIntermediate(`${maxWidth - 115}px`);
 			setCalculatedWidthIntermediateTotal(`${maxWidth - 96}px`);
 			setSmallerWidth(window.innerWidth > 950 ? true : false);
-			setSmallerWidthText(window.innerWidth > 1440 ? true : false);
 		};
 
 		updateCalculatedValues();
@@ -662,7 +660,6 @@ const Main = () => {
 									color: "#356760",
 									fontSize: 60, }}>Michael Kim</span>.
 							</Typography>
-							{smallerWidthText ? (
 								<Typography sx={{
 									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
 									fontWeight: 500,
@@ -681,38 +678,6 @@ const Main = () => {
 									style={{ fontWeight: 600, color: "#356760", fontSize: 40 }}
 								>{rotatingTextOptionsTwo[textOptionTwoIndex]}</span>.
 							</Typography>
-							) : (
-								<Typography sx={{
-									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-									fontWeight: 500,
-									color: "#190019",
-									fontSize: 32,
-									lineHeight: "60px",
-									verticalAlign: "text-bottom",
-									letterSpacing: "0.5px",
-									paddingTop: 4
-								}}>
-									
-									I'm a software developer and data scientist interested in deepening human understanding at the intersections of{" "}
-									<span
-										class="txt-rotate"
-										data-period="4000"
-										data-rotate='["software engineering",
-										"machine learning",
-										"web development",
-										"data analysis"]'
-										style={{ fontWeight: 600, color: "#356760", fontSize: 40 }}
-									/> and <span
-									class="txt-rotate"
-									data-period="4000"
-									data-rotate='["proteomics",
-									"bioinformatics",
-									"business",
-									"metabolomics"]'
-									style={{ fontWeight: 600, color: "#356760", fontSize: 40 }}
-								/>.
-							</Typography>
-							)}
 							<Box sx={{
 								display: "flex",
 								flexDirection: "row",
@@ -724,7 +689,7 @@ const Main = () => {
 								<Box sx={{ paddingRight: "60px", paddingLeft: "60px" }}>
 									<ButtonStart link="https://github.com/mkim45" iconUrl={GitHubIcon} text="GitHub" hoverColor="#322F2A" color="#625F59" width="200px" fontSize="24px" imgDimension="40px"/>
 								</Box>
-								<ButtonStartResume link="https://drive.google.com/file/d/1EqZagkx3Eyem9r26fnkN_FKbYD2Hc-AH/view?usp=sharing" text="Resume" hoverColor="#8A9D8B" color="#9DBE9A" width="200px" fontSize="24px" imgDimension="40px"/>
+								<ButtonStartResume link="https://drive.google.com/file/d/1KsjGK1Vvj932qUB7lhl_Z5iZ-YAZgjHq/view?usp=sharing" text="Resume" hoverColor="#8A9D8B" color="#9DBE9A" width="200px" fontSize="24px" imgDimension="40px"/>
 							</Box>
 						</Box>
 					</Box>
@@ -1296,7 +1261,7 @@ const Main = () => {
 										<ButtonStart link="https://github.com/mkim45" iconUrl={GitHubIcon} text="GitHub" hoverColor="#322F2A" color="#625F59" width="250px" fontSize="30px" imgDimension="45px"/>
 									</Box>
 									<Box sx={{ paddingRight: "70px" }}>
-										<ButtonStartResume link="https://drive.google.com/file/d/1EqZagkx3Eyem9r26fnkN_FKbYD2Hc-AH/view?usp=sharing" text="Resume" hoverColor="#8A9D8B" color="#9DBE9A" width="250px" fontSize="30px" imgDimension="45px"/>
+										<ButtonStartResume link="https://drive.google.com/file/d/1KsjGK1Vvj932qUB7lhl_Z5iZ-YAZgjHq/view?usp=sharing" text="Resume" hoverColor="#8A9D8B" color="#9DBE9A" width="250px" fontSize="30px" imgDimension="45px"/>
 									</Box>
 									<ButtonStartEmail link="mailto:michaelkim2025.1@u.northwestern.edu" text="Email" hoverColor="#2F4858" color="#4D6A70" width="250px" fontSize="30px" imgDimension="45px"/>
 								</Box>
