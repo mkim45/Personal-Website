@@ -220,6 +220,7 @@ const Main = () => {
 	const [calculatedWidthIntermediate, setCalculatedWidthIntermediate] = useState("");
 	const [calculatedWidthIntermediateTotal, setCalculatedWidthIntermediateTotal] = useState("");
 	const [smallerWidth, setSmallerWidth] = useState(false);
+	const [smallerWidthText, setSmallerWidthText] = useState(false);
 	const [textOptionOneIndex, setTextOptionOneIndex] = useState(0);
 	const [textOptionTwoIndex, setTextOptionTwoIndex] = useState(0);
 
@@ -497,6 +498,7 @@ const Main = () => {
 			setCalculatedWidthIntermediate(`${maxWidth - 115}px`);
 			setCalculatedWidthIntermediateTotal(`${maxWidth - 96}px`);
 			setSmallerWidth(window.innerWidth > 950 ? true : false);
+			setSmallerWidthText(window.innerWidth > 1440 ? true : false);
 		};
 
 		updateCalculatedValues();
@@ -660,6 +662,7 @@ const Main = () => {
 									color: "#356760",
 									fontSize: 60, }}>Michael Kim</span>.
 							</Typography>
+							{smallerWidthText ? (
 								<Typography sx={{
 									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
 									fontWeight: 500,
@@ -678,6 +681,38 @@ const Main = () => {
 									style={{ fontWeight: 600, color: "#356760", fontSize: 40 }}
 								>{rotatingTextOptionsTwo[textOptionTwoIndex]}</span>.
 							</Typography>
+							) : (
+								<Typography sx={{
+									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
+									fontWeight: 500,
+									color: "#190019",
+									fontSize: 32,
+									lineHeight: "60px",
+									verticalAlign: "text-bottom",
+									letterSpacing: "0.5px",
+									paddingTop: 4
+								}}>
+									
+									I'm a software developer and data scientist interested in deepening human understanding at the intersections of{" "}
+									<span
+										class="txt-rotate"
+										data-period="4000"
+										data-rotate='["software engineering",
+										"machine learning",
+										"web development",
+										"data analysis"]'
+										style={{ fontWeight: 600, color: "#356760", fontSize: 40 }}
+									/> and <span
+									class="txt-rotate"
+									data-period="4000"
+									data-rotate='["proteomics",
+									"bioinformatics",
+									"business",
+									"metabolomics"]'
+									style={{ fontWeight: 600, color: "#356760", fontSize: 40 }}
+								/>.
+							</Typography>
+							)}
 							<Box sx={{
 								display: "flex",
 								flexDirection: "row",
