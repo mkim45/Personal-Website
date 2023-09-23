@@ -88,7 +88,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						}}>
 							<div
 								style={{
-									position: "sticky",
+									position: { sm: "static", md: "sticky" },
 									top: 0,
 									backgroundColor: "#fbf7f0",
 									zIndex: 3,
@@ -290,7 +290,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						}}>
 							<div
 								style={{
-									position: "sticky",
+									position: { sm: "static", md: "sticky" },
 									top: 0,
 									backgroundColor: "#fbf7f0",
 									zIndex: 3,
@@ -493,7 +493,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						}}>
 							<div
 								style={{
-									position: "sticky",
+									position: { sm: "static", md: "sticky" },
 									top: 0,
 									backgroundColor: "#fbf7f0",
 									zIndex: 3,
@@ -695,7 +695,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						}}>
 							<div
 								style={{
-									position: "sticky",
+									position: { sm: "static", md: "sticky" },
 									top: 0,
 									backgroundColor: "#fbf7f0",
 									zIndex: 3,
@@ -922,7 +922,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						}}>
 							<div
 								style={{
-									position: "sticky",
+									position: { sm: "static", md: "sticky" },
 									top: 0,
 									backgroundColor: "#fbf7f0",
 									zIndex: 3,
@@ -1129,7 +1129,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						}}>
 							<div
 								style={{
-									position: "sticky",
+									position: { sm: "static", md: "sticky" },
 									top: 0,
 									backgroundColor: "#fbf7f0",
 									zIndex: 3,
@@ -1336,7 +1336,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						}}>
 							<div
 								style={{
-									position: "sticky",
+									position: { sm: "static", md: "sticky" },
 									top: 0,
 									backgroundColor: "#fbf7f0",
 									zIndex: 3,
@@ -1540,7 +1540,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						}}>
 							<div
 								style={{
-									position: "sticky",
+									position: { sm: "static", md: "sticky" },
 									top: 0,
 									backgroundColor: "#fbf7f0",
 									zIndex: 3,
@@ -1767,7 +1767,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						}}>
 							<div
 								style={{
-									position: "sticky",
+									position: { sm: "static", md: "sticky" },
 									top: 0,
 									backgroundColor: "#fbf7f0",
 									zIndex: 3,
@@ -1975,7 +1975,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						}}>
 							<div
 								style={{
-									position: "sticky",
+									position: { sm: "static", md: "sticky" },
 									top: 0,
 									backgroundColor: "#fbf7f0",
 									zIndex: 3,
@@ -2182,7 +2182,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						}}>
 							<div
 								style={{
-									position: "sticky",
+									position: { sm: "static", md: "sticky" },
 									top: 0,
 									backgroundColor: "#fbf7f0",
 									zIndex: 3,
@@ -2389,7 +2389,7 @@ export default function Projects({calculatedWidth, calculatedHeight, smallerCalc
 						}}>
 							<div
 								style={{
-									position: "sticky",
+									position: { sm: "static", md: "sticky" },
 									top: 0,
 									backgroundColor: "#fbf7f0",
 									zIndex: 3,
