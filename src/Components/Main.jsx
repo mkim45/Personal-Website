@@ -246,7 +246,7 @@ const Main = () => {
 									maxWidth: "100%",
 									display: "flex",
 									textAlign: windowWidth < 1075 ? "center" : "start",
-									justifyContent: windowWidth < 1075 ? "center" : "normal",
+									justifyContent: "center",
 									flexDirection: "column"
 								}}
 							>
