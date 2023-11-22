@@ -5,13 +5,15 @@ import Projects from "./Projects";
 import Technologies from "./Technologies";
 import Work from "./Work";
 import { styled } from "@mui/material/styles";
+import "./Main.css";
 
-import Portrait from "./Michael_Kim.jpg";
+import Portrait from "./Michael_Kim.png";
+import AboutMe from "./AboutMe.png";
 import Yelp from "./Yelp.png";
 import Battery from "./Battery.png";
 import Chess from "./Chess.png";
 import Proteins1 from "./Proteins1.png";
-import Proteins2 from "./Proteins2.jpeg";
+import Proteins2 from "./Proteins2.png";
 import Proteins3 from "./Proteins3.png";
 import Proteins4 from "./Proteins4.png";
 import Proteins5 from "./Proteins5.png";
@@ -61,1176 +63,3298 @@ import ProteomicsWork from "./Proteomics.jpg";
 import BatteryWork from "./BatteryWork.png";
 import InboundWork from "./Inbound.png";
 import BastiatWork from "./BastiatPartners.jpg";
+import NorthwesternWork from "./NorthwesternWork.jpg";
 
-import GitHubIcon from "./GitHubIcon.png";
-import LinkedInIcon from "./LinkedIn.png";
+import GitHubIcon from "./GitHub.png";
+import LinkedInIcon from "./LinkedInLogo.png";
 import DownloadIcon from '@mui/icons-material/Download';
 import EmailIcon from '@mui/icons-material/Email';
 
 import HomeLogo from "./Logo.png";
 
 import Button from "@mui/material/Button";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
+import { ArrowForward, GitHub } from "@mui/icons-material";
 
 const ImgNoMargin = styled("img")({
-	display: "block",
 	maxWidth: "100%",
 	maxHeight: "100%",
 });
 
-const CustomButton = styled(Button)(({ buttonColor, hoverColor, width }) => ({
-	backgroundColor: buttonColor,
-	color: "#fff", 
-	borderRadius: "10px", 
-	display: "flex",
-	alignItems: "center",
-	justifyContent: "space-around",
-	padding: "8px 16px", 
-	width: width, 
-	cursor: "pointer",
-	textTransform: "none",
-	textDecoration: "none",
-	"&:hover": {
-		backgroundColor: hoverColor, 
-	},
-}));
-
-function ButtonStart({ text, link, iconUrl, color, hoverColor, width, fontSize, imgDimension }) {
-	return (
-	  <Link href={link} target="_blank" rel="noopener noreferrer" underline="none">
-		<CustomButton buttonColor={color} hoverColor={hoverColor} width={width}>
-		  <Typography sx={{
-			fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-			fontWeight: 500,
-			color: "#fff",
-			fontSize: fontSize,
-			verticalAlign: "text-bottom",
-		  }}>
-			{text}
-		  </Typography>
-		  <img src={iconUrl} alt={text} style={{ width: imgDimension, height: imgDimension }} />
-		</CustomButton>
-	  </Link>
-	);
-}
-
-function ButtonStartResume({ text, link, color, hoverColor, width, fontSize, imgDimension }) {
-	return (
-	  <Link href={link} target="_blank" rel="noopener noreferrer" underline="none">
-		<CustomButton buttonColor={color} hoverColor={hoverColor} width={width}>
-		  <Typography sx={{
-			fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-			fontWeight: 500,
-			color: "#fff",
-			fontSize: fontSize,
-			verticalAlign: "text-bottom",
-		  }}>
-			{text}
-		  </Typography>
-		  <DownloadIcon style={{ width: imgDimension, height: imgDimension, color: "#fff" }} />
-		</CustomButton>
-	  </Link>
-	);
-}
-
-function ButtonStartEmail({ text, link, color, hoverColor, width, fontSize, imgDimension }) {
-	return (
-	  <Link href={link} target="_blank" rel="noopener noreferrer" underline="none">
-		<CustomButton buttonColor={color} hoverColor={hoverColor} width={width}>
-		  <Typography sx={{
-			fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-			fontWeight: 500,
-			color: "#fff",
-			fontSize: fontSize,
-			verticalAlign: "text-bottom",
-		  }}>
-			{text}
-		  </Typography>
-		  <EmailIcon style={{ width: imgDimension, height: imgDimension, color: "#fff" }} />
-		</CustomButton>
-	  </Link>
-	);
-}
+var TxtRotate = function(el, toRotate, period) {
+	this.toRotate = toRotate;
+	this.el = el;
+	this.loopNum = 0;
+	this.period = parseInt(period, 100) || 4000;
+	this.txt = '';
+	this.tick();
+	this.isDeleting = false;
+  };
+  
+  TxtRotate.prototype.tick = function() {
+	var i = this.loopNum % this.toRotate.length;
+	var fullTxt = this.toRotate[i];
+  
+	if (this.isDeleting) {
+	  this.txt = fullTxt.substring(0, this.txt.length - 1);
+	} else {
+	  this.txt = fullTxt.substring(0, this.txt.length + 1);
+	}
+  
+	this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+  
+	var that = this;
+	var delta = 150 - Math.random() * 100;
+  
+	if (this.isDeleting) { delta /= 2; }
+  
+	if (!this.isDeleting && this.txt === fullTxt) {
+	  delta = this.period;
+	  this.isDeleting = true;
+	} else if (this.isDeleting && this.txt === '') {
+	  this.isDeleting = false;
+	  this.loopNum++;
+	  delta = 1000;
+	}
+  
+	setTimeout(function() {
+	  that.tick();
+	}, delta);
+  };
+  
+  window.onload = function() {
+	var elements = document.getElementsByClassName('txt-rotate');
+	for (var i=0; i<elements.length; i++) {
+	  var toRotate = elements[i].getAttribute('data-rotate');
+	  var period = elements[i].getAttribute('data-period');
+	  if (toRotate) {
+		new TxtRotate(elements[i], JSON.parse(toRotate), period);
+	  }
+	}
+	// INJECT CSS
+	var css = document.createElement("style");
+	css.type = "text/css";
+	css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #1b4332 }";
+	document.body.appendChild(css);
+  };
 
 const Main = () => {
-	const minWidth = 1440;
-	const [calculatedWidth, setCalculatedWidth] = useState("");
-	const [smallerCalculatedWidth, setSmallerCalculatedWidth] = useState("");
-	const [calculatedHeight, setCalculatedHeight] = useState("");
-	const [calculatedWidthTechnologies, setCalculatedWidthTechnologies] = useState("");
-	const [smallerCalculatedWidthTechnologies, setSmallerCalculatedWidthTechnologies] = useState("");
-	const [calculatedHeightTechnologies, setCalculatedHeightTechnologies] = useState("");
-	const [calculatedWidthIntermediate, setCalculatedWidthIntermediate] = useState("");
-	const [calculatedWidthIntermediateTotal, setCalculatedWidthIntermediateTotal] = useState("");
-	const [smallerWidth, setSmallerWidth] = useState(false);
-	const [textOptionOneIndex, setTextOptionOneIndex] = useState(0);
-	const [textOptionTwoIndex, setTextOptionTwoIndex] = useState(0);
-
-	const rotatingTextOptionsOne = [
-		"software engineering",
-		"machine learning",
-		"web development",
-		"data analysis"
-	]
-
-	const rotatingTextOptionsTwo = [
-		"proteomics",
-		"bioinformatics",
-		"business",
-		"metabolomics"
-	]
-
-	const homeRef = useRef(null);
-	const aboutRef = useRef(null);
-	const projectsRef = useRef(null);
-	const experiencesRef = useRef(null);
-	const contactRef = useRef(null);
-	const APP_BAR_HEIGHT = 93;
-
-	const scrollToHome = () => {
-		const homeEl = homeRef.current;
-		 
-		let currentY = window.scrollY;
-		const targetY = homeEl.offsetTop - APP_BAR_HEIGHT;
-		
-		const increment = 100; 
-		
-		function scrollStep() {
-		  let smallerIncrement = 0;
-		  let nextY = currentY + increment;
-		  if (nextY > targetY) {
-			smallerIncrement = targetY - currentY;
-		  } 
-		  if (nextY < targetY) {
-			smallerIncrement = currentY - targetY;
-		  }
-		  if (currentY < targetY) {
-			if (smallerIncrement > 0) {
-				window.scroll(0, currentY + smallerIncrement);
-				currentY += smallerIncrement;
-				requestAnimationFrame(scrollStep);
-			} else {
-				window.scroll(0, currentY + increment);
-				currentY += increment;
-				requestAnimationFrame(scrollStep);
-			}
-		  }
-		  if (currentY > targetY) {
-			if (smallerIncrement > 0) {
-				window.scroll(0, currentY - smallerIncrement);
-				currentY -= smallerIncrement;
-				requestAnimationFrame(scrollStep);
-			} else {
-				window.scroll(0, currentY - increment);
-				currentY -= increment;
-				requestAnimationFrame(scrollStep);
-			}
-		  }
-		}
-		
-		requestAnimationFrame(scrollStep);
-	}
-
-	const scrollToAbout = () => {
-		const aboutEl = aboutRef.current;
-		 
-		let currentY = window.scrollY;
-		const targetY = aboutEl.offsetTop - APP_BAR_HEIGHT;
-		
-		const increment = 100; 
-		
-		function scrollStep() {
-		  let smallerIncrement = 0;
-		  let nextY = currentY + increment;
-		  if (nextY > targetY) {
-			smallerIncrement = targetY - currentY;
-		  } 
-		  if (nextY < targetY) {
-			smallerIncrement = currentY - targetY;
-		  }
-		  if (currentY < targetY) {
-			if (smallerIncrement > 0) {
-				window.scroll(0, currentY + smallerIncrement);
-				currentY += smallerIncrement;
-				requestAnimationFrame(scrollStep);
-			} else {
-				window.scroll(0, currentY + increment);
-				currentY += increment;
-				requestAnimationFrame(scrollStep);
-			}
-		  }
-		  if (currentY > targetY) {
-			if (smallerIncrement > 0) {
-				window.scroll(0, currentY - smallerIncrement);
-				currentY -= smallerIncrement;
-				requestAnimationFrame(scrollStep);
-			} else {
-				window.scroll(0, currentY - increment);
-				currentY -= increment;
-				requestAnimationFrame(scrollStep);
-			}
-		  }
-		}
-		
-		requestAnimationFrame(scrollStep);
-	}
-
-	const scrollToProjects = () => {
-		const projectsEl = projectsRef.current;
-		 
-		let currentY = window.scrollY;
-		const targetY = projectsEl.offsetTop - APP_BAR_HEIGHT;
-		
-		const increment = 100; 
-		
-		function scrollStep() {
-		  let smallerIncrement = 0;
-		  let nextY = currentY + increment;
-		  if (nextY > targetY) {
-			smallerIncrement = targetY - currentY;
-		  } 
-		  if (nextY < targetY) {
-			smallerIncrement = currentY - targetY;
-		  }
-		  if (currentY < targetY) {
-			if (smallerIncrement > 0) {
-				window.scroll(0, currentY + smallerIncrement);
-				currentY += smallerIncrement;
-				requestAnimationFrame(scrollStep);
-			} else {
-				window.scroll(0, currentY + increment);
-				currentY += increment;
-				requestAnimationFrame(scrollStep);
-			}
-		  }
-		  if (currentY > targetY) {
-			if (smallerIncrement > 0) {
-				window.scroll(0, currentY - smallerIncrement);
-				currentY -= smallerIncrement;
-				requestAnimationFrame(scrollStep);
-			} else {
-				window.scroll(0, currentY - increment);
-				currentY -= increment;
-				requestAnimationFrame(scrollStep);
-			}
-		  }
-		}
-		
-		requestAnimationFrame(scrollStep);
-	}
-
-	const scrollToExperiences = () => {
-		const experiencesEl = experiencesRef.current;
-		 
-		let currentY = window.scrollY;
-		const targetY = experiencesEl.offsetTop - APP_BAR_HEIGHT;
-		
-		const increment = 100; 
-		
-		function scrollStep() {
-		  let smallerIncrement = 0;
-		  let nextY = currentY + increment;
-		  if (nextY > targetY) {
-			smallerIncrement = targetY - currentY;
-		  } 
-		  if (nextY < targetY) {
-			smallerIncrement = currentY - targetY;
-		  }
-		  if (currentY < targetY) {
-			if (smallerIncrement > 0) {
-				window.scroll(0, currentY + smallerIncrement);
-				currentY += smallerIncrement;
-				requestAnimationFrame(scrollStep);
-			} else {
-				window.scroll(0, currentY + increment);
-				currentY += increment;
-				requestAnimationFrame(scrollStep);
-			}
-		  }
-		  if (currentY > targetY) {
-			if (smallerIncrement > 0) {
-				window.scroll(0, currentY - smallerIncrement);
-				currentY -= smallerIncrement;
-				requestAnimationFrame(scrollStep);
-			} else {
-				window.scroll(0, currentY - increment);
-				currentY -= increment;
-				requestAnimationFrame(scrollStep);
-			}
-		  }
-		}
-		
-		requestAnimationFrame(scrollStep);
-	}
-
-	const scrollToContact = () => {
-		const contactEl = contactRef.current;
-		 
-		let currentY = window.scrollY;
-		const targetY = contactEl.offsetTop - APP_BAR_HEIGHT;
-		
-		const increment = 100; 
-		
-		function scrollStep() {
-		  let smallerIncrement = 0;
-		  let nextY = currentY + increment;
-		  if (nextY > targetY) {
-			smallerIncrement = targetY - currentY;
-		  } 
-		  if (nextY < targetY) {
-			smallerIncrement = currentY - targetY;
-		  }
-		  if (currentY < targetY) {
-			if (smallerIncrement > 0) {
-				window.scroll(0, currentY + smallerIncrement);
-				currentY += smallerIncrement;
-				requestAnimationFrame(scrollStep);
-			} else {
-				window.scroll(0, currentY + increment);
-				currentY += increment;
-				requestAnimationFrame(scrollStep);
-			}
-		  }
-		  if (currentY > targetY) {
-			if (smallerIncrement > 0) {
-				window.scroll(0, currentY - smallerIncrement);
-				currentY -= smallerIncrement;
-				requestAnimationFrame(scrollStep);
-			} else {
-				window.scroll(0, currentY - increment);
-				currentY -= increment;
-				requestAnimationFrame(scrollStep);
-			}
-		  }
-		}
-		
-		requestAnimationFrame(scrollStep);
-	}
+	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
 	useEffect(() => {
-		const intervalOne = setInterval(() => {
-		  setTextOptionOneIndex((prevIndex) => (prevIndex + 1) % rotatingTextOptionsOne.length);
-		}, 3500);
-	
-		const intervalTwoDelay = setTimeout(() => {
-		  const intervalTwo = setInterval(() => {
-			setTextOptionTwoIndex((prevIndex) => (prevIndex + 1) % rotatingTextOptionsTwo.length);
-		  }, 3500);
-	
-		  return () => {
-			clearInterval(intervalTwo);
-		  };
-		}, 2500);
-	
-		return () => {
-		  clearInterval(intervalOne);
-		  clearTimeout(intervalTwoDelay);
-		};
-	}, []);	
-
-	useEffect(() => {
-		const updateCalculatedValues = () => {
-			const maxWidth = Math.max(window.innerWidth, minWidth);
-			setCalculatedWidth(`${maxWidth - 231.5}px`);
-			setSmallerCalculatedWidth(`${(maxWidth - 231.5) / 4}px`);
-			setCalculatedHeight(`${((maxWidth - 231.5) / 4) + 35}px`);
-			setCalculatedWidthTechnologies(`${maxWidth - 399}px`);
-			setSmallerCalculatedWidthTechnologies(`${(maxWidth - 399) / 9}px`);
-			setCalculatedHeightTechnologies(`${((maxWidth - 399) / 9) + 35}px`);
-			setCalculatedWidthIntermediate(`${maxWidth - 115}px`);
-			setCalculatedWidthIntermediateTotal(`${maxWidth - 96}px`);
-			setSmallerWidth(window.innerWidth > 950 ? true : false);
+		const handleResize = () => {
+		setWindowWidth(window.innerWidth);
 		};
 
-		updateCalculatedValues();
-		window.addEventListener("resize", updateCalculatedValues);
+		window.addEventListener('resize', handleResize);
 
 		return () => {
-			window.removeEventListener("resize", updateCalculatedValues);
+		window.removeEventListener('resize', handleResize);
 		};
-	}, [minWidth]);
+	}, []);
 
     return (
-        <div 
-			style={{
-				backgroundColor: "#fbf7f0",
-				width: "100vw",
-				height: "100vh",
-				minWidth: "1440px"
-			}}>
-			<CssBaseline />
-			<style>
-				{`
-					body {
-						margin: 0;
-						background-color: #fbf7f0;
-					}
-				`}
-			</style>
-            <AppBar
-				position="fixed"
-				sx={{ zIndex: 2, 
-					  height: "94.5px",
-					  boxShadow: "none",
-					  backgroundColor: "#fbf7f0"
+		<div className="view">
+			<div 
+				style={{
+					backgroundColor: "#f0fff1",
+					minWidth: "calc(100vw - 40px)",
+					minHeight: "calc(100vh - 40px)",
+					position: "relative",
+					overflow: "hidden"
 				}}
 			>
-				<Container maxWidth={(Math.max(window.innerWidth, minWidth) - 32) + "px"}>
-					<Toolbar sx={{ justifyContent: "space-between", height: "93px" }}>
-						<Box sx={{ display: "flex", pt: 3, pb: 2, cursor: "pointer" }}>
-							<a onClick={scrollToHome}>
-								<img src={HomeLogo} width={"200px"} alt='Logo' />
-							</a>
-						</Box>
-						{smallerWidth && (
-       							<>	
-						<Stack
-							sx={{ flexGrow: 0, display: { xs: "none", md: "flex" }, pt: 4, pb: 3 }}
-							direction='row'
-							>
-								<a onClick={scrollToAbout}>
-								<Typography
-									variant='body3'
-									noWrap
-									sx={{
-										mr: 8,
-										display: "flex",
-										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-										fontWeight: 500,
-										color: "#190019",
-										textDecoration: "none",
-										flexGrow: 1,
-										cursor: "pointer",
-									}}>
-									ABOUT ME
-								</Typography>
-								</a>
-								<a onClick={scrollToProjects}>
-								<Typography
-									variant='body3'
-									noWrap
-									sx={{
-										mr: 8,
-										display: "flex",
-										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-										fontWeight: 500,
-										color: "#190019",
-										textDecoration: "none",
-										flexGrow: 1,
-										cursor: "pointer",
-									}}>
-									PROJECTS
-								</Typography>
-								</a>
-								<a onClick={scrollToExperiences}>
-								<Typography
-									variant='body3'
-									noWrap
-									sx={{
-										mr: 8,
-										display: "flex",
-										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-										fontWeight: 500,
-										color: "#190019",
-										textDecoration: "none",
-										flexGrow: 1,
-										cursor: "pointer",
-									}}>
-									EXPERIENCES
-								</Typography>
-								</a>
-								<a onClick={scrollToContact}>
-								<Typography
-									variant='body3'
-									noWrap
-									sx={{
-										display: "flex",
-										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-										fontWeight: 500,
-										color: "#190019",
-										textDecoration: "none",
-										flexGrow: 1,
-										cursor: "pointer",
-									}}>
-									CONTACT ME
-								</Typography>
-								</a>
-						</Stack>
-						</>)}
-					</Toolbar>
+				<div
+					style={{
+						zIndex: 10000,
+						display: "flex",
+						justifyContent: "space-between",
+						alignItems: "center",
+						width: "calc(100vw - 160px)",
+						backgroundColor: "#f0fff1",
+						padding: "15px 60px 15px",
+						position: "fixed"
+					}}
+				>
+					<a href="/">
+						<img src={HomeLogo} width={"60px"} alt='Logo' />
+					</a>
 					<div
-                    style={{
-                        borderBottom: "1.5px solid black",
-                        marginLeft: 24,
-                        marginRight: 24,
-                    }}
-					/>
-				</Container>
-			</AppBar>
-			<Container maxWidth={(Math.max(window.innerWidth, minWidth) - 32) + "px"} style={{ paddingTop: "96px" }}>
-				<div style={{ paddingTop: "40px", paddingBottom: "40px", height: "640px", display: "flex", alignItems: "center", width: "100%", justifyContent: "space-evenly" }} id="home" ref={homeRef}>
-					<Box sx={{
-						width: "100%",
-						display: "flex",
-						flexDirection: "row",
-						alignItems: "center",
-						justifyContent: "space-evenly"
-					}}>
-						<Box sx={{ paddingRight: 6 }}>
+						style={{
+							display: "flex",
+							alignItems: "center"
+						}}
+					>	
+						<a href="https://github.com/mkim45" target="_blank" rel="noopener noreferrer" underline="none">
 							<ImgNoMargin
-								alt="portrait"
-								src={Portrait}
-								sx={{ height: "525px", width: "350px" }}
+								alt="githubtop"
+								src={GitHubIcon}
+								sx={{ height: "40px", width: "40px", paddingRight: "20px" }}
 							/>
-						</Box>
-						<Box sx={{
-							display: "flex",
-							flexDirection: "column",
-							justifyContent: "center",
-							width: "850px",
-							alignItems: "baseline"
-						}}>
-							<Typography sx={{
-								fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-								fontWeight: 500,
-								color: "#190019",
-								fontSize: 32,
-								lineHeight: "1",
-								verticalAlign: "text-bottom",
-								letterSpacing: "0.5px"
-							}}>
-								Hi, my name is <span style={{ fontWeight: 600,
-									color: "#356760",
-									fontSize: 60, }}>Michael Kim</span>.
-							</Typography>
-								<Typography sx={{
-									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-									fontWeight: 500,
-									color: "#190019",
-									fontSize: 32,
-									lineHeight: "60px",
-									verticalAlign: "text-bottom",
-									letterSpacing: "0.5px",
-									paddingTop: 4
-								}}>
-									
-									I'm a software developer and data scientist interested in deepening human understanding at the intersections of{" "}
-									<span
-										style={{ fontWeight: 600, color: "#356760", fontSize: 40 }}
-									>{rotatingTextOptionsOne[textOptionOneIndex]}</span> and <span
-									style={{ fontWeight: 600, color: "#356760", fontSize: 40 }}
-								>{rotatingTextOptionsTwo[textOptionTwoIndex]}</span>.
-							</Typography>
-							<Box sx={{
-								display: "flex",
-								flexDirection: "row",
-								width: "90%",
-								paddingTop: 8,
-								justifyContent: "start"
-							}}> 
-								<ButtonStart link="https://www.linkedin.com/in/michael-kim-nu/" iconUrl={LinkedInIcon} text="LinkedIn" color="#0A66C2" hoverColor="#0754a6" width="200px" fontSize="24px" imgDimension="40px"/>
-								<Box sx={{ paddingRight: "60px", paddingLeft: "60px" }}>
-									<ButtonStart link="https://github.com/mkim45" iconUrl={GitHubIcon} text="GitHub" hoverColor="#322F2A" color="#625F59" width="200px" fontSize="24px" imgDimension="40px"/>
-								</Box>
-								<ButtonStartResume link="https://drive.google.com/file/d/1KsjGK1Vvj932qUB7lhl_Z5iZ-YAZgjHq/view?usp=sharing" text="Resume" hoverColor="#8A9D8B" color="#9DBE9A" width="200px" fontSize="24px" imgDimension="40px"/>
-							</Box>
-						</Box>
-					</Box>
+						</a>
+						<a href="https://www.linkedin.com/in/michael-kim-nu/" target="_blank" rel="noopener noreferrer" underline="none">
+							<ImgNoMargin
+								alt="linkedintop"
+								src={LinkedInIcon}
+								sx={{ height: "40px", width: "40px" }}
+							/>
+						</a>
+					</div>
 				</div>
-				<div style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "300px" }} id="about" ref={aboutRef}>
-					<Box sx={{
-						display: "flex",
-						flexDirection: "row",
-						alignItems: "center",
-						justifyContent: "start",
-						width: calculatedWidthIntermediateTotal,
-						height: "100%"
-					}}>
-						<div
-							style={{
-								borderLeft: "1.5px solid black",
-								height: "265px",
-								paddingTop: "16px",
-								paddingBottom: "16px",
-								paddingRight: "16px",
-							}}
-						/>
-						<Box sx={{
+				<div 
+					style={{ 
+						marginLeft: "60px",
+						marginRight: "60px"
+					}}
+				>
+					<div
+						style={{
+							minHeight: "100%",
+							paddingTop: windowWidth >= 1075 ? "69px" : "89px",
 							display: "flex",
-							flexDirection: "column",
-							justifyContent: "center",
 							alignItems: "center",
-							width: calculatedWidthIntermediate,
-							height: "300px",
-							paddingRight: "16px"
-						}}>
+							overflow: "hidden",
+							justifyContent: "space-between",
+							maxWidth: "1200px",
+							margin: "0px auto",
+							flexDirection: windowWidth < 1075 ? "column" : "row"
+						}}
+					>
+						{windowWidth < 1075 ? (
 							<div
 								style={{
-									borderTop: "1.5px solid black",
-									paddingBottom: "16px",
-									width: calculatedWidthIntermediate
+									display: "flex", justifyContent: "center"
 								}}
-							/>
-							<Box sx={{
-								height: "265px",
-								width: calculatedWidthIntermediate,
-								display: "flex",
-								justifyContent: "center",
-								alignItems: "center",
-							}}>
-								<Typography sx={{
-									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-									fontWeight: 600,
-									color: "#356760",
-									fontSize: 70,
-									paddingLeft: 1.25,
-									lineHeight: "1",
-									letterSpacing: "0.5px"
-								}}>
-									ABOUT ME
-								</Typography>
-							</Box>
-							<div
-								style={{
-									borderBottom: "1.5px solid black",
-									paddingTop: "16px",
-									width: calculatedWidthIntermediate
-								}}
-							/>
-						</Box>
+							>
+								<ImgNoMargin
+									alt="portrait"
+									src={Portrait}
+									sx={{ height: "350px", width: "233.33px" }}
+								/>
+							</div>
+						) : null}
 						<div
 							style={{
-								borderLeft: "1.5px solid black",
-								height: "265px",
-								paddingTop: "16px",
-								paddingBottom: "16px",
-								paddingRight: "16px",
+								marginTop: windowWidth < 1075 ? "30px" : "0px"
 							}}
-						/>
-					</Box>
-				</div>
-				<div style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "430px" }}>
-					<Box sx={{
-						display: "flex",
-						flexDirection: "row",
-						alignItems: "center",
-						justifyContent: "start",
-						width: calculatedWidthIntermediateTotal,
-						height: "100%"
-					}}>
-						<div
-							style={{
-								borderLeft: "1.5px solid black",
-								height: "395px",
-								paddingTop: "16px",
-								paddingBottom: "16px",
-								paddingRight: "16px",
-							}}
-						/>
-						<Box sx={{
-							display: "flex",
-							flexDirection: "column",
-							justifyContent: "center",
-							alignItems: "center",
-							width: calculatedWidthIntermediate,
-							height: "430px",
-							paddingRight: "16px"
-						}}>
+						>
 							<div
 								style={{
-									borderTop: "1.5px solid transparent",
-									paddingBottom: "16px",
-									width: calculatedWidthIntermediate
+									minHeight: "25vh",
+									maxWidth: "100%",
+									display: "flex",
+									textAlign: windowWidth < 1075 ? "center" : "start",
+									justifyContent: windowWidth < 1075 ? "center" : "normal",
+									flexDirection: "column"
 								}}
-							/>
-							<Box sx={{
-								height: "395px",
-								width: calculatedWidthIntermediate,
-								display: "flex",
-								justifyContent: "center",
-								alignItems: "center",
-								paddingRight: "2.5%",
-								paddingLeft: "2.5%"
-							}}>
-								<Typography
-								sx={{
-									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-									fontWeight: 500,
-									color: "#190019",
-									fontSize: "20px",
-									px: "25px",
-									py: "5px"
-								}}
+							>
+								<h1
+									style={{
+										fontSize: "72px",
+										fontFamily: "Bitter, serif",
+										fontWeight: "normal",
+										color: "#1b4332",
+										margin: "0px"
+									}}
 								>
-									I’m a third-year undergraduate student at Northwestern University pursuing a Bachelor’s degree in Biological Sciences and Data Science, 
-									with plans to obtain a Master’s degree in Computer Science through a four-year BA/MS program. While initially exploring finance through 
-									investment banking and venture capital internships, I found myself much more passionate about the transformative, far-reaching work of 
-									tech-enabled companies I was actually advising and sourcing. After discovering this, I explored software development, machine learning, and data 
-									science to begin making tangible impacts, specifically in the field of proteomics and biology at large.<br/><br/>
-									
-									I am currently working as an Informatics and Software Engineering Intern at the Northwestern Proteomics Center of Excellence, an Analyst Leadership 
-									Extern at Battery Ventures, and the Technology Director for Northwestern’s Science Olympiad organization. In my free time, I enjoy playing tennis, 
-									learning new languages, exploring outdoors, and reading books on genomics and human behavior.<br/><br/>
-
-									Keep scrolling to learn more about me and what I’m passionate about working on! 
-							</Typography>
-							</Box>
+									Hi, my<br></br>name is <b>Michael</b><span style={{ color: "#52b788" }}>.</span>
+								</h1>
+								<p
+									style={{
+										fontSize: "24px",
+										maxWidth: "525px",
+										marginTop: "30px",
+										lineHeight: 1.65,
+										color: "#1b4332"
+									}}
+								>
+									I'm a <b>software engineer</b> and <b>data scientist</b> interested in improving human experiences through&nbsp;
+									<span class="txt-rotate"
+										style={{
+											fontWeight: "bold",
+											color: "#1b4332"
+										}} 
+										data-period="1500"
+										data-rotate='["multiomics.&nbsp;", "machine learning.&nbsp;", "startups.&nbsp;", "software development.&nbsp;", "bioinformatics.&nbsp;"]'>
+									</span>
+								</p>
+							</div>
+						</div>
+						{windowWidth >= 1075 ? (
 							<div
 								style={{
-									borderBottom: "1.5px solid transparent",
-									paddingTop: "16px",
-									width: calculatedWidthIntermediate
+									marginTop: "60px",
 								}}
-							/>
-						</Box>
+							>
+								<ImgNoMargin
+									alt="portrait"
+									src={Portrait}
+									sx={{ height: "525px", width: "350px" }}
+								/>
+							</div>
+						) : null}
+					</div>
+					{windowWidth >= 1075 ? (
 						<div
 							style={{
-								borderLeft: "1.5px solid black",
-								height: "395px",
-								paddingTop: "16px",
-								paddingBottom: "16px",
-								paddingRight: "16px",
-							}}
-						/>
-					</Box>
-				</div>
-				<div style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "300px" }} id="projects" ref={projectsRef}>
-					<Box sx={{
-						display: "flex",
-						flexDirection: "row",
-						alignItems: "center",
-						justifyContent: "start",
-						width: calculatedWidthIntermediateTotal,
-						height: "100%"
-					}}>
-						<div
-							style={{
-								borderLeft: "1.5px solid black",
-								height: "265px",
-								paddingTop: "16px",
-								paddingBottom: "16px",
-								paddingRight: "16px",
-							}}
-						/>
-						<Box sx={{
-							display: "flex",
-							flexDirection: "column",
-							justifyContent: "center",
-							alignItems: "center",
-							width: calculatedWidthIntermediate,
-							height: "300px",
-							paddingRight: "16px"
-						}}>
-							<div
-								style={{
-									borderTop: "1.5px solid black",
-									paddingBottom: "16px",
-									width: calculatedWidthIntermediate
-								}}
-							/>
-							<Box sx={{
-								height: "265px",
-								width: calculatedWidthIntermediate,
-								display: "flex",
-								justifyContent: "center",
-								alignItems: "center",
-							}}>
-								<Typography sx={{
-									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-									fontWeight: 600,
-									color: "#356760",
-									fontSize: 70,
-									paddingLeft: 1.25,
-									lineHeight: "1",
-									letterSpacing: "0.5px"
-								}}>
-									WHAT I'VE WORKED ON
-								</Typography>
-							</Box>
-							<div
-								style={{
-									borderBottom: "1.5px solid black",
-									paddingTop: "16px",
-									width: calculatedWidthIntermediate
-								}}
-							/>
-						</Box>
-						<div
-							style={{
-								borderLeft: "1.5px solid black",
-								height: "265px",
-								paddingTop: "16px",
-								paddingBottom: "16px",
-								paddingRight: "16px",
-							}}
-						/>
-					</Box>
-				</div>
-				<Projects
-					calculatedWidth={calculatedWidth}
-					calculatedHeight={calculatedHeight}
-					smallerCalculatedWidth={smallerCalculatedWidth}
-					Images={[Proteins3, Proteins2, Proteins4, Proteins1, Battery, Proteins5, SciOly, Science1, Wine, Uber, Chess, Yelp]}
-				/>
-				<div style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "300px" }}>
-					<Box sx={{
-						display: "flex",
-						flexDirection: "row",
-						alignItems: "center",
-						justifyContent: "start",
-						width: calculatedWidthIntermediateTotal,
-						height: "100%"
-					}}>
-						<div
-							style={{
-								borderLeft: "1.5px solid black",
-								height: "265px",
-								paddingTop: "16px",
-								paddingBottom: "16px",
-								paddingRight: "16px",
-							}}
-						/>
-						<Box sx={{
-							display: "flex",
-							flexDirection: "column",
-							justifyContent: "center",
-							alignItems: "center",
-							width: calculatedWidthIntermediate,
-							height: "300px",
-							paddingRight: "16px"
-						}}>
-							<div
-								style={{
-									borderTop: "1.5px solid black",
-									paddingBottom: "16px",
-									width: calculatedWidthIntermediate
-								}}
-							/>
-							<Box sx={{
-								height: "265px",
-								width: calculatedWidthIntermediate,
-								display: "flex",
-								justifyContent: "center",
-								alignItems: "center",
-							}}>
-								<Typography sx={{
-									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-									fontWeight: 600,
-									color: "#356760",
-									fontSize: 70,
-									paddingLeft: 1.25,
-									lineHeight: "1",
-									letterSpacing: "0.5px"
-								}}>
-									WHAT I'VE WORKED WITH
-								</Typography>
-							</Box>
-							<div
-								style={{
-									borderBottom: "1.5px solid black",
-									paddingTop: "16px",
-									width: calculatedWidthIntermediate
-								}}
-							/>
-						</Box>
-						<div
-							style={{
-								borderLeft: "1.5px solid black",
-								height: "265px",
-								paddingTop: "16px",
-								paddingBottom: "16px",
-								paddingRight: "16px",
-							}}
-						/>
-					</Box>
-				</div>
-				<Technologies
-					calculatedWidthTechnologies={calculatedWidthTechnologies}
-					calculatedHeightTechnologies={calculatedHeightTechnologies}
-					smallerCalculatedWidthTechnologies={smallerCalculatedWidthTechnologies}
-					imgSrc={[Azure, Blazor, C, CSharp, CPlus, CSS, FSharp, Figma, Firebase]}
-					imgAlt={["Azure", "Blazor", "C", "CSharp", "CPlus", "CSS", "FSharp", "Figma", "Firebase"]}
-					first={false}
-				/>
-				<Technologies
-					calculatedWidthTechnologies={calculatedWidthTechnologies}
-					calculatedHeightTechnologies={calculatedHeightTechnologies}
-					smallerCalculatedWidthTechnologies={smallerCalculatedWidthTechnologies}
-					imgSrc={[Git, HTML, HuggingFace, Java, JavaScript, Keras, Matplotlib, MySQL, Net]}
-					imgAlt={["Git", "HTML", "HuggingFace", "Java", "JavaScript", "Keras", "Matplotlib", "MySQL", "Net"]}
-					first={false}
-				/>
-				<Technologies
-					calculatedWidthTechnologies={calculatedWidthTechnologies}
-					calculatedHeightTechnologies={calculatedHeightTechnologies}
-					smallerCalculatedWidthTechnologies={smallerCalculatedWidthTechnologies}
-					imgSrc={[Node, Npm, Numpy, Pandas, Postgre, Python, Pytorch, R, Racket]}
-					imgAlt={["Node", "Npm", "Numpy", "Pandas", "Postgre", "Python", "Pytorch", "R", "Racket"]}
-					first={false}
-				/>
-				<Technologies
-					calculatedWidthTechnologies={calculatedWidthTechnologies}
-					calculatedHeightTechnologies={calculatedHeightTechnologies}
-					smallerCalculatedWidthTechnologies={smallerCalculatedWidthTechnologies}
-					imgSrc={[ReactImage, SAS, Scikit, Scipy, Seaborn, SQLite, Statsmodels, Tensorflow, Wasm]}
-					imgAlt={["React", "SAS", "Scikit", "Scipy", "Seaborn", "SQLite", "Statsmodels", "Tensorflow", "Wasm"]}
-					first={true}
-				/>
-				<div style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "300px" }} id="experiences" ref={experiencesRef}>
-					<Box sx={{
-						display: "flex",
-						flexDirection: "row",
-						alignItems: "center",
-						justifyContent: "start",
-						width: calculatedWidthIntermediateTotal,
-						height: "100%"
-					}}>
-						<div
-							style={{
-								borderLeft: "1.5px solid black",
-								height: "265px",
-								paddingTop: "16px",
-								paddingBottom: "16px",
-								paddingRight: "16px",
-							}}
-						/>
-						<Box sx={{
-							display: "flex",
-							flexDirection: "column",
-							justifyContent: "center",
-							alignItems: "center",
-							width: calculatedWidthIntermediate,
-							height: "300px",
-							paddingRight: "16px"
-						}}>
-							<div
-								style={{
-									borderTop: "1.5px solid black",
-									paddingBottom: "16px",
-									width: calculatedWidthIntermediate
-								}}
-							/>
-							<Box sx={{
-								height: "265px",
-								width: calculatedWidthIntermediate,
-								display: "flex",
-								justifyContent: "center",
-								alignItems: "center",
-							}}>
-								<Typography sx={{
-									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-									fontWeight: 600,
-									color: "#356760",
-									fontSize: 70,
-									paddingLeft: 1.25,
-									lineHeight: "1",
-									letterSpacing: "0.5px"
-								}}>
-									WHERE I'VE WORKED BEFORE
-								</Typography>
-							</Box>
-							<div
-								style={{
-									borderBottom: "1.5px solid black",
-									paddingTop: "16px",
-									width: calculatedWidthIntermediate
-								}}
-							/>
-						</Box>
-						<div
-							style={{
-								borderLeft: "1.5px solid black",
-								height: "265px",
-								paddingTop: "16px",
-								paddingBottom: "16px",
-								paddingRight: "16px",
-							}}
-						/>
-					</Box>
-				</div>
-				<Work
-					calculatedWidth={calculatedWidth}
-					calculatedHeight={calculatedHeight}
-					smallerCalculatedWidth={smallerCalculatedWidth}
-					Images={[ProteomicsWork, BatteryWork, InboundWork, BastiatWork]}
-				/>
-				<div style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "300px" }} id="contact" ref={contactRef}>
-					<Box sx={{
-						display: "flex",
-						flexDirection: "row",
-						alignItems: "center",
-						justifyContent: "start",
-						width: calculatedWidthIntermediateTotal,
-						height: "100%"
-					}}>
-						<div
-							style={{
-								borderLeft: "1.5px solid black",
-								height: "265px",
-								paddingTop: "16px",
-								paddingBottom: "16px",
-								paddingRight: "16px",
-							}}
-						/>
-						<Box sx={{
-							display: "flex",
-							flexDirection: "column",
-							justifyContent: "center",
-							alignItems: "center",
-							width: calculatedWidthIntermediate,
-							height: "300px",
-							paddingRight: "16px"
-						}}>
-							<div
-								style={{
-									borderTop: "1.5px solid black",
-									paddingBottom: "16px",
-									width: calculatedWidthIntermediate
-								}}
-							/>
-							<Box sx={{
-								height: "265px",
-								width: calculatedWidthIntermediate,
-								display: "flex",
-								justifyContent: "center",
-								alignItems: "center",
-							}}>
-								<Typography sx={{
-									fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-									fontWeight: 600,
-									color: "#356760",
-									fontSize: 70,
-									paddingLeft: 1.25,
-									lineHeight: "1",
-									letterSpacing: "0.5px"
-								}}>
-									CONTACT ME
-								</Typography>
-							</Box>
-							<div
-								style={{
-									borderBottom: "1.5px solid black",
-									paddingTop: "16px",
-									width: calculatedWidthIntermediate
-								}}
-							/>
-						</Box>
-						<div
-							style={{
-								borderLeft: "1.5px solid black",
-								height: "265px",
-								paddingTop: "16px",
-								paddingBottom: "16px",
-								paddingRight: "16px",
-							}}
-						/>
-					</Box>
-				</div>
-				<div style={{ display: "flex", paddingLeft: "24px", paddingRight: "24px", height: "345px" }}>
-					<Box sx={{
-						display: "flex",
-						flexDirection: "row",
-						alignItems: "center",
-						justifyContent: "start",
-						width: calculatedWidthIntermediateTotal,
-						height: "330px"
-					}}>
-						<div
-							style={{
-								borderLeft: "1.5px solid black",
-								height: "295px",
-								paddingTop: "16px",
-								paddingBottom: "16px",
-								paddingRight: "16px",
-							}}
-						/>
-						<Box sx={{
-							display: "flex",
-							flexDirection: "column",
-							justifyContent: "center",
-							alignItems: "center",
-							width: calculatedWidthIntermediate,
-							height: "330px",
-							paddingRight: "16px"
-						}}>
-							<div
-								style={{
-									borderTop: "1.5px solid transparent",
-									paddingBottom: "16px",
-									width: calculatedWidthIntermediate
-								}}
-							/>
-							<Box sx={{
-								height: "295px",
-								width: calculatedWidthIntermediate,
-								display: "flex",
-								justifyContent: "center",
-								alignItems: "center",
-								flexDirection: "column"
-							}}>
-								<Box sx={{
-								height: "295px",
-								width: "100%",
-								display: "flex",
-								justifyContent: "center",
-								alignItems: "center",
+								margin: "100px auto 0px",
 								flexDirection: "row",
-								paddingRight: "5%",
-								paddingLeft: "5%"
-								}}>
-									<Typography sx={{
-										fontFamily: '"Rosart", "Georgia", "Times New Roman", "FZNewBaoSong", serif',
-										fontWeight: 500,
-										color: "#190019",
-										fontSize: 48,
-										px: 2.5,
-										pt: 2
-									}}>
-										If any of this sounds interesting or you want to learn some more about me, <span style={{ fontWeight: 600, color: "#356760" }}>let's chat!</span>
-									</Typography>
-								</Box>
-								<Box sx={{
-								height: "295px",
-								width: "100%",
+								justifyContent: "space-between",
 								display: "flex",
-								justifyContent: "center",
-								alignItems: "center",
-								flexDirection: "row",
-								paddingRight: "2.5%",
-								paddingLeft: "2.5%"
-								}}>
-									<ButtonStart link="https://www.linkedin.com/in/michael-kim-nu/" iconUrl={LinkedInIcon} text="LinkedIn" color="#0A66C2" hoverColor="#0754a6" width="250px" fontSize="30px" imgDimension="45px"/>
-									<Box sx={{ paddingLeft: "70px", paddingRight: "70px" }}>
-										<ButtonStart link="https://github.com/mkim45" iconUrl={GitHubIcon} text="GitHub" hoverColor="#322F2A" color="#625F59" width="250px" fontSize="30px" imgDimension="45px"/>
-									</Box>
-									<Box sx={{ paddingRight: "70px" }}>
-										<ButtonStartResume link="https://drive.google.com/file/d/1KsjGK1Vvj932qUB7lhl_Z5iZ-YAZgjHq/view?usp=sharing" text="Resume" hoverColor="#8A9D8B" color="#9DBE9A" width="250px" fontSize="30px" imgDimension="45px"/>
-									</Box>
-									<ButtonStartEmail link="mailto:michaelkim2025.1@u.northwestern.edu" text="Email" hoverColor="#2F4858" color="#4D6A70" width="250px" fontSize="30px" imgDimension="45px"/>
-								</Box>
-							</Box>
+								maxWidth: "1200px"
+							}}
+						>
 							<div
 								style={{
-									borderBottom: "1.5px solid black",
-									paddingTop: "16px",
-									width: calculatedWidthIntermediate
+									width: "60%"
 								}}
-							/>
-						</Box>
+							>
+								<div
+									style={{
+										position: "relative",
+										marginBottom: "36.5px"
+									}}
+								>
+									<h2
+										style={{
+											fontSize: "64px",
+											fontFamily: "Bitter, serif",
+											fontWeight: "bold",
+											color: "#1b4332",
+											margin: "0px"
+										}}
+									>
+										About me<span style={{ color: "#52b788" }}>.</span>
+									</h2>
+									<div
+										style={{
+											width: "80px",
+											height: "3.5px",
+											backgroundColor: "#52b788",
+											marginTop: "10px"
+										}}
+									></div>
+								</div>
+								<div
+									style={{
+										margin: "0px auto",
+										position: "relative"
+									}}
+								>
+									<p
+										style={{
+											fontSize: "17px",
+											marginTop: "0px",
+											lineHeight: 1.65,
+											color: "#1b4332",
+											marginBottom: "25px"
+										}}
+									>
+										I’m a <b>third-year undergraduate student</b> at Northwestern University, pursuing a B.A. in Biology and Data Science 
+										and an M.S. in Computer Science through a B.A./M.S. program.<br/><br/>
+										While initially exploring investment banking and venture capital internships, I found myself far more passionate 
+										about the transformative work of the startups I was actually advising and sourcing. Since then, I’ve been fortunate to build 
+										software for a <b>multiomics research lab</b>, a <b>venture capital firm</b>, and a <b>startup</b>. I'm eager to continue 
+										imparting meaningful impact, particularly at innovative and disruptive startups.<br/><br/>
+										Currently, I’m leading a project at the <b>Proteomics Center of Excellence</b> to reverse engineer and improve Thermo Fisher Scientific’s mass 
+										spectrometry software. On the side, I’ve been creating a multiomics quality control tool with <b>autoencoder neural network models</b>.<br/><br/>
+										While I’m not coding, I enjoy playing tennis, learning new languages, spending time outdoors with friends, and reading books on human behavior. 
+									</p>
+								</div>
+							</div>
+							<div
+								style={{
+									marginTop: "114px"
+								}}
+							>
+								<ImgNoMargin
+									alt="aboutMe"
+									src={AboutMe}
+									sx={{ height: "425px", width: "365px" }}
+								/>
+							</div>
+						</div>
+					) : (
 						<div
 							style={{
-								borderLeft: "1.5px solid black",
-								height: "295px",
-								paddingTop: "16px",
-								paddingBottom: "16px",
-								paddingRight: "16px",
+								margin: "100px auto 0px",
+								flexDirection: "row",
+								justifyContent: "space-between",
+								display: "flex",
+								maxWidth: "1200px"
 							}}
-						/>
-					</Box>
+						>
+							<div
+								style={{
+									width: "100%"
+								}}
+							>
+								<div
+									style={{
+										position: "relative",
+										marginBottom: "36.5px"
+									}}
+								>
+									<h2
+										style={{
+											fontSize: "64px",
+											fontFamily: "Bitter, serif",
+											fontWeight: "bold",
+											color: "#1b4332",
+											margin: "0px"
+										}}
+									>
+										About me<span style={{ color: "#52b788" }}>.</span>
+									</h2>
+									<div
+										style={{
+											width: "80px",
+											height: "3.5px",
+											backgroundColor: "#52b788",
+											marginTop: "10px"
+										}}
+									></div>
+								</div>
+								<div
+									style={{
+										margin: "0px auto",
+										position: "relative"
+									}}
+								>
+									<p
+										style={{
+											fontSize: "17px",
+											marginTop: "0px",
+											lineHeight: 1.65,
+											color: "#1b4332",
+											marginBottom: "25px"
+										}}
+									>
+										I’m a <b>third-year undergraduate student</b> at Northwestern University, pursuing a B.A. in Biology and Data Science 
+										and an M.S. in Computer Science through a B.A./M.S. program.<br/><br/>
+										While initially exploring investment banking and venture capital internships, I found myself far more passionate 
+										about the transformative work of the startups I was actually advising and sourcing. Since then, I’ve been fortunate to build 
+										software for a <b>multiomics research lab</b>, a <b>venture capital firm</b>, and a <b>startup</b>. I'm eager to continue 
+										imparting meaningful impact, particularly at innovative and disruptive startups.<br/><br/>
+										Currently, I’m leading a project at the <b>Proteomics Center of Excellence</b> to reverse engineer and improve Thermo Fisher Scientific’s mass 
+										spectrometry software. On the side, I’ve been creating a multiomics quality control tool with <b>autoencoder neural network models</b>.<br/><br/>
+										While I’m not coding, I enjoy playing tennis, learning new languages, spending time outdoors with friends, and reading books on human behavior. 
+									</p>
+								</div>
+							</div>
+						</div>
+					)}
+					{windowWidth >= 1375 ? (
+						<div
+							style={{
+								margin: "100px auto 0px",
+								maxWidth: "1200px"
+							}}
+						>
+							<div
+								style={{
+									width: "60%"
+								}}
+							>
+								<div
+									style={{
+										position: "relative",
+										marginBottom: "36.5px"
+									}}
+								>
+									<h2
+										style={{
+											fontSize: "64px",
+											fontFamily: "Bitter, serif",
+											fontWeight: "bold",
+											color: "#1b4332",
+											margin: "0px"
+										}}
+									>
+										About my work<span style={{ color: "#52b788" }}>.</span>
+									</h2>
+									<div
+										style={{
+											width: "80px",
+											height: "3.5px",
+											backgroundColor: "#52b788",
+											marginTop: "10px"
+										}}
+									></div>
+								</div>
+								<div
+									style={{
+										margin: "0px auto",
+										position: "relative"
+									}}
+								>
+									<p
+										style={{
+											fontSize: "17px",
+											marginTop: "0px",
+											lineHeight: 1.65,
+											color: "#1b4332",
+										}}
+									>
+										I'm passionate about learning and leveraging new technologies in fast-paced environments to 
+										drive positive change. Whether accelerating proteomics research or crafting interactive products, 
+										I enjoy collaborating with others to maximize the impact I can have.
+									</p>
+								</div>
+							</div>
+							<div
+								className="project"
+								style={{
+									marginTop: "40px",
+									backgroundImage: `url(${Proteins2})`,
+									backgroundSize: "cover",
+									backgroundRepeat: "no-repeat"
+								}}
+							>
+								<div
+									style={{
+										width: "100%"
+									}}
+								>
+									<div
+										style={{
+											position: "relative",
+											marginBottom: "36.5px"
+										}}
+									>
+										<h2
+											style={{
+												fontSize: "48px",
+												fontFamily: "Bitter, serif",
+												fontWeight: "bold",
+												color: "#fff",
+												margin: "0px"
+											}}
+										>
+											Mass Spectrometry Insights Tool
+										</h2>
+									</div>
+									<div
+										style={{
+											margin: "0px auto",
+											position: "relative"
+										}}
+									>
+										<p
+											style={{
+												fontSize: "17px",
+												marginBottom: "0px",
+												marginTop: "0px",
+												lineHeight: 1.65,
+												color: "#fff",
+											}}
+										>
+											A reimagining of Thermo Fisher Scientific's RawMeat mass spectrometry data quality assessment 
+											software for comprehensive tabular and graphical insights. Created through reverse engineering, 
+											the tool is built to be OS-agnostic using WebAssembly (Blazor) and C#, enhancing accessiblility to 
+											data quality metrics and improving capabilities across both top-down and bottom-up proteomics use.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div
+								className="project"
+								style={{
+									marginTop: "20px",
+									backgroundImage: `url(${Proteins4})`,
+									backgroundSize: "cover",
+									backgroundRepeat: "no-repeat"
+								}}
+							>
+								<div
+									style={{
+										width: "100%"
+									}}
+								>
+									<div
+										style={{
+											position: "relative",
+											marginBottom: "36.5px"
+										}}
+									>
+										<h2
+											style={{
+												fontSize: "48px",
+												fontFamily: "Bitter, serif",
+												fontWeight: "bold",
+												color: "#fff",
+												margin: "0px"
+											}}
+										>
+											Top-Down Proteomics Quality Control
+										</h2>
+									</div>
+									<div
+										style={{
+											margin: "0px auto",
+											position: "relative"
+										}}
+									>
+										<p
+											style={{
+												fontSize: "17px",
+												marginBottom: "0px",
+												marginTop: "0px",
+												lineHeight: 1.65,
+												color: "#fff",
+											}}
+										>
+											A machine learning tool for filtering out poor quality mass spectrometry scans in order to improve performance and 
+											computing speeds of proteoform discovery methods in top-down proteomics. Built using tuned autoencoder neural networks 
+											and logistic regression models with dimensionality reduction for binary classification.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div
+								className="project"
+								style={{
+									marginTop: "20px",
+									backgroundImage: `url(${Battery})`,
+									backgroundSize: "cover",
+									backgroundRepeat: "no-repeat"
+								}}
+							>
+								<div
+									style={{
+										width: "100%"
+									}}
+								>
+									<div
+										style={{
+											position: "relative",
+											marginBottom: "36.5px"
+										}}
+									>
+										<h2
+											style={{
+												fontSize: "48px",
+												fontFamily: "Bitter, serif",
+												fontWeight: "bold",
+												color: "#fff",
+												margin: "0px"
+											}}
+										>
+											Battery Ventures Internal Bidding Tool
+										</h2>
+									</div>
+									<div
+										style={{
+											margin: "0px auto",
+											position: "relative"
+										}}
+									>
+										<p
+											style={{
+												fontSize: "17px",
+												marginBottom: "0px",
+												marginTop: "0px",
+												lineHeight: 1.65,
+												color: "#fff",
+											}}
+										>
+											An internal software tool created for investment professionals to browse sourced companies by externs and bid in a silent auction system 
+											for ownership of future calls and transactions with target companies.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div
+								style={{
+									display: "flex",
+									flexDirection: "row",
+									width: "100%",
+									justifyContent: "space-between"
+								}}
+							>
+								<div
+									className="project"
+									style={{
+										marginTop: "20px",
+										backgroundImage: `url(${Proteins1})`,
+										backgroundSize: "cover",
+										backgroundRepeat: "no-repeat",
+										width: "25.5%",
+										height: "180px"
+									}}
+								>
+									<div
+										style={{
+											width: "100%"
+										}}
+									>
+										<div
+											style={{
+												position: "relative",
+												marginBottom: "18px"
+											}}
+										>
+											<h2
+												style={{
+													fontSize: "36px",
+													fontFamily: "Bitter, serif",
+													fontWeight: "bold",
+													color: "#fff",
+													margin: "0px"
+												}}
+											>
+												Fragment Ion Comparison
+											</h2>
+										</div>
+										<div
+											style={{
+												margin: "0px auto",
+												position: "relative"
+											}}
+										>
+											<p
+												style={{
+													fontSize: "17px",
+													marginTop: "0px",
+													marginBottom: "0px",
+													lineHeight: 1.65,
+													color: "#fff",
+												}}
+											>
+												A comparison of matched ion masses for ensemble vs. I2MS methods.
+											</p>
+										</div>
+									</div>
+								</div>
+								<div
+									className="project"
+									style={{
+										marginTop: "20px",
+										backgroundImage: `url(${Proteins5})`,
+										backgroundSize: "cover",
+										backgroundRepeat: "no-repeat",
+										width: "25.5%",
+										height: "180px"
+									}}
+								>
+									<div
+										style={{
+											width: "100%"
+										}}
+									>
+										<div
+											style={{
+												position: "relative",
+												marginBottom: "18px"
+											}}
+										>
+											<h2
+												style={{
+													fontSize: "36px",
+													fontFamily: "Bitter, serif",
+													fontWeight: "bold",
+													color: "#fff",
+													margin: "0px"
+												}}
+											>
+												Top-Down Quantification
+											</h2>
+										</div>
+										<div
+											style={{
+												margin: "0px auto",
+												position: "relative"
+											}}
+										>
+											<p
+												style={{
+													fontSize: "17px",
+													marginTop: "0px",
+													marginBottom: "0px",
+													lineHeight: 1.65,
+													color: "#fff",
+												}}
+											>
+												A top-down label-free quantification for ALS study metabolite measures.
+											</p>
+										</div>
+									</div>
+								</div>
+								<div
+									className="project"
+									style={{
+										marginTop: "20px",
+										backgroundImage: `url(${Proteins3})`,
+										backgroundSize: "cover",
+										backgroundRepeat: "no-repeat",
+										width: "25.5%",
+										height: "180px"
+									}}
+								>
+									<div
+										style={{
+											width: "100%"
+										}}
+									>
+										<div
+											style={{
+												position: "relative",
+												marginBottom: "18px"
+											}}
+										>
+											<h2
+												style={{
+													fontSize: "36px",
+													fontFamily: "Bitter, serif",
+													fontWeight: "bold",
+													color: "#fff",
+													margin: "0px"
+												}}
+											>
+												ICR Disease Prediction
+											</h2>
+										</div>
+										<div
+											style={{
+												margin: "0px auto",
+												position: "relative"
+											}}
+										>
+											<p
+												style={{
+													fontSize: "17px",
+													marginTop: "0px",
+													marginBottom: "0px",
+													lineHeight: 1.65,
+													color: "#fff",
+												}}
+											>
+												A project to predict age-related health conditions from masked features. 
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div
+								style={{
+									display: "flex",
+									flexDirection: "row",
+									width: "100%",
+									justifyContent: "space-between"
+								}}
+							>
+								<div
+									className="project"
+									style={{
+										marginTop: "20px",
+										backgroundImage: `url(${Science1})`,
+										backgroundSize: "cover",
+										backgroundRepeat: "no-repeat",
+										width: "25.5%",
+										height: "180px"
+									}}
+								>
+									<div
+										style={{
+											width: "100%"
+										}}
+									>
+										<div
+											style={{
+												position: "relative",
+												marginBottom: "18px"
+											}}
+										>
+											<h2
+												style={{
+													fontSize: "36px",
+													fontFamily: "Bitter, serif",
+													fontWeight: "bold",
+													color: "#fff",
+													margin: "0px"
+												}}
+											>
+												NU Science Olympiad Website
+											</h2>
+										</div>
+										<div
+											style={{
+												margin: "0px auto",
+												position: "relative"
+											}}
+										>
+											<p
+												style={{
+													fontSize: "17px",
+													marginTop: "0px",
+													marginBottom: "0px",
+													lineHeight: 1.65,
+													color: "#fff",
+												}}
+											>
+												A website for the Northwestern University Science Olympiad group.
+											</p>
+										</div>
+									</div>
+								</div>
+								<div
+									className="project"
+									style={{
+										marginTop: "20px",
+										backgroundImage: `url(${Wine})`,
+										backgroundSize: "cover",
+										backgroundRepeat: "no-repeat",
+										width: "25.5%",
+										height: "180px"
+									}}
+								>
+									<div
+										style={{
+											width: "100%"
+										}}
+									>
+										<div
+											style={{
+												position: "relative",
+												marginBottom: "18px"
+											}}
+										>
+											<h2
+												style={{
+													fontSize: "36px",
+													fontFamily: "Bitter, serif",
+													fontWeight: "bold",
+													color: "#fff",
+													margin: "0px"
+												}}
+											>
+												Wine Quality Prediction
+											</h2>
+										</div>
+										<div
+											style={{
+												margin: "0px auto",
+												position: "relative"
+											}}
+										>
+											<p
+												style={{
+													fontSize: "17px",
+													marginTop: "0px",
+													marginBottom: "0px",
+													lineHeight: 1.65,
+													color: "#fff",
+												}}
+											>
+												A project to predict Vinho Verde wine quality with tuned models.
+											</p>
+										</div>
+									</div>
+								</div>
+								<div
+									className="project"
+									style={{
+										marginTop: "20px",
+										backgroundImage: `url(${Uber})`,
+										backgroundSize: "cover",
+										backgroundRepeat: "no-repeat",
+										width: "25.5%",
+										height: "180px"
+									}}
+								>
+									<div
+										style={{
+											width: "100%"
+										}}
+									>
+										<div
+											style={{
+												position: "relative",
+												marginBottom: "18px"
+											}}
+										>
+											<h2
+												style={{
+													fontSize: "36px",
+													fontFamily: "Bitter, serif",
+													fontWeight: "bold",
+													color: "#fff",
+													margin: "0px"
+												}}
+											>
+												Lyft / Uber Price Prediction
+											</h2>
+										</div>
+										<div
+											style={{
+												margin: "0px auto",
+												position: "relative"
+											}}
+										>
+											<p
+												style={{
+													fontSize: "17px",
+													marginTop: "0px",
+													marginBottom: "0px",
+													lineHeight: 1.65,
+													color: "#fff",
+												}}
+											>
+												A project to predict the prices of Lyft and Uber rides in the Boston area.
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					) : windowWidth >= 1075 ? (
+						<div
+							style={{
+								margin: "100px auto 0px",
+								maxWidth: "1200px"
+							}}
+						>
+							<div
+								style={{
+									width: "100%"
+								}}
+							>
+								<div
+									style={{
+										position: "relative",
+										marginBottom: "36.5px"
+									}}
+								>
+									<h2
+										style={{
+											fontSize: "64px",
+											fontFamily: "Bitter, serif",
+											fontWeight: "bold",
+											color: "#1b4332",
+											margin: "0px"
+										}}
+									>
+										About my work<span style={{ color: "#52b788" }}>.</span>
+									</h2>
+									<div
+										style={{
+											width: "80px",
+											height: "3.5px",
+											backgroundColor: "#52b788",
+											marginTop: "10px"
+										}}
+									></div>
+								</div>
+								<div
+									style={{
+										margin: "0px auto",
+										position: "relative"
+									}}
+								>
+									<p
+										style={{
+											fontSize: "17px",
+											marginTop: "0px",
+											lineHeight: 1.65,
+											color: "#1b4332",
+										}}
+									>
+										I'm passionate about learning and leveraging new technologies in fast-paced environments to 
+										drive positive change. Whether accelerating proteomics research or crafting interactive products, 
+										I enjoy collaborating with others to maximize the impact I can have.
+									</p>
+								</div>
+							</div>
+							<div
+								className="project"
+								style={{
+									marginTop: "40px",
+									backgroundImage: `url(${Proteins2})`,
+									backgroundSize: "cover",
+									backgroundRepeat: "no-repeat"
+								}}
+							>
+								<div
+									style={{
+										width: "100%"
+									}}
+								>
+									<div
+										style={{
+											position: "relative",
+											marginBottom: "36.5px"
+										}}
+									>
+										<h2
+											style={{
+												fontSize: "48px",
+												fontFamily: "Bitter, serif",
+												fontWeight: "bold",
+												color: "#fff",
+												margin: "0px"
+											}}
+										>
+											Mass Spectrometry Insights Tool
+										</h2>
+									</div>
+									<div
+										style={{
+											margin: "0px auto",
+											position: "relative"
+										}}
+									>
+										<p
+											style={{
+												fontSize: "17px",
+												marginBottom: "0px",
+												marginTop: "0px",
+												lineHeight: 1.65,
+												color: "#fff",
+											}}
+										>
+											A reimagining of Thermo Fisher Scientific's RawMeat mass spectrometry data quality assessment 
+											software for comprehensive tabular and graphical insights. Created through reverse engineering, 
+											the tool is built to be OS-agnostic using WebAssembly (Blazor) and C#, enhancing accessiblility to 
+											data quality metrics and improving capabilities across both top-down and bottom-up proteomics use.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div
+								className="project"
+								style={{
+									marginTop: "20px",
+									backgroundImage: `url(${Proteins4})`,
+									backgroundSize: "cover",
+									backgroundRepeat: "no-repeat"
+								}}
+							>
+								<div
+									style={{
+										width: "100%"
+									}}
+								>
+									<div
+										style={{
+											position: "relative",
+											marginBottom: "36.5px"
+										}}
+									>
+										<h2
+											style={{
+												fontSize: "48px",
+												fontFamily: "Bitter, serif",
+												fontWeight: "bold",
+												color: "#fff",
+												margin: "0px"
+											}}
+										>
+											Top-Down Proteomics Quality Control
+										</h2>
+									</div>
+									<div
+										style={{
+											margin: "0px auto",
+											position: "relative"
+										}}
+									>
+										<p
+											style={{
+												fontSize: "17px",
+												marginBottom: "0px",
+												marginTop: "0px",
+												lineHeight: 1.65,
+												color: "#fff",
+											}}
+										>
+											A machine learning tool for filtering out poor quality mass spectrometry scans in order to improve performance and 
+											computing speeds of proteoform discovery methods in top-down proteomics. Built using tuned autoencoder neural networks 
+											and logistic regression models with dimensionality reduction for binary classification.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div
+								className="project"
+								style={{
+									marginTop: "20px",
+									backgroundImage: `url(${Battery})`,
+									backgroundSize: "cover",
+									backgroundRepeat: "no-repeat"
+								}}
+							>
+								<div
+									style={{
+										width: "100%"
+									}}
+								>
+									<div
+										style={{
+											position: "relative",
+											marginBottom: "36.5px"
+										}}
+									>
+										<h2
+											style={{
+												fontSize: "48px",
+												fontFamily: "Bitter, serif",
+												fontWeight: "bold",
+												color: "#fff",
+												margin: "0px"
+											}}
+										>
+											Battery Ventures Internal Bidding Tool
+										</h2>
+									</div>
+									<div
+										style={{
+											margin: "0px auto",
+											position: "relative"
+										}}
+									>
+										<p
+											style={{
+												fontSize: "17px",
+												marginBottom: "0px",
+												marginTop: "0px",
+												lineHeight: 1.65,
+												color: "#fff",
+											}}
+										>
+											An internal software tool created for investment professionals to browse sourced companies by externs and bid in a silent auction system 
+											for ownership of future calls and transactions with target companies.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div
+								className="project"
+								style={{
+									marginTop: "20px",
+									backgroundImage: `url(${Proteins1})`,
+									backgroundSize: "cover",
+									backgroundRepeat: "no-repeat",
+									height: "180px"
+								}}
+							>
+								<div
+									style={{
+										width: "100%"
+									}}
+								>
+									<div
+										style={{
+											position: "relative",
+											marginBottom: "18px"
+										}}
+									>
+										<h2
+											style={{
+												fontSize: "36px",
+												fontFamily: "Bitter, serif",
+												fontWeight: "bold",
+												color: "#fff",
+												margin: "0px"
+											}}
+										>
+											Fragment Ion Comparison
+										</h2>
+									</div>
+									<div
+										style={{
+											margin: "0px auto",
+											position: "relative"
+										}}
+									>
+										<p
+											style={{
+												fontSize: "17px",
+												marginTop: "0px",
+												marginBottom: "0px",
+												lineHeight: 1.65,
+												color: "#fff",
+											}}
+										>
+											A comparison of matched ion masses for ensemble vs. I2MS methods.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div
+								className="project"
+								style={{
+									marginTop: "20px",
+									backgroundImage: `url(${Proteins5})`,
+									backgroundSize: "cover",
+									backgroundRepeat: "no-repeat",
+									height: "180px"
+								}}
+							>
+								<div
+									style={{
+										width: "100%"
+									}}
+								>
+									<div
+										style={{
+											position: "relative",
+											marginBottom: "18px"
+										}}
+									>
+										<h2
+											style={{
+												fontSize: "36px",
+												fontFamily: "Bitter, serif",
+												fontWeight: "bold",
+												color: "#fff",
+												margin: "0px"
+											}}
+										>
+											Top-Down Quantification
+										</h2>
+									</div>
+									<div
+										style={{
+											margin: "0px auto",
+											position: "relative"
+										}}
+									>
+										<p
+											style={{
+												fontSize: "17px",
+												marginTop: "0px",
+												marginBottom: "0px",
+												lineHeight: 1.65,
+												color: "#fff",
+											}}
+										>
+											A top-down label-free quantification for ALS study metabolite measures.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div
+								className="project"
+								style={{
+									marginTop: "20px",
+									backgroundImage: `url(${Proteins3})`,
+									backgroundSize: "cover",
+									backgroundRepeat: "no-repeat",
+									height: "180px"
+								}}
+							>
+								<div
+									style={{
+										width: "100%"
+									}}
+								>
+									<div
+										style={{
+											position: "relative",
+											marginBottom: "18px"
+										}}
+									>
+										<h2
+											style={{
+												fontSize: "36px",
+												fontFamily: "Bitter, serif",
+												fontWeight: "bold",
+												color: "#fff",
+												margin: "0px"
+											}}
+										>
+											ICR Disease Prediction
+										</h2>
+									</div>
+									<div
+										style={{
+											margin: "0px auto",
+											position: "relative"
+										}}
+									>
+										<p
+											style={{
+												fontSize: "17px",
+												marginTop: "0px",
+												marginBottom: "0px",
+												lineHeight: 1.65,
+												color: "#fff",
+											}}
+										>
+											A project to predict age-related health conditions from masked features. 
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					) : (
+						<div
+							style={{
+								margin: "100px auto 0px",
+								maxWidth: "1200px"
+							}}
+						>
+							<div
+								style={{
+									width: "100%"
+								}}
+							>
+								<div
+									style={{
+										position: "relative",
+										marginBottom: "36.5px"
+									}}
+								>
+									<h2
+										style={{
+											fontSize: "64px",
+											fontFamily: "Bitter, serif",
+											fontWeight: "bold",
+											color: "#1b4332",
+											margin: "0px"
+										}}
+									>
+										About my work<span style={{ color: "#52b788" }}>.</span>
+									</h2>
+									<div
+										style={{
+											width: "80px",
+											height: "3.5px",
+											backgroundColor: "#52b788",
+											marginTop: "10px"
+										}}
+									></div>
+								</div>
+								<div
+									style={{
+										margin: "0px auto",
+										position: "relative"
+									}}
+								>
+									<p
+										style={{
+											fontSize: "17px",
+											marginTop: "0px",
+											lineHeight: 1.65,
+											color: "#1b4332",
+										}}
+									>
+										I'm passionate about learning and leveraging new technologies in fast-paced environments to 
+										drive positive change. Whether accelerating proteomics research or crafting interactive products, 
+										I enjoy collaborating with others to maximize the impact I can have.
+									</p>
+								</div>
+							</div>
+							<div
+								className="project"
+								style={{
+									marginTop: "40px",
+									backgroundImage: `url(${Proteins2})`,
+									backgroundSize: "cover",
+									backgroundRepeat: "no-repeat"
+								}}
+							>
+								<div
+									style={{
+										width: "100%"
+									}}
+								>
+									<div
+										style={{
+											position: "relative",
+											marginBottom: "36.5px"
+										}}
+									>
+										<h2
+											style={{
+												fontSize: "48px",
+												fontFamily: "Bitter, serif",
+												fontWeight: "bold",
+												color: "#fff",
+												margin: "0px"
+											}}
+										>
+											Mass Spectrometry Insights Tool
+										</h2>
+									</div>
+									<div
+										style={{
+											margin: "0px auto",
+											position: "relative"
+										}}
+									>
+										<p
+											style={{
+												fontSize: "17px",
+												marginBottom: "0px",
+												marginTop: "0px",
+												lineHeight: 1.65,
+												color: "#fff",
+											}}
+										>
+											A reimagining of Thermo Fisher Scientific's RawMeat mass spectrometry data quality assessment 
+											software for comprehensive tabular and graphical insights. 
+										</p>
+									</div>
+								</div>
+							</div>
+							<div
+								className="project"
+								style={{
+									marginTop: "20px",
+									backgroundImage: `url(${Proteins4})`,
+									backgroundSize: "cover",
+									backgroundRepeat: "no-repeat"
+								}}
+							>
+								<div
+									style={{
+										width: "100%"
+									}}
+								>
+									<div
+										style={{
+											position: "relative",
+											marginBottom: "36.5px"
+										}}
+									>
+										<h2
+											style={{
+												fontSize: "48px",
+												fontFamily: "Bitter, serif",
+												fontWeight: "bold",
+												color: "#fff",
+												margin: "0px"
+											}}
+										>
+											Proteomics Quality Control
+										</h2>
+									</div>
+									<div
+										style={{
+											margin: "0px auto",
+											position: "relative"
+										}}
+									>
+										<p
+											style={{
+												fontSize: "17px",
+												marginBottom: "0px",
+												marginTop: "0px",
+												lineHeight: 1.65,
+												color: "#fff",
+											}}
+										>
+											A machine learning tool for filtering out poor quality mass spectrometry scans in order to improve performance and 
+											computing speeds of proteoform discovery methods in top-down proteomics.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div
+								className="project"
+								style={{
+									marginTop: "20px",
+									backgroundImage: `url(${Battery})`,
+									backgroundSize: "cover",
+									backgroundRepeat: "no-repeat"
+								}}
+							>
+								<div
+									style={{
+										width: "100%"
+									}}
+								>
+									<div
+										style={{
+											position: "relative",
+											marginBottom: "36.5px"
+										}}
+									>
+										<h2
+											style={{
+												fontSize: "48px",
+												fontFamily: "Bitter, serif",
+												fontWeight: "bold",
+												color: "#fff",
+												margin: "0px"
+											}}
+										>
+											Battery Ventures Internal Tool
+										</h2>
+									</div>
+									<div
+										style={{
+											margin: "0px auto",
+											position: "relative"
+										}}
+									>
+										<p
+											style={{
+												fontSize: "17px",
+												marginBottom: "0px",
+												marginTop: "0px",
+												lineHeight: 1.65,
+												color: "#fff",
+											}}
+										>
+											An internal software tool created for investment professionals to browse sourced companies and bid in a silent auction system 
+											for ownership of future transactions.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div
+								className="project"
+								style={{
+									marginTop: "20px",
+									backgroundImage: `url(${Proteins1})`,
+									backgroundSize: "cover",
+									backgroundRepeat: "no-repeat",
+									height: "180px"
+								}}
+							>
+								<div
+									style={{
+										width: "100%"
+									}}
+								>
+									<div
+										style={{
+											position: "relative",
+											marginBottom: "18px"
+										}}
+									>
+										<h2
+											style={{
+												fontSize: "36px",
+												fontFamily: "Bitter, serif",
+												fontWeight: "bold",
+												color: "#fff",
+												margin: "0px"
+											}}
+										>
+											Fragment Ion Comparison
+										</h2>
+									</div>
+									<div
+										style={{
+											margin: "0px auto",
+											position: "relative"
+										}}
+									>
+										<p
+											style={{
+												fontSize: "17px",
+												marginTop: "0px",
+												marginBottom: "0px",
+												lineHeight: 1.65,
+												color: "#fff",
+											}}
+										>
+											A comparison of matched ion masses for ensemble vs. I2MS methods.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div
+								className="project"
+								style={{
+									marginTop: "20px",
+									backgroundImage: `url(${Proteins5})`,
+									backgroundSize: "cover",
+									backgroundRepeat: "no-repeat",
+									height: "180px"
+								}}
+							>
+								<div
+									style={{
+										width: "100%"
+									}}
+								>
+									<div
+										style={{
+											position: "relative",
+											marginBottom: "18px"
+										}}
+									>
+										<h2
+											style={{
+												fontSize: "36px",
+												fontFamily: "Bitter, serif",
+												fontWeight: "bold",
+												color: "#fff",
+												margin: "0px"
+											}}
+										>
+											Top-Down Quantification
+										</h2>
+									</div>
+									<div
+										style={{
+											margin: "0px auto",
+											position: "relative"
+										}}
+									>
+										<p
+											style={{
+												fontSize: "17px",
+												marginTop: "0px",
+												marginBottom: "0px",
+												lineHeight: 1.65,
+												color: "#fff",
+											}}
+										>
+											A top-down label-free quantification for ALS study metabolite measures.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div
+								className="project"
+								style={{
+									marginTop: "20px",
+									backgroundImage: `url(${Proteins3})`,
+									backgroundSize: "cover",
+									backgroundRepeat: "no-repeat",
+									height: "180px"
+								}}
+							>
+								<div
+									style={{
+										width: "100%"
+									}}
+								>
+									<div
+										style={{
+											position: "relative",
+											marginBottom: "18px"
+										}}
+									>
+										<h2
+											style={{
+												fontSize: "36px",
+												fontFamily: "Bitter, serif",
+												fontWeight: "bold",
+												color: "#fff",
+												margin: "0px"
+											}}
+										>
+											ICR Disease Prediction
+										</h2>
+									</div>
+									<div
+										style={{
+											margin: "0px auto",
+											position: "relative"
+										}}
+									>
+										<p
+											style={{
+												fontSize: "17px",
+												marginTop: "0px",
+												marginBottom: "0px",
+												lineHeight: 1.65,
+												color: "#fff",
+											}}
+										>
+											A project to predict age-related health conditions from masked features. 
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					)}
+					{windowWidth >= 1300 ? (
+						<div
+							style={{
+								margin: "100px auto 0px",
+								maxWidth: "1200px"
+							}}
+						>
+							<div
+								style={{
+									width: "100%"
+								}}
+							>
+								<div
+									style={{
+										position: "relative",
+										marginBottom: "36.5px"
+									}}
+								>
+									<h2
+										style={{
+											fontSize: "64px",
+											fontFamily: "Bitter, serif",
+											fontWeight: "bold",
+											color: "#1b4332",
+											margin: "0px"
+										}}
+									>
+										About my experiences<span style={{ color: "#52b788" }}>.</span>
+									</h2>
+									<div
+										style={{
+											width: "80px",
+											height: "3.5px",
+											backgroundColor: "#52b788",
+											marginTop: "10px"
+										}}
+									></div>
+								</div>
+								<div
+									style={{
+										margin: "0px auto",
+										position: "relative"
+									}}
+								>
+									<p
+										style={{
+											fontSize: "17px",
+											marginTop: "0px",
+											lineHeight: 1.65,
+											color: "#1b4332",
+										}}
+									>
+										I'm passionate about learning and leveraging new technologies in fast-paced environments to 
+										drive positive change. Whether accelerating proteomics research or crafting interactive products, 
+										I enjoy collaborating with others to maximize the impact I can have.
+									</p>
+								</div>
+							</div>
+							<div
+								style={{
+									display: "flex",
+									flexDirection: "row",
+									justifyContent: "space-between",
+									marginTop: "36.5px"
+								}}
+							>
+								<div
+									style={{
+										display: "flex",
+										flexDirection: "row",
+										padding: "20px 0px",
+										alignItems: "center",
+										width: "70%",
+									}}
+								>
+									<ImgNoMargin
+										alt="pce"
+										src={ProteomicsWork}
+										sx={{ height: "125px", width: "125px" }}
+									/>
+									<div
+										style={{
+											paddingLeft: "40px"
+										}}
+									>
+										<h2
+											style={{
+												fontSize: "36px",
+												fontFamily: "Bitter, serif",
+												fontWeight: "bold",
+												color: "#1b4332",
+												margin: "0px"
+											}}
+										>
+											Proteomics Center of Excellence<span style={{ color: "#52b788" }}></span>
+										</h2>
+										<p
+											style={{
+												fontSize: "22px",
+												marginTop: "4px",
+												marginBottom: "0px",
+												lineHeight: 1.65,
+												color: "#1b4332",
+											}}
+										>
+											Informatics and Software Engineering Intern
+										</p>
+										<p
+											style={{
+												fontSize: "17px",
+												marginTop: "10px",
+												marginBottom: "10px",
+												lineHeight: 1.65,
+												color: "#1b4332",
+											}}
+										>
+											The Northwestern University Proteomics Center of Excellence is a lab pioneering mass spectrometry
+											methods in top-down proteomics. I have worked on software for label-free quantification, 
+											proteoform discovery, and mass spectrometry tools. 
+										</p>
+									</div>
+								</div>
+								<p
+									style={{
+										fontSize: "22px",
+										marginTop: "20px",
+										marginBottom: "0px",
+										lineHeight: 1.65,
+										color: "#1b4332",
+										paddingLeft: "20px",
+										paddingRight: "20px",
+									}}
+								>
+									Jun 2023 - Present
+								</p>
+								<div>
+									<div
+										className="timeline"
+										style={{
+											marginTop: "22.5px"
+										}}
+									></div>
+									<div
+										className="post-timeline"
+									></div>
+								</div>
+							</div>
+							<div
+								style={{
+									display: "flex",
+									flexDirection: "row",
+									justifyContent: "space-between"
+								}}
+							>
+								<div
+									style={{
+										display: "flex",
+										flexDirection: "row",
+										padding: "20px 0px",
+										alignItems: "center",
+										width: "70%"
+									}}
+								>
+									<ImgNoMargin
+										alt="pce"
+										src={BatteryWork}
+										sx={{ height: "125px", width: "125px" }}
+									/>
+									<div
+										style={{
+											paddingLeft: "40px"
+										}}
+									>
+										<h2
+											style={{
+												fontSize: "36px",
+												fontFamily: "Bitter, serif",
+												fontWeight: "bold",
+												color: "#1b4332",
+												margin: "0px"
+											}}
+										>
+											Battery Ventures<span style={{ color: "#52b788" }}></span>
+										</h2>
+										<p
+											style={{
+												fontSize: "22px",
+												marginTop: "4px",
+												marginBottom: "0px",
+												lineHeight: 1.65,
+												color: "#1b4332",
+											}}
+										>
+											Sourcing and Diligence Analyst Extern
+										</p>
+										<p
+											style={{
+												fontSize: "17px",
+												marginTop: "10px",
+												marginBottom: "10px",
+												lineHeight: 1.65,
+												color: "#1b4332",
+											}}
+										>
+											I joined Battery Ventures ($13B AUM) as an sourcing analyst extern to find target B2B SaaS companies, a
+											diligence analyst extern to complete a project on broadcasting software, and built an internal software
+											tool prototype for bidding on companies. 
+										</p>
+									</div>
+								</div>
+								<p
+									style={{
+										fontSize: "22px",
+										marginTop: "20px",
+										marginBottom: "0px",
+										lineHeight: 1.65,
+										color: "#1b4332",
+										paddingLeft: "20px",
+										paddingRight: "20px"
+									}}
+								>
+									Jan 2023 - Present
+								</p>
+								<div>
+									<div
+										className="timeline"
+										style={{
+											marginTop: "22.5px"
+										}}
+									></div>
+									<div
+										className="post-timeline"
+									></div>
+								</div>
+							</div>
+							<div
+								style={{
+									display: "flex",
+									flexDirection: "row",
+									justifyContent: "space-between"
+								}}
+							>
+								<div
+									style={{
+										display: "flex",
+										flexDirection: "row",
+										padding: "20px 0px",
+										alignItems: "center",
+										width: "70%"
+									}}
+								>
+									<ImgNoMargin
+										alt="pce"
+										src={NorthwesternWork}
+										sx={{ height: "125px", width: "125px" }}
+									/>
+									<div
+										style={{
+											paddingLeft: "40px"
+										}}
+									>
+										<h2
+											style={{
+												fontSize: "36px",
+												fontFamily: "Bitter, serif",
+												fontWeight: "bold",
+												color: "#1b4332",
+												margin: "0px"
+											}}
+										>
+											Northwestern Science Olympiad<span style={{ color: "#52b788" }}></span>
+										</h2>
+										<p
+											style={{
+												fontSize: "22px",
+												marginTop: "4px",
+												marginBottom: "0px",
+												lineHeight: 1.65,
+												color: "#1b4332",
+											}}
+										>
+											Technology Director
+										</p>
+										<p
+											style={{
+												fontSize: "17px",
+												marginTop: "10px",
+												marginBottom: "10px",
+												lineHeight: 1.65,
+												color: "#1b4332",
+											}}
+										>
+											The Northwestern University Science Olympiad organization hosts an annual competition for 
+											high school students. I created a website for the invitational and have worked to implement 
+											grading automation solutions and test analytics.
+										</p>
+									</div>
+								</div>
+								<p
+									style={{
+										fontSize: "22px",
+										marginTop: "20px",
+										marginBottom: "0px",
+										lineHeight: 1.65,
+										color: "#1b4332",
+										paddingLeft: "20px",
+										paddingRight: "20px"
+									}}
+								>
+									Sep 2022 - Present
+								</p>
+								<div>
+									<div
+										className="timeline"
+										style={{
+											marginTop: "22.5px"
+										}}
+									></div>
+									<div
+										className="post-timeline"
+									></div>
+								</div>
+							</div>
+							<div
+								style={{
+									display: "flex",
+									flexDirection: "row",
+									justifyContent: "space-between"
+								}}
+							>
+								<div
+									style={{
+										display: "flex",
+										flexDirection: "row",
+										padding: "20px 0px",
+										alignItems: "center",
+										width: "70%"
+									}}
+								>
+									<ImgNoMargin
+										alt="pce"
+										src={InboundWork}
+										sx={{ height: "125px", width: "125px" }}
+									/>
+									<div
+										style={{
+											paddingLeft: "40px"
+										}}
+									>
+										<h2
+											style={{
+												fontSize: "36px",
+												fontFamily: "Bitter, serif",
+												fontWeight: "bold",
+												color: "#1b4332",
+												margin: "0px"
+											}}
+										>
+											Inbound<span style={{ color: "#52b788" }}></span>
+										</h2>
+										<p
+											style={{
+												fontSize: "22px",
+												marginTop: "4px",
+												marginBottom: "0px",
+												lineHeight: 1.65,
+												color: "#1b4332",
+											}}
+										>
+											Software Engineer and Growth Associate
+										</p>
+										<p
+											style={{
+												fontSize: "17px",
+												marginTop: "10px",
+												marginBottom: "10px",
+												lineHeight: 1.65,
+												color: "#1b4332",
+											}}
+										>
+											Inbound is a university student recruiting platform for 16+ universities and recruiters from companies like Blackstone, Mastercard, and Deloitte. I led student 
+											outreach efforts and contributed to building and refactoring student and employer portals. 
+										</p>
+									</div>
+								</div>
+								<p
+									style={{
+										fontSize: "22px",
+										marginTop: "20px",
+										marginBottom: "0px",
+										lineHeight: 1.65,
+										color: "#1b4332",
+										paddingLeft: "20px",
+										paddingRight: "20px"
+									}}
+								>
+									Aug 2022 - Jun 2023
+								</p>
+								<div>
+									<div
+										className="timeline"
+										style={{
+											marginTop: "22.5px"
+										}}
+									></div>
+									<div
+										className="post-timeline"
+									></div>
+								</div>
+							</div>
+							<div
+								style={{
+									display: "flex",
+									flexDirection: "row",
+									justifyContent: "space-between"
+								}}
+							>
+								<div
+									style={{
+										display: "flex",
+										flexDirection: "row",
+										padding: "20px 0px",
+										alignItems: "center",
+										width: "70%"
+									}}
+								>
+									<ImgNoMargin
+										alt="pce"
+										src={BastiatWork}
+										sx={{ height: "125px", width: "125px" }}
+									/>
+									<div
+										style={{
+											paddingLeft: "40px"
+										}}
+									>
+										<h2
+											style={{
+												fontSize: "36px",
+												fontFamily: "Bitter, serif",
+												fontWeight: "bold",
+												color: "#1b4332",
+												margin: "0px"
+											}}
+										>
+											Bastiat Partners<span style={{ color: "#52b788" }}></span>
+										</h2>
+										<p
+											style={{
+												fontSize: "22px",
+												marginTop: "4px",
+												marginBottom: "0px",
+												lineHeight: 1.65,
+												color: "#1b4332",
+											}}
+										>
+											Investment Banking Summer Analyst
+										</p>
+										<p
+											style={{
+												fontSize: "17px",
+												marginTop: "10px",
+												marginBottom: "10px",
+												lineHeight: 1.65,
+												color: "#1b4332",
+											}}
+										>
+											Bastiat Partners is a merchant bank advising Seed through Series C companies on venture capital raises. I joined calls with 
+											startup CEOs to discuss prospective and active primary opportunities and led sourcing to identify private SaaS companies.
+										</p>
+									</div>
+								</div>
+								<p
+									style={{
+										fontSize: "22px",
+										marginTop: "20px",
+										marginBottom: "0px",
+										lineHeight: 1.65,
+										color: "#1b4332",
+										paddingLeft: "20px",
+										paddingRight: "20px",
+									}}
+								>
+									Jun 2022 - Sep 2022
+								</p>
+								<div>
+									<div
+										className="timeline"
+										style={{
+											marginTop: "22.5px"
+										}}
+									></div>
+								</div>
+							</div>
+						</div>
+					) : (
+						windowWidth >= 800 ? (
+							<div
+								style={{
+									margin: "100px auto 0px",
+									maxWidth: "1200px"
+								}}
+							>
+								<div
+									style={{
+										width: "60%"
+									}}
+								>
+									<div
+										style={{
+											position: "relative",
+											marginBottom: "36.5px"
+										}}
+									>
+										<h2
+											style={{
+												fontSize: "64px",
+												fontFamily: "Bitter, serif",
+												fontWeight: "bold",
+												color: "#1b4332",
+												margin: "0px"
+											}}
+										>
+											About my experiences<span style={{ color: "#52b788" }}>.</span>
+										</h2>
+										<div
+											style={{
+												width: "80px",
+												height: "3.5px",
+												backgroundColor: "#52b788",
+												marginTop: "10px"
+											}}
+										></div>
+									</div>
+									<div
+										style={{
+											margin: "0px auto",
+											position: "relative"
+										}}
+									>
+										<p
+											style={{
+												fontSize: "17px",
+												marginTop: "0px",
+												lineHeight: 1.65,
+												color: "#1b4332",
+											}}
+										>
+											I'm passionate about learning and leveraging new technologies in fast-paced environments to 
+											drive positive change. Whether accelerating proteomics research or crafting interactive products, 
+											I enjoy collaborating with others to maximize the impact I can have.
+										</p>
+									</div>
+								</div>
+								<div
+									style={{
+										display: "flex",
+										flexDirection: "row",
+										justifyContent: "space-between",
+										marginTop: "36.5px"
+									}}
+								>
+									<div
+										style={{
+											display: "flex",
+											flexDirection: "row",
+											padding: "20px 0px",
+											alignItems: "center",
+											width: "70%",
+										}}
+									>
+										<ImgNoMargin
+											alt="pce"
+											src={ProteomicsWork}
+											sx={{ height: "125px", width: "125px" }}
+										/>
+										<div
+											style={{
+												paddingLeft: "40px"
+											}}
+										>
+											<h2
+												style={{
+													fontSize: "36px",
+													fontFamily: "Bitter, serif",
+													fontWeight: "bold",
+													color: "#1b4332",
+													margin: "0px"
+												}}
+											>
+												Proteomics Center of Excellence<span style={{ color: "#52b788" }}></span>
+											</h2>
+											<p
+												style={{
+													fontSize: "22px",
+													marginTop: "4px",
+													marginBottom: "0px",
+													lineHeight: 1.65,
+													color: "#1b4332",
+												}}
+											>
+												Informatics and Software Engineering Intern
+											</p>
+											<p
+												style={{
+													fontSize: "17px",
+													marginTop: "10px",
+													marginBottom: "10px",
+													lineHeight: 1.65,
+													color: "#1b4332",
+												}}
+											>
+												The Northwestern University Proteomics Center of Excellence is a lab pioneering mass spectrometry
+												methods in top-down proteomics. I have worked on software for label-free quantification, 
+												proteoform discovery, and mass spectrometry tools. 
+											</p>
+										</div>
+									</div>
+									<p
+										style={{
+											fontSize: "22px",
+											marginTop: "20px",
+											marginBottom: "0px",
+											lineHeight: 1.65,
+											color: "#1b4332",
+											paddingLeft: "20px",
+											paddingRight: "20px",
+										}}
+									>
+										Jun 2023 - Present
+									</p>
+									<div>
+										<div
+											className="timeline"
+											style={{
+												marginTop: "22.5px"
+											}}
+										></div>
+										<div
+											className="post-timeline"
+										></div>
+									</div>
+								</div>
+								<div
+									style={{
+										display: "flex",
+										flexDirection: "row",
+										justifyContent: "space-between"
+									}}
+								>
+									<div
+										style={{
+											display: "flex",
+											flexDirection: "row",
+											padding: "20px 0px",
+											alignItems: "center",
+											width: "70%"
+										}}
+									>
+										<ImgNoMargin
+											alt="pce"
+											src={BatteryWork}
+											sx={{ height: "125px", width: "125px" }}
+										/>
+										<div
+											style={{
+												paddingLeft: "40px"
+											}}
+										>
+											<h2
+												style={{
+													fontSize: "36px",
+													fontFamily: "Bitter, serif",
+													fontWeight: "bold",
+													color: "#1b4332",
+													margin: "0px"
+												}}
+											>
+												Battery Ventures<span style={{ color: "#52b788" }}></span>
+											</h2>
+											<p
+												style={{
+													fontSize: "22px",
+													marginTop: "4px",
+													marginBottom: "0px",
+													lineHeight: 1.65,
+													color: "#1b4332",
+												}}
+											>
+												Sourcing and Diligence Analyst Extern
+											</p>
+											<p
+												style={{
+													fontSize: "17px",
+													marginTop: "10px",
+													marginBottom: "10px",
+													lineHeight: 1.65,
+													color: "#1b4332",
+												}}
+											>
+												I joined Battery Ventures ($13B AUM) as an sourcing analyst extern to find target B2B SaaS companies, a
+												diligence analyst extern to complete a project on broadcasting software, and built an internal software
+												tool prototype for bidding on companies. 
+											</p>
+										</div>
+									</div>
+									<p
+										style={{
+											fontSize: "22px",
+											marginTop: "20px",
+											marginBottom: "0px",
+											lineHeight: 1.65,
+											color: "#1b4332",
+											paddingLeft: "20px",
+											paddingRight: "20px"
+										}}
+									>
+										Jan 2023 - Present
+									</p>
+									<div>
+										<div
+											className="timeline"
+											style={{
+												marginTop: "22.5px"
+											}}
+										></div>
+										<div
+											className="post-timeline"
+										></div>
+									</div>
+								</div>
+								<div
+									style={{
+										display: "flex",
+										flexDirection: "row",
+										justifyContent: "space-between"
+									}}
+								>
+									<div
+										style={{
+											display: "flex",
+											flexDirection: "row",
+											padding: "20px 0px",
+											alignItems: "center",
+											width: "70%"
+										}}
+									>
+										<ImgNoMargin
+											alt="pce"
+											src={NorthwesternWork}
+											sx={{ height: "125px", width: "125px" }}
+										/>
+										<div
+											style={{
+												paddingLeft: "40px"
+											}}
+										>
+											<h2
+												style={{
+													fontSize: "36px",
+													fontFamily: "Bitter, serif",
+													fontWeight: "bold",
+													color: "#1b4332",
+													margin: "0px"
+												}}
+											>
+												Northwestern Science Olympiad<span style={{ color: "#52b788" }}></span>
+											</h2>
+											<p
+												style={{
+													fontSize: "22px",
+													marginTop: "4px",
+													marginBottom: "0px",
+													lineHeight: 1.65,
+													color: "#1b4332",
+												}}
+											>
+												Technology Director
+											</p>
+											<p
+												style={{
+													fontSize: "17px",
+													marginTop: "10px",
+													marginBottom: "10px",
+													lineHeight: 1.65,
+													color: "#1b4332",
+												}}
+											>
+												The Northwestern University Science Olympiad organization hosts an annual competition for 
+												high school students. I created a website for the invitational and have worked to implement 
+												grading automation solutions and test analytics.
+											</p>
+										</div>
+									</div>
+									<p
+										style={{
+											fontSize: "22px",
+											marginTop: "20px",
+											marginBottom: "0px",
+											lineHeight: 1.65,
+											color: "#1b4332",
+											paddingLeft: "20px",
+											paddingRight: "20px"
+										}}
+									>
+										Sep 2022 - Present
+									</p>
+									<div>
+										<div
+											className="timeline"
+											style={{
+												marginTop: "22.5px"
+											}}
+										></div>
+										<div
+											className="post-timeline"
+										></div>
+									</div>
+								</div>
+								<div
+									style={{
+										display: "flex",
+										flexDirection: "row",
+										justifyContent: "space-between"
+									}}
+								>
+									<div
+										style={{
+											display: "flex",
+											flexDirection: "row",
+											padding: "20px 0px",
+											alignItems: "center",
+											width: "70%"
+										}}
+									>
+										<ImgNoMargin
+											alt="pce"
+											src={InboundWork}
+											sx={{ height: "125px", width: "125px" }}
+										/>
+										<div
+											style={{
+												paddingLeft: "40px"
+											}}
+										>
+											<h2
+												style={{
+													fontSize: "36px",
+													fontFamily: "Bitter, serif",
+													fontWeight: "bold",
+													color: "#1b4332",
+													margin: "0px"
+												}}
+											>
+												Inbound<span style={{ color: "#52b788" }}></span>
+											</h2>
+											<p
+												style={{
+													fontSize: "22px",
+													marginTop: "4px",
+													marginBottom: "0px",
+													lineHeight: 1.65,
+													color: "#1b4332",
+												}}
+											>
+												Software Engineer and Growth Associate
+											</p>
+											<p
+												style={{
+													fontSize: "17px",
+													marginTop: "10px",
+													marginBottom: "10px",
+													lineHeight: 1.65,
+													color: "#1b4332",
+												}}
+											>
+												Inbound is a university student recruiting platform for 16+ universities and recruiters from companies like Blackstone, Mastercard, and Deloitte. I led student 
+												outreach efforts and contributed to building and refactoring student and employer portals. 
+											</p>
+										</div>
+									</div>
+									<p
+										style={{
+											fontSize: "22px",
+											marginTop: "20px",
+											marginBottom: "0px",
+											lineHeight: 1.65,
+											color: "#1b4332",
+											paddingLeft: "20px",
+											paddingRight: "20px"
+										}}
+									>
+										Aug 2022 - Jun 2023
+									</p>
+									<div>
+										<div
+											className="timeline"
+											style={{
+												marginTop: "22.5px"
+											}}
+										></div>
+										<div
+											className="post-timeline"
+										></div>
+									</div>
+								</div>
+								<div
+									style={{
+										display: "flex",
+										flexDirection: "row",
+										justifyContent: "space-between"
+									}}
+								>
+									<div
+										style={{
+											display: "flex",
+											flexDirection: "row",
+											padding: "20px 0px",
+											alignItems: "center",
+											width: "70%"
+										}}
+									>
+										<ImgNoMargin
+											alt="pce"
+											src={BastiatWork}
+											sx={{ height: "125px", width: "125px" }}
+										/>
+										<div
+											style={{
+												paddingLeft: "40px"
+											}}
+										>
+											<h2
+												style={{
+													fontSize: "36px",
+													fontFamily: "Bitter, serif",
+													fontWeight: "bold",
+													color: "#1b4332",
+													margin: "0px"
+												}}
+											>
+												Bastiat Partners<span style={{ color: "#52b788" }}></span>
+											</h2>
+											<p
+												style={{
+													fontSize: "22px",
+													marginTop: "4px",
+													marginBottom: "0px",
+													lineHeight: 1.65,
+													color: "#1b4332",
+												}}
+											>
+												Investment Banking Summer Analyst
+											</p>
+											<p
+												style={{
+													fontSize: "17px",
+													marginTop: "10px",
+													marginBottom: "10px",
+													lineHeight: 1.65,
+													color: "#1b4332",
+												}}
+											>
+												Bastiat Partners is a merchant bank advising Seed through Series C companies on venture capital raises. I joined calls with 
+												startup CEOs to discuss prospective and active primary opportunities and led sourcing to identify private SaaS companies.
+											</p>
+										</div>
+									</div>
+									<p
+										style={{
+											fontSize: "22px",
+											marginTop: "20px",
+											marginBottom: "0px",
+											lineHeight: 1.65,
+											color: "#1b4332",
+											paddingLeft: "20px",
+											paddingRight: "20px",
+										}}
+									>
+										Jun 2022 - Sep 2022
+									</p>
+									<div>
+										<div
+											className="timeline"
+											style={{
+												marginTop: "22.5px"
+											}}
+										></div>
+									</div>
+								</div>
+							</div>
+						) : (
+							<div
+								style={{
+									margin: "100px auto 0px",
+									maxWidth: "1200px"
+								}}
+							>
+								<div
+									style={{
+										width: "60%"
+									}}
+								>
+									<div
+										style={{
+											position: "relative",
+											marginBottom: "36.5px"
+										}}
+									>
+										<h2
+											style={{
+												fontSize: "64px",
+												fontFamily: "Bitter, serif",
+												fontWeight: "bold",
+												color: "#1b4332",
+												margin: "0px"
+											}}
+										>
+											About my experiences<span style={{ color: "#52b788" }}>.</span>
+										</h2>
+										<div
+											style={{
+												width: "80px",
+												height: "3.5px",
+												backgroundColor: "#52b788",
+												marginTop: "10px"
+											}}
+										></div>
+									</div>
+									<div
+										style={{
+											margin: "0px auto",
+											position: "relative"
+										}}
+									>
+										<p
+											style={{
+												fontSize: "17px",
+												marginTop: "0px",
+												lineHeight: 1.65,
+												color: "#1b4332",
+											}}
+										>
+											I'm passionate about learning and leveraging new technologies in fast-paced environments to 
+											drive positive change. Whether accelerating proteomics research or crafting interactive products, 
+											I enjoy collaborating with others to maximize the impact I can have.
+										</p>
+									</div>
+								</div>
+								<div
+									style={{
+										display: "flex",
+										flexDirection: "row",
+										justifyContent: "space-between",
+										marginTop: "36.5px"
+									}}
+								>
+									<div
+										style={{
+											display: "flex",
+											flexDirection: "row",
+											padding: "20px 0px",
+											alignItems: "center",
+											width: "70%",
+										}}
+									>
+										<ImgNoMargin
+											alt="pce"
+											src={ProteomicsWork}
+											sx={{ height: "125px", width: "125px" }}
+										/>
+										<div
+											style={{
+												paddingLeft: "40px"
+											}}
+										>
+											<h2
+												style={{
+													fontSize: "36px",
+													fontFamily: "Bitter, serif",
+													fontWeight: "bold",
+													color: "#1b4332",
+													margin: "0px"
+												}}
+											>
+												Proteomics Center of Excellence<span style={{ color: "#52b788" }}></span>
+											</h2>
+											<p
+												style={{
+													fontSize: "22px",
+													marginTop: "4px",
+													marginBottom: "0px",
+													lineHeight: 1.65,
+													color: "#1b4332",
+												}}
+											>
+												Informatics and Software Engineering Intern
+											</p>
+											<p
+												style={{
+													fontSize: "22px",
+													marginTop: "4px",
+													marginBottom: "0px",
+													lineHeight: 1.65,
+													color: "#1b4332",
+												}}
+											>
+												Jun 2023 - Present
+											</p>
+											<p
+												style={{
+													fontSize: "17px",
+													marginTop: "10px",
+													marginBottom: "10px",
+													lineHeight: 1.65,
+													color: "#1b4332",
+												}}
+											>
+												The Northwestern University Proteomics Center of Excellence is a lab pioneering mass spectrometry
+												methods in top-down proteomics. I have worked on software for label-free quantification, 
+												proteoform discovery, and mass spectrometry tools. 
+											</p>
+										</div>
+									</div>
+									<div>
+										<div
+											className="timeline"
+											style={{
+												marginTop: "22.5px"
+											}}
+										></div>
+										<div
+											className="post-timeline"
+										></div>
+									</div>
+								</div>
+								<div
+									style={{
+										display: "flex",
+										flexDirection: "row",
+										justifyContent: "space-between"
+									}}
+								>
+									<div
+										style={{
+											display: "flex",
+											flexDirection: "row",
+											padding: "20px 0px",
+											alignItems: "center",
+											width: "70%"
+										}}
+									>
+										<ImgNoMargin
+											alt="pce"
+											src={BatteryWork}
+											sx={{ height: "125px", width: "125px" }}
+										/>
+										<div
+											style={{
+												paddingLeft: "40px"
+											}}
+										>
+											<h2
+												style={{
+													fontSize: "36px",
+													fontFamily: "Bitter, serif",
+													fontWeight: "bold",
+													color: "#1b4332",
+													margin: "0px"
+												}}
+											>
+												Battery Ventures<span style={{ color: "#52b788" }}></span>
+											</h2>
+											<p
+												style={{
+													fontSize: "22px",
+													marginTop: "4px",
+													marginBottom: "0px",
+													lineHeight: 1.65,
+													color: "#1b4332",
+												}}
+											>
+												Sourcing and Diligence Analyst Extern
+											</p>
+											<p
+												style={{
+													fontSize: "22px",
+													marginTop: "4px",
+													marginBottom: "0px",
+													lineHeight: 1.65,
+													color: "#1b4332",
+												}}
+											>
+												Jan 2023 - Present
+											</p>
+											<p
+												style={{
+													fontSize: "17px",
+													marginTop: "10px",
+													marginBottom: "10px",
+													lineHeight: 1.65,
+													color: "#1b4332",
+												}}
+											>
+												I joined Battery Ventures ($13B AUM) as an sourcing analyst extern to find target B2B SaaS companies, a
+												diligence analyst extern to complete a project on broadcasting software, and built an internal software
+												tool prototype for bidding on companies. 
+											</p>
+										</div>
+									</div>
+									<div>
+										<div
+											className="timeline"
+											style={{
+												marginTop: "22.5px"
+											}}
+										></div>
+										<div
+											className="post-timeline"
+										></div>
+									</div>
+								</div>
+								<div
+									style={{
+										display: "flex",
+										flexDirection: "row",
+										justifyContent: "space-between"
+									}}
+								>
+									<div
+										style={{
+											display: "flex",
+											flexDirection: "row",
+											padding: "20px 0px",
+											alignItems: "center",
+											width: "70%"
+										}}
+									>
+										<ImgNoMargin
+											alt="pce"
+											src={NorthwesternWork}
+											sx={{ height: "125px", width: "125px" }}
+										/>
+										<div
+											style={{
+												paddingLeft: "40px"
+											}}
+										>
+											<h2
+												style={{
+													fontSize: "36px",
+													fontFamily: "Bitter, serif",
+													fontWeight: "bold",
+													color: "#1b4332",
+													margin: "0px"
+												}}
+											>
+												Northwestern Science Olympiad<span style={{ color: "#52b788" }}></span>
+											</h2>
+											<p
+												style={{
+													fontSize: "22px",
+													marginTop: "4px",
+													marginBottom: "0px",
+													lineHeight: 1.65,
+													color: "#1b4332",
+												}}
+											>
+												Technology Director
+											</p>
+											<p
+												style={{
+													fontSize: "22px",
+													marginTop: "4px",
+													marginBottom: "0px",
+													lineHeight: 1.65,
+													color: "#1b4332",
+												}}
+											>
+												Sep 2022 - Present
+											</p>
+											<p
+												style={{
+													fontSize: "17px",
+													marginTop: "10px",
+													marginBottom: "10px",
+													lineHeight: 1.65,
+													color: "#1b4332",
+												}}
+											>
+												The Northwestern University Science Olympiad organization hosts an annual competition for 
+												high school students. I created a website for the invitational and have worked to implement 
+												grading automation solutions and test analytics.
+											</p>
+										</div>
+									</div>
+									<div>
+										<div
+											className="timeline"
+											style={{
+												marginTop: "22.5px"
+											}}
+										></div>
+										<div
+											className="post-timeline"
+										></div>
+									</div>
+								</div>
+								<div
+									style={{
+										display: "flex",
+										flexDirection: "row",
+										justifyContent: "space-between"
+									}}
+								>
+									<div
+										style={{
+											display: "flex",
+											flexDirection: "row",
+											padding: "20px 0px",
+											alignItems: "center",
+											width: "70%"
+										}}
+									>
+										<ImgNoMargin
+											alt="pce"
+											src={InboundWork}
+											sx={{ height: "125px", width: "125px" }}
+										/>
+										<div
+											style={{
+												paddingLeft: "40px"
+											}}
+										>
+											<h2
+												style={{
+													fontSize: "36px",
+													fontFamily: "Bitter, serif",
+													fontWeight: "bold",
+													color: "#1b4332",
+													margin: "0px"
+												}}
+											>
+												Inbound<span style={{ color: "#52b788" }}></span>
+											</h2>
+											<p
+												style={{
+													fontSize: "22px",
+													marginTop: "4px",
+													marginBottom: "0px",
+													lineHeight: 1.65,
+													color: "#1b4332",
+												}}
+											>
+												Software Engineer and Growth Associate
+											</p>
+											<p
+												style={{
+													fontSize: "22px",
+													marginTop: "4px",
+													marginBottom: "0px",
+													lineHeight: 1.65,
+													color: "#1b4332",
+												}}
+											>
+												Aug 2022 - Jun 2023
+											</p>
+											<p
+												style={{
+													fontSize: "17px",
+													marginTop: "10px",
+													marginBottom: "10px",
+													lineHeight: 1.65,
+													color: "#1b4332",
+												}}
+											>
+												Inbound is a university student recruiting platform for 16+ universities and recruiters from companies like Blackstone, Mastercard, and Deloitte. I led student 
+												outreach efforts and contributed to building and refactoring student and employer portals. 
+											</p>
+										</div>
+									</div>
+									<div>
+										<div
+											className="timeline"
+											style={{
+												marginTop: "22.5px"
+											}}
+										></div>
+										<div
+											className="post-timeline"
+										></div>
+									</div>
+								</div>
+								<div
+									style={{
+										display: "flex",
+										flexDirection: "row",
+										justifyContent: "space-between"
+									}}
+								>
+									<div
+										style={{
+											display: "flex",
+											flexDirection: "row",
+											padding: "20px 0px",
+											alignItems: "center",
+											width: "70%"
+										}}
+									>
+										<ImgNoMargin
+											alt="pce"
+											src={BastiatWork}
+											sx={{ height: "125px", width: "125px" }}
+										/>
+										<div
+											style={{
+												paddingLeft: "40px"
+											}}
+										>
+											<h2
+												style={{
+													fontSize: "36px",
+													fontFamily: "Bitter, serif",
+													fontWeight: "bold",
+													color: "#1b4332",
+													margin: "0px"
+												}}
+											>
+												Bastiat Partners<span style={{ color: "#52b788" }}></span>
+											</h2>
+											<p
+												style={{
+													fontSize: "22px",
+													marginTop: "4px",
+													marginBottom: "0px",
+													lineHeight: 1.65,
+													color: "#1b4332",
+												}}
+											>
+												Investment Banking Summer Analyst
+											</p>
+											<p
+												style={{
+													fontSize: "22px",
+													marginTop: "4px",
+													marginBottom: "0px",
+													lineHeight: 1.65,
+													color: "#1b4332",
+												}}
+											>
+												Jun 2022 - Sep 2022
+											</p>
+											<p
+												style={{
+													fontSize: "17px",
+													marginTop: "10px",
+													marginBottom: "10px",
+													lineHeight: 1.65,
+													color: "#1b4332",
+												}}
+											>
+												Bastiat Partners is a merchant bank advising Seed through Series C companies on venture capital raises. I joined calls with 
+												startup CEOs to discuss prospective and active primary opportunities and led sourcing to identify private SaaS companies.
+											</p>
+										</div>
+									</div>
+									<div>
+										<div
+											className="timeline"
+											style={{
+												marginTop: "22.5px"
+											}}
+										></div>
+									</div>
+								</div>
+							</div>
+						)
+					)}
+					<div
+						style={{
+							margin: "100px auto 0px",
+							maxWidth: "1200px"
+						}}
+					>
+						<div
+							style={{
+								width: "60%"
+							}}
+						>
+							<div
+								style={{
+									position: "relative",
+									marginBottom: "36.5px"
+								}}
+							>
+								<h2
+									style={{
+										fontSize: "64px",
+										fontFamily: "Bitter, serif",
+										fontWeight: "bold",
+										color: "#1b4332",
+										margin: "0px"
+									}}
+								>
+									Contact me<span style={{ color: "#52b788" }}>.</span>
+								</h2>
+								<div
+									style={{
+										width: "80px",
+										height: "3.5px",
+										backgroundColor: "#52b788",
+										marginTop: "10px"
+									}}
+								></div>
+							</div>
+							<div
+								style={{
+									margin: "0px auto",
+									position: "relative"
+								}}
+							>
+								<p
+									style={{
+										fontSize: "17px",
+										marginTop: "0px",
+										lineHeight: 1.65,
+										color: "#1b4332",
+										marginBottom: "36.5px"
+									}}
+								>
+									I am currently looking for opportunities for Spring 2024 and Summer 2024. If you'd like to learn more about me or just want to chat, please reach out!
+								</p>
+							</div>
+						</div>
+						<div
+							style={{
+								display: "flex",
+								flexDirection: "row",
+							}}
+						>
+							<a href="https://github.com/mkim45" target="_blank" rel="noopener noreferrer" underline="none">
+								<ImgNoMargin
+									alt="githubtop"
+									src={GitHubIcon}
+									sx={{ height: "40px", width: "40px", paddingRight: "40px" }}
+								/>
+							</a>
+							<a href="https://www.linkedin.com/in/michael-kim-nu/" target="_blank" rel="noopener noreferrer" underline="none">
+								<ImgNoMargin
+									alt="linkedintop"
+									src={LinkedInIcon}
+									sx={{ height: "40px", width: "40px", paddingRight: "40px" }}
+								/>
+							</a>
+							<a href={"mailto:michaelkim2025.1@u.northwestern.edu"} target="_blank" rel="noopener noreferrer" underline="none">
+								<EmailIcon style={{ width: "40px", height: "40px", color: "#1b4332", paddingRight: "40px" }} />
+							</a>
+							<a href="https://drive.google.com/file/d/1YwltLpdjJeLbaBCEr8S3trEaMApgaMQu/view?usp=drive_link" target="_blank" rel="noopener noreferrer" underline="none" style={{ textDecoration: "none" }}>
+								<div
+									style={{ display: "flex", flexDirection: "row", textDecoration: "none", alignItems: "center" }}
+								>
+									<p
+										style={{
+											fontSize: "22px",
+											marginTop: "0px",
+											marginBottom: "0px",
+											lineHeight: 1.65,
+											color: "#1b4332",
+											paddingRight: "10px",
+											display: "flex",
+											alignItems: "center"
+										}}
+									>
+										View My Resume
+									</p>
+									<ArrowForwardIcon 
+										style={{ width: "30px", height: "30px", color: "#1b4332", alignItems: "center", display: "flex" }}
+									></ArrowForwardIcon>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div
+						style={{ height: "36.5px" }}
+					></div>
 				</div>
-			</Container>
-        </div>
+			</div>
+		</div>
     );
 };
 

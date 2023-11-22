@@ -1,0 +1,61 @@
+.view {
+	background: #fff;
+	min-height: calc(100vh - 40px);
+	position: relative;
+	padding: 20px;
+	line-height: 1;
+  }
+  
+.view::before {
+  	content: "";
+	top: 0;
+	backface-visibility: hidden;
+	position: fixed;
+	left: 0;
+	width: 100%;
+	height: 20px;
+	background: #fff;
+	z-index: 20000;
+	box-sizing: border-box;
+}
+  
+.view::after {
+	content: "";
+	backface-visibility: hidden;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 20px;
+	background: #fff;
+	z-index: 20100;
+	box-sizing: border-box;
+}
+
+.txt-rotate {}
+
+.project {
+	height: 240px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 40px;
+	padding-right: 40px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	border-radius: 16px;
+	overflow: hidden;
+}
+
+.timeline {
+	width: 27.5px;
+	height: 27.5px;
+	border-radius: 40%;
+	background-color: #52b788;
+}
+
+.post-timeline {
+	width: 6px;
+	height: 100%;
+	margin-left: 10.75px;
+	background-color: #52b788;
+}
