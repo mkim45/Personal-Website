@@ -1776,7 +1776,7 @@ const Main = () => {
 						>
 							<div
 								style={{
-									width: "100%"
+									width: "60%"
 								}}
 							>
 								<div
@@ -2272,7 +2272,7 @@ const Main = () => {
 							>
 								<div
 									style={{
-										width: "60%"
+										width: "100%"
 									}}
 								>
 									<div
@@ -2767,7 +2767,7 @@ const Main = () => {
 							>
 								<div
 									style={{
-										width: "60%"
+										width: "100%"
 									}}
 								>
 									<div
