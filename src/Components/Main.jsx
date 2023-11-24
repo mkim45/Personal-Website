@@ -3324,7 +3324,7 @@ const Main = () => {
 							<a href={"mailto:michaelkim2025.1@u.northwestern.edu"} target="_blank" rel="noopener noreferrer" underline="none">
 								<EmailIcon style={{ width: "40px", height: "40px", color: "#1b4332", paddingRight: "40px" }} />
 							</a>
-							<a href="https://drive.google.com/file/d/1YwltLpdjJeLbaBCEr8S3trEaMApgaMQu/view?usp=drive_link" target="_blank" rel="noopener noreferrer" underline="none" style={{ textDecoration: "none" }}>
+							<a href="https://drive.google.com/file/d/1KsjGK1Vvj932qUB7lhl_Z5iZ-YAZgjHq/view?usp=sharing" target="_blank" rel="noopener noreferrer" underline="none" style={{ textDecoration: "none" }}>
 								<div
 									style={{ display: "flex", flexDirection: "row", textDecoration: "none", alignItems: "center" }}
 								>
