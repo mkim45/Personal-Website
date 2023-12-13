@@ -1,63 +1,19 @@
-import { AppBar, Toolbar, Box, Stack, Typography, Link } from "@mui/material";
 import React from "react";
-import { useState, useEffect, useRef } from "react";
-import Projects from "./Projects";
-import Technologies from "./Technologies";
-import Work from "./Work";
+import { useState, useEffect } from "react";
 import { styled } from "@mui/material/styles";
 import "./Main.css";
 
 import Portrait from "./Michael_Kim.png";
 import AboutMe from "./AboutMe.png";
-import Yelp from "./Yelp.png";
 import Battery from "./Battery.png";
-import Chess from "./Chess.png";
 import Proteins1 from "./Proteins1.png";
 import Proteins2 from "./Proteins2.png";
 import Proteins3 from "./Proteins3.png";
 import Proteins4 from "./Proteins4.png";
 import Proteins5 from "./Proteins5.png";
 import Science1 from "./Science1.png";
-import SciOly from "./SciOly.png";
 import Uber from "./Uber.png";
 import Wine from "./Wine.png";
-
-import Net from "./NET.png";
-import Azure from "./Azure.png";
-import Blazor from "./Blazor.png";
-import C from "./C.png";
-import CSharp from "./CSharp.png";
-import CPlus from "./C++.png";
-import CSS from "./CSS.png";
-import FSharp from "./FSharp.png";
-import Figma from "./Figma.png";
-import Firebase from "./Firebase.png";
-import Git from "./Git.png";
-import HTML from "./HTML.png";
-import HuggingFace from "./Hugging.png";
-import Java from "./Java.png";
-import JavaScript from "./Javascript.png";
-import Keras from "./Keras.png";
-import Matplotlib from "./Matplotlib.png";
-import MySQL from "./MySQL.png";
-import Node from "./Node.png";
-import Npm from "./Npm.png";
-import Numpy from "./Numpy.png";
-import Pandas from "./Pandas.png";
-import Postgre from "./Postgre.png";
-import Python from "./Python.png";
-import Pytorch from "./Pytorch.png";
-import R from "./R.png";
-import Racket from "./Racket.png";
-import ReactImage from "./React.png";
-import SAS from "./SAS.png";
-import Scikit from "./Scikit.png";
-import Scipy from "./Scipy.png";
-import Seaborn from "./Seaborn.png";
-import SQLite from "./SQLite.png";
-import Statsmodels from "./Statsmodels.png";
-import Tensorflow from "./Tensorflow.png";
-import Wasm from "./WebAssembly.png";
 
 import ProteomicsWork from "./Proteomics.jpg";
 import BatteryWork from "./BatteryWork.png";
@@ -67,16 +23,11 @@ import NorthwesternWork from "./NorthwesternWork.jpg";
 
 import GitHubIcon from "./GitHub.png";
 import LinkedInIcon from "./LinkedInLogo.png";
-import DownloadIcon from '@mui/icons-material/Download';
 import EmailIcon from '@mui/icons-material/Email';
 
 import HomeLogo from "./Logo.png";
 
-import Button from "@mui/material/Button";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import CssBaseline from "@mui/material/CssBaseline";
-import Container from "@mui/material/Container";
-import { ArrowForward, GitHub } from "@mui/icons-material";
 
 const ImgNoMargin = styled("img")({
 	maxWidth: "100%",
@@ -498,9 +449,9 @@ const Main = () => {
 											color: "#1b4332",
 										}}
 									>
-										I'm passionate about learning and leveraging new technologies in fast-paced environments to 
-										drive positive change. Whether accelerating proteomics research or crafting interactive products, 
-										I enjoy collaborating with others to maximize the impact I can have.
+										Whether it's through independent or collaborative projects, I enjoy applying new technologies to get impactful results.
+										Over the last four years, I've worked on projects for data analysis and software development across multiple industries
+										and disciplines. 
 									</p>
 								</div>
 							</div>
@@ -1061,9 +1012,9 @@ const Main = () => {
 											color: "#1b4332",
 										}}
 									>
-										I'm passionate about learning and leveraging new technologies in fast-paced environments to 
-										drive positive change. Whether accelerating proteomics research or crafting interactive products, 
-										I enjoy collaborating with others to maximize the impact I can have.
+										Whether it's through independent or collaborative projects, I enjoy applying new technologies to get impactful results.
+										Over the last four years, I've worked on projects for data analysis and software development across multiple industries
+										and disciplines. 
 									</p>
 								</div>
 							</div>
@@ -1441,9 +1392,9 @@ const Main = () => {
 											color: "#1b4332",
 										}}
 									>
-										I'm passionate about learning and leveraging new technologies in fast-paced environments to 
-										drive positive change. Whether accelerating proteomics research or crafting interactive products, 
-										I enjoy collaborating with others to maximize the impact I can have.
+										Whether it's through independent or collaborative projects, I enjoy applying new technologies to get impactful results.
+										Over the last four years, I've worked on projects for data analysis and software development across multiple industries
+										and disciplines. 
 									</p>
 								</div>
 							</div>
