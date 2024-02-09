@@ -34,62 +34,64 @@ const ImgNoMargin = styled("img")({
 	maxHeight: "100%",
 });
 
-var TxtRotate = function(el, toRotate, period) {
-	this.toRotate = toRotate;
-	this.el = el;
-	this.loopNum = 0;
-	this.period = parseInt(period, 100) || 4000;
-	this.txt = '';
-	this.tick();
-	this.isDeleting = false;
-  };
+// var TxtRotate = function(el, toRotate, period) {
+// 	this.toRotate = toRotate;
+// 	this.el = el;
+// 	this.loopNum = 0;
+// 	this.period = parseInt(period, 10) || 4000;
+// 	this.txt = '';
+// 	this.tick();
+// 	this.isDeleting = false;
+//   };
   
-  TxtRotate.prototype.tick = function() {
-	var i = this.loopNum % this.toRotate.length;
-	var fullTxt = this.toRotate[i];
+//   TxtRotate.prototype.tick = function() {
+// 	var i = this.loopNum % this.toRotate.length;
+// 	var fullTxt = this.toRotate[i];
   
-	if (this.isDeleting) {
-	  this.txt = fullTxt.substring(0, this.txt.length - 1);
-	} else {
-	  this.txt = fullTxt.substring(0, this.txt.length + 1);
-	}
+// 	if (this.isDeleting) {
+// 	  this.txt = fullTxt.substring(0, this.txt.length - 1);
+// 	} else {
+// 	  this.txt = fullTxt.substring(0, this.txt.length + 1);
+// 	}
   
-	this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+// 	this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
   
-	var that = this;
-	var delta = 150 - Math.random() * 100;
+// 	var that = this;
+// 	var delta = 150; // Fixed delta value
   
-	if (this.isDeleting) { delta /= 2; }
+// 	if (this.isDeleting) {
+// 	  delta /= 2;
+// 	}
   
-	if (!this.isDeleting && this.txt === fullTxt) {
-	  delta = this.period;
-	  this.isDeleting = true;
-	} else if (this.isDeleting && this.txt === '') {
-	  this.isDeleting = false;
-	  this.loopNum++;
-	  delta = 1000;
-	}
+// 	if (!this.isDeleting && this.txt === fullTxt) {
+// 	  delta = this.period;
+// 	  this.isDeleting = true;
+// 	} else if (this.isDeleting && this.txt === '') {
+// 	  this.isDeleting = false;
+// 	  this.loopNum++;
+// 	  delta = 1000;
+// 	}
   
-	setTimeout(function() {
-	  that.tick();
-	}, delta);
-  };
+// 	setTimeout(function() {
+// 	  that.tick();
+// 	}, delta);
+//   };
   
-  window.onload = function() {
-	var elements = document.getElementsByClassName('txt-rotate');
-	for (var i=0; i<elements.length; i++) {
-	  var toRotate = elements[i].getAttribute('data-rotate');
-	  var period = elements[i].getAttribute('data-period');
-	  if (toRotate) {
-		new TxtRotate(elements[i], JSON.parse(toRotate), period);
-	  }
-	}
-	// INJECT CSS
-	var css = document.createElement("style");
-	css.type = "text/css";
-	css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #1b4332 }";
-	document.body.appendChild(css);
-  };
+//   window.onload = function() {
+// 	var elements = document.getElementsByClassName('txt-rotate');
+// 	for (var i = 0; i < elements.length; i++) {
+// 	  var toRotate = elements[i].getAttribute('data-rotate');
+// 	  var period = elements[i].getAttribute('data-period');
+// 	  if (toRotate) {
+// 		new TxtRotate(elements[i], JSON.parse(toRotate), period);
+// 	  }
+// 	}
+// 	// INJECT CSS
+// 	var css = document.createElement("style");
+// 	css.type = "text/css";
+// 	css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #1b4332 }";
+// 	document.body.appendChild(css);
+//   };
 
 const Main = () => {
 	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -203,7 +205,7 @@ const Main = () => {
 							>
 								<h1
 									style={{
-										fontSize: "72px",
+										fontSize: windowWidth < 500 ? "54px" : "72px",
 										fontFamily: "Bitter, serif",
 										fontWeight: "normal",
 										color: "#1b4332",
@@ -214,22 +216,23 @@ const Main = () => {
 								</h1>
 								<p
 									style={{
-										fontSize: "24px",
+										fontSize: windowWidth < 500 ? "20px" : "24px",
 										maxWidth: "525px",
 										marginTop: "30px",
 										lineHeight: 1.65,
 										color: "#1b4332"
 									}}
 								>
-									I'm a <b>software engineer</b> and <b>data scientist</b> interested in improving human experiences through&nbsp;
-									<span class="txt-rotate"
+									I'm a <b>software engineer</b> and <b>data scientist</b> focused on enhancing industry experiences, from <b>biotechnology</b> to <b>enterprise startups</b>.
+									{/* through&nbsp; */}
+									{/* <span class="txt-rotate"
 										style={{
 											fontWeight: "bold",
 											color: "#1b4332"
 										}} 
 										data-period="1500"
 										data-rotate='["multiomics.&nbsp;", "machine learning.&nbsp;", "startups.&nbsp;", "software development.&nbsp;", "bioinformatics.&nbsp;"]'>
-									</span>
+									</span> */}
 								</p>
 							</div>
 						</div>
@@ -1027,7 +1030,7 @@ const Main = () => {
 									>
 										<h2
 											style={{
-												fontSize: "36px",
+												fontSize: "30px",
 												fontFamily: "Bitter, serif",
 												fontWeight: "bold",
 												color: "#fff",
@@ -1064,7 +1067,7 @@ const Main = () => {
 										>
 											<h2
 												style={{
-													fontSize: "36px",
+													fontSize: "30px",
 													fontFamily: "Bitter, serif",
 													fontWeight: "bold",
 													color: "#fff",
@@ -1102,7 +1105,7 @@ const Main = () => {
 										>
 											<h2
 												style={{
-													fontSize: "36px",
+													fontSize: "30px",
 													fontFamily: "Bitter, serif",
 													fontWeight: "bold",
 													color: "#fff",
@@ -1139,7 +1142,7 @@ const Main = () => {
 									>
 										<h2
 											style={{
-												fontSize: "36px",
+												fontSize: "30px",
 												fontFamily: "Bitter, serif",
 												fontWeight: "bold",
 												color: "#fff",
@@ -1175,7 +1178,7 @@ const Main = () => {
 									>
 										<h2
 											style={{
-												fontSize: "36px",
+												fontSize: "30px",
 												fontFamily: "Bitter, serif",
 												fontWeight: "bold",
 												color: "#fff",
@@ -1211,7 +1214,7 @@ const Main = () => {
 									>
 										<h2
 											style={{
-												fontSize: "36px",
+												fontSize: "30px",
 												fontFamily: "Bitter, serif",
 												fontWeight: "bold",
 												color: "#fff",
@@ -1249,7 +1252,7 @@ const Main = () => {
 										>
 											<h2
 												style={{
-													fontSize: "36px",
+													fontSize: "30px",
 													fontFamily: "Bitter, serif",
 													fontWeight: "bold",
 													color: "#fff",
@@ -1286,7 +1289,7 @@ const Main = () => {
 									>
 										<h2
 											style={{
-												fontSize: "36px",
+												fontSize: "30px",
 												fontFamily: "Bitter, serif",
 												fontWeight: "bold",
 												color: "#fff",
@@ -1324,7 +1327,7 @@ const Main = () => {
 										>
 											<h2
 												style={{
-													fontSize: "36px",
+													fontSize: "30px",
 													fontFamily: "Bitter, serif",
 													fontWeight: "bold",
 													color: "#fff",
@@ -2858,44 +2861,50 @@ const Main = () => {
 							style={{
 								display: "flex",
 								flexDirection: "row",
-								width: "100%"
+								width: "100%",
+								justifyContent: windowWidth < 600 ? "space-between" : "normal"
 							}}
 						>
 							<a href="https://github.com/mkim45" target="_blank" rel="noopener noreferrer" underline="none">
 								<ImgNoMargin
 									alt="githubtop"
 									src={GitHubIcon}
-									sx={{ height: "40px", width: "40px", paddingRight: windowWidth < 600 ? `calc(0.05 * ${windowWidth}px)` : "40px" }}
+									sx={{ height: "40px", width: "40px", paddingRight: windowWidth >= 600 ? "40px" : "0px" }}
 								/>
 							</a>
 							<a href="https://www.linkedin.com/in/michael-kim-nu/" target="_blank" rel="noopener noreferrer" underline="none">
 								<ImgNoMargin
 									alt="linkedintop"
 									src={LinkedInIcon}
-									sx={{ height: "40px", width: "40px", paddingRight: windowWidth < 600 ? `calc(0.05 * ${windowWidth}px)` : "40px" }}
+									sx={{ height: "40px", width: "40px", paddingRight: windowWidth >= 600 ? "40px" : "0px" }}
 								/>
 							</a>
 							<a href={"mailto:michaelkim2025.1@u.northwestern.edu"} target="_blank" rel="noopener noreferrer" underline="none">
-								<EmailIcon style={{ width: "40px", height: "40px", color: "#1b4332", paddingRight: windowWidth < 600 ? `calc(0.05 * ${windowWidth}px)` : "40px" }} />
+								<EmailIcon style={{ width: "40px", height: "40px", color: "#1b4332", paddingRight: windowWidth >= 600 ? "40px" : "0px" }} />
 							</a>
 							<a href="https://drive.google.com/file/d/1KsjGK1Vvj932qUB7lhl_Z5iZ-YAZgjHq/view?usp=sharing" target="_blank" rel="noopener noreferrer" underline="none" style={{ textDecoration: "none" }}>
 								<div
 									style={{ display: "flex", flexDirection: "row", textDecoration: "none", alignItems: "center", padding: "0px", margin: "0px" }}
 								>
 									{windowWidth >= 600 ? (
-										<p
-											style={{
-												fontSize: "22px",
-												margin: "0px",
-												lineHeight: 1.65,
-												color: "#1b4332",
-												paddingRight: "10px",
-												display: "flex",
-												alignItems: "center"
-											}}
-										>
-											View My Resume
-										</p>
+										<>
+											<p
+												style={{
+													fontSize: "22px",
+													margin: "0px",
+													lineHeight: 1.65,
+													color: "#1b4332",
+													paddingRight: "10px",
+													display: "flex",
+													alignItems: "center"
+												}}
+											>
+												View My Resume
+											</p>
+											<ArrowForwardIcon 
+												style={{ width: "30px", height: "30px", color: "#1b4332", alignItems: "center", display: "flex", margin: "0px", padding: "0px" }}
+											></ArrowForwardIcon>
+										</>
 									) : (
 										<p
 											style={{
@@ -2911,9 +2920,6 @@ const Main = () => {
 											Resume
 										</p>
 									)}
-									<ArrowForwardIcon 
-										style={{ width: "30px", height: "30px", color: "#1b4332", alignItems: "center", display: "flex", margin: "0px", padding: "0px" }}
-									></ArrowForwardIcon>
 								</div>
 							</a>
 						</div>
