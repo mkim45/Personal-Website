@@ -12,7 +12,7 @@ import Proteins3 from "./Proteins3.png";
 import Proteins4 from "./Proteins4.png";
 import Proteins5 from "./Proteins5.png";
 import Science1 from "./Science1.png";
-import Uber from "./Uber.png";
+import TeamfightTactics from "./TeamfightTactics.jpeg";
 import Wine from "./Wine.png";
 
 import ProteomicsWork from "./Proteomics.jpg";
@@ -156,8 +156,8 @@ const Main = () => {
 				</div>
 				<div 
 					style={{ 
-						marginLeft: "60px",
-						marginRight: "60px"
+						marginLeft: "40px",
+						marginRight: "40px"
 					}}
 				>
 					<div
@@ -176,7 +176,7 @@ const Main = () => {
 						{windowWidth < 1075 ? (
 							<div
 								style={{
-									display: "flex", justifyContent: "center"
+									display: "flex", justifyContent: "center", marginTop: "20px"
 								}}
 							>
 								<ImgNoMargin
@@ -236,7 +236,7 @@ const Main = () => {
 						{windowWidth >= 1075 ? (
 							<div
 								style={{
-									marginTop: "60px",
+									marginTop: "40px",
 								}}
 							>
 								<ImgNoMargin
@@ -307,11 +307,11 @@ const Main = () => {
 										and an M.S. in Computer Science through a B.A./M.S. program.<br/><br/>
 										While initially exploring investment banking and venture capital internships, I found myself far more passionate 
 										about the transformative work of the startups I was actually advising and sourcing. Since then, I’ve been fortunate to build 
-										software for a <b>multiomics research lab</b>, a <b>venture capital firm</b>, and a <b>startup</b>. I'm eager to continue 
+										software for a <b>multiomics research lab</b>, a <b>venture capital firm</b>, and an <b>HR software startup</b>. I'm eager to continue 
 										imparting meaningful impact, particularly at innovative and disruptive startups.<br/><br/>
-										Currently, I’m leading a project at the <b>Proteomics Center of Excellence</b> to reverse engineer and improve Thermo Fisher Scientific’s mass 
-										spectrometry software. On the side, I’ve been creating a multiomics quality control tool with <b>autoencoder neural network models</b>.<br/><br/>
-										While I’m not coding, I enjoy playing tennis, learning new languages, spending time outdoors with friends, and reading books on human behavior. 
+										Currently, I’m leading a project at the <b>Proteomics Center of Excellence</b> to create an OS-agnostic mass spectrometry insights platform. 
+										On the side, I’ve been creating a multiomics quality control tool with <b>autoencoder neural network and tree-based models</b>.<br/><br/>
+										While I’m not coding, I enjoy playing tennis, learning new languages, spending time outdoors with friends, playing Teamfight Tactics, and reading books on human behavior. 
 									</p>
 								</div>
 							</div>
@@ -397,570 +397,7 @@ const Main = () => {
 							</div>
 						</div>
 					)}
-					{windowWidth >= 1375 ? (
-						<div
-							style={{
-								margin: "100px auto 0px",
-								maxWidth: "1200px"
-							}}
-						>
-							<div
-								style={{
-									width: "60%"
-								}}
-							>
-								<div
-									style={{
-										position: "relative",
-										marginBottom: "36.5px"
-									}}
-								>
-									<h2
-										style={{
-											fontSize: "64px",
-											fontFamily: "Bitter, serif",
-											fontWeight: "bold",
-											color: "#1b4332",
-											margin: "0px"
-										}}
-									>
-										About my work<span style={{ color: "#52b788" }}>.</span>
-									</h2>
-									<div
-										style={{
-											width: "80px",
-											height: "3.5px",
-											backgroundColor: "#52b788",
-											marginTop: "10px"
-										}}
-									></div>
-								</div>
-								<div
-									style={{
-										margin: "0px auto",
-										position: "relative"
-									}}
-								>
-									<p
-										style={{
-											fontSize: "17px",
-											marginTop: "0px",
-											lineHeight: 1.65,
-											color: "#1b4332",
-										}}
-									>
-										Whether it's through independent or collaborative projects, I enjoy applying new technologies to get impactful results.
-										Over the last four years, I've worked on projects for data analysis and software development across multiple industries
-										and disciplines. 
-									</p>
-								</div>
-							</div>
-							<div
-								className="project"
-								style={{
-									marginTop: "40px",
-									backgroundImage: `url(${Proteins2})`,
-									backgroundSize: "cover",
-									backgroundRepeat: "no-repeat"
-								}}
-							>
-								<div
-									style={{
-										width: "100%"
-									}}
-								>
-									<div
-										style={{
-											position: "relative",
-											marginBottom: "36.5px"
-										}}
-									>
-										<h2
-											style={{
-												fontSize: "48px",
-												fontFamily: "Bitter, serif",
-												fontWeight: "bold",
-												color: "#fff",
-												margin: "0px"
-											}}
-										>
-											Mass Spectrometry Insights Tool
-										</h2>
-									</div>
-									<div
-										style={{
-											margin: "0px auto",
-											position: "relative"
-										}}
-									>
-										<p
-											style={{
-												fontSize: "17px",
-												marginBottom: "0px",
-												marginTop: "0px",
-												lineHeight: 1.65,
-												color: "#fff",
-											}}
-										>
-											A reimagining of Thermo Fisher Scientific's RawMeat mass spectrometry data quality assessment 
-											software for comprehensive tabular and graphical insights. Created through reverse engineering, 
-											the tool is built to be OS-agnostic using WebAssembly (Blazor) and C#, enhancing accessiblility to 
-											data quality metrics and improving capabilities across both top-down and bottom-up proteomics use.
-										</p>
-									</div>
-								</div>
-							</div>
-							<div
-								className="project"
-								style={{
-									marginTop: "20px",
-									backgroundImage: `url(${Proteins4})`,
-									backgroundSize: "cover",
-									backgroundRepeat: "no-repeat"
-								}}
-							>
-								<div
-									style={{
-										width: "100%"
-									}}
-								>
-									<div
-										style={{
-											position: "relative",
-											marginBottom: "36.5px"
-										}}
-									>
-										<h2
-											style={{
-												fontSize: "48px",
-												fontFamily: "Bitter, serif",
-												fontWeight: "bold",
-												color: "#fff",
-												margin: "0px"
-											}}
-										>
-											Top-Down Proteomics Quality Control
-										</h2>
-									</div>
-									<div
-										style={{
-											margin: "0px auto",
-											position: "relative"
-										}}
-									>
-										<p
-											style={{
-												fontSize: "17px",
-												marginBottom: "0px",
-												marginTop: "0px",
-												lineHeight: 1.65,
-												color: "#fff",
-											}}
-										>
-											A machine learning tool for filtering out poor quality mass spectrometry scans in order to improve performance and 
-											computing speeds of proteoform discovery methods in top-down proteomics. Built using tuned autoencoder neural networks 
-											and logistic regression models with dimensionality reduction for binary classification.
-										</p>
-									</div>
-								</div>
-							</div>
-							<div
-								className="project"
-								style={{
-									marginTop: "20px",
-									backgroundImage: `url(${Battery})`,
-									backgroundSize: "cover",
-									backgroundRepeat: "no-repeat"
-								}}
-							>
-								<div
-									style={{
-										width: "100%"
-									}}
-								>
-									<div
-										style={{
-											position: "relative",
-											marginBottom: "36.5px"
-										}}
-									>
-										<h2
-											style={{
-												fontSize: "48px",
-												fontFamily: "Bitter, serif",
-												fontWeight: "bold",
-												color: "#fff",
-												margin: "0px"
-											}}
-										>
-											Battery Ventures Internal Bidding Tool
-										</h2>
-									</div>
-									<div
-										style={{
-											margin: "0px auto",
-											position: "relative"
-										}}
-									>
-										<p
-											style={{
-												fontSize: "17px",
-												marginBottom: "0px",
-												marginTop: "0px",
-												lineHeight: 1.65,
-												color: "#fff",
-											}}
-										>
-											An internal software tool created for investment professionals to browse sourced companies by externs and bid in a silent auction system 
-											for ownership of future calls and transactions with target companies.
-										</p>
-									</div>
-								</div>
-							</div>
-							<div
-								style={{
-									display: "flex",
-									flexDirection: "row",
-									width: "100%",
-									justifyContent: "space-between"
-								}}
-							>
-								<div
-									className="project"
-									style={{
-										marginTop: "20px",
-										backgroundImage: `url(${Proteins1})`,
-										backgroundSize: "cover",
-										backgroundRepeat: "no-repeat",
-										width: "25.5%",
-										height: "180px"
-									}}
-								>
-									<div
-										style={{
-											width: "100%"
-										}}
-									>
-										<div
-											style={{
-												position: "relative",
-												marginBottom: "18px"
-											}}
-										>
-											<h2
-												style={{
-													fontSize: "36px",
-													fontFamily: "Bitter, serif",
-													fontWeight: "bold",
-													color: "#fff",
-													margin: "0px"
-												}}
-											>
-												Fragment Ion Comparison
-											</h2>
-										</div>
-										<div
-											style={{
-												margin: "0px auto",
-												position: "relative"
-											}}
-										>
-											<p
-												style={{
-													fontSize: "17px",
-													marginTop: "0px",
-													marginBottom: "0px",
-													lineHeight: 1.65,
-													color: "#fff",
-												}}
-											>
-												A comparison of matched ion masses for ensemble vs. I2MS methods.
-											</p>
-										</div>
-									</div>
-								</div>
-								<div
-									className="project"
-									style={{
-										marginTop: "20px",
-										backgroundImage: `url(${Proteins5})`,
-										backgroundSize: "cover",
-										backgroundRepeat: "no-repeat",
-										width: "25.5%",
-										height: "180px"
-									}}
-								>
-									<div
-										style={{
-											width: "100%"
-										}}
-									>
-										<div
-											style={{
-												position: "relative",
-												marginBottom: "18px"
-											}}
-										>
-											<h2
-												style={{
-													fontSize: "36px",
-													fontFamily: "Bitter, serif",
-													fontWeight: "bold",
-													color: "#fff",
-													margin: "0px"
-												}}
-											>
-												Top-Down Quantification
-											</h2>
-										</div>
-										<div
-											style={{
-												margin: "0px auto",
-												position: "relative"
-											}}
-										>
-											<p
-												style={{
-													fontSize: "17px",
-													marginTop: "0px",
-													marginBottom: "0px",
-													lineHeight: 1.65,
-													color: "#fff",
-												}}
-											>
-												A top-down label-free quantification for ALS study metabolite measures.
-											</p>
-										</div>
-									</div>
-								</div>
-								<div
-									className="project"
-									style={{
-										marginTop: "20px",
-										backgroundImage: `url(${Proteins3})`,
-										backgroundSize: "cover",
-										backgroundRepeat: "no-repeat",
-										width: "25.5%",
-										height: "180px"
-									}}
-								>
-									<div
-										style={{
-											width: "100%"
-										}}
-									>
-										<div
-											style={{
-												position: "relative",
-												marginBottom: "18px"
-											}}
-										>
-											<h2
-												style={{
-													fontSize: "36px",
-													fontFamily: "Bitter, serif",
-													fontWeight: "bold",
-													color: "#fff",
-													margin: "0px"
-												}}
-											>
-												ICR Disease Prediction
-											</h2>
-										</div>
-										<div
-											style={{
-												margin: "0px auto",
-												position: "relative"
-											}}
-										>
-											<p
-												style={{
-													fontSize: "17px",
-													marginTop: "0px",
-													marginBottom: "0px",
-													lineHeight: 1.65,
-													color: "#fff",
-												}}
-											>
-												A project to predict age-related health conditions from masked features. 
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div
-								style={{
-									display: "flex",
-									flexDirection: "row",
-									width: "100%",
-									justifyContent: "space-between"
-								}}
-							>
-								<div
-									className="project"
-									style={{
-										marginTop: "20px",
-										backgroundImage: `url(${Science1})`,
-										backgroundSize: "cover",
-										backgroundRepeat: "no-repeat",
-										width: "25.5%",
-										height: "180px"
-									}}
-								>
-									<div
-										style={{
-											width: "100%"
-										}}
-									>
-										<div
-											style={{
-												position: "relative",
-												marginBottom: "18px"
-											}}
-										>
-											<h2
-												style={{
-													fontSize: "36px",
-													fontFamily: "Bitter, serif",
-													fontWeight: "bold",
-													color: "#fff",
-													margin: "0px"
-												}}
-											>
-												NU Science Olympiad Website
-											</h2>
-										</div>
-										<div
-											style={{
-												margin: "0px auto",
-												position: "relative"
-											}}
-										>
-											<p
-												style={{
-													fontSize: "17px",
-													marginTop: "0px",
-													marginBottom: "0px",
-													lineHeight: 1.65,
-													color: "#fff",
-												}}
-											>
-												A website for the Northwestern University Science Olympiad group.
-											</p>
-										</div>
-									</div>
-								</div>
-								<div
-									className="project"
-									style={{
-										marginTop: "20px",
-										backgroundImage: `url(${Wine})`,
-										backgroundSize: "cover",
-										backgroundRepeat: "no-repeat",
-										width: "25.5%",
-										height: "180px"
-									}}
-								>
-									<div
-										style={{
-											width: "100%"
-										}}
-									>
-										<div
-											style={{
-												position: "relative",
-												marginBottom: "18px"
-											}}
-										>
-											<h2
-												style={{
-													fontSize: "36px",
-													fontFamily: "Bitter, serif",
-													fontWeight: "bold",
-													color: "#fff",
-													margin: "0px"
-												}}
-											>
-												Wine Quality Prediction
-											</h2>
-										</div>
-										<div
-											style={{
-												margin: "0px auto",
-												position: "relative"
-											}}
-										>
-											<p
-												style={{
-													fontSize: "17px",
-													marginTop: "0px",
-													marginBottom: "0px",
-													lineHeight: 1.65,
-													color: "#fff",
-												}}
-											>
-												A project to predict Vinho Verde wine quality with tuned models.
-											</p>
-										</div>
-									</div>
-								</div>
-								<div
-									className="project"
-									style={{
-										marginTop: "20px",
-										backgroundImage: `url(${Uber})`,
-										backgroundSize: "cover",
-										backgroundRepeat: "no-repeat",
-										width: "25.5%",
-										height: "180px"
-									}}
-								>
-									<div
-										style={{
-											width: "100%"
-										}}
-									>
-										<div
-											style={{
-												position: "relative",
-												marginBottom: "18px"
-											}}
-										>
-											<h2
-												style={{
-													fontSize: "36px",
-													fontFamily: "Bitter, serif",
-													fontWeight: "bold",
-													color: "#fff",
-													margin: "0px"
-												}}
-											>
-												Lyft / Uber Price Prediction
-											</h2>
-										</div>
-										<div
-											style={{
-												margin: "0px auto",
-												position: "relative"
-											}}
-										>
-											<p
-												style={{
-													fontSize: "17px",
-													marginTop: "0px",
-													marginBottom: "0px",
-													lineHeight: 1.65,
-													color: "#fff",
-												}}
-											>
-												A project to predict the prices of Lyft and Uber rides in the Boston area.
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					) : windowWidth >= 1075 ? (
+					{windowWidth >= 890 ? (
 						<div
 							style={{
 								margin: "100px auto 0px",
@@ -1013,7 +450,7 @@ const Main = () => {
 										}}
 									>
 										Whether it's through independent or collaborative projects, I enjoy applying new technologies to get impactful results.
-										Over the last four years, I've worked on projects for data analysis and software development across multiple industries
+										Over the last four years, I've worked on projects for data analysis, software development, and machine learning across multiple industries
 										and disciplines. 
 									</p>
 								</div>
@@ -1040,14 +477,14 @@ const Main = () => {
 									>
 										<h2
 											style={{
-												fontSize: "48px",
+												fontSize: "36px",
 												fontFamily: "Bitter, serif",
 												fontWeight: "bold",
 												color: "#fff",
 												margin: "0px"
 											}}
 										>
-											Mass Spectrometry Insights Tool
+											Mass Spectrometry Insights Platform
 										</h2>
 									</div>
 									<div
@@ -1065,13 +502,67 @@ const Main = () => {
 												color: "#fff",
 											}}
 										>
-											A reimagining of Thermo Fisher Scientific's RawMeat mass spectrometry data quality assessment 
-											software for comprehensive tabular and graphical insights. Created through reverse engineering, 
-											the tool is built to be OS-agnostic using WebAssembly (Blazor) and C#, enhancing accessiblility to 
-											data quality metrics and improving capabilities across both top-down and bottom-up proteomics use.
+											A WebAssembly (Blazor) and C# mass spectrometry data insights platform for top-down and bottom-up proteomics use. 
+											Created using custom-built APIs and hex analysis of .RAW files for tabular and graphical displays. Publishing of 
+											the project is expected in coming weeks.
 										</p>
 									</div>
 								</div>
+							</div>
+							<div
+								className="project"
+								style={{
+									marginTop: "20px",
+									backgroundImage: `url(${TeamfightTactics})`,
+									backgroundSize: "cover",
+									backgroundRepeat: "no-repeat"
+								}}
+							>
+								<a href="https://github.com/mkim45/tft-toolbox" target="_blank" rel="noopener noreferrer" style={{ width: "100%", textDecoration: "none" }}>
+									<div
+										style={{
+											width: "100%"
+										}}
+									>
+										<div
+											style={{
+												position: "relative",
+												marginBottom: "36.5px"
+											}}
+										>
+											<h2
+												style={{
+													fontSize: "36px",
+													fontFamily: "Bitter, serif",
+													fontWeight: "bold",
+													color: "#fff",
+													margin: "0px"
+												}}
+											>
+												Teamfight Tactics Game Simulator
+											</h2>
+										</div>
+										<div
+											style={{
+												margin: "0px auto",
+												position: "relative"
+											}}
+										>
+											<p
+												style={{
+													fontSize: "17px",
+													marginBottom: "0px",
+													marginTop: "0px",
+													lineHeight: 1.65,
+													color: "#fff",
+												}}
+											>
+												A JavaScript simulator for Teamfight Tactics meant to allow players to solve situational puzzles to improve in-game skills. Recreated game 
+												mechanics to emulate gameplay as close as possible. This project is currently in progress of being built.
+											</p>
+										</div>
+									</div>
+								</a>
 							</div>
 							<div
 								className="project"
@@ -1082,50 +573,52 @@ const Main = () => {
 									backgroundRepeat: "no-repeat"
 								}}
 							>
-								<div
-									style={{
-										width: "100%"
-									}}
-								>
+								<a href="https://github.com/mkim45/TopDownMassSpecClassification" target="_blank" rel="noopener noreferrer" style={{ width: "100%", textDecoration: "none" }}>
 									<div
 										style={{
-											position: "relative",
-											marginBottom: "36.5px"
+											width: "100%"
 										}}
 									>
-										<h2
+										<div
 											style={{
-												fontSize: "48px",
-												fontFamily: "Bitter, serif",
-												fontWeight: "bold",
-												color: "#fff",
-												margin: "0px"
+												position: "relative",
+												marginBottom: "36.5px"
 											}}
 										>
-											Top-Down Proteomics Quality Control
-										</h2>
-									</div>
-									<div
-										style={{
-											margin: "0px auto",
-											position: "relative"
-										}}
-									>
-										<p
+											<h2
+												style={{
+													fontSize: "36px",
+													fontFamily: "Bitter, serif",
+													fontWeight: "bold",
+													color: "#fff",
+													margin: "0px"
+												}}
+											>
+												Top-Down Proteomics Quality Control
+											</h2>
+										</div>
+										<div
 											style={{
-												fontSize: "17px",
-												marginBottom: "0px",
-												marginTop: "0px",
-												lineHeight: 1.65,
-												color: "#fff",
+												margin: "0px auto",
+												position: "relative"
 											}}
 										>
-											A machine learning tool for filtering out poor quality mass spectrometry scans in order to improve performance and 
-											computing speeds of proteoform discovery methods in top-down proteomics. Built using tuned autoencoder neural networks 
-											and logistic regression models with dimensionality reduction for binary classification.
-										</p>
+											<p
+												style={{
+													fontSize: "17px",
+													marginBottom: "0px",
+													marginTop: "0px",
+													lineHeight: 1.65,
+													color: "#fff",
+												}}
+											>
+												A machine learning tool for filtering out poor quality mass spectrometry scans to improve performance and 
+												computing speeds of top-down proteoform discovery methods. Built using tuned autoencoder neural networks, 
+												tree-based models, and supervised learning algorithms.
+											</p>
+										</div>
 									</div>
-								</div>
+								</a>
 							</div>
 							<div
 								className="project"
@@ -1149,7 +642,7 @@ const Main = () => {
 									>
 										<h2
 											style={{
-												fontSize: "48px",
+												fontSize: "36px",
 												fontFamily: "Bitter, serif",
 												fontWeight: "bold",
 												color: "#fff",
@@ -1174,7 +667,7 @@ const Main = () => {
 												color: "#fff",
 											}}
 										>
-											An internal software tool created for investment professionals to browse sourced companies by externs and bid in a silent auction system 
+											A JavaScript internal software tool created for investment professionals to browse sourced companies by externs and bid in a silent auction system 
 											for ownership of future calls and transactions with target companies.
 										</p>
 									</div>
@@ -1186,8 +679,7 @@ const Main = () => {
 									marginTop: "20px",
 									backgroundImage: `url(${Proteins1})`,
 									backgroundSize: "cover",
-									backgroundRepeat: "no-repeat",
-									height: "180px"
+									backgroundRepeat: "no-repeat"
 								}}
 							>
 								<div
@@ -1198,7 +690,7 @@ const Main = () => {
 									<div
 										style={{
 											position: "relative",
-											marginBottom: "18px"
+											marginBottom: "36.5px"
 										}}
 									>
 										<h2
@@ -1210,7 +702,7 @@ const Main = () => {
 												margin: "0px"
 											}}
 										>
-											Fragment Ion Comparison
+											Fragment Ion Comparison Analysis
 										</h2>
 									</div>
 									<div
@@ -1222,13 +714,14 @@ const Main = () => {
 										<p
 											style={{
 												fontSize: "17px",
-												marginTop: "0px",
 												marginBottom: "0px",
+												marginTop: "0px",
 												lineHeight: 1.65,
 												color: "#fff",
 											}}
 										>
-											A comparison of matched ion masses for ensemble vs. I2MS methods.
+											A comparison of matched fragment ion masses for ensemble and individualized-ion mass spectrometry methods for future optimization of 
+											ASC and AIM-based proteoform discovery on multiple spectral outputs.
 										</p>
 									</div>
 								</div>
@@ -1239,8 +732,7 @@ const Main = () => {
 									marginTop: "20px",
 									backgroundImage: `url(${Proteins5})`,
 									backgroundSize: "cover",
-									backgroundRepeat: "no-repeat",
-									height: "180px"
+									backgroundRepeat: "no-repeat"
 								}}
 							>
 								<div
@@ -1251,7 +743,7 @@ const Main = () => {
 									<div
 										style={{
 											position: "relative",
-											marginBottom: "18px"
+											marginBottom: "36.5px"
 										}}
 									>
 										<h2
@@ -1263,7 +755,7 @@ const Main = () => {
 												margin: "0px"
 											}}
 										>
-											Top-Down Quantification
+											Top-Down Label-Free Quantification
 										</h2>
 									</div>
 									<div
@@ -1275,13 +767,14 @@ const Main = () => {
 										<p
 											style={{
 												fontSize: "17px",
-												marginTop: "0px",
 												marginBottom: "0px",
+												marginTop: "0px",
 												lineHeight: 1.65,
 												color: "#fff",
 											}}
 										>
-											A top-down label-free quantification for ALS study metabolite measures.
+											Conducted statistical analyses with custom Python, R, and SAS scripts for external ALS study collaborators. Used hierarchical linear model-based ANOVA 
+											to identify differential expression in proteomics and metabolomics.
 										</p>
 									</div>
 								</div>
@@ -1293,7 +786,62 @@ const Main = () => {
 									backgroundImage: `url(${Proteins3})`,
 									backgroundSize: "cover",
 									backgroundRepeat: "no-repeat",
-									height: "180px"
+									backgroundPosition: "center"
+								}}
+							>
+								<a href="https://github.com/mkim45/ICR-Age" target="_blank" rel="noopener noreferrer" style={{ width: "100%", textDecoration: "none" }}>
+									<div
+										style={{
+											width: "100%"
+										}}
+									>
+										<div
+											style={{
+												position: "relative",
+												marginBottom: "36.5px"
+											}}
+										>
+											<h2
+												style={{
+													fontSize: "36px",
+													fontFamily: "Bitter, serif",
+													fontWeight: "bold",
+													color: "#fff",
+													margin: "0px"
+												}}
+											>
+												ICR Health Condition Prediction
+											</h2>
+										</div>
+										<div
+											style={{
+												margin: "0px auto",
+												position: "relative"
+											}}
+										>
+											<p
+												style={{
+													fontSize: "17px",
+													marginBottom: "0px",
+													marginTop: "0px",
+													lineHeight: 1.65,
+													color: "#fff",
+												}}
+											>
+												A compilation of predictive machine learning models to determine whether patients had one of three age-related medical conditions based on 
+												various masked health characteristics. Used tree-based models, neural networks, and ensemble models to optimize performance.
+											</p>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div
+								className="project"
+								style={{
+									marginTop: "20px",
+									backgroundImage: `url(${Science1})`,
+									backgroundSize: "cover",
+									backgroundRepeat: "no-repeat"
 								}}
 							>
 								<div
@@ -1304,7 +852,7 @@ const Main = () => {
 									<div
 										style={{
 											position: "relative",
-											marginBottom: "18px"
+											marginBottom: "36.5px"
 										}}
 									>
 										<h2
@@ -1316,7 +864,7 @@ const Main = () => {
 												margin: "0px"
 											}}
 										>
-											ICR Disease Prediction
+											Northwestern Science Olympiad Website
 										</h2>
 									</div>
 									<div
@@ -1328,16 +876,73 @@ const Main = () => {
 										<p
 											style={{
 												fontSize: "17px",
-												marginTop: "0px",
 												marginBottom: "0px",
+												marginTop: "0px",
 												lineHeight: 1.65,
 												color: "#fff",
 											}}
 										>
-											A project to predict age-related health conditions from masked features. 
+											A website created for the Northwestern University Science Olympiad group that includes important tournament information, announcements, 
+											organization information, and past exams and answer keys.
 										</p>
 									</div>
 								</div>
+							</div>
+							<div
+								className="project"
+								style={{
+									marginTop: "20px",
+									backgroundImage: `url(${Wine})`,
+									backgroundSize: "cover",
+									backgroundRepeat: "no-repeat",
+									backgroundPosition: "center"
+								}}
+							>
+								<a href="https://github.com/mkim45/Wine-Prediction" target="_blank" rel="noopener noreferrer" style={{ width: "100%", textDecoration: "none" }}>
+									<div
+										style={{
+											width: "100%"
+										}}
+									>
+										<div
+											style={{
+												position: "relative",
+												marginBottom: "36.5px"
+											}}
+										>
+											<h2
+												style={{
+													fontSize: "36px",
+													fontFamily: "Bitter, serif",
+													fontWeight: "bold",
+													color: "#fff",
+													margin: "0px"
+												}}
+											>
+												Wine Quality Prediction Models
+											</h2>
+										</div>
+										<div
+											style={{
+												margin: "0px auto",
+												position: "relative"
+											}}
+										>
+											<p
+												style={{
+													fontSize: "17px",
+													marginBottom: "0px",
+													marginTop: "0px",
+													lineHeight: 1.65,
+													color: "#fff",
+												}}
+											>
+												A project to predict the quality of Vinho Verde wines using regression analysis, tree-based models, and ensemble models. 
+												Fine-tuned hyperparameters to achieve optimal performance and deliver conclusions.
+											</p>
+										</div>
+									</div>
+								</a>
 							</div>
 						</div>
 					) : (
@@ -1393,7 +998,7 @@ const Main = () => {
 										}}
 									>
 										Whether it's through independent or collaborative projects, I enjoy applying new technologies to get impactful results.
-										Over the last four years, I've worked on projects for data analysis and software development across multiple industries
+										Over the last four years, I've worked on projects for data analysis, software development, and machine learning across multiple industries
 										and disciplines. 
 									</p>
 								</div>
@@ -1404,7 +1009,10 @@ const Main = () => {
 									marginTop: "40px",
 									backgroundImage: `url(${Proteins2})`,
 									backgroundSize: "cover",
-									backgroundRepeat: "no-repeat"
+									backgroundRepeat: "no-repeat",
+									height: "160px",
+									paddingLeft: "20px",
+									paddingRight: "20px"
 								}}
 							>
 								<div
@@ -1415,41 +1023,59 @@ const Main = () => {
 									<div
 										style={{
 											position: "relative",
-											marginBottom: "36.5px"
 										}}
 									>
 										<h2
 											style={{
-												fontSize: "48px",
+												fontSize: "36px",
 												fontFamily: "Bitter, serif",
 												fontWeight: "bold",
 												color: "#fff",
 												margin: "0px"
 											}}
 										>
-											Mass Spectrometry Insights Tool
+											Mass Spectrometry Insights Platform
 										</h2>
 									</div>
+								</div>
+							</div>
+							<div
+								className="project"
+								style={{
+									marginTop: "20px",
+									backgroundImage: `url(${TeamfightTactics})`,
+									backgroundSize: "cover",
+									backgroundRepeat: "no-repeat",
+									height: "160px",
+									paddingLeft: "20px",
+									paddingRight: "20px"
+								}}
+							>
+								<a href="https://github.com/mkim45/tft-toolbox" target="_blank" rel="noopener noreferrer" style={{ width: "100%", textDecoration: "none" }}>
 									<div
 										style={{
-											margin: "0px auto",
-											position: "relative"
+											width: "100%"
 										}}
 									>
-										<p
+										<div
 											style={{
-												fontSize: "17px",
-												marginBottom: "0px",
-												marginTop: "0px",
-												lineHeight: 1.65,
-												color: "#fff",
+												position: "relative",
 											}}
 										>
-											A reimagining of Thermo Fisher Scientific's RawMeat mass spectrometry data quality assessment 
-											software for comprehensive tabular and graphical insights. 
-										</p>
+											<h2
+												style={{
+													fontSize: "36px",
+													fontFamily: "Bitter, serif",
+													fontWeight: "bold",
+													color: "#fff",
+													margin: "0px"
+												}}
+											>
+												Teamfight Tactics Game Simulator
+											</h2>
+										</div>
 									</div>
-								</div>
+								</a>
 							</div>
 							<div
 								className="project"
@@ -1457,52 +1083,37 @@ const Main = () => {
 									marginTop: "20px",
 									backgroundImage: `url(${Proteins4})`,
 									backgroundSize: "cover",
-									backgroundRepeat: "no-repeat"
+									backgroundRepeat: "no-repeat",
+									height: "160px",
+									paddingLeft: "20px",
+									paddingRight: "20px"
 								}}
 							>
-								<div
-									style={{
-										width: "100%"
-									}}
-								>
+								<a href="https://github.com/mkim45/TopDownMassSpecClassification" target="_blank" rel="noopener noreferrer" style={{ width: "100%", textDecoration: "none" }}>
 									<div
 										style={{
-											position: "relative",
-											marginBottom: "36.5px"
+											width: "100%"
 										}}
 									>
-										<h2
+										<div
 											style={{
-												fontSize: "48px",
-												fontFamily: "Bitter, serif",
-												fontWeight: "bold",
-												color: "#fff",
-												margin: "0px"
+												position: "relative",
 											}}
 										>
-											Proteomics Quality Control
-										</h2>
+											<h2
+												style={{
+													fontSize: "36px",
+													fontFamily: "Bitter, serif",
+													fontWeight: "bold",
+													color: "#fff",
+													margin: "0px"
+												}}
+											>
+												Top-Down Proteomics Quality Control
+											</h2>
+										</div>
 									</div>
-									<div
-										style={{
-											margin: "0px auto",
-											position: "relative"
-										}}
-									>
-										<p
-											style={{
-												fontSize: "17px",
-												marginBottom: "0px",
-												marginTop: "0px",
-												lineHeight: 1.65,
-												color: "#fff",
-											}}
-										>
-											A machine learning tool for filtering out poor quality mass spectrometry scans in order to improve performance and 
-											computing speeds of proteoform discovery methods in top-down proteomics.
-										</p>
-									</div>
-								</div>
+								</a>
 							</div>
 							<div
 								className="project"
@@ -1510,7 +1121,10 @@ const Main = () => {
 									marginTop: "20px",
 									backgroundImage: `url(${Battery})`,
 									backgroundSize: "cover",
-									backgroundRepeat: "no-repeat"
+									backgroundRepeat: "no-repeat",
+									height: "160px",
+									paddingLeft: "20px",
+									paddingRight: "20px"
 								}}
 							>
 								<div
@@ -1521,39 +1135,19 @@ const Main = () => {
 									<div
 										style={{
 											position: "relative",
-											marginBottom: "36.5px"
 										}}
 									>
 										<h2
 											style={{
-												fontSize: "48px",
+												fontSize: "36px",
 												fontFamily: "Bitter, serif",
 												fontWeight: "bold",
 												color: "#fff",
 												margin: "0px"
 											}}
 										>
-											Battery Ventures Internal Tool
+											Battery Ventures Internal Bidding Tool
 										</h2>
-									</div>
-									<div
-										style={{
-											margin: "0px auto",
-											position: "relative"
-										}}
-									>
-										<p
-											style={{
-												fontSize: "17px",
-												marginBottom: "0px",
-												marginTop: "0px",
-												lineHeight: 1.65,
-												color: "#fff",
-											}}
-										>
-											An internal software tool created for investment professionals to browse sourced companies and bid in a silent auction system 
-											for ownership of future transactions.
-										</p>
 									</div>
 								</div>
 							</div>
@@ -1564,7 +1158,9 @@ const Main = () => {
 									backgroundImage: `url(${Proteins1})`,
 									backgroundSize: "cover",
 									backgroundRepeat: "no-repeat",
-									height: "180px"
+									height: "160px",
+									paddingLeft: "20px",
+									paddingRight: "20px"
 								}}
 							>
 								<div
@@ -1575,7 +1171,6 @@ const Main = () => {
 									<div
 										style={{
 											position: "relative",
-											marginBottom: "18px"
 										}}
 									>
 										<h2
@@ -1587,26 +1182,8 @@ const Main = () => {
 												margin: "0px"
 											}}
 										>
-											Fragment Ion Comparison
+											Fragment Ion Comparison Analysis
 										</h2>
-									</div>
-									<div
-										style={{
-											margin: "0px auto",
-											position: "relative"
-										}}
-									>
-										<p
-											style={{
-												fontSize: "17px",
-												marginTop: "0px",
-												marginBottom: "0px",
-												lineHeight: 1.65,
-												color: "#fff",
-											}}
-										>
-											A comparison of matched ion masses for ensemble vs. I2MS methods.
-										</p>
 									</div>
 								</div>
 							</div>
@@ -1617,7 +1194,9 @@ const Main = () => {
 									backgroundImage: `url(${Proteins5})`,
 									backgroundSize: "cover",
 									backgroundRepeat: "no-repeat",
-									height: "180px"
+									height: "160px",
+									paddingLeft: "20px",
+									paddingRight: "20px"
 								}}
 							>
 								<div
@@ -1628,7 +1207,6 @@ const Main = () => {
 									<div
 										style={{
 											position: "relative",
-											marginBottom: "18px"
 										}}
 									>
 										<h2
@@ -1640,26 +1218,8 @@ const Main = () => {
 												margin: "0px"
 											}}
 										>
-											Top-Down Quantification
+											Top-Down Label-Free Quantification
 										</h2>
-									</div>
-									<div
-										style={{
-											margin: "0px auto",
-											position: "relative"
-										}}
-									>
-										<p
-											style={{
-												fontSize: "17px",
-												marginTop: "0px",
-												marginBottom: "0px",
-												lineHeight: 1.65,
-												color: "#fff",
-											}}
-										>
-											A top-down label-free quantification for ALS study metabolite measures.
-										</p>
 									</div>
 								</div>
 							</div>
@@ -1670,7 +1230,48 @@ const Main = () => {
 									backgroundImage: `url(${Proteins3})`,
 									backgroundSize: "cover",
 									backgroundRepeat: "no-repeat",
-									height: "180px"
+									backgroundPosition: "center",
+									height: "160px",
+									paddingLeft: "20px",
+									paddingRight: "20px"
+								}}
+							>
+								<a href="https://github.com/mkim45/ICR-Age" target="_blank" rel="noopener noreferrer" style={{ width: "100%", textDecoration: "none" }}>
+									<div
+										style={{
+											width: "100%"
+										}}
+									>
+										<div
+											style={{
+												position: "relative",
+											}}
+										>
+											<h2
+												style={{
+													fontSize: "36px",
+													fontFamily: "Bitter, serif",
+													fontWeight: "bold",
+													color: "#fff",
+													margin: "0px"
+												}}
+											>
+												ICR Health Condition Prediction
+											</h2>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div
+								className="project"
+								style={{
+									marginTop: "20px",
+									backgroundImage: `url(${Science1})`,
+									backgroundSize: "cover",
+									backgroundRepeat: "no-repeat",
+									height: "160px",
+									paddingLeft: "20px",
+									paddingRight: "20px"
 								}}
 							>
 								<div
@@ -1681,7 +1282,6 @@ const Main = () => {
 									<div
 										style={{
 											position: "relative",
-											marginBottom: "18px"
 										}}
 									>
 										<h2
@@ -1693,28 +1293,49 @@ const Main = () => {
 												margin: "0px"
 											}}
 										>
-											ICR Disease Prediction
+											Northwestern Science Olympiad Website
 										</h2>
 									</div>
+								</div>
+							</div>
+							<div
+								className="project"
+								style={{
+									marginTop: "20px",
+									backgroundImage: `url(${Wine})`,
+									backgroundSize: "cover",
+									backgroundRepeat: "no-repeat",
+									backgroundPosition: "center",
+									height: "160px",
+									paddingLeft: "20px",
+									paddingRight: "20px"
+								}}
+							>
+								<a href="https://github.com/mkim45/Wine-Prediction" target="_blank" rel="noopener noreferrer" style={{ width: "100%", textDecoration: "none" }}>
 									<div
 										style={{
-											margin: "0px auto",
-											position: "relative"
+											width: "100%"
 										}}
 									>
-										<p
+										<div
 											style={{
-												fontSize: "17px",
-												marginTop: "0px",
-												marginBottom: "0px",
-												lineHeight: 1.65,
-												color: "#fff",
+												position: "relative",
 											}}
 										>
-											A project to predict age-related health conditions from masked features. 
-										</p>
+											<h2
+												style={{
+													fontSize: "36px",
+													fontFamily: "Bitter, serif",
+													fontWeight: "bold",
+													color: "#fff",
+													margin: "0px"
+												}}
+											>
+												Wine Quality Prediction Models
+											</h2>
+										</div>
 									</div>
-								</div>
+								</a>
 							</div>
 						</div>
 					)}
@@ -1727,7 +1348,7 @@ const Main = () => {
 						>
 							<div
 								style={{
-									width: "60%"
+									width: "100%"
 								}}
 							>
 								<div
@@ -1772,7 +1393,7 @@ const Main = () => {
 									>
 										I'm passionate about learning and leveraging new technologies in fast-paced environments to 
 										drive positive change. Whether accelerating proteomics research or crafting interactive products, 
-										I enjoy collaborating with others to maximize the impact I can have.
+										I've enjoyed collaborating with others to maximize the impact I can have in previous roles.
 									</p>
 								</div>
 							</div>
@@ -1883,94 +1504,6 @@ const Main = () => {
 								>
 									<ImgNoMargin
 										alt="pce"
-										src={BatteryWork}
-										sx={{ height: "125px", width: "125px" }}
-									/>
-									<div
-										style={{
-											paddingLeft: "40px"
-										}}
-									>
-										<h2
-											style={{
-												fontSize: "36px",
-												fontFamily: "Bitter, serif",
-												fontWeight: "bold",
-												color: "#1b4332",
-												margin: "0px"
-											}}
-										>
-											Battery Ventures<span style={{ color: "#52b788" }}></span>
-										</h2>
-										<p
-											style={{
-												fontSize: "22px",
-												marginTop: "4px",
-												marginBottom: "0px",
-												lineHeight: 1.65,
-												color: "#1b4332",
-											}}
-										>
-											Sourcing and Diligence Analyst Extern
-										</p>
-										<p
-											style={{
-												fontSize: "17px",
-												marginTop: "10px",
-												marginBottom: "10px",
-												lineHeight: 1.65,
-												color: "#1b4332",
-											}}
-										>
-											I joined Battery Ventures ($13B AUM) as an sourcing analyst extern to find target B2B SaaS companies, a
-											diligence analyst extern to complete a project on broadcasting software, and built an internal software
-											tool prototype for bidding on companies. 
-										</p>
-									</div>
-								</div>
-								<p
-									style={{
-										fontSize: "22px",
-										marginTop: "20px",
-										marginBottom: "0px",
-										lineHeight: 1.65,
-										color: "#1b4332",
-										paddingLeft: "20px",
-										paddingRight: "20px"
-									}}
-								>
-									Jan 2023 - Present
-								</p>
-								<div>
-									<div
-										className="timeline"
-										style={{
-											marginTop: "22.5px"
-										}}
-									></div>
-									<div
-										className="post-timeline"
-									></div>
-								</div>
-							</div>
-							<div
-								style={{
-									display: "flex",
-									flexDirection: "row",
-									justifyContent: "space-between"
-								}}
-							>
-								<div
-									style={{
-										display: "flex",
-										flexDirection: "row",
-										padding: "20px 0px",
-										alignItems: "center",
-										width: "70%"
-									}}
-								>
-									<ImgNoMargin
-										alt="pce"
 										src={NorthwesternWork}
 										sx={{ height: "125px", width: "125px" }}
 									/>
@@ -2028,6 +1561,94 @@ const Main = () => {
 									}}
 								>
 									Sep 2022 - Present
+								</p>
+								<div>
+									<div
+										className="timeline"
+										style={{
+											marginTop: "22.5px"
+										}}
+									></div>
+									<div
+										className="post-timeline"
+									></div>
+								</div>
+							</div>
+							<div
+								style={{
+									display: "flex",
+									flexDirection: "row",
+									justifyContent: "space-between"
+								}}
+							>
+								<div
+									style={{
+										display: "flex",
+										flexDirection: "row",
+										padding: "20px 0px",
+										alignItems: "center",
+										width: "70%"
+									}}
+								>
+									<ImgNoMargin
+										alt="pce"
+										src={BatteryWork}
+										sx={{ height: "125px", width: "125px" }}
+									/>
+									<div
+										style={{
+											paddingLeft: "40px"
+										}}
+									>
+										<h2
+											style={{
+												fontSize: "36px",
+												fontFamily: "Bitter, serif",
+												fontWeight: "bold",
+												color: "#1b4332",
+												margin: "0px"
+											}}
+										>
+											Battery Ventures<span style={{ color: "#52b788" }}></span>
+										</h2>
+										<p
+											style={{
+												fontSize: "22px",
+												marginTop: "4px",
+												marginBottom: "0px",
+												lineHeight: 1.65,
+												color: "#1b4332",
+											}}
+										>
+											Sourcing and Diligence Analyst Extern
+										</p>
+										<p
+											style={{
+												fontSize: "17px",
+												marginTop: "10px",
+												marginBottom: "10px",
+												lineHeight: 1.65,
+												color: "#1b4332",
+											}}
+										>
+											I joined Battery Ventures ($13B AUM) as an sourcing analyst extern to find target B2B SaaS companies, a
+											diligence analyst extern to complete a project on broadcasting software, and built an internal software
+											tool prototype for bidding on companies. 
+										</p>
+									</div>
+								</div>
+								<p
+									style={{
+										fontSize: "22px",
+										marginTop: "20px",
+										marginBottom: "0px",
+										lineHeight: 1.65,
+										color: "#1b4332",
+										paddingLeft: "20px",
+										paddingRight: "20px"
+									}}
+								>
+									Jan 2023 - Dec 2023
 								</p>
 								<div>
 									<div
@@ -2268,7 +1889,7 @@ const Main = () => {
 										>
 											I'm passionate about learning and leveraging new technologies in fast-paced environments to 
 											drive positive change. Whether accelerating proteomics research or crafting interactive products, 
-											I enjoy collaborating with others to maximize the impact I can have.
+											I've enjoyed collaborating with others to maximize the impact I can have in previous roles.
 										</p>
 									</div>
 								</div>
@@ -2296,7 +1917,7 @@ const Main = () => {
 										/>
 										<div
 											style={{
-												paddingLeft: "40px"
+												paddingLeft: "40px",
 											}}
 										>
 											<h2
@@ -2348,94 +1969,6 @@ const Main = () => {
 										}}
 									>
 										Jun 2023 - Present
-									</p>
-									<div>
-										<div
-											className="timeline"
-											style={{
-												marginTop: "22.5px"
-											}}
-										></div>
-										<div
-											className="post-timeline"
-										></div>
-									</div>
-								</div>
-								<div
-									style={{
-										display: "flex",
-										flexDirection: "row",
-										justifyContent: "space-between"
-									}}
-								>
-									<div
-										style={{
-											display: "flex",
-											flexDirection: "row",
-											padding: "20px 0px",
-											alignItems: "center",
-											width: "70%"
-										}}
-									>
-										<ImgNoMargin
-											alt="pce"
-											src={BatteryWork}
-											sx={{ height: "125px", width: "125px" }}
-										/>
-										<div
-											style={{
-												paddingLeft: "40px"
-											}}
-										>
-											<h2
-												style={{
-													fontSize: "36px",
-													fontFamily: "Bitter, serif",
-													fontWeight: "bold",
-													color: "#1b4332",
-													margin: "0px"
-												}}
-											>
-												Battery Ventures<span style={{ color: "#52b788" }}></span>
-											</h2>
-											<p
-												style={{
-													fontSize: "22px",
-													marginTop: "4px",
-													marginBottom: "0px",
-													lineHeight: 1.65,
-													color: "#1b4332",
-												}}
-											>
-												Sourcing and Diligence Analyst Extern
-											</p>
-											<p
-												style={{
-													fontSize: "17px",
-													marginTop: "10px",
-													marginBottom: "10px",
-													lineHeight: 1.65,
-													color: "#1b4332",
-												}}
-											>
-												I joined Battery Ventures ($13B AUM) as an sourcing analyst extern to find target B2B SaaS companies, a
-												diligence analyst extern to complete a project on broadcasting software, and built an internal software
-												tool prototype for bidding on companies. 
-											</p>
-										</div>
-									</div>
-									<p
-										style={{
-											fontSize: "22px",
-											marginTop: "20px",
-											marginBottom: "0px",
-											lineHeight: 1.65,
-											color: "#1b4332",
-											paddingLeft: "20px",
-											paddingRight: "20px"
-										}}
-									>
-										Jan 2023 - Present
 									</p>
 									<div>
 										<div
@@ -2524,6 +2057,94 @@ const Main = () => {
 										}}
 									>
 										Sep 2022 - Present
+									</p>
+									<div>
+										<div
+											className="timeline"
+											style={{
+												marginTop: "22.5px"
+											}}
+										></div>
+										<div
+											className="post-timeline"
+										></div>
+									</div>
+								</div>
+								<div
+									style={{
+										display: "flex",
+										flexDirection: "row",
+										justifyContent: "space-between"
+									}}
+								>
+									<div
+										style={{
+											display: "flex",
+											flexDirection: "row",
+											padding: "20px 0px",
+											alignItems: "center",
+											width: "70%"
+										}}
+									>
+										<ImgNoMargin
+											alt="pce"
+											src={BatteryWork}
+											sx={{ height: "125px", width: "125px" }}
+										/>
+										<div
+											style={{
+												paddingLeft: "40px"
+											}}
+										>
+											<h2
+												style={{
+													fontSize: "36px",
+													fontFamily: "Bitter, serif",
+													fontWeight: "bold",
+													color: "#1b4332",
+													margin: "0px"
+												}}
+											>
+												Battery Ventures<span style={{ color: "#52b788" }}></span>
+											</h2>
+											<p
+												style={{
+													fontSize: "22px",
+													marginTop: "4px",
+													marginBottom: "0px",
+													lineHeight: 1.65,
+													color: "#1b4332",
+												}}
+											>
+												Sourcing and Diligence Analyst Extern
+											</p>
+											<p
+												style={{
+													fontSize: "17px",
+													marginTop: "10px",
+													marginBottom: "10px",
+													lineHeight: 1.65,
+													color: "#1b4332",
+												}}
+											>
+												I joined Battery Ventures ($13B AUM) as an sourcing analyst extern to find target B2B SaaS companies, a
+												diligence analyst extern to complete a project on broadcasting software, and built an internal software
+												tool prototype for bidding on companies. 
+											</p>
+										</div>
+									</div>
+									<p
+										style={{
+											fontSize: "22px",
+											marginTop: "20px",
+											marginBottom: "0px",
+											lineHeight: 1.65,
+											color: "#1b4332",
+											paddingLeft: "20px",
+											paddingRight: "20px"
+										}}
+									>
+										Jan 2023 - Dec 2023
 									</p>
 									<div>
 										<div
@@ -2727,17 +2348,31 @@ const Main = () => {
 											marginBottom: "36.5px"
 										}}
 									>
-										<h2
-											style={{
-												fontSize: "64px",
-												fontFamily: "Bitter, serif",
-												fontWeight: "bold",
-												color: "#1b4332",
-												margin: "0px"
-											}}
-										>
-											About my experiences<span style={{ color: "#52b788" }}>.</span>
-										</h2>
+										{windowWidth >= 500 ? (
+											<h2
+												style={{
+													fontSize: "64px",
+													fontFamily: "Bitter, serif",
+													fontWeight: "bold",
+													color: "#1b4332",
+													margin: "0px"
+												}}
+											>
+												About my experiences<span style={{ color: "#52b788" }}>.</span>
+											</h2>
+										) : (
+											<h2
+												style={{
+													fontSize: "64px",
+													fontFamily: "Bitter, serif",
+													fontWeight: "bold",
+													color: "#1b4332",
+													margin: "0px"
+												}}
+											>
+												About my roles<span style={{ color: "#52b788" }}>.</span>
+											</h2>
+										)}
 										<div
 											style={{
 												width: "80px",
@@ -2781,17 +2416,21 @@ const Main = () => {
 											flexDirection: "row",
 											padding: "20px 0px",
 											alignItems: "center",
-											width: "70%",
+											width: "100%"
 										}}
 									>
-										<ImgNoMargin
-											alt="pce"
-											src={ProteomicsWork}
-											sx={{ height: "125px", width: "125px" }}
-										/>
+										{windowWidth >= 500 ? (
+											<ImgNoMargin
+												alt="pce"
+												src={ProteomicsWork}
+												sx={{ height: "125px", width: "125px" }}
+											/>
+										) : (
+											<></>
+										)}
 										<div
 											style={{
-												paddingLeft: "40px"
+												paddingLeft: windowWidth >= 500 ? "40px" : "0px"
 											}}
 										>
 											<h2
@@ -2818,7 +2457,7 @@ const Main = () => {
 											</p>
 											<p
 												style={{
-													fontSize: "22px",
+													fontSize: "19px",
 													marginTop: "4px",
 													marginBottom: "0px",
 													lineHeight: 1.65,
@@ -2842,17 +2481,6 @@ const Main = () => {
 											</p>
 										</div>
 									</div>
-									<div>
-										<div
-											className="timeline"
-											style={{
-												marginTop: "22.5px"
-											}}
-										></div>
-										<div
-											className="post-timeline"
-										></div>
-									</div>
 								</div>
 								<div
 									style={{
@@ -2867,103 +2495,21 @@ const Main = () => {
 											flexDirection: "row",
 											padding: "20px 0px",
 											alignItems: "center",
-											width: "70%"
+											width: "100%"
 										}}
 									>
-										<ImgNoMargin
-											alt="pce"
-											src={BatteryWork}
-											sx={{ height: "125px", width: "125px" }}
-										/>
+										{windowWidth >= 500 ? (
+											<ImgNoMargin
+												alt="northwesternWork"
+												src={NorthwesternWork}
+												sx={{ height: "125px", width: "125px" }}
+											/>
+										) : (
+											<></>
+										)}
 										<div
 											style={{
-												paddingLeft: "40px"
-											}}
-										>
-											<h2
-												style={{
-													fontSize: "36px",
-													fontFamily: "Bitter, serif",
-													fontWeight: "bold",
-													color: "#1b4332",
-													margin: "0px"
-												}}
-											>
-												Battery Ventures<span style={{ color: "#52b788" }}></span>
-											</h2>
-											<p
-												style={{
-													fontSize: "22px",
-													marginTop: "4px",
-													marginBottom: "0px",
-													lineHeight: 1.65,
-													color: "#1b4332",
-												}}
-											>
-												Sourcing and Diligence Analyst Extern
-											</p>
-											<p
-												style={{
-													fontSize: "22px",
-													marginTop: "4px",
-													marginBottom: "0px",
-													lineHeight: 1.65,
-													color: "#1b4332",
-												}}
-											>
-												Jan 2023 - Present
-											</p>
-											<p
-												style={{
-													fontSize: "17px",
-													marginTop: "10px",
-													marginBottom: "10px",
-													lineHeight: 1.65,
-													color: "#1b4332",
-												}}
-											>
-												I joined Battery Ventures ($13B AUM) as an sourcing analyst extern to find target B2B SaaS companies, a
-												diligence analyst extern to complete a project on broadcasting software, and built an internal software
-												tool prototype for bidding on companies. 
-											</p>
-										</div>
-									</div>
-									<div>
-										<div
-											className="timeline"
-											style={{
-												marginTop: "22.5px"
-											}}
-										></div>
-										<div
-											className="post-timeline"
-										></div>
-									</div>
-								</div>
-								<div
-									style={{
-										display: "flex",
-										flexDirection: "row",
-										justifyContent: "space-between"
-									}}
-								>
-									<div
-										style={{
-											display: "flex",
-											flexDirection: "row",
-											padding: "20px 0px",
-											alignItems: "center",
-											width: "70%"
-										}}
-									>
-										<ImgNoMargin
-											alt="pce"
-											src={NorthwesternWork}
-											sx={{ height: "125px", width: "125px" }}
-										/>
-										<div
-											style={{
-												paddingLeft: "40px"
+												paddingLeft: windowWidth >= 500 ? "40px" : "0px"
 											}}
 										>
 											<h2
@@ -2990,7 +2536,7 @@ const Main = () => {
 											</p>
 											<p
 												style={{
-													fontSize: "22px",
+													fontSize: "19px",
 													marginTop: "4px",
 													marginBottom: "0px",
 													lineHeight: 1.65,
@@ -3014,16 +2560,84 @@ const Main = () => {
 											</p>
 										</div>
 									</div>
-									<div>
+								</div>
+								<div
+									style={{
+										display: "flex",
+										flexDirection: "row",
+										justifyContent: "space-between"
+									}}
+								>
+									<div
+										style={{
+											display: "flex",
+											flexDirection: "row",
+											padding: "20px 0px",
+											alignItems: "center",
+											width: "100%"
+										}}
+									>
+										{windowWidth >= 500 ? (
+											<ImgNoMargin
+												alt="batteryWork"
+												src={BatteryWork}
+												sx={{ height: "125px", width: "125px" }}
+											/>
+										) : (
+											<></>
+										)}
 										<div
-											className="timeline"
 											style={{
-												marginTop: "22.5px"
+												paddingLeft: windowWidth >= 500 ? "40px" : "0px"
 											}}
-										></div>
-										<div
-											className="post-timeline"
-										></div>
+										>
+											<h2
+												style={{
+													fontSize: "36px",
+													fontFamily: "Bitter, serif",
+													fontWeight: "bold",
+													color: "#1b4332",
+													margin: "0px"
+												}}
+											>
+												Battery Ventures<span style={{ color: "#52b788" }}></span>
+											</h2>
+											<p
+												style={{
+													fontSize: "22px",
+													marginTop: "4px",
+													marginBottom: "0px",
+													lineHeight: 1.65,
+													color: "#1b4332",
+												}}
+											>
+												Sourcing and Diligence Analyst Extern
+											</p>
+											<p
+												style={{
+													fontSize: "19px",
+													marginTop: "4px",
+													marginBottom: "0px",
+													lineHeight: 1.65,
+													color: "#1b4332",
+												}}
+											>
+												Jan 2023 - Dec 2023
+											</p>
+											<p
+												style={{
+													fontSize: "17px",
+													marginTop: "10px",
+													marginBottom: "10px",
+													lineHeight: 1.65,
+													color: "#1b4332",
+												}}
+											>
+												I joined Battery Ventures ($13B AUM) as an sourcing analyst extern to find target B2B SaaS companies, a
+												diligence analyst extern to complete a project on broadcasting software, and built an internal software
+												tool prototype for bidding on companies. 
+											</p>
+										</div>
 									</div>
 								</div>
 								<div
@@ -3039,17 +2653,21 @@ const Main = () => {
 											flexDirection: "row",
 											padding: "20px 0px",
 											alignItems: "center",
-											width: "70%"
+											width: "100%"
 										}}
 									>
-										<ImgNoMargin
-											alt="pce"
-											src={InboundWork}
-											sx={{ height: "125px", width: "125px" }}
-										/>
+										{windowWidth >= 500 ? (
+											<ImgNoMargin
+												alt="inboundWork"
+												src={InboundWork}
+												sx={{ height: "125px", width: "125px" }}
+											/>
+										) : (
+											<></>
+										)}
 										<div
 											style={{
-												paddingLeft: "40px"
+												paddingLeft: windowWidth >= 500 ? "40px" : "0px"
 											}}
 										>
 											<h2
@@ -3076,7 +2694,7 @@ const Main = () => {
 											</p>
 											<p
 												style={{
-													fontSize: "22px",
+													fontSize: "19px",
 													marginTop: "4px",
 													marginBottom: "0px",
 													lineHeight: 1.65,
@@ -3099,17 +2717,6 @@ const Main = () => {
 											</p>
 										</div>
 									</div>
-									<div>
-										<div
-											className="timeline"
-											style={{
-												marginTop: "22.5px"
-											}}
-										></div>
-										<div
-											className="post-timeline"
-										></div>
-									</div>
 								</div>
 								<div
 									style={{
@@ -3124,17 +2731,21 @@ const Main = () => {
 											flexDirection: "row",
 											padding: "20px 0px",
 											alignItems: "center",
-											width: "70%"
+											width: "100%"
 										}}
 									>
-										<ImgNoMargin
-											alt="pce"
-											src={BastiatWork}
-											sx={{ height: "125px", width: "125px" }}
-										/>
+										{windowWidth >= 500 ? (
+											<ImgNoMargin
+												alt="bastiatWork"
+												src={BastiatWork}
+												sx={{ height: "125px", width: "125px" }}
+											/>
+										) : (
+											<></>
+										)}
 										<div
 											style={{
-												paddingLeft: "40px"
+												paddingLeft: windowWidth >= 500 ? "40px" : "0px"
 											}}
 										>
 											<h2
@@ -3161,7 +2772,7 @@ const Main = () => {
 											</p>
 											<p
 												style={{
-													fontSize: "22px",
+													fontSize: "19px",
 													marginTop: "4px",
 													marginBottom: "0px",
 													lineHeight: 1.65,
@@ -3184,18 +2795,9 @@ const Main = () => {
 											</p>
 										</div>
 									</div>
-									<div>
-										<div
-											className="timeline"
-											style={{
-												marginTop: "22.5px"
-											}}
-										></div>
-									</div>
 								</div>
 							</div>
-						)
-					)}
+						))}
 					<div
 						style={{
 							margin: "100px auto 0px",
@@ -3204,7 +2806,7 @@ const Main = () => {
 					>
 						<div
 							style={{
-								width: "60%"
+								width: "100%"
 							}}
 						>
 							<div
@@ -3256,45 +2858,61 @@ const Main = () => {
 							style={{
 								display: "flex",
 								flexDirection: "row",
+								width: "100%"
 							}}
 						>
 							<a href="https://github.com/mkim45" target="_blank" rel="noopener noreferrer" underline="none">
 								<ImgNoMargin
 									alt="githubtop"
 									src={GitHubIcon}
-									sx={{ height: "40px", width: "40px", paddingRight: "40px" }}
+									sx={{ height: "40px", width: "40px", paddingRight: windowWidth < 600 ? `calc(0.05 * ${windowWidth}px)` : "40px" }}
 								/>
 							</a>
 							<a href="https://www.linkedin.com/in/michael-kim-nu/" target="_blank" rel="noopener noreferrer" underline="none">
 								<ImgNoMargin
 									alt="linkedintop"
 									src={LinkedInIcon}
-									sx={{ height: "40px", width: "40px", paddingRight: "40px" }}
+									sx={{ height: "40px", width: "40px", paddingRight: windowWidth < 600 ? `calc(0.05 * ${windowWidth}px)` : "40px" }}
 								/>
 							</a>
 							<a href={"mailto:michaelkim2025.1@u.northwestern.edu"} target="_blank" rel="noopener noreferrer" underline="none">
-								<EmailIcon style={{ width: "40px", height: "40px", color: "#1b4332", paddingRight: "40px" }} />
+								<EmailIcon style={{ width: "40px", height: "40px", color: "#1b4332", paddingRight: windowWidth < 600 ? `calc(0.05 * ${windowWidth}px)` : "40px" }} />
 							</a>
 							<a href="https://drive.google.com/file/d/1KsjGK1Vvj932qUB7lhl_Z5iZ-YAZgjHq/view?usp=sharing" target="_blank" rel="noopener noreferrer" underline="none" style={{ textDecoration: "none" }}>
 								<div
-									style={{ display: "flex", flexDirection: "row", textDecoration: "none", alignItems: "center" }}
+									style={{ display: "flex", flexDirection: "row", textDecoration: "none", alignItems: "center", padding: "0px", margin: "0px" }}
 								>
-									<p
-										style={{
-											fontSize: "22px",
-											marginTop: "0px",
-											marginBottom: "0px",
-											lineHeight: 1.65,
-											color: "#1b4332",
-											paddingRight: "10px",
-											display: "flex",
-											alignItems: "center"
-										}}
-									>
-										View My Resume
-									</p>
+									{windowWidth >= 600 ? (
+										<p
+											style={{
+												fontSize: "22px",
+												margin: "0px",
+												lineHeight: 1.65,
+												color: "#1b4332",
+												paddingRight: "10px",
+												display: "flex",
+												alignItems: "center"
+											}}
+										>
+											View My Resume
+										</p>
+									) : (
+										<p
+											style={{
+												fontSize: "22px",
+												margin: "0px",
+												lineHeight: 1.65,
+												color: "#1b4332",
+												paddingRight: "10px",
+												display: "flex",
+												alignItems: "center"
+											}}
+										>
+											Resume
+										</p>
+									)}
 									<ArrowForwardIcon 
-										style={{ width: "30px", height: "30px", color: "#1b4332", alignItems: "center", display: "flex" }}
+										style={{ width: "30px", height: "30px", color: "#1b4332", alignItems: "center", display: "flex", margin: "0px", padding: "0px" }}
 									></ArrowForwardIcon>
 								</div>
 							</a>
