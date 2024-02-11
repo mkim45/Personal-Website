@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { styled } from "@mui/material/styles";
 import "./Main.css";
+import Dialog from '@mui/material/Dialog';
 
 import Portrait from "./Michael_Kim.png";
 import AboutMe from "./AboutMe.png";
@@ -95,6 +96,17 @@ const ImgNoMargin = styled("img")({
 
 const Main = () => {
 	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+	const [open, setOpen] = React.useState([false, false, false, false, false, false, false, false, false]);
+
+	const handleClickOpen = (index) => {
+		const updatedOpen = [false, false, false, false, false, false, false, false, false];
+		updatedOpen[index] = true;
+		setOpen(updatedOpen);
+	};
+	  
+	const handleClose = () => {
+		setOpen([false, false, false, false, false, false, false, false, false]);
+	};
 
 	useEffect(() => {
 		const handleResize = () => {
@@ -121,7 +133,7 @@ const Main = () => {
 			>
 				<div
 					style={{
-						zIndex: 10000,
+						zIndex: 2,
 						display: "flex",
 						justifyContent: "space-between",
 						alignItems: "center",
@@ -458,6 +470,101 @@ const Main = () => {
 									</p>
 								</div>
 							</div>
+							<Dialog
+								fullWidth
+								maxWidth={"lg"}
+								open={open[0]}
+								onClose={handleClose}
+								PaperProps={{
+									sx: {
+									minHeight: "400px",
+									maxHeight: "600px",
+									backgroundColor: "#f0fff1"
+									}
+								}}
+							>
+								<div 
+									style={{
+										display: "flex",
+										flexDirection: "column",
+										height: "100%"
+									}}
+								>
+									<div
+										style={{
+											position: { sm: "static", md: "sticky" },
+											top: 0,
+											backgroundColor: "#f0fff1",
+											zIndex: 3,
+										}}
+									>
+										<div 
+											style={{
+												display: "flex",
+												flexDirection: "row",
+												justifyContent: "space-between",
+												padding: "10px"
+											}}
+										>
+											<p
+												style={{
+													fontWeight: 600,
+													color: "#1b4332",
+													fontSize: "36px",
+													padding: "0px 10px 0px 10px",
+													margin: "10px 0px 10px 0px"
+												}}
+											>
+												Bottom-Up Proteomics Data Assessment Tool
+											</p>
+										</div>
+										<p style={{
+											fontWeight: 500,
+											fontSize: "18px",
+											padding: "5px 20px 5px 20px",
+											margin: "0px 0px 10px 0px"
+										}}>
+											<span style={{ fontWeight: "bold" }}>Duration:</span> Oct. 2023 - Present<br/><span style={{ fontWeight: "bold" }}>Technologies Used:</span> C#, WebAssembly (Blazor), JavaScript
+										</p>
+										<div 
+											style={{
+												borderBottom: "1.5px solid black",
+												marginLeft: "14px",
+												marginRight: "14px",
+												width: `calc(100% - 28px)`
+											}}
+										/>
+									</div>
+									<p
+										style={{
+											fontWeight: 500,
+											color: "#190019",
+											fontSize: "18px",
+											padding: "10px 20px 10px 20px"
+										}}
+									>
+										As part of the Kelleher Research Group at Northwestern University's Proteomics Center of Excellence, I am currently developing a <b>mass spectrometry data quality 
+										insights tool</b> that will be open-source and publicly available for research use. Currently, scans containing data for ensemble mass spectrometry are accessible 
+										through Thermo Fisher Scientific .RAW files that can only be opened using a Windows desktop application. Additionally, existing tools lack some of the data quality 
+										assessment tables or graphs desired for top-down proteomics use cases. <br/><br/>
+
+										To solve for these missing features and limitations, I have been building an <b>OS-agnostic web application</b> that will accept user uploaded .RAW files and 
+										output tabular and graphical visualizations of scan information. Custom-built APIs in C# from hex analysis of .RAW files will be used, in addition 
+										to a Blazor wrapper of SciChart JavaScript. A Model-View-ViewModel architecture is being implemented and testing is done across 60+ file versions for future distribution to 
+										hundreds of labs.<br/><br/>
+
+										A first version of the application will be published in the coming weeks for bottom-up and top-down proteomics use. Click on the links here for more information on the work at the{' '}
+										<a href="https://proteomics.northwestern.edu/" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
+											Proteomics Center of Excellence
+										</a>{' '}
+										and{' '}
+										<a href="https://www.kelleher.northwestern.edu/" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
+											Kelleher Research Group
+										</a>{' '}
+										at Northwestern University.
+									</p>
+								</div>
+							</Dialog>
 							<div
 								className="project"
 								style={{
@@ -466,6 +573,7 @@ const Main = () => {
 									backgroundSize: "cover",
 									backgroundRepeat: "no-repeat"
 								}}
+								onClick={() => handleClickOpen(0)}
 							>
 								<div
 									style={{
@@ -512,6 +620,101 @@ const Main = () => {
 									</div>
 								</div>
 							</div>
+							<Dialog
+								fullWidth
+								maxWidth={"lg"}
+								open={open[1]}
+								onClose={handleClose}
+								PaperProps={{
+									sx: {
+									minHeight: "400px",
+									maxHeight: "600px",
+									backgroundColor: "#f0fff1"
+									}
+								}}
+							>
+								<div 
+									style={{
+										display: "flex",
+										flexDirection: "column",
+										height: "100%"
+									}}
+								>
+									<div
+										style={{
+											position: { sm: "static", md: "sticky" },
+											top: 0,
+											backgroundColor: "#f0fff1",
+											zIndex: 3,
+										}}
+									>
+										<div 
+											style={{
+												display: "flex",
+												flexDirection: "row",
+												justifyContent: "space-between",
+												padding: "10px"
+											}}
+										>
+											<p
+												style={{
+													fontWeight: 600,
+													color: "#1b4332",
+													fontSize: "36px",
+													padding: "0px 10px 0px 10px",
+													margin: "10px 0px 10px 0px"
+												}}
+											>
+												Teamfight Tactics Game Simulator
+											</p>
+										</div>
+										<p style={{
+											fontWeight: 500,
+											fontSize: "18px",
+											padding: "5px 20px 5px 20px",
+											margin: "0px 0px 10px 0px"
+										}}>
+											<span style={{ fontWeight: "bold" }}>Duration:</span> Jan. 2024 - Present<br/><span style={{ fontWeight: "bold" }}>Technologies Used:</span> JavaScript (React), Python, CSS, HTML
+										</p>
+										<div 
+											style={{
+												borderBottom: "1.5px solid black",
+												marginLeft: "14px",
+												marginRight: "14px",
+												width: `calc(100% - 28px)`
+											}}
+										/>
+									</div>
+									<p
+										style={{
+											fontWeight: 500,
+											color: "#190019",
+											fontSize: "18px",
+											padding: "10px 20px 10px 20px"
+										}}
+									>
+										As part of the Kelleher Research Group at Northwestern University's Proteomics Center of Excellence, I am currently developing a <b>mass spectrometry data quality 
+										insights tool</b> that will be open-source and publicly available for research use. Currently, scans containing data for ensemble mass spectrometry are accessible 
+										through Thermo Fisher Scientific .RAW files that can only be opened using a Windows desktop application. Additionally, existing tools lack some of the data quality 
+										assessment tables or graphs desired for top-down proteomics use cases. <br/><br/>
+
+										To solve for these missing features and limitations, I have been building an <b>OS-agnostic web application</b> that will accept user uploaded .RAW files and 
+										output tabular and graphical visualizations of scan information. Custom-built APIs in C# from hex analysis of .RAW files will be used, in addition 
+										to a Blazor wrapper of SciChart JavaScript. A Model-View-ViewModel architecture is being implemented and testing is done across 60+ file versions for future distribution to 
+										hundreds of labs.<br/><br/>
+
+										A first version of the application will be published in the coming weeks for bottom-up and top-down proteomics use. Click on the links here for more information on the work at the{' '}
+										<a href="https://proteomics.northwestern.edu/" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
+											Proteomics Center of Excellence
+										</a>{' '}
+										and{' '}
+										<a href="https://www.kelleher.northwestern.edu/" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
+											Kelleher Research Group
+										</a>{' '}
+										at Northwestern University.
+									</p>
+								</div>
+							</Dialog>
 							<div
 								className="project"
 								style={{
@@ -520,52 +723,51 @@ const Main = () => {
 									backgroundSize: "cover",
 									backgroundRepeat: "no-repeat"
 								}}
+								onClick={() => handleClickOpen(1)}
 							>
-								<a href="https://github.com/mkim45/tft-toolbox" target="_blank" rel="noopener noreferrer" style={{ width: "100%", textDecoration: "none" }}>
+								<div
+									style={{
+										width: "100%"
+									}}
+								>
 									<div
 										style={{
-											width: "100%"
+											position: "relative",
+											marginBottom: "36.5px"
 										}}
 									>
-										<div
+										<h2
 											style={{
-												position: "relative",
-												marginBottom: "36.5px"
+												fontSize: "36px",
+												fontFamily: "Bitter, serif",
+												fontWeight: "bold",
+												color: "#fff",
+												margin: "0px"
 											}}
 										>
-											<h2
-												style={{
-													fontSize: "36px",
-													fontFamily: "Bitter, serif",
-													fontWeight: "bold",
-													color: "#fff",
-													margin: "0px"
-												}}
-											>
-												Teamfight Tactics Game Simulator
-											</h2>
-										</div>
-										<div
-											style={{
-												margin: "0px auto",
-												position: "relative"
-											}}
-										>
-											<p
-												style={{
-													fontSize: "17px",
-													marginBottom: "0px",
-													marginTop: "0px",
-													lineHeight: 1.65,
-													color: "#fff",
-												}}
-											>
-												A JavaScript simulator for Teamfight Tactics meant to allow players to solve situational puzzles to improve in-game skills. Recreated game 
-												mechanics to emulate gameplay as close as possible. This project is currently in progress of being built.
-											</p>
-										</div>
+											Teamfight Tactics Game Simulator
+										</h2>
 									</div>
-								</a>
+									<div
+										style={{
+											margin: "0px auto",
+											position: "relative"
+										}}
+									>
+										<p
+											style={{
+												fontSize: "17px",
+												marginBottom: "0px",
+												marginTop: "0px",
+												lineHeight: 1.65,
+												color: "#fff",
+											}}
+										>
+											A JavaScript simulator for Teamfight Tactics meant to allow players to solve situational puzzles to improve in-game skills. Recreated game 
+											mechanics to emulate gameplay as close as possible. This project is currently in progress of being built.
+										</p>
+									</div>
+								</div>
 							</div>
 							<div
 								className="project"
@@ -1006,6 +1208,101 @@ const Main = () => {
 									</p>
 								</div>
 							</div>
+							<Dialog
+								fullWidth
+								maxWidth={"lg"}
+								open={open[0]}
+								onClose={handleClose}
+								PaperProps={{
+									sx: {
+									minHeight: "400px",
+									maxHeight: "600px",
+									backgroundColor: "#f0fff1"
+									}
+								}}
+							>
+								<div 
+									style={{
+										display: "flex",
+										flexDirection: "column",
+										height: "100%"
+									}}
+								>
+									<div
+										style={{
+											position: { sm: "static", md: "sticky" },
+											top: 0,
+											backgroundColor: "#f0fff1",
+											zIndex: 3,
+										}}
+									>
+										<div 
+											style={{
+												display: "flex",
+												flexDirection: "row",
+												justifyContent: "space-between",
+												padding: "10px"
+											}}
+										>
+											<p
+												style={{
+													fontWeight: 600,
+													color: "#1b4332",
+													fontSize: "36px",
+													padding: "0px 10px 0px 10px",
+													margin: "10px 0px 10px 0px"
+												}}
+											>
+												Bottom-Up Proteomics Data Assessment Tool
+											</p>
+										</div>
+										<p style={{
+											fontWeight: 500,
+											fontSize: "18px",
+											padding: "5px 20px 5px 20px",
+											margin: "0px 0px 10px 0px"
+										}}>
+											<span style={{ fontWeight: "bold" }}>Duration:</span> Oct. 2023 - Present<br/><span style={{ fontWeight: "bold" }}>Technologies Used:</span> C#, WebAssembly (Blazor), JavaScript
+										</p>
+										<div 
+											style={{
+												borderBottom: "1.5px solid black",
+												marginLeft: "14px",
+												marginRight: "14px",
+												width: `calc(100% - 28px)`
+											}}
+										/>
+									</div>
+									<p
+										style={{
+											fontWeight: 500,
+											color: "#190019",
+											fontSize: "18px",
+											padding: "10px 20px 10px 20px"
+										}}
+									>
+										As part of the Kelleher Research Group at Northwestern University's Proteomics Center of Excellence, I am currently developing a <b>mass spectrometry data quality 
+										insights tool</b> that will be open-source and publicly available for research use. Currently, scans containing data for ensemble mass spectrometry are accessible 
+										through Thermo Fisher Scientific .RAW files that can only be opened using a Windows desktop application. Additionally, existing tools lack some of the data quality 
+										assessment tables or graphs desired for top-down proteomics use cases. <br/><br/>
+
+										To solve for these missing features and limitations, I have been building an <b>OS-agnostic web application</b> that will accept user uploaded .RAW files and 
+										output tabular and graphical visualizations of scan information. Custom-built APIs in C# from hex analysis of .RAW files will be used, in addition 
+										to a Blazor wrapper of SciChart JavaScript. A Model-View-ViewModel architecture is being implemented and testing is done across 60+ file versions for future distribution to 
+										hundreds of labs.<br/><br/>
+
+										A first version of the application will be published in the coming weeks for bottom-up and top-down proteomics use. Click on the links here for more information on the work at the{' '}
+										<a href="https://proteomics.northwestern.edu/" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
+											Proteomics Center of Excellence
+										</a>{' '}
+										and{' '}
+										<a href="https://www.kelleher.northwestern.edu/" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
+											Kelleher Research Group
+										</a>{' '}
+										at Northwestern University.
+									</p>
+								</div>
+							</Dialog>
 							<div
 								className="project"
 								style={{
@@ -1017,6 +1314,7 @@ const Main = () => {
 									paddingLeft: "20px",
 									paddingRight: "20px"
 								}}
+								onClick={() => handleClickOpen(0)}
 							>
 								<div
 									style={{
