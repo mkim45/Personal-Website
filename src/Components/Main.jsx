@@ -324,7 +324,7 @@ const Main = () => {
 										}}
 									>
 										I’m a <b>third-year undergraduate student</b> at Northwestern University, pursuing a B.A. in Biology and Data Science 
-										and an M.S. in Computer Science through a B.A./M.S. program.<br/><br/>
+										and an M.S. in Computer Science through a B.A./M.S. program (graduating Spring 2025).<br/><br/>
 										While initially exploring investment banking and venture capital internships, I found myself far more passionate 
 										about the transformative work of the startups I was actually advising and sourcing. Since then, I’ve been fortunate to build 
 										software for a <b>multiomics research lab</b>, a <b>venture capital firm</b>, and an <b>HR software startup</b>. I'm eager to continue 
@@ -471,7 +471,7 @@ const Main = () => {
 									>
 										Whether it's through independent or collaborative projects, I enjoy applying new technologies to get impactful results.
 										Over the last four years, I've worked on projects for data analysis, software development, and machine learning across multiple industries
-										and disciplines. 
+										and disciplines. Click on any project below to learn more!
 									</p>
 								</div>
 							</div>
@@ -711,7 +711,7 @@ const Main = () => {
 										and the code at this {' '}
 										<a href="https://github.com/tftoolbox/tftoolbox.github.io" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
 											GitHub repository
-										</a>{' '}
+										</a>
 										.
 									</p>
 									<img
@@ -854,13 +854,13 @@ const Main = () => {
 										of low-quality scans when features are not known a priori.<br/><br/>
 
 										Our team cleaned and scaled data, did EDA, and created new variables to train logistic regression, KNN, random forest, LightGBM, ensemble models, and autoencoders. The 
-									model hyperparameters were tuned for performance on validation data and various dimensionality reduction techniques were also tested. A test accuracy and F1 score of <b>~82%</b> was 
+										model hyperparameters were tuned for performance on validation data and various dimensionality reduction techniques were also tested. A test accuracy and F1 score of <b>~82%</b> was 
 										achieved, which would <b>speed up lab deconvolution techniques by ~100%.</b><br/><br/>  
 
 										Some of the results of this analysis and the models can be found in this{' '}
 										<a href="https://github.com/mkim45/TopDownMassSpecClassification" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
 											GitHub repository
-										</a>{' '}
+										</a>
 										.
 									</p>
 								</div>
@@ -1157,7 +1157,7 @@ const Main = () => {
 										C# was utilized for the mapping and analysis of spectra across the entire project. More information about the Kelleher Research Group can be found at this{' '}
 										<a href="https://www.kelleher.northwestern.edu/" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
 											link here
-										</a>{' '}
+										</a>
 										.
 									</p>
 									<img
@@ -1311,7 +1311,7 @@ const Main = () => {
 										More information about the Kelleher Research Group can be found at this{' '}
 										<a href="https://www.kelleher.northwestern.edu/" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
 											link here
-										</a>{' '}
+										</a>
 										.
 									</p>
 									<img
@@ -1460,7 +1460,7 @@ const Main = () => {
 										The models can be found at this{' '}
 										<a href="https://github.com/mkim45/ICR-Age" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
 											GitHub repository
-										</a>{' '}
+										</a>
 										.
 									</p>
 								</div>
@@ -1747,7 +1747,7 @@ const Main = () => {
 										The models and project report can be found at this{' '}
 										<a href="https://github.com/mkim45/Wine-Prediction" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
 											GitHub repository
-										</a>{' '}
+										</a>
 										.
 									</p>
 								</div>
@@ -1863,7 +1863,7 @@ const Main = () => {
 									>
 										Whether it's through independent or collaborative projects, I enjoy applying new technologies to get impactful results.
 										Over the last four years, I've worked on projects for data analysis, software development, and machine learning across multiple industries
-										and disciplines. 
+										and disciplines. Click on any project below to learn more!
 									</p>
 								</div>
 							</div>
@@ -2085,7 +2085,7 @@ const Main = () => {
 										and the code at this {' '}
 										<a href="https://github.com/tftoolbox/tftoolbox.github.io" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
 											GitHub repository
-										</a>{' '}
+										</a>
 										.
 									</p>
 									<img
@@ -2217,7 +2217,7 @@ const Main = () => {
 										Some of the results of this analysis and the models can be found in this{' '}
 										<a href="https://github.com/mkim45/TopDownMassSpecClassification" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
 											GitHub repository
-										</a>{' '}
+										</a>
 										.
 									</p>
 								</div>
@@ -2479,7 +2479,7 @@ const Main = () => {
 										C# was utilized for the mapping and analysis of spectra across the entire project. More information about the Kelleher Research Group can be found at this{' '}
 										<a href="https://www.kelleher.northwestern.edu/" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
 											link here
-										</a>{' '}
+										</a>
 										.
 									</p>
 									<img
@@ -2616,7 +2616,7 @@ const Main = () => {
 										More information about the Kelleher Research Group can be found at this{' '}
 										<a href="https://www.kelleher.northwestern.edu/" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
 											link here
-										</a>{' '}
+										</a>
 										.
 									</p>
 									<img
@@ -2748,7 +2748,7 @@ const Main = () => {
 										The models can be found at this{' '}
 										<a href="https://github.com/mkim45/ICR-Age" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
 											GitHub repository
-										</a>{' '}
+										</a>
 										.
 									</p>
 								</div>
@@ -3001,7 +3001,7 @@ const Main = () => {
 										The models and project report can be found at this{' '}
 										<a href="https://github.com/mkim45/Wine-Prediction" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
 											GitHub repository
-										</a>{' '}
+										</a>
 										.
 									</p>
 								</div>
