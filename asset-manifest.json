@@ -1,15 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.7241563e.css",
-    "main.js": "/static/js/main.e840e0c4.js",
+    "main.css": "/static/css/main.fd34f710.css",
+    "main.js": "/static/js/main.36c16541.js",
     "static/media/Proteins5.png": "/static/media/Proteins5.b8fb3ce90a91b3c30f2f.png",
     "static/media/Proteins4.png": "/static/media/Proteins4.ed4fba59a8a7b6d6c2f9.png",
     "static/media/AboutMe.png": "/static/media/AboutMe.802903a0804b673ae835.png",
     "static/media/Science1.png": "/static/media/Science1.42f536ca05a3480addec.png",
     "static/media/Michael_Kim.png": "/static/media/Michael_Kim.232a10a78342d2deb5e5.png",
     "static/media/Wine.png": "/static/media/Wine.02c66668c1b759ac623b.png",
+    "static/media/TFToolbox.png": "/static/media/TFToolbox.6bf66c6535caae500c3c.png",
     "static/media/Proteins1.png": "/static/media/Proteins1.ec8711d52522e40c7321.png",
+    "static/media/BatteryTool.png": "/static/media/BatteryTool.ac07cb7674932c007a3b.png",
     "static/media/Proteins2.png": "/static/media/Proteins2.400841fcc91e6a6c4566.png",
+    "static/media/I2MSComparison.png": "/static/media/I2MSComparison.6e6f2583108ca24f0c2a.png",
+    "static/media/LabelFreeQuant.png": "/static/media/LabelFreeQuant.6c7f0aed454ed56a7b09.png",
     "static/media/Battery.png": "/static/media/Battery.4cd575b1734aaaa11252.png",
     "static/media/Proteins3.png": "/static/media/Proteins3.18ca63c5288df81367a7.png",
     "static/media/TeamfightTactics.jpeg": "/static/media/TeamfightTactics.43d4b0b1cf6cb644652a.jpeg",
@@ -20,11 +24,11 @@
     "static/media/GitHub.png": "/static/media/GitHub.019078d6231546358d0b.png",
     "static/media/LinkedInLogo.png": "/static/media/LinkedInLogo.79f1a5ba3ab05abb63a6.png",
     "index.html": "/index.html",
-    "main.7241563e.css.map": "/static/css/main.7241563e.css.map",
-    "main.e840e0c4.js.map": "/static/js/main.e840e0c4.js.map"
+    "main.fd34f710.css.map": "/static/css/main.fd34f710.css.map",
+    "main.36c16541.js.map": "/static/js/main.36c16541.js.map"
   },
   "entrypoints": [
-    "static/css/main.7241563e.css",
-    "static/js/main.e840e0c4.js"
+    "static/css/main.fd34f710.css",
+    "static/js/main.36c16541.js"
   ]
 }
