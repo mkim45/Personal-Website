@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.fd34f710.css",
-    "main.js": "/static/js/main.36c16541.js",
+    "main.js": "/static/js/main.c05857a4.js",
     "static/media/Proteins5.png": "/static/media/Proteins5.b8fb3ce90a91b3c30f2f.png",
     "static/media/Proteins4.png": "/static/media/Proteins4.ed4fba59a8a7b6d6c2f9.png",
     "static/media/AboutMe.png": "/static/media/AboutMe.802903a0804b673ae835.png",
@@ -25,10 +25,10 @@
     "static/media/LinkedInLogo.png": "/static/media/LinkedInLogo.79f1a5ba3ab05abb63a6.png",
     "index.html": "/index.html",
     "main.fd34f710.css.map": "/static/css/main.fd34f710.css.map",
-    "main.36c16541.js.map": "/static/js/main.36c16541.js.map"
+    "main.c05857a4.js.map": "/static/js/main.c05857a4.js.map"
   },
   "entrypoints": [
     "static/css/main.fd34f710.css",
-    "static/js/main.36c16541.js"
+    "static/js/main.c05857a4.js"
   ]
 }
