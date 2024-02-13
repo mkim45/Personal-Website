@@ -16,6 +16,11 @@ import Science1 from "./Science1.png";
 import TeamfightTactics from "./TeamfightTactics.jpeg";
 import Wine from "./Wine.png";
 
+import BatteryTool from './BatteryTool.png';
+import LabelFreeQuant from './LabelFreeQuant.png';
+import I2MSComparison from './I2MSComparison.png';
+import TFToolbox from './TFToolbox.png';
+
 import ProteomicsWork from "./Proteomics.jpg";
 import BatteryWork from "./BatteryWork.png";
 import InboundWork from "./Inbound.png";
@@ -399,7 +404,7 @@ const Main = () => {
 										}}
 									>
 										I’m a <b>third-year undergraduate student</b> at Northwestern University, pursuing a B.A. in Biology and Data Science 
-										and an M.S. in Computer Science through a B.A./M.S. program.<br/><br/>
+										and an M.S. in Computer Science through a B.A./M.S. program (graduating Spring 2025).<br/><br/>
 										While initially exploring investment banking and venture capital internships, I found myself far more passionate 
 										about the transformative work of the startups I was actually advising and sourcing. Since then, I’ve been fortunate to build 
 										software for a <b>multiomics research lab</b>, a <b>venture capital firm</b>, and a <b>startup</b>. I'm eager to continue 
@@ -515,7 +520,7 @@ const Main = () => {
 													margin: "10px 0px 10px 0px"
 												}}
 											>
-												Bottom-Up Proteomics Data Assessment Tool
+												Mass Spectrometry Insights Platform
 											</p>
 										</div>
 										<p style={{
@@ -693,26 +698,27 @@ const Main = () => {
 											padding: "10px 20px 10px 20px"
 										}}
 									>
-										As part of the Kelleher Research Group at Northwestern University's Proteomics Center of Excellence, I am currently developing a <b>mass spectrometry data quality 
-										insights tool</b> that will be open-source and publicly available for research use. Currently, scans containing data for ensemble mass spectrometry are accessible 
-										through Thermo Fisher Scientific .RAW files that can only be opened using a Windows desktop application. Additionally, existing tools lack some of the data quality 
-										assessment tables or graphs desired for top-down proteomics use cases. <br/><br/>
+										Currently, I'm building <b>TFToolbox</b>, a collection of player improvement and practice tools for Teamfight Tactics (an auto chess game by Riot Games). 
+										The first tool that's being created is a "puzzles" web application that offers users the ability to train in-game techniques, including unit positioning. The 
+										JavaScript application uses Python scraped game data to do one-to-one simulations of actual game scenarios that allows players to improve in situational 
+										decision-making.<br/><br/>
 
-										To solve for these missing features and limitations, I have been building an <b>OS-agnostic web application</b> that will accept user uploaded .RAW files and 
-										output tabular and graphical visualizations of scan information. Custom-built APIs in C# from hex analysis of .RAW files will be used, in addition 
-										to a Blazor wrapper of SciChart JavaScript. A Model-View-ViewModel architecture is being implemented and testing is done across 60+ file versions for future distribution to 
-										hundreds of labs.<br/><br/>
-
-										A first version of the application will be published in the coming weeks for bottom-up and top-down proteomics use. Click on the links here for more information on the work at the{' '}
-										<a href="https://proteomics.northwestern.edu/" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
-											Proteomics Center of Excellence
+										The platform is currently an MVP. Future updates to add more accurate and scalable gameplay, user authentication, and leaderboards through APIs and Node.js will be 
+										implemented. For now, the current version can be found on the{' '}
+										<a href="https://tftoolbox.github.io/" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
+											website here
 										</a>{' '}
-										and{' '}
-										<a href="https://www.kelleher.northwestern.edu/" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
-											Kelleher Research Group
+										and the code at this {' '}
+										<a href="https://github.com/tftoolbox/tftoolbox.github.io" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
+											GitHub repository
 										</a>{' '}
-										at Northwestern University.
+										.
 									</p>
+									<img
+										src={TFToolbox}
+										alt="Tftoolbox"
+										style={{ maxWidth: "80%", height: "auto", padding: "0px 20px 10px 20px", margin: "auto" }}
+									/>
 								</div>
 							</Dialog>
 							<div
@@ -769,6 +775,96 @@ const Main = () => {
 									</div>
 								</div>
 							</div>
+							<Dialog
+								fullWidth
+								maxWidth={"lg"}
+								open={open[2]}
+								onClose={handleClose}
+								PaperProps={{
+									sx: {
+									minHeight: "400px",
+									maxHeight: "600px",
+									backgroundColor: "#f0fff1"
+									}
+								}}
+							>
+								<div 
+									style={{
+										display: "flex",
+										flexDirection: "column",
+										height: "100%"
+									}}
+								>
+									<div
+										style={{
+											position: { sm: "static", md: "sticky" },
+											top: 0,
+											backgroundColor: "#f0fff1",
+											zIndex: 3,
+										}}
+									>
+										<div 
+											style={{
+												display: "flex",
+												flexDirection: "row",
+												justifyContent: "space-between",
+												padding: "10px"
+											}}
+										>
+											<p
+												style={{
+													fontWeight: 600,
+													color: "#1b4332",
+													fontSize: "36px",
+													padding: "0px 10px 0px 10px",
+													margin: "10px 0px 10px 0px"
+												}}
+											>
+												Top-Down Proteomics Quality Control
+											</p>
+										</div>
+										<p style={{
+											fontWeight: 500,
+											fontSize: "18px",
+											padding: "5px 20px 5px 20px",
+											margin: "0px 0px 10px 0px"
+										}}>
+											<span style={{ fontWeight: "bold" }}>Duration:</span> Sep. 2023 - Dec. 2023<br/><span style={{ fontWeight: "bold" }}>Technologies Used:</span> Python (Pandas, NumPy, SciPy, PyTorch, Scikit-learn, Matplotlib), C#
+										</p>
+										<div 
+											style={{
+												borderBottom: "1.5px solid black",
+												marginLeft: "14px",
+												marginRight: "14px",
+												width: `calc(100% - 28px)`
+											}}
+										/>
+									</div>
+									<p
+										style={{
+											fontWeight: 500,
+											color: "#190019",
+											fontSize: "18px",
+											padding: "10px 20px 10px 20px"
+										}}
+									>
+										As part of project coursework for COMP_SCI 349-0 Machine Learning and the Kelleher Research Group, I worked with a team to create <b>predictive machine learning models </b>
+										for binary classification of mass spectrometry scans by quality. Typically, top-down mass spectra face several challenges related to quality control, due to 
+										fragmentation complexity, spectral noise and interference, and technical variability. To this end, unbiased quality control methods are important to automate filtering out 
+										of low-quality scans when features are not known a priori.<br/><br/>
+
+										Our team cleaned and scaled data, did EDA, and created new variables to train logistic regression, KNN, random forest, LightGBM, ensemble models, and autoencoders. The 
+									model hyperparameters were tuned for performance on validation data and various dimensionality reduction techniques were also tested. A test accuracy and F1 score of <b>~82%</b> was 
+										achieved, which would <b>speed up lab deconvolution techniques by ~100%.</b><br/><br/>  
+
+										Some of the results of this analysis and the models can be found in this{' '}
+										<a href="https://github.com/mkim45/TopDownMassSpecClassification" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
+											GitHub repository
+										</a>{' '}
+										.
+									</p>
+								</div>
+							</Dialog>
 							<div
 								className="project"
 								style={{
@@ -777,54 +873,149 @@ const Main = () => {
 									backgroundSize: "cover",
 									backgroundRepeat: "no-repeat"
 								}}
+								onClick={() => handleClickOpen(2)}
 							>
-								<a href="https://github.com/mkim45/TopDownMassSpecClassification" target="_blank" rel="noopener noreferrer" style={{ width: "100%", textDecoration: "none" }}>
+								<div
+									style={{
+										width: "100%"
+									}}
+								>
 									<div
 										style={{
-											width: "100%"
+											position: "relative",
+											marginBottom: "36.5px"
 										}}
 									>
-										<div
+										<h2
 											style={{
-												position: "relative",
-												marginBottom: "36.5px"
+												fontSize: "36px",
+												fontFamily: "Bitter, serif",
+												fontWeight: "bold",
+												color: "#fff",
+												margin: "0px"
 											}}
 										>
-											<h2
-												style={{
-													fontSize: "36px",
-													fontFamily: "Bitter, serif",
-													fontWeight: "bold",
-													color: "#fff",
-													margin: "0px"
-												}}
-											>
-												Top-Down Proteomics Quality Control
-											</h2>
-										</div>
-										<div
+											Top-Down Proteomics Quality Control
+										</h2>
+									</div>
+									<div
+										style={{
+											margin: "0px auto",
+											position: "relative"
+										}}
+									>
+										<p
 											style={{
-												margin: "0px auto",
-												position: "relative"
+												fontSize: "17px",
+												marginBottom: "0px",
+												marginTop: "0px",
+												lineHeight: 1.65,
+												color: "#fff",
+											}}
+										>
+											A machine learning tool for filtering out poor quality mass spectrometry scans to improve performance and 
+											computing speeds of top-down proteoform discovery methods. Built using tuned autoencoder neural networks, 
+											tree-based models, and supervised learning algorithms.
+										</p>
+									</div>
+								</div>
+							</div>
+							<Dialog
+								fullWidth
+								maxWidth={"lg"}
+								open={open[3]}
+								onClose={handleClose}
+								PaperProps={{
+									sx: {
+									minHeight: "400px",
+									maxHeight: "600px",
+									backgroundColor: "#f0fff1"
+									}
+								}}
+							>
+								<div 
+									style={{
+										display: "flex",
+										flexDirection: "column",
+										height: "100%"
+									}}
+								>
+									<div
+										style={{
+											position: { sm: "static", md: "sticky" },
+											top: 0,
+											backgroundColor: "#f0fff1",
+											zIndex: 3,
+										}}
+									>
+										<div 
+											style={{
+												display: "flex",
+												flexDirection: "row",
+												justifyContent: "space-between",
+												padding: "10px"
 											}}
 										>
 											<p
 												style={{
-													fontSize: "17px",
-													marginBottom: "0px",
-													marginTop: "0px",
-													lineHeight: 1.65,
-													color: "#fff",
+													fontWeight: 600,
+													color: "#1b4332",
+													fontSize: "36px",
+													padding: "0px 10px 0px 10px",
+													margin: "10px 0px 10px 0px"
 												}}
 											>
-												A machine learning tool for filtering out poor quality mass spectrometry scans to improve performance and 
-												computing speeds of top-down proteoform discovery methods. Built using tuned autoencoder neural networks, 
-												tree-based models, and supervised learning algorithms.
+												Battery Ventures Internal Bidding Tool
 											</p>
 										</div>
+										<p style={{
+											fontWeight: 500,
+											fontSize: "18px",
+											padding: "5px 20px 5px 20px",
+											margin: "0px 0px 10px 0px"
+										}}>
+											<span style={{ fontWeight: "bold" }}>Duration:</span> Aug. 2023 - Dec. 2023<br/><span style={{ fontWeight: "bold" }}>Technologies Used:</span> JavaScript (React), CSS, HTML, Google Cloud
+										</p>
+										<div 
+											style={{
+												borderBottom: "1.5px solid black",
+												marginLeft: "14px",
+												marginRight: "14px",
+												width: `calc(100% - 28px)`
+											}}
+										/>
 									</div>
-								</a>
-							</div>
+									<p
+										style={{
+											fontWeight: 500,
+											color: "#190019",
+											fontSize: "18px",
+											padding: "10px 20px 10px 20px"
+										}}
+									>
+										After completing the analyst sourcing and diligence externships with Battery Ventures, I created a MVP for an internal tool that would connect extern sourced companies to 
+										partners and other investors at the firm. Externs source hundreds of startups across a variety of stages, industries, and locations, which are then passed along to investors 
+										that will set up introductory calls with the companies they find interesting. However, at the time of my completion of the externship, there was no system put in place to connect 
+										investors to all sourced companies (to facilitate finding of startups they wanted to reach out to).<br/><br/>
+
+										To solve this, I created a JavaScript web application to take files from users and store company data. Then, using APIs, a dashboard of companies are shown to investors to be bid on in 
+										a silent auction process. At a timed deadline, the investor who bids the most will win "ownership" of that company and future relationships with them. An email will be sent out with results 
+										of the bidding process each week.
+										{/* <br/><br/> */}
+
+										{/* The MVP can be found at this{' '}
+										<a href="https://github.com/mkim45/TopDownMassSpecClassification" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
+											GitHub repository
+										</a>{' '}
+										. */}
+									</p>
+									<img
+										src={BatteryTool}
+										alt="BatteryTool"
+										style={{ maxWidth: "80%", height: "auto", padding: "0px 20px 10px 20px", margin: "auto" }}
+									/>
+								</div>
+							</Dialog>
 							<div
 								className="project"
 								style={{
@@ -833,6 +1024,7 @@ const Main = () => {
 									backgroundSize: "cover",
 									backgroundRepeat: "no-repeat"
 								}}
+								onClick={() => handleClickOpen(3)}
 							>
 								<div
 									style={{
@@ -878,6 +1070,103 @@ const Main = () => {
 									</div>
 								</div>
 							</div>
+							<Dialog
+								fullWidth
+								maxWidth={"lg"}
+								open={open[4]}
+								onClose={handleClose}
+								PaperProps={{
+									sx: {
+									minHeight: "400px",
+									maxHeight: "600px",
+									backgroundColor: "#f0fff1"
+									}
+								}}
+							>
+								<div 
+									style={{
+										display: "flex",
+										flexDirection: "column",
+										height: "100%"
+									}}
+								>
+									<div
+										style={{
+											position: { sm: "static", md: "sticky" },
+											top: 0,
+											backgroundColor: "#f0fff1",
+											zIndex: 3,
+										}}
+									>
+										<div 
+											style={{
+												display: "flex",
+												flexDirection: "row",
+												justifyContent: "space-between",
+												padding: "10px"
+											}}
+										>
+											<p
+												style={{
+													fontWeight: 600,
+													color: "#1b4332",
+													fontSize: "36px",
+													padding: "0px 10px 0px 10px",
+													margin: "10px 0px 10px 0px"
+												}}
+											>
+												Fragment Ion Comparison Analysis
+											</p>
+										</div>
+										<p style={{
+											fontWeight: 500,
+											fontSize: "18px",
+											padding: "5px 20px 5px 20px",
+											margin: "0px 0px 10px 0px"
+										}}>
+											<span style={{ fontWeight: "bold" }}>Duration:</span> Jul. 2023 - Aug. 2023<br/><span style={{ fontWeight: "bold" }}>Technologies Used:</span> C#
+										</p>
+										<div 
+											style={{
+												borderBottom: "1.5px solid black",
+												marginLeft: "14px",
+												marginRight: "14px",
+												width: `calc(100% - 28px)`
+											}}
+										/>
+									</div>
+									<p
+										style={{
+											fontWeight: 500,
+											color: "#190019",
+											fontSize: "18px",
+											padding: "10px 20px 10px 20px"
+										}}
+									>
+										As part of the Kelleher Research Group at Northwestern University's Proteomics Center of Excellence, I completed an internal project to analyze the difference in masses 
+										amongst matched fragment ions for ensemble and individualized ion mass spectrometry (I2MS) methods. Current literature shows that I2MS methods can provide a far 
+										greater ability to detect high mass fragment ions than traditional mass spectrometry methods. However, further analysis is needed to see whether the missed fragment ions 
+										left undetected by I2MS methods are actually of interest and visible in individual scans.<br/><br/>
+
+										To this end, I analyzed myoglobin (17kDa), carbonic anhydrase (29kDa), and pyruvate kinase (58kDa) scans from both ensemble and I2MS methods using ASCs. The matched fragment 
+										ions resulting from running the ASCs on scans were then compared for which ions were exclusive to each of the two methods. Those exclusive ions were then mapped to see the differences 
+										in presence of low mass and high mass ions, in addition to their appearance on spectra. Ultimately, it was discovered that in all three proteins, there were exclusive matched fragment ions, 
+										where the number of exclusive matched fragment ions increased with the mass of the proteins. It appeared that the ions missing in the I2MS method, which were lower mass ions, were actually missed 
+										and present in both spectra for I2MS and ensemble.<br/><br/>
+
+										C# was utilized for the mapping and analysis of spectra across the entire project. More information about the Kelleher Research Group can be found at this{' '}
+										<a href="https://www.kelleher.northwestern.edu/" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
+											link here
+										</a>{' '}
+										.
+									</p>
+									<img
+										src={I2MSComparison}
+										alt="I2MSComparison"
+										style={{ maxWidth: "80%", height: "auto", padding: "0px 20px 10px 20px", margin: "auto" }}
+									/>
+								</div>
+							</Dialog>
 							<div
 								className="project"
 								style={{
@@ -886,6 +1175,7 @@ const Main = () => {
 									backgroundSize: "cover",
 									backgroundRepeat: "no-repeat"
 								}}
+								onClick={() => handleClickOpen(4)}
 							>
 								<div
 									style={{
@@ -925,12 +1215,112 @@ const Main = () => {
 												color: "#fff",
 											}}
 										>
-											A comparison of matched fragment ion masses for ensemble and individualized-ion mass spectrometry methods for future optimization of 
+											A comparison of matched fragment ion masses for ensemble and individualized ion mass spectrometry (I2MS) methods for future optimization of 
 											ASC and AIM-based proteoform discovery on multiple spectral outputs.
 										</p>
 									</div>
 								</div>
 							</div>
+							<Dialog
+								fullWidth
+								maxWidth={"lg"}
+								open={open[5]}
+								onClose={handleClose}
+								PaperProps={{
+									sx: {
+									minHeight: "400px",
+									maxHeight: "600px",
+									backgroundColor: "#f0fff1"
+									}
+								}}
+							>
+								<div 
+									style={{
+										display: "flex",
+										flexDirection: "column",
+										height: "100%"
+									}}
+								>
+									<div
+										style={{
+											position: { sm: "static", md: "sticky" },
+											top: 0,
+											backgroundColor: "#f0fff1",
+											zIndex: 3,
+										}}
+									>
+										<div 
+											style={{
+												display: "flex",
+												flexDirection: "row",
+												justifyContent: "space-between",
+												padding: "10px"
+											}}
+										>
+											<p
+												style={{
+													fontWeight: 600,
+													color: "#1b4332",
+													fontSize: "36px",
+													padding: "0px 10px 0px 10px",
+													margin: "10px 0px 10px 0px"
+												}}
+											>
+												Top-Down Label-Free Quantification
+											</p>
+										</div>
+										<p style={{
+											fontWeight: 500,
+											fontSize: "18px",
+											padding: "5px 20px 5px 20px",
+											margin: "0px 0px 10px 0px"
+										}}>
+											<span style={{ fontWeight: "bold" }}>Duration:</span> Jun. 2023 - Aug. 2023<br/><span style={{ fontWeight: "bold" }}>Technologies Used:</span> Python, R, SAS
+										</p>
+										<div 
+											style={{
+												borderBottom: "1.5px solid black",
+												marginLeft: "14px",
+												marginRight: "14px",
+												width: `calc(100% - 28px)`
+											}}
+										/>
+									</div>
+									<p
+										style={{
+											fontWeight: 500,
+											color: "#190019",
+											fontSize: "18px",
+											padding: "10px 20px 10px 20px"
+										}}
+									>
+										As part of the Kelleher Research Group at Northwestern University's Proteomics Center of Excellence, I assisted in conducting data analysis through a top-down label-free 
+										quantification for identification of statistically significant intensities of metabolites as part of an external ALS study. Analysis was done utilizing custom SAS, R, and 
+										Python scripts to get final deliverable results to external collaborators.<br/><br/>
+
+										Initially, comparisons were made between the different custom scripts created in SAS, R, and Python to ensure the same results across all three programming langauges. This ensured 
+										that the final deliverable analysis to external collaborators could be verifiably sound, regardless of which of the three was chosen to run the analysis in. Afterwards, heirarchical linear 
+										model-based ANOVA was used to find metabolites with statistically significant differences across multiple treatment factors and time conditions. Boxplots were created to see the quality of the 
+										data based on the variation from all sources, in addition to subsequent batch correction steps and a random effect for block. Further analysis was also done to determine whether acceptable 
+										levels of missing values were present.<br/><br/>
+
+										P-values, z-scores, and fold changes were obtained for the creation of volcano plots that gave pairwise comparisons between treatments. Also, q-values were obtained using the 
+										Benjamini Hochberg procedure, yielding corrected p-values for marking boundaries of false-discovery rates (FDR) against fold changes. After this, heatmaps were created to display the differences 
+										in all treatments in an easily-interpretable visual. Subsets of metabolites of interest were also highlighted in separate heatmaps.<br/><br/>
+
+										More information about the Kelleher Research Group can be found at this{' '}
+										<a href="https://www.kelleher.northwestern.edu/" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
+											link here
+										</a>{' '}
+										.
+									</p>
+									<img
+										src={LabelFreeQuant}
+										alt="LabelFreeQuant"
+										style={{ maxWidth: "80%", height: "auto", padding: "0px 20px 10px 20px", margin: "auto" }}
+									/>
+								</div>
+							</Dialog>
 							<div
 								className="project"
 								style={{
@@ -939,6 +1329,7 @@ const Main = () => {
 									backgroundSize: "cover",
 									backgroundRepeat: "no-repeat"
 								}}
+								onClick={() => handleClickOpen(5)}
 							>
 								<div
 									style={{
@@ -984,6 +1375,96 @@ const Main = () => {
 									</div>
 								</div>
 							</div>
+							<Dialog
+								fullWidth
+								maxWidth={"lg"}
+								open={open[6]}
+								onClose={handleClose}
+								PaperProps={{
+									sx: {
+									minHeight: "400px",
+									maxHeight: "600px",
+									backgroundColor: "#f0fff1"
+									}
+								}}
+							>
+								<div 
+									style={{
+										display: "flex",
+										flexDirection: "column",
+										height: "100%"
+									}}
+								>
+									<div
+										style={{
+											position: { sm: "static", md: "sticky" },
+											top: 0,
+											backgroundColor: "#f0fff1",
+											zIndex: 3,
+										}}
+									>
+										<div 
+											style={{
+												display: "flex",
+												flexDirection: "row",
+												justifyContent: "space-between",
+												padding: "10px"
+											}}
+										>
+											<p
+												style={{
+													fontWeight: 600,
+													color: "#1b4332",
+													fontSize: "36px",
+													padding: "0px 10px 0px 10px",
+													margin: "10px 0px 10px 0px"
+												}}
+											>
+												ICR Health Condition Prediction
+											</p>
+										</div>
+										<p style={{
+											fontWeight: 500,
+											fontSize: "18px",
+											padding: "5px 20px 5px 20px",
+											margin: "0px 0px 10px 0px"
+										}}>
+											<span style={{ fontWeight: "bold" }}>Duration:</span> Jun. 2023 - Aug. 2023<br/><span style={{ fontWeight: "bold" }}>Technologies Used:</span> Python (Pandas, NumPy, Matplotlib, Optuna, Scikit-learn, Seaborn, Statsmodels)
+										</p>
+										<div 
+											style={{
+												borderBottom: "1.5px solid black",
+												marginLeft: "14px",
+												marginRight: "14px",
+												width: `calc(100% - 28px)`
+											}}
+										/>
+									</div>
+									<p
+										style={{
+											fontWeight: 500,
+											color: "#190019",
+											fontSize: "18px",
+											padding: "10px 20px 10px 20px"
+										}}
+									>
+										Using data from a Kaggle competition and InVitro Cell Research (ICR), I built predictive machine learning models to determine the probability that a patient had one of three age-related medical 
+										conditions based on various health characteristics data. Given the current literature connecting age with a number of complications (from heart disease to dementia), bioinformatics and data science 
+										can be utilized to intervene earlier if models are able to accurately detect where medical conditions may arise.<br/><br/>
+
+										I used Python and various libraries to initially do exploratory data analysis on 50+ masked health conditions and the binary response variable (presence of age-related health condition or not in patient). 
+										Afterwards, I imputed missing values after substantial testing of performance on base models after different imputation methods. I tested the performance of XGBoost, Random Forest, Decision Tree Classifiers, 
+										TabPFN, CatBoost, LightGBM, AdaBoost, and Gradient Boosting Classifiers individually and ensembled using both stacking and voting. Optuna trials and cross-validated metrics were used to find ideal hyperparameter 
+										values, in addition to different regularization parameters to adjust for overfitting and visualizations of model shortcomings in predicting probabilities of response above or below certain thresholds.<br/><br/>
+
+										The models can be found at this{' '}
+										<a href="https://github.com/mkim45/ICR-Age" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
+											GitHub repository
+										</a>{' '}
+										.
+									</p>
+								</div>
+							</Dialog>
 							<div
 								className="project"
 								style={{
@@ -993,53 +1474,139 @@ const Main = () => {
 									backgroundRepeat: "no-repeat",
 									backgroundPosition: "center"
 								}}
+								onClick={() => handleClickOpen(6)}
 							>
-								<a href="https://github.com/mkim45/ICR-Age" target="_blank" rel="noopener noreferrer" style={{ width: "100%", textDecoration: "none" }}>
+								<div
+									style={{
+										width: "100%"
+									}}
+								>
 									<div
 										style={{
-											width: "100%"
+											position: "relative",
+											marginBottom: "36.5px"
 										}}
 									>
-										<div
+										<h2
 											style={{
-												position: "relative",
-												marginBottom: "36.5px"
+												fontSize: "36px",
+												fontFamily: "Bitter, serif",
+												fontWeight: "bold",
+												color: "#fff",
+												margin: "0px"
 											}}
 										>
-											<h2
-												style={{
-													fontSize: "36px",
-													fontFamily: "Bitter, serif",
-													fontWeight: "bold",
-													color: "#fff",
-													margin: "0px"
-												}}
-											>
-												ICR Health Condition Prediction
-											</h2>
-										</div>
-										<div
+											ICR Health Condition Prediction
+										</h2>
+									</div>
+									<div
+										style={{
+											margin: "0px auto",
+											position: "relative"
+										}}
+									>
+										<p
 											style={{
-												margin: "0px auto",
-												position: "relative"
+												fontSize: "17px",
+												marginBottom: "0px",
+												marginTop: "0px",
+												lineHeight: 1.65,
+												color: "#fff",
+											}}
+										>
+											A compilation of predictive machine learning models to determine whether patients had one of three age-related medical conditions based on 
+											various masked health characteristics. Used tree-based models, neural networks, and ensemble models to optimize performance.
+										</p>
+									</div>
+								</div>
+							</div>
+							<Dialog
+								fullWidth
+								maxWidth={"lg"}
+								open={open[7]}
+								onClose={handleClose}
+								PaperProps={{
+									sx: {
+									minHeight: "400px",
+									maxHeight: "600px",
+									backgroundColor: "#f0fff1"
+									}
+								}}
+							>
+								<div 
+									style={{
+										display: "flex",
+										flexDirection: "column",
+										height: "100%"
+									}}
+								>
+									<div
+										style={{
+											position: { sm: "static", md: "sticky" },
+											top: 0,
+											backgroundColor: "#f0fff1",
+											zIndex: 3,
+										}}
+									>
+										<div 
+											style={{
+												display: "flex",
+												flexDirection: "row",
+												justifyContent: "space-between",
+												padding: "10px"
 											}}
 										>
 											<p
 												style={{
-													fontSize: "17px",
-													marginBottom: "0px",
-													marginTop: "0px",
-													lineHeight: 1.65,
-													color: "#fff",
+													fontWeight: 600,
+													color: "#1b4332",
+													fontSize: "36px",
+													padding: "0px 10px 0px 10px",
+													margin: "10px 0px 10px 0px"
 												}}
 											>
-												A compilation of predictive machine learning models to determine whether patients had one of three age-related medical conditions based on 
-												various masked health characteristics. Used tree-based models, neural networks, and ensemble models to optimize performance.
+												Northwestern Science Olympiad Website
 											</p>
 										</div>
+										<p style={{
+											fontWeight: 500,
+											fontSize: "18px",
+											padding: "5px 20px 5px 20px",
+											margin: "0px 0px 10px 0px"
+										}}>
+											<span style={{ fontWeight: "bold" }}>Duration:</span> Nov. 2023 - Present<br/><span style={{ fontWeight: "bold" }}>Technologies Used:</span> JavaScript (React), CSS, HTML
+										</p>
+										<div 
+											style={{
+												borderBottom: "1.5px solid black",
+												marginLeft: "14px",
+												marginRight: "14px",
+												width: `calc(100% - 28px)`
+											}}
+										/>
 									</div>
-								</a>
-							</div>
+									<p
+										style={{
+											fontWeight: 500,
+											color: "#190019",
+											fontSize: "18px",
+											padding: "10px 20px 10px 20px"
+										}}
+									>
+										As the technology director for the Northwestern University Science Olympiad organization, I am currently creating a website to display relevant details about the club, our past competitions,
+										and information for teams related to our upcoming invitational in February 2024. The Northwestern University Science Olympiad organization plans a Division C Science Olympiad Invitational for 
+										30+ high school teams (approximately 450+ students) each February on the Evanston campus. The organization's executive board is responsible for planning and preparing the logistics of the 
+										tournament day and lead up to the competition.<br/><br/>
+
+										The website was created using a combination of JavaScript, CSS, and HTML. It is an updated version of the previous year's website that was built primarily using WordPress and other CSS and HTML 
+										elements, which lacked capabilities for user-friendly navigation to various pages housing necessary information and had design constraints. Sections of the website were created to display information 
+										about the organization itself, the upcoming competition for this year including sign-up and logistics, and past competition tests and answer keys as a resource for competing high school students. The 
+										website will continue to be updated throughout the year leading up to the invitational in February to include new announcements about tournament day logistics.<br/><br/>
+
+										The website is currently being built and will be finished in September ahead of the beginning of sign-up for the 2024 invitational.
+									</p>
+								</div>
+							</Dialog>
 							<div
 								className="project"
 								style={{
@@ -1048,6 +1615,7 @@ const Main = () => {
 									backgroundSize: "cover",
 									backgroundRepeat: "no-repeat"
 								}}
+								onClick={() => handleClickOpen(7)}
 							>
 								<div
 									style={{
@@ -1093,6 +1661,97 @@ const Main = () => {
 									</div>
 								</div>
 							</div>
+							<Dialog
+								fullWidth
+								maxWidth={"lg"}
+								open={open[8]}
+								onClose={handleClose}
+								PaperProps={{
+									sx: {
+									minHeight: "400px",
+									maxHeight: "600px",
+									backgroundColor: "#f0fff1"
+									}
+								}}
+							>
+								<div 
+									style={{
+										display: "flex",
+										flexDirection: "column",
+										height: "100%"
+									}}
+								>
+									<div
+										style={{
+											position: { sm: "static", md: "sticky" },
+											top: 0,
+											backgroundColor: "#f0fff1",
+											zIndex: 3,
+										}}
+									>
+										<div 
+											style={{
+												display: "flex",
+												flexDirection: "row",
+												justifyContent: "space-between",
+												padding: "10px"
+											}}
+										>
+											<p
+												style={{
+													fontWeight: 600,
+													color: "#1b4332",
+													fontSize: "36px",
+													padding: "0px 10px 0px 10px",
+													margin: "10px 0px 10px 0px"
+												}}
+											>
+												Wine Quality Prediction Models
+											</p>
+										</div>
+										<p style={{
+											fontWeight: 500,
+											fontSize: "18px",
+											padding: "5px 20px 5px 20px",
+											margin: "0px 0px 10px 0px"
+										}}>
+											<span style={{ fontWeight: "bold" }}>Duration:</span> Apr. 2023 - Jun. 2023<br/><span style={{ fontWeight: "bold" }}>Technologies Used:</span> Python (Pandas, NumPy, Matplotlib, Scikit-learn, Seaborn)
+										</p>
+										<div 
+											style={{
+												borderBottom: "1.5px solid black",
+												marginLeft: "14px",
+												marginRight: "14px",
+												width: `calc(100% - 28px)`
+											}}
+										/>
+									</div>
+									<p
+										style={{
+											fontWeight: 500,
+											color: "#190019",
+											fontSize: "18px",
+											padding: "10px 20px 10px 20px"
+										}}
+									>
+										As part of the final coursework for STAT 303-3 Data Science in Python course, I completed a project to predict the quality of Vinho Verde red and white wines 
+										using various models as part of a four-person team. Wine quality was measured as a discrete response variable on a scale of 0-10, with 11 predictor variables based on physicochemical 
+										properties of wines being used from samples to train our models. We attempted to minimize MAE to attempt to predict quality within the margin of rounding up or down to the nearest integer value.<br/><br/>
+
+										To begin with, stratified splitting of data was done with respect to wine quality to obtain training and testing data at similar distributions to the overall dataset for response variables. MARS, Bagged 
+										Decision Trees, Random Forest, and XGBoost models were used to test individual model performance in reducing MAE beyond naive methods. Fine tuning of hyperparameters was done for all four of these models 
+										to minimize cross-validated MAE. Afterwards, the four individual models were ensembled using various methods, including voting ensemble and stacking ensemble with different metamodels. Further attempts at creating 
+										ensembles of ensembled models with different metamodels was conducted. However, the best model ended up being the fine-tuned voting ensemble, with a test MAE of 0.35 being within the desired range to predict 
+										wine quality within the margin of rounding.<br/><br/>
+
+										The models and project report can be found at this{' '}
+										<a href="https://github.com/mkim45/Wine-Prediction" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
+											GitHub repository
+										</a>{' '}
+										.
+									</p>
+								</div>
+							</Dialog>
 							<div
 								className="project"
 								style={{
@@ -1102,52 +1761,52 @@ const Main = () => {
 									backgroundRepeat: "no-repeat",
 									backgroundPosition: "center"
 								}}
+								onClick={() => handleClickOpen(8)}
 							>
-								<a href="https://github.com/mkim45/Wine-Prediction" target="_blank" rel="noopener noreferrer" style={{ width: "100%", textDecoration: "none" }}>
+								
+								<div
+									style={{
+										width: "100%"
+									}}
+								>
 									<div
 										style={{
-											width: "100%"
+											position: "relative",
+											marginBottom: "36.5px"
 										}}
 									>
-										<div
+										<h2
 											style={{
-												position: "relative",
-												marginBottom: "36.5px"
+												fontSize: "36px",
+												fontFamily: "Bitter, serif",
+												fontWeight: "bold",
+												color: "#fff",
+												margin: "0px"
 											}}
 										>
-											<h2
-												style={{
-													fontSize: "36px",
-													fontFamily: "Bitter, serif",
-													fontWeight: "bold",
-													color: "#fff",
-													margin: "0px"
-												}}
-											>
-												Wine Quality Prediction Models
-											</h2>
-										</div>
-										<div
-											style={{
-												margin: "0px auto",
-												position: "relative"
-											}}
-										>
-											<p
-												style={{
-													fontSize: "17px",
-													marginBottom: "0px",
-													marginTop: "0px",
-													lineHeight: 1.65,
-													color: "#fff",
-												}}
-											>
-												A project to predict the quality of Vinho Verde wines using regression analysis, tree-based models, and ensemble models. 
-												Fine-tuned hyperparameters to achieve optimal performance and deliver conclusions.
-											</p>
-										</div>
+											Wine Quality Prediction Models
+										</h2>
 									</div>
-								</a>
+									<div
+										style={{
+											margin: "0px auto",
+											position: "relative"
+										}}
+									>
+										<p
+											style={{
+												fontSize: "17px",
+												marginBottom: "0px",
+												marginTop: "0px",
+												lineHeight: 1.65,
+												color: "#fff",
+											}}
+										>
+											A project to predict the quality of Vinho Verde wines using regression analysis, tree-based models, and ensemble models. 
+											Fine-tuned hyperparameters to achieve optimal performance and deliver conclusions.
+										</p>
+									</div>
+								</div>
 							</div>
 						</div>
 					) : (
@@ -1253,7 +1912,7 @@ const Main = () => {
 													margin: "10px 0px 10px 0px"
 												}}
 											>
-												Bottom-Up Proteomics Data Assessment Tool
+												Mass Spectrometry Insights Platform
 											</p>
 										</div>
 										<p style={{
@@ -1340,6 +1999,102 @@ const Main = () => {
 									</div>
 								</div>
 							</div>
+							<Dialog
+								fullWidth
+								maxWidth={"lg"}
+								open={open[1]}
+								onClose={handleClose}
+								PaperProps={{
+									sx: {
+									minHeight: "400px",
+									maxHeight: "600px",
+									backgroundColor: "#f0fff1"
+									}
+								}}
+							>
+								<div 
+									style={{
+										display: "flex",
+										flexDirection: "column",
+										height: "100%"
+									}}
+								>
+									<div
+										style={{
+											position: { sm: "static", md: "sticky" },
+											top: 0,
+											backgroundColor: "#f0fff1",
+											zIndex: 3,
+										}}
+									>
+										<div 
+											style={{
+												display: "flex",
+												flexDirection: "row",
+												justifyContent: "space-between",
+												padding: "10px"
+											}}
+										>
+											<p
+												style={{
+													fontWeight: 600,
+													color: "#1b4332",
+													fontSize: "36px",
+													padding: "0px 10px 0px 10px",
+													margin: "10px 0px 10px 0px"
+												}}
+											>
+												Teamfight Tactics Game Simulator
+											</p>
+										</div>
+										<p style={{
+											fontWeight: 500,
+											fontSize: "18px",
+											padding: "5px 20px 5px 20px",
+											margin: "0px 0px 10px 0px"
+										}}>
+											<span style={{ fontWeight: "bold" }}>Duration:</span> Jan. 2024 - Present<br/><span style={{ fontWeight: "bold" }}>Technologies Used:</span> JavaScript (React), Python, CSS, HTML
+										</p>
+										<div 
+											style={{
+												borderBottom: "1.5px solid black",
+												marginLeft: "14px",
+												marginRight: "14px",
+												width: `calc(100% - 28px)`
+											}}
+										/>
+									</div>
+									<p
+										style={{
+											fontWeight: 500,
+											color: "#190019",
+											fontSize: "18px",
+											padding: "10px 20px 10px 20px"
+										}}
+									>
+										Currently, I'm building <b>TFToolbox</b>, a collection of player improvement and practice tools for Teamfight Tactics (an auto chess game by Riot Games). 
+										The first tool that's being created is a "puzzles" web application that offers users the ability to train in-game techniques, including unit positioning. The 
+										JavaScript application uses Python scraped game data to do one-to-one simulations of actual game scenarios that allows players to improve in situational 
+										decision-making.<br/><br/>
+
+										The platform is currently an MVP. Future updates to add more accurate and scalable gameplay, user authentication, and leaderboards through APIs and Node.js will be 
+										implemented. For now, the current version can be found on the{' '}
+										<a href="https://tftoolbox.github.io/" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
+											website here
+										</a>{' '}
+										and the code at this {' '}
+										<a href="https://github.com/tftoolbox/tftoolbox.github.io" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
+											GitHub repository
+										</a>{' '}
+										.
+									</p>
+									<img
+										src={TFToolbox}
+										alt="Tftoolbox"
+										style={{ maxWidth: "80%", height: "auto", padding: "0px 20px 10px 20px", margin: "auto" }}
+									/>
+								</div>
+							</Dialog>
 							<div
 								className="project"
 								style={{
@@ -1351,33 +2106,122 @@ const Main = () => {
 									paddingLeft: "20px",
 									paddingRight: "20px"
 								}}
+								onClick={() => handleClickOpen(1)}
 							>
-								<a href="https://github.com/mkim45/tft-toolbox" target="_blank" rel="noopener noreferrer" style={{ width: "100%", textDecoration: "none" }}>
+								<div
+									style={{
+										width: "100%"
+									}}
+								>
 									<div
 										style={{
-											width: "100%"
+											position: "relative",
 										}}
 									>
-										<div
+										<h2
 											style={{
-												position: "relative",
+												fontSize: "30px",
+												fontFamily: "Bitter, serif",
+												fontWeight: "bold",
+												color: "#fff",
+												margin: "0px"
 											}}
 										>
-											<h2
+											Teamfight Tactics Game Simulator
+										</h2>
+									</div>
+								</div>
+							</div>
+							<Dialog
+								fullWidth
+								maxWidth={"lg"}
+								open={open[2]}
+								onClose={handleClose}
+								PaperProps={{
+									sx: {
+									minHeight: "400px",
+									maxHeight: "600px",
+									backgroundColor: "#f0fff1"
+									}
+								}}
+							>
+								<div 
+									style={{
+										display: "flex",
+										flexDirection: "column",
+										height: "100%"
+									}}
+								>
+									<div
+										style={{
+											position: { sm: "static", md: "sticky" },
+											top: 0,
+											backgroundColor: "#f0fff1",
+											zIndex: 3,
+										}}
+									>
+										<div 
+											style={{
+												display: "flex",
+												flexDirection: "row",
+												justifyContent: "space-between",
+												padding: "10px"
+											}}
+										>
+											<p
 												style={{
-													fontSize: "30px",
-													fontFamily: "Bitter, serif",
-													fontWeight: "bold",
-													color: "#fff",
-													margin: "0px"
+													fontWeight: 600,
+													color: "#1b4332",
+													fontSize: "36px",
+													padding: "0px 10px 0px 10px",
+													margin: "10px 0px 10px 0px"
 												}}
 											>
-												Teamfight Tactics Game Simulator
-											</h2>
+												Top-Down Proteomics Quality Control
+											</p>
 										</div>
+										<p style={{
+											fontWeight: 500,
+											fontSize: "18px",
+											padding: "5px 20px 5px 20px",
+											margin: "0px 0px 10px 0px"
+										}}>
+											<span style={{ fontWeight: "bold" }}>Duration:</span> Sep. 2023 - Dec. 2023<br/><span style={{ fontWeight: "bold" }}>Technologies Used:</span> Python (Pandas, NumPy, SciPy, PyTorch, Scikit-learn, Matplotlib), C#
+										</p>
+										<div 
+											style={{
+												borderBottom: "1.5px solid black",
+												marginLeft: "14px",
+												marginRight: "14px",
+												width: `calc(100% - 28px)`
+											}}
+										/>
 									</div>
-								</a>
-							</div>
+									<p
+										style={{
+											fontWeight: 500,
+											color: "#190019",
+											fontSize: "18px",
+											padding: "10px 20px 10px 20px"
+										}}
+									>
+										As part of project coursework for COMP_SCI 349-0 Machine Learning and the Kelleher Research Group, I worked with a team to create <b>predictive machine learning models </b>
+										for binary classification of mass spectrometry scans by quality. Typically, top-down mass spectra face several challenges related to quality control, due to 
+										fragmentation complexity, spectral noise and interference, and technical variability. To this end, unbiased quality control methods are important to automate filtering out 
+										of low-quality scans when features are not known a priori.<br/><br/>
+
+										Our team cleaned and scaled data, did EDA, and created new variables to train logistic regression, KNN, random forest, LightGBM, ensemble models, and autoencoders. The 
+										model hyperparameters were tuned for performance on validation data and various dimensionality reduction techniques were also tested. A test accuracy and F1 score of <b>~82%</b> was 
+										achieved, which would <b>speed up lab deconvolution techniques by ~100%.</b><br/><br/>  
+
+										Some of the results of this analysis and the models can be found in this{' '}
+										<a href="https://github.com/mkim45/TopDownMassSpecClassification" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
+											GitHub repository
+										</a>{' '}
+										.
+									</p>
+								</div>
+							</Dialog>
 							<div
 								className="project"
 								style={{
@@ -1389,33 +2233,128 @@ const Main = () => {
 									paddingLeft: "20px",
 									paddingRight: "20px"
 								}}
+								onClick={() => handleClickOpen(2)}
 							>
-								<a href="https://github.com/mkim45/TopDownMassSpecClassification" target="_blank" rel="noopener noreferrer" style={{ width: "100%", textDecoration: "none" }}>
+								<div
+									style={{
+										width: "100%"
+									}}
+								>
 									<div
 										style={{
-											width: "100%"
+											position: "relative",
 										}}
 									>
-										<div
+										<h2
 											style={{
-												position: "relative",
+												fontSize: "30px",
+												fontFamily: "Bitter, serif",
+												fontWeight: "bold",
+												color: "#fff",
+												margin: "0px"
 											}}
 										>
-											<h2
+											Top-Down Proteomics Quality Control
+										</h2>
+									</div>
+								</div>
+							</div>
+							<Dialog
+								fullWidth
+								maxWidth={"lg"}
+								open={open[3]}
+								onClose={handleClose}
+								PaperProps={{
+									sx: {
+									minHeight: "400px",
+									maxHeight: "600px",
+									backgroundColor: "#f0fff1"
+									}
+								}}
+							>
+								<div 
+									style={{
+										display: "flex",
+										flexDirection: "column",
+										height: "100%"
+									}}
+								>
+									<div
+										style={{
+											position: { sm: "static", md: "sticky" },
+											top: 0,
+											backgroundColor: "#f0fff1",
+											zIndex: 3,
+										}}
+									>
+										<div 
+											style={{
+												display: "flex",
+												flexDirection: "row",
+												justifyContent: "space-between",
+												padding: "10px"
+											}}
+										>
+											<p
 												style={{
-													fontSize: "30px",
-													fontFamily: "Bitter, serif",
-													fontWeight: "bold",
-													color: "#fff",
-													margin: "0px"
+													fontWeight: 600,
+													color: "#1b4332",
+													fontSize: "36px",
+													padding: "0px 10px 0px 10px",
+													margin: "10px 0px 10px 0px"
 												}}
 											>
-												Top-Down Proteomics Quality Control
-											</h2>
+												Battery Ventures Internal Bidding Tool
+											</p>
 										</div>
+										<p style={{
+											fontWeight: 500,
+											fontSize: "18px",
+											padding: "5px 20px 5px 20px",
+											margin: "0px 0px 10px 0px"
+										}}>
+											<span style={{ fontWeight: "bold" }}>Duration:</span> Aug. 2023 - Dec. 2023<br/><span style={{ fontWeight: "bold" }}>Technologies Used:</span> JavaScript (React), CSS, HTML, Google Cloud
+										</p>
+										<div 
+											style={{
+												borderBottom: "1.5px solid black",
+												marginLeft: "14px",
+												marginRight: "14px",
+												width: `calc(100% - 28px)`
+											}}
+										/>
 									</div>
-								</a>
-							</div>
+									<p
+										style={{
+											fontWeight: 500,
+											color: "#190019",
+											fontSize: "18px",
+											padding: "10px 20px 10px 20px"
+										}}
+									>
+										After completing the analyst sourcing and diligence externships with Battery Ventures, I created a MVP for an internal tool that would connect extern sourced companies to 
+										partners and other investors at the firm. Externs source hundreds of startups across a variety of stages, industries, and locations, which are then passed along to investors 
+										that will set up introductory calls with the companies they find interesting. However, at the time of my completion of the externship, there was no system put in place to connect 
+										investors to all sourced companies (to facilitate finding of startups they wanted to reach out to).<br/><br/>
+
+										To solve this, I created a JavaScript web application to take files from users and store company data. Then, using APIs, a dashboard of companies are shown to investors to be bid on in 
+										a silent auction process. At a timed deadline, the investor who bids the most will win "ownership" of that company and future relationships with them. An email will be sent out with results 
+										of the bidding process each week.
+										{/* <br/><br/>
+
+										The MVP can be found at this{' '}
+										<a href="https://github.com/mkim45/TopDownMassSpecClassification" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
+											GitHub repository
+										</a>{' '}
+										. */}
+									</p>
+									<img
+										src={BatteryTool}
+										alt="BatteryTool"
+										style={{ maxWidth: "80%", height: "auto", padding: "0px 20px 10px 20px", margin: "auto" }}
+									/>
+								</div>
+							</Dialog>
 							<div
 								className="project"
 								style={{
@@ -1427,6 +2366,7 @@ const Main = () => {
 									paddingLeft: "20px",
 									paddingRight: "20px"
 								}}
+								onClick={() => handleClickOpen(3)}
 							>
 								<div
 									style={{
@@ -1452,6 +2392,103 @@ const Main = () => {
 									</div>
 								</div>
 							</div>
+							<Dialog
+								fullWidth
+								maxWidth={"lg"}
+								open={open[4]}
+								onClose={handleClose}
+								PaperProps={{
+									sx: {
+									minHeight: "400px",
+									maxHeight: "600px",
+									backgroundColor: "#f0fff1"
+									}
+								}}
+							>
+								<div 
+									style={{
+										display: "flex",
+										flexDirection: "column",
+										height: "100%"
+									}}
+								>
+									<div
+										style={{
+											position: { sm: "static", md: "sticky" },
+											top: 0,
+											backgroundColor: "#f0fff1",
+											zIndex: 3,
+										}}
+									>
+										<div 
+											style={{
+												display: "flex",
+												flexDirection: "row",
+												justifyContent: "space-between",
+												padding: "10px"
+											}}
+										>
+											<p
+												style={{
+													fontWeight: 600,
+													color: "#1b4332",
+													fontSize: "36px",
+													padding: "0px 10px 0px 10px",
+													margin: "10px 0px 10px 0px"
+												}}
+											>
+												Fragment Ion Comparison Analysis
+											</p>
+										</div>
+										<p style={{
+											fontWeight: 500,
+											fontSize: "18px",
+											padding: "5px 20px 5px 20px",
+											margin: "0px 0px 10px 0px"
+										}}>
+											<span style={{ fontWeight: "bold" }}>Duration:</span> Jul. 2023 - Aug. 2023<br/><span style={{ fontWeight: "bold" }}>Technologies Used:</span> C#
+										</p>
+										<div 
+											style={{
+												borderBottom: "1.5px solid black",
+												marginLeft: "14px",
+												marginRight: "14px",
+												width: `calc(100% - 28px)`
+											}}
+										/>
+									</div>
+									<p
+										style={{
+											fontWeight: 500,
+											color: "#190019",
+											fontSize: "18px",
+											padding: "10px 20px 10px 20px"
+										}}
+									>
+										As part of the Kelleher Research Group at Northwestern University's Proteomics Center of Excellence, I completed an internal project to analyze the difference in masses 
+										amongst matched fragment ions for ensemble and individualized ion mass spectrometry (I2MS) methods. Current literature shows that I2MS methods can provide a far 
+										greater ability to detect high mass fragment ions than traditional mass spectrometry methods. However, further analysis is needed to see whether the missed fragment ions 
+										left undetected by I2MS methods are actually of interest and visible in individual scans.<br/><br/>
+
+										To this end, I analyzed myoglobin (17kDa), carbonic anhydrase (29kDa), and pyruvate kinase (58kDa) scans from both ensemble and I2MS methods using ASCs. The matched fragment 
+										ions resulting from running the ASCs on scans were then compared for which ions were exclusive to each of the two methods. Those exclusive ions were then mapped to see the differences 
+										in presence of low mass and high mass ions, in addition to their appearance on spectra. Ultimately, it was discovered that in all three proteins, there were exclusive matched fragment ions, 
+										where the number of exclusive matched fragment ions increased with the mass of the proteins. It appeared that the ions missing in the I2MS method, which were lower mass ions, were actually missed 
+										and present in both spectra for I2MS and ensemble.<br/><br/>
+
+										C# was utilized for the mapping and analysis of spectra across the entire project. More information about the Kelleher Research Group can be found at this{' '}
+										<a href="https://www.kelleher.northwestern.edu/" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
+											link here
+										</a>{' '}
+										.
+									</p>
+									<img
+										src={I2MSComparison}
+										alt="I2MSComparison"
+										style={{ maxWidth: "80%", height: "auto", padding: "0px 20px 10px 20px", margin: "auto" }}
+									/>
+								</div>
+							</Dialog>
 							<div
 								className="project"
 								style={{
@@ -1463,6 +2500,7 @@ const Main = () => {
 									paddingLeft: "20px",
 									paddingRight: "20px"
 								}}
+								onClick={() => handleClickOpen(4)}
 							>
 								<div
 									style={{
@@ -1488,6 +2526,106 @@ const Main = () => {
 									</div>
 								</div>
 							</div>
+							<Dialog
+								fullWidth
+								maxWidth={"lg"}
+								open={open[5]}
+								onClose={handleClose}
+								PaperProps={{
+									sx: {
+									minHeight: "400px",
+									maxHeight: "600px",
+									backgroundColor: "#f0fff1"
+									}
+								}}
+							>
+								<div 
+									style={{
+										display: "flex",
+										flexDirection: "column",
+										height: "100%"
+									}}
+								>
+									<div
+										style={{
+											position: { sm: "static", md: "sticky" },
+											top: 0,
+											backgroundColor: "#f0fff1",
+											zIndex: 3,
+										}}
+									>
+										<div 
+											style={{
+												display: "flex",
+												flexDirection: "row",
+												justifyContent: "space-between",
+												padding: "10px"
+											}}
+										>
+											<p
+												style={{
+													fontWeight: 600,
+													color: "#1b4332",
+													fontSize: "36px",
+													padding: "0px 10px 0px 10px",
+													margin: "10px 0px 10px 0px"
+												}}
+											>
+												Top-Down Label-Free Quantification
+											</p>
+										</div>
+										<p style={{
+											fontWeight: 500,
+											fontSize: "18px",
+											padding: "5px 20px 5px 20px",
+											margin: "0px 0px 10px 0px"
+										}}>
+											<span style={{ fontWeight: "bold" }}>Duration:</span> Jun. 2023 - Aug. 2023<br/><span style={{ fontWeight: "bold" }}>Technologies Used:</span> Python, R, SAS
+										</p>
+										<div 
+											style={{
+												borderBottom: "1.5px solid black",
+												marginLeft: "14px",
+												marginRight: "14px",
+												width: `calc(100% - 28px)`
+											}}
+										/>
+									</div>
+									<p
+										style={{
+											fontWeight: 500,
+											color: "#190019",
+											fontSize: "18px",
+											padding: "10px 20px 10px 20px"
+										}}
+									>
+										As part of the Kelleher Research Group at Northwestern University's Proteomics Center of Excellence, I assisted in conducting data analysis through a top-down label-free 
+										quantification for identification of statistically significant intensities of metabolites as part of an external ALS study. Analysis was done utilizing custom SAS, R, and 
+										Python scripts to get final deliverable results to external collaborators.<br/><br/>
+
+										Initially, comparisons were made between the different custom scripts created in SAS, R, and Python to ensure the same results across all three programming langauges. This ensured 
+										that the final deliverable analysis to external collaborators could be verifiably sound, regardless of which of the three was chosen to run the analysis in. Afterwards, heirarchical linear 
+										model-based ANOVA was used to find metabolites with statistically significant differences across multiple treatment factors and time conditions. Boxplots were created to see the quality of the 
+										data based on the variation from all sources, in addition to subsequent batch correction steps and a random effect for block. Further analysis was also done to determine whether acceptable 
+										levels of missing values were present.<br/><br/>
+
+										P-values, z-scores, and fold changes were obtained for the creation of volcano plots that gave pairwise comparisons between treatments. Also, q-values were obtained using the 
+										Benjamini Hochberg procedure, yielding corrected p-values for marking boundaries of false-discovery rates (FDR) against fold changes. After this, heatmaps were created to display the differences 
+										in all treatments in an easily-interpretable visual. Subsets of metabolites of interest were also highlighted in separate heatmaps.<br/><br/>
+
+										More information about the Kelleher Research Group can be found at this{' '}
+										<a href="https://www.kelleher.northwestern.edu/" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
+											link here
+										</a>{' '}
+										.
+									</p>
+									<img
+										src={LabelFreeQuant}
+										alt="LabelFreeQuant"
+										style={{ maxWidth: "80%", height: "auto", padding: "0px 20px 10px 20px", margin: "auto" }}
+									/>
+								</div>
+							</Dialog>
 							<div
 								className="project"
 								style={{
@@ -1499,6 +2637,7 @@ const Main = () => {
 									paddingLeft: "20px",
 									paddingRight: "20px"
 								}}
+								onClick={() => handleClickOpen(5)}
 							>
 								<div
 									style={{
@@ -1524,6 +2663,96 @@ const Main = () => {
 									</div>
 								</div>
 							</div>
+							<Dialog
+								fullWidth
+								maxWidth={"lg"}
+								open={open[6]}
+								onClose={handleClose}
+								PaperProps={{
+									sx: {
+									minHeight: "400px",
+									maxHeight: "600px",
+									backgroundColor: "#f0fff1"
+									}
+								}}
+							>
+								<div 
+									style={{
+										display: "flex",
+										flexDirection: "column",
+										height: "100%"
+									}}
+								>
+									<div
+										style={{
+											position: { sm: "static", md: "sticky" },
+											top: 0,
+											backgroundColor: "#f0fff1",
+											zIndex: 3,
+										}}
+									>
+										<div 
+											style={{
+												display: "flex",
+												flexDirection: "row",
+												justifyContent: "space-between",
+												padding: "10px"
+											}}
+										>
+											<p
+												style={{
+													fontWeight: 600,
+													color: "#1b4332",
+													fontSize: "36px",
+													padding: "0px 10px 0px 10px",
+													margin: "10px 0px 10px 0px"
+												}}
+											>
+												ICR Health Condition Prediction
+											</p>
+										</div>
+										<p style={{
+											fontWeight: 500,
+											fontSize: "18px",
+											padding: "5px 20px 5px 20px",
+											margin: "0px 0px 10px 0px"
+										}}>
+											<span style={{ fontWeight: "bold" }}>Duration:</span> Jun. 2023 - Aug. 2023<br/><span style={{ fontWeight: "bold" }}>Technologies Used:</span> Python (Pandas, NumPy, Matplotlib, Optuna, Scikit-learn, Seaborn, Statsmodels)
+										</p>
+										<div 
+											style={{
+												borderBottom: "1.5px solid black",
+												marginLeft: "14px",
+												marginRight: "14px",
+												width: `calc(100% - 28px)`
+											}}
+										/>
+									</div>
+									<p
+										style={{
+											fontWeight: 500,
+											color: "#190019",
+											fontSize: "18px",
+											padding: "10px 20px 10px 20px"
+										}}
+									>
+										Using data from a Kaggle competition and InVitro Cell Research (ICR), I built predictive machine learning models to determine the probability that a patient had one of three age-related medical 
+										conditions based on various health characteristics data. Given the current literature connecting age with a number of complications (from heart disease to dementia), bioinformatics and data science 
+										can be utilized to intervene earlier if models are able to accurately detect where medical conditions may arise.<br/><br/>
+
+										I used Python and various libraries to initially do exploratory data analysis on 50+ masked health conditions and the binary response variable (presence of age-related health condition or not in patient). 
+										Afterwards, I imputed missing values after substantial testing of performance on base models after different imputation methods. I tested the performance of XGBoost, Random Forest, Decision Tree Classifiers, 
+										TabPFN, CatBoost, LightGBM, AdaBoost, and Gradient Boosting Classifiers individually and ensembled using both stacking and voting. Optuna trials and cross-validated metrics were used to find ideal hyperparameter 
+										values, in addition to different regularization parameters to adjust for overfitting and visualizations of model shortcomings in predicting probabilities of response above or below certain thresholds.<br/><br/>
+
+										The models can be found at this{' '}
+										<a href="https://github.com/mkim45/ICR-Age" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
+											GitHub repository
+										</a>{' '}
+										.
+									</p>
+								</div>
+							</Dialog>
 							<div
 								className="project"
 								style={{
@@ -1536,33 +2765,119 @@ const Main = () => {
 									paddingLeft: "20px",
 									paddingRight: "20px"
 								}}
+								onClick={() => handleClickOpen(6)}
 							>
-								<a href="https://github.com/mkim45/ICR-Age" target="_blank" rel="noopener noreferrer" style={{ width: "100%", textDecoration: "none" }}>
+								<div
+									style={{
+										width: "100%"
+									}}
+								>
 									<div
 										style={{
-											width: "100%"
+											position: "relative",
 										}}
 									>
-										<div
+										<h2
 											style={{
-												position: "relative",
+												fontSize: "30px",
+												fontFamily: "Bitter, serif",
+												fontWeight: "bold",
+												color: "#fff",
+												margin: "0px"
 											}}
 										>
-											<h2
+											ICR Health Condition Prediction
+										</h2>
+									</div>
+								</div>
+							</div>
+							<Dialog
+								fullWidth
+								maxWidth={"lg"}
+								open={open[7]}
+								onClose={handleClose}
+								PaperProps={{
+									sx: {
+									minHeight: "400px",
+									maxHeight: "600px",
+									backgroundColor: "#f0fff1"
+									}
+								}}
+							>
+								<div 
+									style={{
+										display: "flex",
+										flexDirection: "column",
+										height: "100%"
+									}}
+								>
+									<div
+										style={{
+											position: { sm: "static", md: "sticky" },
+											top: 0,
+											backgroundColor: "#f0fff1",
+											zIndex: 3,
+										}}
+									>
+										<div 
+											style={{
+												display: "flex",
+												flexDirection: "row",
+												justifyContent: "space-between",
+												padding: "10px"
+											}}
+										>
+											<p
 												style={{
-													fontSize: "30px",
-													fontFamily: "Bitter, serif",
-													fontWeight: "bold",
-													color: "#fff",
-													margin: "0px"
+													fontWeight: 600,
+													color: "#1b4332",
+													fontSize: "36px",
+													padding: "0px 10px 0px 10px",
+													margin: "10px 0px 10px 0px"
 												}}
 											>
-												ICR Health Condition Prediction
-											</h2>
+												Northwestern Science Olympiad Website
+											</p>
 										</div>
+										<p style={{
+											fontWeight: 500,
+											fontSize: "18px",
+											padding: "5px 20px 5px 20px",
+											margin: "0px 0px 10px 0px"
+										}}>
+											<span style={{ fontWeight: "bold" }}>Duration:</span> Nov. 2023 - Present<br/><span style={{ fontWeight: "bold" }}>Technologies Used:</span> JavaScript (React), CSS, HTML
+										</p>
+										<div 
+											style={{
+												borderBottom: "1.5px solid black",
+												marginLeft: "14px",
+												marginRight: "14px",
+												width: `calc(100% - 28px)`
+											}}
+										/>
 									</div>
-								</a>
-							</div>
+									<p
+										style={{
+											fontWeight: 500,
+											color: "#190019",
+											fontSize: "18px",
+											padding: "10px 20px 10px 20px"
+										}}
+									>
+										As the technology director for the Northwestern University Science Olympiad organization, I am currently creating a website to display relevant details about the club, our past competitions,
+										and information for teams related to our upcoming invitational in February 2024. The Northwestern University Science Olympiad organization plans a Division C Science Olympiad Invitational for 
+										30+ high school teams (approximately 450+ students) each February on the Evanston campus. The organization's executive board is responsible for planning and preparing the logistics of the 
+										tournament day and lead up to the competition.<br/><br/>
+
+										The website was created using a combination of JavaScript, CSS, and HTML. It is an updated version of the previous year's website that was built primarily using WordPress and other CSS and HTML 
+										elements, which lacked capabilities for user-friendly navigation to various pages housing necessary information and had design constraints. Sections of the website were created to display information 
+										about the organization itself, the upcoming competition for this year including sign-up and logistics, and past competition tests and answer keys as a resource for competing high school students. The 
+										website will continue to be updated throughout the year leading up to the invitational in February to include new announcements about tournament day logistics.<br/><br/>
+
+										The website is currently being built and will be finished in September ahead of the beginning of sign-up for the 2024 invitational.
+									</p>
+								</div>
+							</Dialog>
 							<div
 								className="project"
 								style={{
@@ -1574,6 +2889,7 @@ const Main = () => {
 									paddingLeft: "20px",
 									paddingRight: "20px"
 								}}
+								onClick={() => handleClickOpen(7)}
 							>
 								<div
 									style={{
@@ -1599,6 +2915,97 @@ const Main = () => {
 									</div>
 								</div>
 							</div>
+							<Dialog
+								fullWidth
+								maxWidth={"lg"}
+								open={open[8]}
+								onClose={handleClose}
+								PaperProps={{
+									sx: {
+									minHeight: "400px",
+									maxHeight: "600px",
+									backgroundColor: "#f0fff1"
+									}
+								}}
+							>
+								<div 
+									style={{
+										display: "flex",
+										flexDirection: "column",
+										height: "100%"
+									}}
+								>
+									<div
+										style={{
+											position: { sm: "static", md: "sticky" },
+											top: 0,
+											backgroundColor: "#f0fff1",
+											zIndex: 3,
+										}}
+									>
+										<div 
+											style={{
+												display: "flex",
+												flexDirection: "row",
+												justifyContent: "space-between",
+												padding: "10px"
+											}}
+										>
+											<p
+												style={{
+													fontWeight: 600,
+													color: "#1b4332",
+													fontSize: "36px",
+													padding: "0px 10px 0px 10px",
+													margin: "10px 0px 10px 0px"
+												}}
+											>
+												Wine Quality Prediction Models
+											</p>
+										</div>
+										<p style={{
+											fontWeight: 500,
+											fontSize: "18px",
+											padding: "5px 20px 5px 20px",
+											margin: "0px 0px 10px 0px"
+										}}>
+											<span style={{ fontWeight: "bold" }}>Duration:</span> Apr. 2023 - Jun. 2023<br/><span style={{ fontWeight: "bold" }}>Technologies Used:</span> Python (Pandas, NumPy, Matplotlib, Scikit-learn, Seaborn)
+										</p>
+										<div 
+											style={{
+												borderBottom: "1.5px solid black",
+												marginLeft: "14px",
+												marginRight: "14px",
+												width: `calc(100% - 28px)`
+											}}
+										/>
+									</div>
+									<p
+										style={{
+											fontWeight: 500,
+											color: "#190019",
+											fontSize: "18px",
+											padding: "10px 20px 10px 20px"
+										}}
+									>
+										As part of the final coursework for STAT 303-3 Data Science in Python course, I completed a project to predict the quality of Vinho Verde red and white wines 
+										using various models as part of a four-person team. Wine quality was measured as a discrete response variable on a scale of 0-10, with 11 predictor variables based on physicochemical 
+										properties of wines being used from samples to train our models. We attempted to minimize MAE to attempt to predict quality within the margin of rounding up or down to the nearest integer value.<br/><br/>
+
+										To begin with, stratified splitting of data was done with respect to wine quality to obtain training and testing data at similar distributions to the overall dataset for response variables. MARS, Bagged 
+										Decision Trees, Random Forest, and XGBoost models were used to test individual model performance in reducing MAE beyond naive methods. Fine tuning of hyperparameters was done for all four of these models 
+										to minimize cross-validated MAE. Afterwards, the four individual models were ensembled using various methods, including voting ensemble and stacking ensemble with different metamodels. Further attempts at creating 
+										ensembles of ensembled models with different metamodels was conducted. However, the best model ended up being the fine-tuned voting ensemble, with a test MAE of 0.35 being within the desired range to predict 
+										wine quality within the margin of rounding.<br/><br/>
+
+										The models and project report can be found at this{' '}
+										<a href="https://github.com/mkim45/Wine-Prediction" target="_blank" rel="noopener noreferrer" style={{ color: "#190019" }}>
+											GitHub repository
+										</a>{' '}
+										.
+									</p>
+								</div>
+							</Dialog>
 							<div
 								className="project"
 								style={{
@@ -1611,32 +3018,31 @@ const Main = () => {
 									paddingLeft: "20px",
 									paddingRight: "20px"
 								}}
+								onClick={() => handleClickOpen(8)}
 							>
-								<a href="https://github.com/mkim45/Wine-Prediction" target="_blank" rel="noopener noreferrer" style={{ width: "100%", textDecoration: "none" }}>
+								<div
+									style={{
+										width: "100%"
+									}}
+								>
 									<div
 										style={{
-											width: "100%"
+											position: "relative",
 										}}
 									>
-										<div
+										<h2
 											style={{
-												position: "relative",
+												fontSize: "30px",
+												fontFamily: "Bitter, serif",
+												fontWeight: "bold",
+												color: "#fff",
+												margin: "0px"
 											}}
 										>
-											<h2
-												style={{
-													fontSize: "30px",
-													fontFamily: "Bitter, serif",
-													fontWeight: "bold",
-													color: "#fff",
-													margin: "0px"
-												}}
-											>
-												Wine Quality Prediction Models
-											</h2>
-										</div>
+											Wine Quality Prediction Models
+										</h2>
 									</div>
-								</a>
+								</div>
 							</div>
 						</div>
 					)}
@@ -1773,7 +3179,7 @@ const Main = () => {
 										paddingRight: "20px",
 									}}
 								>
-									Jun 2023 - Present
+									Jun. 2023 - Present
 								</p>
 								<div>
 									<div
@@ -1861,7 +3267,7 @@ const Main = () => {
 										paddingRight: "20px"
 									}}
 								>
-									Sep 2022 - Present
+									Sep. 2022 - Present
 								</p>
 								<div>
 									<div
@@ -1949,7 +3355,7 @@ const Main = () => {
 										paddingRight: "20px"
 									}}
 								>
-									Jan 2023 - Dec 2023
+									Jan. 2023 - Dec. 2023
 								</p>
 								<div>
 									<div
@@ -2036,7 +3442,7 @@ const Main = () => {
 										paddingRight: "20px"
 									}}
 								>
-									Aug 2022 - Jun 2023
+									Aug. 2022 - Jun. 2023
 								</p>
 								<div>
 									<div
@@ -2123,7 +3529,7 @@ const Main = () => {
 										paddingRight: "20px",
 									}}
 								>
-									Jun 2022 - Sep 2022
+									Jun. 2022 - Sep. 2022
 								</p>
 								<div>
 									<div
@@ -2269,7 +3675,7 @@ const Main = () => {
 											paddingRight: "20px",
 										}}
 									>
-										Jun 2023 - Present
+										Jun. 2023 - Present
 									</p>
 									<div>
 										<div
@@ -2357,7 +3763,7 @@ const Main = () => {
 											paddingRight: "20px"
 										}}
 									>
-										Sep 2022 - Present
+										Sep. 2022 - Present
 									</p>
 									<div>
 										<div
@@ -2445,7 +3851,7 @@ const Main = () => {
 											paddingRight: "20px"
 										}}
 									>
-										Jan 2023 - Dec 2023
+										Jan. 2023 - Dec. 2023
 									</p>
 									<div>
 										<div
@@ -2532,7 +3938,7 @@ const Main = () => {
 											paddingRight: "20px"
 										}}
 									>
-										Aug 2022 - Jun 2023
+										Aug. 2022 - Jun. 2023
 									</p>
 									<div>
 										<div
@@ -2619,7 +4025,7 @@ const Main = () => {
 											paddingRight: "20px",
 										}}
 									>
-										Jun 2022 - Sep 2022
+										Jun. 2022 - Sep. 2022
 									</p>
 									<div>
 										<div
@@ -2765,7 +4171,7 @@ const Main = () => {
 													color: "#1b4332",
 												}}
 											>
-												Jun 2023 - Present
+												Jun. 2023 - Present
 											</p>
 											<p
 												style={{
@@ -2844,7 +4250,7 @@ const Main = () => {
 													color: "#1b4332",
 												}}
 											>
-												Sep 2022 - Present
+												Sep. 2022 - Present
 											</p>
 											<p
 												style={{
@@ -2923,7 +4329,7 @@ const Main = () => {
 													color: "#1b4332",
 												}}
 											>
-												Jan 2023 - Dec 2023
+												Jan. 2023 - Dec. 2023
 											</p>
 											<p
 												style={{
@@ -3002,7 +4408,7 @@ const Main = () => {
 													color: "#1b4332",
 												}}
 											>
-												Aug 2022 - Jun 2023
+												Aug. 2022 - Jun. 2023
 											</p>
 											<p
 												style={{
@@ -3080,7 +4486,7 @@ const Main = () => {
 													color: "#1b4332",
 												}}
 											>
-												Jun 2022 - Sep 2022
+												Jun. 2022 - Sep. 2022
 											</p>
 											<p
 												style={{
