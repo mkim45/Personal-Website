@@ -165,13 +165,13 @@ const Main = () => {
 								sx={{ height: "40px", width: "40px", paddingRight: "20px" }}
 							/>
 						</a>
-						<Link to="/planner" target="_blank" rel="noopener noreferrer" underline="none">
-  <ImgNoMargin
-    alt="linkedintop"
-    src={LinkedInIcon}
-    sx={{ height: "40px", width: "40px" }}
-  />
-</Link>
+						<a href="https://www.linkedin.com/in/michael-kim-nu/" target="_blank" rel="noopener noreferrer" underline="none">
+							<ImgNoMargin
+								alt="linkedintop"
+								src={LinkedInIcon}
+								sx={{ height: "40px", width: "40px" }}
+							/>
+						</a>
 					</div>
 				</div>
 				<div 
