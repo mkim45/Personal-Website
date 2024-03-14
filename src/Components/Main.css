@@ -4,7 +4,7 @@
 	position: relative;
 	padding: 20px;
 	line-height: 1;
-  }
+}
   
 .view::before {
   	content: "";
@@ -59,3 +59,153 @@
 	margin-left: 10.75px;
 	background-color: #52b788;
 }
+
+.planner-container {
+	min-height: 100%;
+	padding-top: 84px;
+	display: flex;
+	overflow: hidden;
+	justify-content: space-between;
+	max-width: 1280px;
+	margin: 0px auto;
+	flex-direction: column;
+}
+
+.checklist-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.timer-display {
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 136px;
+	margin-top: 4px;
+	margin-bottom: 8px;
+	font-variant-numeric: tabular-nums;
+	letter-spacing: -5px;
+}
+
+.timer-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.button {
+	display: inline-block;
+	padding: 10px 20px; 
+	width: 150px;
+	margin: 10px;
+	border: none;
+	border-radius: 500px;
+	border: 1.5px solid #1b4332; 
+	background-color: #f0fff1;
+	color: black;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.button:hover {
+	background-color: #1b4332; 
+	color: #ffffff
+}
+
+.button.active {
+	background-color: #1b4332; 
+	color: #ffffff
+}
+
+.checklist-item {
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
+.checklist-item input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 15px;
+    height: 15px;
+    border: 1.5px solid #1b4332; 
+    background-color: #f0fff1; 
+    border-radius: 3px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.checklist-item input:checked {
+    background-color: #1b4332; 
+    border: 0px solid transparent;
+}
+
+.checklist-item label {
+    font-size: 16px;
+}
+
+.checklist-item input:checked::before {
+    content: '\2714';
+    display: inline-block;  
+    width: 15px;  
+    height: 15px;  
+    line-height: 15px;  
+    text-align: center; 
+    color: #fff;
+    font-size: 12px;
+}
+
+.mood-sleep-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.mood-container {
+	display: flex;
+	flex-direction: row;
+}
+
+.mood-button,
+.sleep-button {
+  background-color: #f0fff1;
+  border: 1.5px solid #1b4332;
+  color: black;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.mood-button.selected,
+.sleep-button.selected {
+  background-color: #1b4332;
+  color: white;
+}
+
+.mood-button:hover,
+.sleep-button:hover {
+	background-color: #1b4332;
+	color: white;
+}
+
+.input-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.input-container label {
+	font-size: 16px;
+	padding-bottom: 5px;
+	padding-top: 10px;
+}
+
+input[type=numeric]:focus{
+	outline: 1.5px solid #1b4332; 
+  }

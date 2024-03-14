@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 import { styled } from "@mui/material/styles";
 import "./Main.css";
 import Dialog from '@mui/material/Dialog';
@@ -164,13 +165,13 @@ const Main = () => {
 								sx={{ height: "40px", width: "40px", paddingRight: "20px" }}
 							/>
 						</a>
-						<a href="https://www.linkedin.com/in/michael-kim-nu/" target="_blank" rel="noopener noreferrer" underline="none">
-							<ImgNoMargin
-								alt="linkedintop"
-								src={LinkedInIcon}
-								sx={{ height: "40px", width: "40px" }}
-							/>
-						</a>
+						<Link to="/planner" target="_blank" rel="noopener noreferrer" underline="none">
+  <ImgNoMargin
+    alt="linkedintop"
+    src={LinkedInIcon}
+    sx={{ height: "40px", width: "40px" }}
+  />
+</Link>
 					</div>
 				</div>
 				<div 
